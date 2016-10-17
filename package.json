@@ -1,0 +1,44 @@
+{
+  "name": "whiplash-ui-library",
+  "version": "0.0.1",
+  "description": "whiplash-ui-library React component",
+  "main": "lib/index.js",
+  "jsnext:main": "es/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && npm clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
+  "peerDependencies": {
+    "react": "15.x"
+  },
+  "devDependencies": {
+    "enzyme": "^2.4.1",
+    "nwb": "0.12.x",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-scripts": "0.6.0"
+  },
+  "author": "Casey Baggz",
+  "homepage": "https://www.whiplashmerch.com/",
+  "license": "MIT",
+  "repository": "https://github.com/whiplashmerch/whiplash-ui-library",
+  "keywords": [
+    "react-component",
+    "react",
+    "ui-library",
+    "ui"
+  ]
+}

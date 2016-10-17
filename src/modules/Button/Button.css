@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+.Button {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #303030;
+  border-radius: 5px;
+  color: #303030;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  letter-spacing: 0.0125rem;
+  margin: 0.5rem auto;
+  min-width: 11.9375rem;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  transition:
+    background-color 200ms ease-out,
+    border 200ms ease-out,
+    color 200ms ease-out;
+  width: 100%;
+}
+
+.Button.filled {
+  background-color: #303030;
+  color: #fff
+}
+
+.Button.primary {
+  border: 1px solid #4641BE;
+  color: #4641BE;
+}
+
+.Button.primary.filled {
+  background-color: #4641BE;
+  border: 1px solid #4641BE;
+  color: #fff;
+}
+
+.Button.secondary {
+  border: 1px solid #EE2C8D;
+  color: #EE2C8D;
+}
+
+.Button.secondary.filled {
+  background-color: #EE2C8D;
+  border: 1px solid #EE2C8D;
+  color: #fff;
+}
+
+.Button.danger {
+  border: 1px solid #CC3E4A;
+  color: #CC3E4A;
+}
+
+.Button.danger.filled {
+  background-color: #CC3E4A;
+  border: 1px solid #CC3E4A;
+  color: #fff;
+}
+
+.Button.text {
+  border: none;
+}
+
+
+/* hover states */
+
+.Button:hover {
+  background-color: #303030;
+  border: 1px solid #303030;
+  color: #fff;
+}
+
+.Button.filled:hover {
+  background-color: transparent;
+  border: 1px solid #303030;
+  color: #303030;
+}
+
+.Button.primary:hover {
+  background-color: #4641BE;
+  border: 1px solid #4641BE;
+  color: #fff;
+}
+
+.Button.primary.filled:hover {
+  background-color: transparent;
+  border: 1px solid #4641BE;
+  color: #4641BE;
+}
+
+.Button.secondary:hover {
+  background-color: #EE2C8D;
+  border: 1px solid #EE2C8D;
+  color: #fff;
+}
+
+.Button.secondary.filled:hover {
+  background-color: transparent;
+  border: 1px solid #EE2C8D;
+  color: #EE2C8D;
+}
+
+.Button.danger:hover {
+  background-color: #CC3E4A;
+  border: 1px solid #CC3E4A;
+  color: #fff;
+}
+
+.Button.danger.filled:hover {
+  background-color: transparent;
+  border: 1px solid #CC3E4A;
+  color: #CC3E4A;
+}
+
+.Button.text:hover {
+  border: none;
+  background-color: transparent;
+  color: #4641BE;
+}
+
+
+/*===========================================
+                BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 600px) {
+  .Button {
+    margin: 0.5rem;
+    width: initial;
+  }
+}
