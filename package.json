@@ -18,6 +18,7 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "aphrodite": "^0.6.0",
     "classnames": "^2.2.5"
   },

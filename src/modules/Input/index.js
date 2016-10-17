@@ -55,8 +55,6 @@ export default class Input extends Component {
       !this.state.active ? InputStyles.wrapper : [InputStyles.wrapper, InputStyles.activeWrapper]
     );
 
-    console.log(this.state.active);
-
 
     return (
       <div className={ css([InputStyles.main]) }>
