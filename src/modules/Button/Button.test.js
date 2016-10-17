@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { StyleSheetTestUtils } from 'aphrodite';
 import { mount, shallow } from 'enzyme';
 import Button from './';
 
 
 describe('Button Component', () => {
+
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+
+  afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
