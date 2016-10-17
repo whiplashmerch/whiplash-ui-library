@@ -6,14 +6,14 @@
 
 Official React component UI library for [Whiplash Merch](https://www.whiplashmerch.com/).
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://travis-ci.com/whiplashmerch/whiplash-ui-library.svg?token=7sqecPgxJNHKkKxQk6v2&branch=master
+[build]: https://travis-ci.org/whiplashmerch/whiplash-ui-library
 
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
 [npm]: https://www.npmjs.org/package/npm-package
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+[coveralls-badge]: https://img.shields.io/coveralls/whiplashmerch/whiplash-ui-library/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/whiplashmerch/whiplash-ui-library
 
 
 ### Installation
