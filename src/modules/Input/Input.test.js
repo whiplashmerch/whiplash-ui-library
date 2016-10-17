@@ -12,20 +12,6 @@ describe('Input Component', () => {
   });
 
 
-  it('should have a default inputLabel prop', () => {
-    const wrapper = mount(<Input />);
-    expect(wrapper.props().inputLabel).toEqual('');
-  });
-
-
-  it('should pass the inputLabel prop into the label html', () => {
-    const wrapper = mount(<Input inputLabel="name" />);
-    expect(wrapper.props().inputLabel).not.toEqual('');
-    expect(wrapper.props().inputLabel).toEqual('name');
-    expect(wrapper.find('.Input-label').text()).toEqual('name');
-  });
-
-
   it('should have a default inputType', () => {
     const wrapper = mount(<Input />);
     expect(wrapper.props().inputType).toEqual('text');

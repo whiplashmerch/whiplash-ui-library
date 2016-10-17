@@ -1,5 +1,6 @@
 const Theme = {
 
+  primaryLight: '#726EEA',
   primary: '#5134C4',
   primaryDark: '#3F00B6',
   secondary: '#EE2C8D',
@@ -12,9 +13,11 @@ const Theme = {
 
   darkText: '#303030',
   whiteText: '#fff',
+  placeholder: '#909090',
 
-  darkWhite: '#FDFDFD'
+  darkWhite: '#FDFDFD',
 
+  fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
 };
 
 // shared colors
