@@ -23,7 +23,8 @@ class Demo extends Component {
     return(
       <div>
         <h3>Will this work?</h3>
-        <Button buttonText="default" callback={ this._clickButton } />
+        <Button buttonText="primary" theme="danger" callback={ this._clickButton } />
+        <Button buttonText="filled" theme="filled" callback={ this._clickButton } />
         <Input inputLabel="email" inputType="email" onUserInput={ null } />
 
         <div style={{ position: 'relative' }}>
