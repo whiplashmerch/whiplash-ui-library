@@ -77,7 +77,7 @@ export default class Navicon extends Component {
 
 
     return (
-      <div className={ css(NaviconStyles.main) }>
+      <div className={ css(NaviconStyles.main) } data-navicon>
         <a className={ css(NaviconStyles.link) } href="#" onClick={ this._toggleIcon }>
           <span className={ TopBarStyles } />
           <span className={ MiddleBarStyles } />
