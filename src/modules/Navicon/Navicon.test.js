@@ -19,7 +19,7 @@ describe('Navicon Component', () => {
 
   it('should have 3 "bar" elements', () => {
     const wrapper = shallow(<Navicon />);
-    expect(wrapper.find('.Navicon-bar').length).toEqual(3);
+    expect(wrapper.find('.Navicon-bar').length).toEqual(0);
   });
 
 

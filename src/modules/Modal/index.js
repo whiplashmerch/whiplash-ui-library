@@ -1,7 +1,6 @@
 import 'animate.css';
 import React, { Component, PropTypes } from 'react';
 import { css } from 'aphrodite';
-import classNames from 'classnames';
 import ModalStyles from './styles.js';
 
 const propTypes = {

@@ -16,6 +16,7 @@ const Theme = {
   placeholder: '#909090',
 
   darkWhite: '#FDFDFD',
+  black: '#000',
 
   fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
 };
