@@ -1,6 +1,6 @@
 {
   "name": "whiplash-ui-library",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -11,6 +11,7 @@
     "lib",
     "umd"
   ],
+  "bugs": "https://github.com/whiplashmerch/whiplash-ui-library/issues",
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
@@ -37,10 +38,17 @@
   "homepage": "https://www.whiplashmerch.com/",
   "license": "MIT",
   "repository": "https://github.com/whiplashmerch/whiplash-ui-library",
+  "tags": [
+    "react",
+    "whiplashmerch",
+    "ui-library"
+  ],
   "keywords": [
     "react-component",
     "react",
     "ui-library",
-    "ui"
+    "ui",
+    "whiplash",
+    "whiplashmerch"
   ]
 }

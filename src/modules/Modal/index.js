@@ -6,7 +6,7 @@ import ModalStyles from './styles.js';
 const propTypes = {
   active: PropTypes.bool,
   content: PropTypes.object,
-  logo: PropTypes.object,
+  logo: PropTypes.string,
   modalWidth: PropTypes.string,
   onCloseModal: PropTypes.func
 };
@@ -14,7 +14,7 @@ const propTypes = {
 const defaultProps = {
   active: false,
   conent: null,
-  logo: null,
+  logo: '',
   modalWidth: '38.75rem'
 };
 

@@ -17,4 +17,18 @@ Official React component UI library for [Whiplash Merch](https://www.whiplashmer
 
 
 ### Installation
-TBD
+Run:
+```
+npm i whiplash-ui-library --save
+```
+
+Using Components:
+```
+import { Button } from 'whiplash-ui-library';
+```
+
+Live Example of all Available components:
+[Whiplash UI Library Example](https://whiplashmerch.github.io/whiplash-ui-library-pages/#/?_k=gu192b)
+
+<br />
+*More Components Coming Soon!*
