@@ -1,24 +1,26 @@
+import 'animate.css';
 import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
-import geoLogo from './whiplash-geo-logo-white.svg';
-import './Modal.css';
+import { css } from 'aphrodite';
+import ModalStyles from './styles.js';
 
 const propTypes = {
   active: PropTypes.bool,
   content: PropTypes.object,
-  onCloseModal: PropTypes.func,
-  modalWidth: PropTypes.string
+  logo: PropTypes.object,
+  modalWidth: PropTypes.string,
+  onCloseModal: PropTypes.func
 };
 
 const defaultProps = {
   active: false,
-  conent: '',
+  conent: null,
+  logo: null,
   modalWidth: '38.75rem'
 };
 
 
 export default class Modal extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     // cache methods
@@ -27,12 +29,16 @@ export default class Modal extends Component {
 
 
   componentDidMount() {
+    // allow exit on esc press
     document.body.onkeydown = (e) => {
       const evt = e || window.event;
       if (evt.keyCode === 27) {
         this._close();
       }
     };
+
+    this.refs.ModalContent.classList.add('animated');
+    this.refs.ModalOverlay.classList.add('animated');
   }
 
 
@@ -44,36 +50,57 @@ export default class Modal extends Component {
   // PRIVATE
 
   _close() {
-    const container = document.querySelector('.Modal-content');
-    const modal = document.querySelector('.Modal');
+    const modal = this.refs.Modal;
+    const overlay = this.refs.ModalOverlay;
+    const container = this.refs.ModalContent;
 
     container.classList.remove('fadeInDown');
     container.classList.add('fadeOutUp');
-    modal.classList.add('outro');
+
+    overlay.classList.remove('fadeIn');
+    overlay.classList.add('fadeOut');
 
     // wait till animation finished before de-activating
     window.setTimeout(() => {
       this.props.onCloseModal(false);
-    }, 300);
+    }, 400);
   }
 
 
   render() {
-    const ModalClass = classNames('Modal', { active: this.props.active });
-    const ContentClass = classNames('Modal-content', 'animated', { fadeInDown: this.props.active });
-    const contentStyle = { maxWidth: this.props.modalWidth };
+    const ModalClass = css(
+      !this.props.active ? ModalStyles.main : [ ModalStyles.main, ModalStyles.activeModal ]
+    );
+
+    const ContentStyle = { maxWidth: this.props.modalWidth };
+
+    if (this.props.active) {
+      this.refs.ModalContent.classList.remove('fadeOutUp');
+      this.refs.ModalContent.classList.add('fadeInDown');
+
+      this.refs.ModalOverlay.classList.remove('fadeOut');
+      this.refs.ModalOverlay.classList.add('fadeIn');
+    }
+
 
     return (
-      <div className={ ModalClass }>
-        <div className="Modal-overlay" onClick={ this._close } />
+      <div ref="Modal" className={ ModalClass }>
+        <div ref="ModalOverlay" className={ css(ModalStyles.overlay) } onClick={ this._close } />
 
-        <div className={ ContentClass } style={ contentStyle }>
-          <div className="Modal-header">
-            <div className="Modal-logo-container">
-              <img className="Modal-logo" src={ geoLogo } alt="whiplash logo" />
+        <div ref="ModalContent"
+          className={ css([ModalStyles.content, ModalStyles.fadeOutUp]) }
+          style={ ContentStyle }>
+
+          <div className={ css(ModalStyles.header) }>
+            <div className={ css(ModalStyles.logoContainer) }>
+              <img
+                className={ css(ModalStyles.logo) }
+                src={ this.props.logo } alt="logo" />
             </div>
 
-            <span className="Modal-close-btn" onClick={ this._close } />
+            <span
+              className={ css(ModalStyles.closeBtn) }
+              onClick={ this._close } />
           </div>
 
           { this.props.content }

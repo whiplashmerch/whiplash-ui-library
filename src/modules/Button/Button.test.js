@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { mount, shallow } from 'enzyme';
 import Button from './';
 
+
 describe('Button Component', () => {
 
   it('should render without crashing', () => {
@@ -13,7 +14,7 @@ describe('Button Component', () => {
 
   it('should have a button trigger', () => {
     const wrapper = shallow(<Button buttonText="test" callback={ function(){} } />);
-    expect(wrapper.find('.Button').length).toEqual(1);
+    expect(wrapper.find('.Button')).toBeDefined();
   });
 
 
@@ -27,14 +28,6 @@ describe('Button Component', () => {
     const wrapper = mount(<Button buttonType="submit" />);
     expect(wrapper.props().buttonType).toEqual('submit');
     expect(wrapper.props().buttonType).not.toEqual('button');
-  });
-
-
-  it('should add theme as a className', () => {
-    const wrapper = mount(<Button buttonText="test" theme="primary" callback={ function(){} } />);
-    expect(wrapper.props().theme).toEqual('primary');
-    expect(wrapper.props().theme).not.toEqual('');
-    expect(wrapper.find('.primary').length).toEqual(1);
   });
 
 

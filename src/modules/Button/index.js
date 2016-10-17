@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import './Button.css';
+import { css } from 'aphrodite';
+import ButtonStyles from './styles.js';
 
 
 const propTypes = {
@@ -13,7 +14,7 @@ const defaultProps = {
   buttonText: '',
   buttonType: 'button',
   callback: () => { return; },
-  theme: ''
+  theme: 'main'
 };
 
 
@@ -36,7 +37,7 @@ export default class Button extends Component {
   render() {
     return (
       <button type={ this.props.buttonType }
-        className={ `Button ${ this.props.theme }` }
+        className={ css([ButtonStyles.main, ButtonStyles[this.props.theme]]) }
         onClick={ this._triggerCallback }>
         { this.props.buttonText }
       </button>

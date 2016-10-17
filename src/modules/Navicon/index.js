@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import './Navicon.css';
+import { css } from 'aphrodite';
+import NaviconStyles from './styles.js';
 
 const propTypes = {
   onUserInput: PropTypes.func
@@ -19,11 +20,33 @@ export default class Navicon extends Component {
     };
 
     // cache methods
+    this._getBottomBarStyles = this._getBottomBarStyles.bind(this);
+    this._getTopBarStyles = this._getTopBarStyles.bind(this);
     this._toggleIcon = this._toggleIcon.bind(this);
   }
 
 
   // PRIVATE
+
+  _getBottomBarStyles() {
+    if (!!this.state.active & !this.state.finish) {
+      return css([NaviconStyles.bar, NaviconStyles.activeBottomBar]);
+    } else if (!!this.state.active && this.state.finish) {
+      return css([NaviconStyles.bar, NaviconStyles.activeBottomBar, NaviconStyles.finishBottomBar]);
+    } else {
+      return css(NaviconStyles.bar);
+    }
+  }
+
+  _getTopBarStyles() {
+    if (!!this.state.active & !this.state.finish) {
+      return css([NaviconStyles.bar, NaviconStyles.activeTopBar]);
+    } else if (!!this.state.active && this.state.finish) {
+      return css([NaviconStyles.bar, NaviconStyles.activeTopBar, NaviconStyles.finishTopBar]);
+    } else {
+      return css(NaviconStyles.bar);
+    }
+  }
 
   _toggleIcon(e) {
     e.preventDefault();
@@ -44,14 +67,21 @@ export default class Navicon extends Component {
 
 
   render() {
-    const NaviconClass = classNames('Navicon', { active: !!this.state.active, finish: !!this.state.finish });
+    const TopBarStyles = this._getTopBarStyles();
+    const BottomBarStyles = this._getBottomBarStyles();
+
+    const MiddleBarStyles = css(
+      !!this.state.active ? [NaviconStyles.bar, NaviconStyles.middleBar, NaviconStyles.activeMiddleBar] : [NaviconStyles.bar, NaviconStyles.middleBar]
+    );
+
+
 
     return (
-      <div className={ NaviconClass }>
-        <a className="Navicon-link" href="#" onClick={ this._toggleIcon }>
-          <span className="Navicon-bar Navicon-bar-top" />
-          <span className="Navicon-bar Navicon-bar-middle" />
-          <span className="Navicon-bar Navicon-bar-bottom" />
+      <div className={ css(NaviconStyles.main) }>
+        <a className={ css(NaviconStyles.link) } href="#" onClick={ this._toggleIcon }>
+          <span className={ TopBarStyles } />
+          <span className={ MiddleBarStyles } />
+          <span className={ BottomBarStyles } />
         </a>
       </div>
     );

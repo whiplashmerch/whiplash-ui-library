@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
-import './Input.css';
+import { css } from 'aphrodite';
+import InputStyles from './styles.js';
 
 const propTypes = {
   inputAutoComplete: PropTypes.string,
@@ -47,14 +47,24 @@ export default class Input extends Component {
 
 
   render() {
-    const InputClass = classNames('Input', { active: this.state.active });
+    const labelStyles = css(
+      !this.state.active ? InputStyles.label : [InputStyles.label, InputStyles.activeLabel]
+    );
+
+    const wrapperStyles = css(
+      !this.state.active ? InputStyles.wrapper : [InputStyles.wrapper, InputStyles.activeWrapper]
+    );
+
 
     return (
-      <div className={ InputClass }>
-        <label className="Input-label">{ this.props.inputLabel }</label>
-        <div className="Input-input-wrapper">
+      <div className={ css([InputStyles.main]) }>
+        <label className={ labelStyles }>
+          { this.props.inputLabel }
+        </label>
+
+        <div className={ wrapperStyles }>
           <input
-            className="Input-input"
+            className={ css(InputStyles.input) }
             type={ this.props.inputType }
             autoComplete={ this.props.inputAutoComplete }
             maxLength={ this.props.inputMax }
