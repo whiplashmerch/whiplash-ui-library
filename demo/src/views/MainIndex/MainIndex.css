@@ -3,17 +3,24 @@
 }
 
 .MainIndex-header {
-  background-color: #fff;
-  border-bottom: 1px solid #f5f5f5;
+  background-color: #5134C4;
   display: block;
-  padding: 0.5rem;
   text-align: center;
 }
 
 .MainIndex-logo-wrapper {
   display: inline-block;
   margin: 0 auto;
-  width: 2.8rem;
+  width: 2.5rem;
+}
+
+.MainIndex-logo-container {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.MainIndex-logo-link {
+  display: inline-block;
 }
 
 .MainIndex-logo {
@@ -22,7 +29,7 @@
 }
 
 .MainIndex-sidebar {
-  background-color: #fff;
+  background-color: #FBFBFB;
   bottom: 0;
   left: 0;
   display: inline-block;
@@ -41,6 +48,23 @@
   transform: translateX(0);
 }
 
+.NavLink {
+  border-left: 2px solid transparent;
+  display: inline-block;
+  color: #303030;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 200ms ease-out;
+  width: 100%;
+}
+
+.NavLink:hover {
+  border-left: 2px solid #726EEA;
+  background-color: rgba(246, 246, 250, 0.6);
+  color: #4641BE;
+}
+
 .MainIndex-feature {
   float: left;
   height: 100%;
@@ -49,11 +73,48 @@
   width: 100%;
 }
 
+.MainIndex-desktop-links {
+  display: none;
+}
+
 
 /*===========================================
                 BREAKPOINTS
 ===========================================*/
 @media only screen and (min-width: 655px) {
+  .MainIndex-header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .MainIndex-logo-container {
+    background-color: #3F00B6;
+    padding: 0.5rem 1rem;
+  }
+
+  .MainIndex-desktop-links {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 2rem;
+    list-style: none;
+  }
+
+  .MainIndex-desktop-link {
+    color: #C4C2FF;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 100;
+    letter-spacing: 0.0125rem;
+    margin-right: 1.5rem;
+    text-decoration: none;
+  }
+
+  .MainIndex-desktop-link:hover {
+    color: #fff;
+  }
+
   .MainIndex-sidebar {
     bottom: initial;
     left: initial;

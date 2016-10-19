@@ -1,8 +1,9 @@
 .ItemView-header,
 .ItemView-feature {
   background-color: #fff;
+  border: 1px solid rgba(192, 192, 219, 0.5);
   border-radius: 2px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(47, 44, 137, 0.1);
   display: block;
   margin: 0.5rem auto;
   max-width: 50.0625rem;
