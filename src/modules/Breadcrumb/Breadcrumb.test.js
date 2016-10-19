@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { StyleSheetTestUtils } from 'aphrodite';
 import { mount } from 'enzyme';
 import Breadcrumb from './';
 
@@ -7,6 +8,14 @@ import Breadcrumb from './';
 describe('Breadcrumb Component', () => {
 
   const breadList = [{ name: 'test', url: 'test' }];
+
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+
+  afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
