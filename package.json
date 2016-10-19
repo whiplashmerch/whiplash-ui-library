@@ -22,7 +22,8 @@
     "animate.css": "^3.5.2",
     "aphrodite": "^0.6.0",
     "classnames": "^2.2.5",
-    "react-router": "^2.8.1"
+    "react-router": "^2.8.1",
+    "whatwg-fetch": "^1.0.0"
   },
   "peerDependencies": {
     "react": "15.x"

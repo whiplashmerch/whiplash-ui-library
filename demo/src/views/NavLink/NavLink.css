@@ -1,0 +1,14 @@
+.NavLink {
+  display: inline-block;
+  color: #303030;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 200ms ease-out;
+  width: 100%;
+}
+
+.NavLink:hover {
+  background-color: rgba(245, 245, 245, 0.4);
+  color: #4641BE;
+}

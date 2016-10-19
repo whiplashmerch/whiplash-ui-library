@@ -1,0 +1,46 @@
+.ItemView-header,
+.ItemView-feature {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0.5rem auto;
+  max-width: 50.0625rem;
+  padding: 1rem;
+}
+
+.ItemView-feature {
+  position: relative;
+  min-height: 3rem;
+}
+
+.ItemView-section-wrapper {
+  padding-bottom: 1.5rem;
+}
+
+.ItemView-headline {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.ItemView-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.ItemView-description {
+  color: #565656;
+  font-weight: 100;
+}
+
+.ItemView-code {
+  background-color: #1d1f21;
+  border-radius: 2px;
+  color: #dfc48c;
+  display: block;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 0.9em;
+  padding: 1rem;
+}
