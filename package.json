@@ -1,6 +1,6 @@
 {
   "name": "whiplash-ui-library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -21,7 +21,8 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "aphrodite": "^0.6.0",
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "react-router": "^2.8.1"
   },
   "peerDependencies": {
     "react": "15.x"

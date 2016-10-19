@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Example from './Example';
+import './index.css';
 
 import {
+  Breadcrumb,
   Button,
   Input,
   Modal,
@@ -39,6 +41,8 @@ class Demo extends Component {
 
 
   render() {
+    const list = [{name: 'first view', url: "#"}, {name: 'second view', url: '#'}];
+
     return(
       <div>
         <h3>Will this work?</h3>
@@ -55,6 +59,10 @@ class Demo extends Component {
             buttonText="Show modal"
             theme="text"
             callback={ this._showModal } />
+        </div>
+
+        <div>
+          <Breadcrumb list={ list } />
         </div>
 
         <Modal
