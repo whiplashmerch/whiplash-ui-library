@@ -30,11 +30,14 @@ import { Button } from 'whiplash-ui-library';
 Live Example of all Available components:
 [Whiplash UI Library Example](https://whiplashmerch.github.io/whiplash-ui-library/)
 
+Updates:
+[Whiplash UI Library Change log](https://github.com/whiplashmerch/whiplash-ui-library/blob/master/CHANGELOG.md)
+
 ### Testing w/ Jest
-We are currently using [aphrodite]() for all of our styles and it causes failing
-tests which are definitely not ideal. For now, if you are running Jest or enzyme
-and you notice weird test failures, add this to the component tests that you are
-adding the library components to:
+We are currently using [aphrodite](https://github.com/Khan/aphrodite) for all of 
+our styles and it causes failing tests which are definitely not ideal. For now, 
+if you are running Jest or enzyme and you notice weird test failures, add this to 
+the component tests that you are adding the library components to:
 
 ```
 import { StyleSheetTestUtils } from 'aphrodite';
