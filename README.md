@@ -28,7 +28,7 @@ import { Button } from 'whiplash-ui-library';
 ```
 
 Live Example of all Available components:
-[Whiplash UI Library Example](https://whiplashmerch.github.io/whiplash-ui-library-pages/#/?_k=gu192b)
+[Whiplash UI Library Example](https://whiplashmerch.github.io/whiplash-ui-library/)
 
 ### Testing w/ Jest
 We are currently using [aphrodite]() for all of our styles and it causes failing
