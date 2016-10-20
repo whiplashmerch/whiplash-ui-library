@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Example = (props) => (
-  <div>This is another component</div>
+const AppExample = (props) => (
+  <div>This is another component passed into the 'conent' prop</div>
 );
 
-export default Example;
+
+export default AppExample;

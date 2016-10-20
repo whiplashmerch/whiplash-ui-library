@@ -20,12 +20,17 @@ const NaviconStyles = StyleSheet.create({
     height: '100%',
     padding: '0.8rem 0.6rem',
     position: 'relative',
-    width: '100%'
+    width: '100%',
+    ':active': {
+      backgroundColor: 'transparent'
+    },
+    ':focus': {
+      backgroundColor: 'transparent'
+    }
   },
 
   bar: {
     boxSizing: 'border-box',
-    backgroundColor: Theme.black,
     display: 'block',
     height: '1px',
     transform: 'translate3d(0, 0, 0)',

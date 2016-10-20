@@ -1,10 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import { css } from 'aphrodite';
+import { css } from 'aphrodite/no-important';
 import NaviconStyles from './styles.js';
 
 const propTypes = {
+  active: PropTypes.bool.isRequired,
+  barColor: PropTypes.string,
   onUserInput: PropTypes.func
+};
+
+const defaultProps = {
+  active: false,
+  barColor: '#303030'
 };
 
 
@@ -15,7 +22,6 @@ export default class Navicon extends Component {
 
     // init state
     this.state = {
-      active: false,
       finish: false
     };
 
@@ -29,9 +35,9 @@ export default class Navicon extends Component {
   // PRIVATE
 
   _getBottomBarStyles() {
-    if (!!this.state.active & !this.state.finish) {
+    if (!!this.props.active & !this.state.finish) {
       return css([NaviconStyles.bar, NaviconStyles.activeBottomBar]);
-    } else if (!!this.state.active && this.state.finish) {
+    } else if (!!this.props.active && this.state.finish) {
       return css([NaviconStyles.bar, NaviconStyles.activeBottomBar, NaviconStyles.finishBottomBar]);
     } else {
       return css(NaviconStyles.bar);
@@ -39,9 +45,9 @@ export default class Navicon extends Component {
   }
 
   _getTopBarStyles() {
-    if (!!this.state.active & !this.state.finish) {
+    if (!!this.props.active & !this.state.finish) {
       return css([NaviconStyles.bar, NaviconStyles.activeTopBar]);
-    } else if (!!this.state.active && this.state.finish) {
+    } else if (!!this.props.active && this.state.finish) {
       return css([NaviconStyles.bar, NaviconStyles.activeTopBar, NaviconStyles.finishTopBar]);
     } else {
       return css(NaviconStyles.bar);
@@ -51,15 +57,13 @@ export default class Navicon extends Component {
   _toggleIcon(e) {
     e.preventDefault();
 
-    if (!!this.state.active) {
-      this.setState({ active: false, finish: false });
+    if (!!this.props.active) {
+      this.setState({ finish: false });
       this.props.onUserInput(false);
     } else {
-      this.setState({ active: true }, () => {
-        window.setTimeout(() => {
-          this.setState({ finish: true });
-        }, 200);
-      });
+      window.setTimeout(() => {
+        this.setState({ finish: true });
+      }, 200);
 
       this.props.onUserInput(true);
     }
@@ -71,17 +75,19 @@ export default class Navicon extends Component {
     const BottomBarStyles = this._getBottomBarStyles();
 
     const MiddleBarStyles = css(
-      !!this.state.active ? [NaviconStyles.bar, NaviconStyles.middleBar, NaviconStyles.activeMiddleBar] : [NaviconStyles.bar, NaviconStyles.middleBar]
+      !!this.props.active ? [NaviconStyles.bar, NaviconStyles.middleBar, NaviconStyles.activeMiddleBar] : [NaviconStyles.bar, NaviconStyles.middleBar]
     );
 
-
+    const barColor = {
+      backgroundColor: this.props.barColor
+    };
 
     return (
       <div className={ css(NaviconStyles.main) } data-navicon>
         <a className={ css(NaviconStyles.link) } href="#" onClick={ this._toggleIcon }>
-          <span className={ TopBarStyles } />
-          <span className={ MiddleBarStyles } />
-          <span className={ BottomBarStyles } />
+          <span className={ TopBarStyles } style={ barColor } />
+          <span className={ MiddleBarStyles } style={ barColor } />
+          <span className={ BottomBarStyles } style={ barColor } />
         </a>
       </div>
     );
@@ -90,3 +96,4 @@ export default class Navicon extends Component {
 
 
 Navicon.propTypes = propTypes;
+Navicon.defaultProps = defaultProps;
