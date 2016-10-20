@@ -24,6 +24,7 @@ export default class ItemView extends Component {
       item: {},
       modalActive: false,
       modalContent: null,
+      naviconActive: false,
       uiComponent: null
     };
 
@@ -58,7 +59,7 @@ export default class ItemView extends Component {
   _getComponent(name) {
     const list = [
       { name: 'home', url: '/' },
-      { name: this.props.params.name, url: `/${ this.props.params.name }` }
+      { name: name, url: `/library/${ name }` }
     ];
 
 
@@ -67,12 +68,10 @@ export default class ItemView extends Component {
         return <Button buttonText="default" callback={ this._clickButton } />;
       case 'input':
         return <Input inputLabel="name" onUserInput={ this._textInput } />;
-      case 'navicon':
-        return <Navicon onUserInput={ this._toggleNavicon } />;
       case 'modal':
         return <Button buttonText="open modal" theme="text" callback={ this._showModal } />;
       case 'breadcrumb':
-        return <Breadcrumb list={ list } />;
+        return <Breadcrumb list={ list } router />;
       default:
         return null;
     }
@@ -92,13 +91,14 @@ export default class ItemView extends Component {
   }
 
 
-  _toggleModal(bool) {
-    this.setState({ modalActive: bool });
+  _toggleModal(modalActive) {
+    this.setState({ modalActive });
   }
 
 
-  _toggleNavicon(bool) {
-    console.log(`Navicon state: ${ bool }`);
+  _toggleNavicon(naviconActive) {
+    console.log(`Navicon state: ${ naviconActive }`);
+    this.setState({ naviconActive });
   }
 
 
@@ -127,25 +127,31 @@ export default class ItemView extends Component {
         </header>
 
         <div className="ItemView-feature">
-          { this.state.uiComponent }
+          { this.state.uiComponent || <Navicon active={ this.state.naviconActive } onUserInput={ this._toggleNavicon } /> }
         </div>
 
         <div className="ItemView-feature">
           <div className="ItemView-section-wrapper">
             <h3 className="ItemView-title">Example Usage</h3>
             <div>
-              <code className="ItemView-code">{ this.state.item.component }</code>
+              <code className="ItemView-code">
+                { this.state.item.component }
+              </code>
             </div>
           </div>
 
           <div className="ItemView-section-wrapper">
             <h3 className="ItemView-title">instructions</h3>
-            <p className="ItemView-description">{ this.state.item.instructions }</p>
+            <p className="ItemView-description">
+              { this.state.item.instructions }
+            </p>
           </div>
 
           <div className="ItemView-section-wrapper">
             <h3 className="ItemView-title">notes</h3>
-            <p className="ItemView-description">{ this.state.item.notes }</p>
+            <p className="ItemView-description">
+              { this.state.item.notes }
+            </p>
           </div>
         </div>
 

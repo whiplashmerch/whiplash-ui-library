@@ -82,7 +82,6 @@ export default class Navicon extends Component {
       backgroundColor: this.props.barColor
     };
 
-
     return (
       <div className={ css(NaviconStyles.main) } data-navicon>
         <a className={ css(NaviconStyles.link) } href="#" onClick={ this._toggleIcon }>
