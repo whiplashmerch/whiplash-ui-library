@@ -1,9 +1,10 @@
 import 'whatwg-fetch';
 import React, { Component } from 'react';
 import FetchHelper from '../../classes/FetchHelper';
-import './ItemView.css';
-import AppExample from '../../modules/example';
+import AppExample from '../../Example';
 import LibraryData from '../../library.json';
+import geoLogo from '../images/whiplash-geo-logo-white.svg';
+import './ItemView.css';
 
 import {
   Breadcrumb,
@@ -158,6 +159,7 @@ export default class ItemView extends Component {
         <Modal
           active={ this.state.modalActive }
           content={ this.state.modalContent }
+          logo={ geoLogo }
           onCloseModal={ this._toggleModal } />
       </div>
     );

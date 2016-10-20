@@ -34,16 +34,16 @@ describe('Navicon Component', () => {
 
   it('should toggle state when clicked', () => {
     const func = (bool) => { return; };
-    const wrapper = mount(<Navicon onUserInput={ func }/>);
+    const wrapper = mount(<Navicon active={ false } onUserInput={ func }/>);
 
     // active toggle
     wrapper.find('a').simulate('click');
-    expect(wrapper.state().active).toEqual(true);
+    expect(wrapper.props().active).toEqual(false);
     expect(wrapper.state().finish).toEqual(false);
 
     // deactive toggle
     wrapper.find('a').simulate('click');
-    expect(wrapper.state().active).toEqual(false);
+    expect(wrapper.props().active).toEqual(false);
     expect(wrapper.state().finish).toEqual(false);
   });
 
