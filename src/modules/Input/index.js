@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { css } from 'aphrodite';
+import { css } from 'aphrodite/no-important';
 import InputStyles from './styles.js';
 
 const propTypes = {

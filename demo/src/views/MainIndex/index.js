@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from '../../../../src';
+import classNames from 'classnames';
+import { NavLink, Navicon } from '../../../../src';
 import FetchHelper from '../../classes/FetchHelper';
 import logo from '../images/whiplash-geo-logo-white.svg';
 import LibraryData from '../../library.json';
@@ -11,11 +12,13 @@ export default class MainIndex extends Component {
     super();
 
     this.state = {
-      links: LibraryData
+      links: LibraryData,
+      mobileNavActive: false
     };
 
     // cache methods
     this._getLinks = this._getLinks.bind(this);
+    this._toggleNavicon = this._toggleNavicon.bind(this);
   }
 
 
@@ -34,12 +37,27 @@ export default class MainIndex extends Component {
   }
 
 
+  _toggleNavicon(mobileNavActive) {
+    this.setState({ mobileNavActive });
+  }
+
+
   render() {
     const links = this._getLinks();
+    const MobileMenuClass = classNames('MainIndex-sidebar', { active: this.state.mobileNavActive });
+    const OverlayClass = classNames('MainIndex-sidebar-overlay', { active: this.state.mobileNavActive });
 
     return (
       <div className="MainIndex clearfix">
         <header className="MainIndex-header">
+          <div className="MainIndex-navicon-wrapper">
+            <Navicon
+              active={ this.state.mobileNavActive }
+              barColor="#E4E2FA"
+              onUserInput={ this._toggleNavicon }
+            />
+          </div>
+
           <div className="MainIndex-logo-container">
             <NavLink to="/" className="MainIndex-logo-link">
               <div className="MainIndex-logo-wrapper">
@@ -69,7 +87,7 @@ export default class MainIndex extends Component {
           </ul>
         </header>
 
-        <div className="MainIndex-sidebar">
+        <div className={ MobileMenuClass }>
           <nav>
             <ul>
               { links }
@@ -80,6 +98,11 @@ export default class MainIndex extends Component {
         <div className="MainIndex-feature">
           { this.props.children }
         </div>
+
+        <div
+          className={ OverlayClass }
+          onClick={ () => { this._toggleNavicon(false); } }
+        />
       </div>
     );
   }
