@@ -92,6 +92,10 @@ const ModalStyles = StyleSheet.create({
 
   outroOverlay: {
     opacity: 0
+  },
+
+  hidden: {
+    display: 'none'
   }
 
 });

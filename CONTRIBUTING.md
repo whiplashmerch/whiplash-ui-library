@@ -1,21 +1,15 @@
-## Prerequisites
+# Bug Reporting
+If you find bugs while using the Library, please report them
+[here](https://github.com/whiplashmerch/whiplash-ui-library/issues) with a
+descriptive title and as much information as you can give in the body. As soon
+as we can, we will address them and push up fixes immediately.
 
-[Node.js](http://nodejs.org/) >= v4 must be installed.
+# Feature Requests
+Currently, we are only allowing feature requests on living Components that are
+already established within the Library. As soon as we hit the `1.0.0` release,
+we will start accepting *new* features.
 
-## Installation
+To submit a feature request, follow the same guides as bug reporting.
 
-- Running `npm install` in the components's root directory will install everything you need for development.
 
-## Demo Development Server
-
-- `npm start` will run a development server with the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
-
-## Running Tests
-
-- `npm test` will run the tests once.
-
-## Building
-
-- `npm run build` will build the component for publishing to npm and also bundle the demo app.
-
-- `npm run clean` will delete built resources.
+*All code &copy; Whiplash Merch 2016.*
