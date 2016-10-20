@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import expect from 'expect';
 import { StyleSheetTestUtils } from 'aphrodite';
 import { mount, shallow } from 'enzyme';
 import Modal from './';

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import expect from 'expect';
 import { StyleSheetTestUtils } from 'aphrodite';
 import { mount, shallow } from 'enzyme';
 import Input from './';
@@ -29,7 +30,6 @@ describe('Input Component', () => {
 
   it('should update the type attribute to match inputType prop', () => {
     const wrapper = mount(<Input inputType="email" />);
-    expect(wrapper.props().inputType).not.toEqual('text');
     expect(wrapper.props().inputType).toEqual('email');
   });
 

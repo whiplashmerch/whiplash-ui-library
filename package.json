@@ -16,7 +16,9 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "react-scripts test --env=jsdom"
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
