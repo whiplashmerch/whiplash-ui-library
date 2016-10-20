@@ -68,6 +68,10 @@ export default class Modal extends Component {
 
 
   render() {
+    const HeaderStyles = css(
+      !!this.props.logo ? ModalStyles.header : ModalStyles.hidden
+    );
+
     const ModalClass = css(
       !this.props.active ? ModalStyles.main : [ ModalStyles.main, ModalStyles.activeModal ]
     );
@@ -91,7 +95,7 @@ export default class Modal extends Component {
           className={ css([ModalStyles.content, ModalStyles.fadeOutUp]) }
           style={ ContentStyle }>
 
-          <div className={ css(ModalStyles.header) }>
+          <div className={ HeaderStyles }>
             <div className={ css(ModalStyles.logoContainer) }>
               <img
                 className={ css(ModalStyles.logo) }
