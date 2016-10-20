@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import React, { Component } from 'react';
 import FetchHelper from '../../classes/FetchHelper';
 import AppExample from '../../Example';
