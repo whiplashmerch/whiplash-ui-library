@@ -3,7 +3,7 @@ sudo: false
 language: node_js
 node_js:
   - 4
-  - 6
+  - 6.9.0
 
 cache:
   directories:
@@ -19,6 +19,9 @@ after_success:
 branches:
   only:
     - master
+
+script:
+  - nwb test --coverage
 
 notifications:
   webhooks: https://coveralls.io/webhook?repo_token=RLeRWOziIq1pxmhc3OSlPlD069LqB9qDN
