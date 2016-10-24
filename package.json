@@ -30,11 +30,13 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "coveralls": "^2.11.14",
     "enzyme": "^2.4.1",
     "nwb": "0.12.x",
+    "phantomjs-prebuilt": "^2.1.13",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-scripts": "0.6.0"
   },
   "author": "Casey Baggz",
