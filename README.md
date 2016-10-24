@@ -12,7 +12,7 @@ Official React component UI library for [Whiplash Merch](https://www.whiplashmer
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
 [npm]: https://www.npmjs.org/package/npm-package
 
-[coveralls-badge]: https://coveralls.io/repos/github/whiplashmerch/whiplash-ui-library/badge.svg
+[coveralls-badge]: https://coveralls.io/repos/github/whiplashmerch/whiplash-ui-library/badge.svg?branch=master
 [coveralls]: https://coveralls.io/github/whiplashmerch/whiplash-ui-library
 
 ### Installation
