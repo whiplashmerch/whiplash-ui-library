@@ -16,18 +16,18 @@ Official React component UI library for [Whiplash Merch](https://www.whiplashmer
 [coveralls]: https://coveralls.io/github/whiplashmerch/whiplash-ui-library
 
 ### Installation
-using NPM:
+with NPM:
 ```
 npm i whiplash-ui-library --save
 ```
 
-using Yarn:
+with Yarn:
 ```
 yarn add whiplash-ui-library
 ```
 
 
-
+### Usage
 Using Components:
 ```
 import { Button } from 'whiplash-ui-library';
