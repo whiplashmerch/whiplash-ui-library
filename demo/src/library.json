@@ -21,6 +21,13 @@
     "notes": "This component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
   },
   {
+    "name": "legend",
+    "description": "The Legend Component is used to display a visual page indicator of where the user is located.",
+    "component": "<Legend length="5" activeIndex={ this.props.currentPage } />",
+    "instructions": "To use the Legend component, add it into view and include the length (amount of dots) and activeIndex (bind to prop/state) props",
+    "notes": "include a color prop to change the default color fill of the circles."
+  },
+  {
     "name": "modal",
     "description": "The Modal Component is used to have dynamic modals within your app triggered from it's active property.",
     "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } logo={ yourLogoRef } onCloseModal={ this._toggleModal } />",
