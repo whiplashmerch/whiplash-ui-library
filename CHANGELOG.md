@@ -1,3 +1,11 @@
+#v.0.0.8
+Aw yeah, we snuck in a tiny update 🎉! Meet the `Legend` component. It's great
+for pagination usage or any place where you need to show where along the process
+a user is (i.e. step 2 of 4). Check out the demo site for usage info. That's 
+all we have for now, but the big icon lib component is coming very soon, 
+so watch out!
+
+
 # v0.0.7
 Hey, there! 👋 As always, thanks for checking out the first installments of the
 Whiplash React UI Library. This change brings an updated UI for the
