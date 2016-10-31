@@ -9,6 +9,7 @@ import {
   Breadcrumb,
   Button,
   Input,
+  Legend,
   Modal,
   Navicon
 } from '../../../../src';
@@ -20,6 +21,7 @@ export default class ItemView extends Component {
     super();
 
     this.state = {
+      activeIndex: '2',
       items: LibraryData,
       item: {},
       modalActive: false,
@@ -36,6 +38,7 @@ export default class ItemView extends Component {
     this._showModal = this._showModal.bind(this);
     this._textInput = this._textInput.bind(this);
     this._toggleModal = this._toggleModal.bind(this);
+    this._updateLegend = this._updateLegend.bind(this);
   }
 
 
@@ -64,14 +67,16 @@ export default class ItemView extends Component {
 
 
     switch (name) {
+      case 'breadcrumb':
+        return <Breadcrumb list={ list } router />;
       case 'button':
         return <Button buttonText="default" callback={ this._clickButton } />;
       case 'input':
         return <Input inputLabel="name" onUserInput={ this._textInput } />;
+      case 'legend':
+        return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
       case 'modal':
         return <Button buttonText="open modal" theme="text" callback={ this._showModal } />;
-      case 'breadcrumb':
-        return <Breadcrumb list={ list } router />;
       default:
         return null;
     }
@@ -113,6 +118,10 @@ export default class ItemView extends Component {
       item: obj,
       uiComponent: newComp
     });
+  }
+
+  _updateLegend(activeIndex) {
+    console.log(`update state to: ${ activeIndex }`);
   }
 
 
