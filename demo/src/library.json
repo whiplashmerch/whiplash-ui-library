@@ -10,15 +10,22 @@
     "name": "button",
     "description": "No need for description...",
     "component": "<Button buttonText=\"default filled\" callback={ this._clickButton } />",
-    "instructions": "To use the Button component, just drop it in and include a 'buttonText', 'theme', and optional 'buttonType' (i.e. 'submit') and 'callback' (fired onClick) property.",
+    "instructions": "To use the Button component, just drop it in and include a 'buttonText', 'theme', and optional 'buttonType' (i.e. 'submit') and 'callback' (fired onClick - check your console to see this work) property.",
     "notes": "theme types: default, primary, secondary, danger, filled, text."
   },
   {
     "name": "input",
     "description": "The Input Component is used to display a custom style and animated input tag in your forms.",
     "component": "<Input inputLabel=\"email\" inputType=\"email\" onUserInput={ this._textInput } />",
-    "instructions": "To use the Input component, add it into your form and include the 'inputType' (i.e. 'email', 'text') and 'inputLabel' (i.e. 'your name', 'example@youremail.com') properties.",
+    "instructions": "To use the Input component, add it into your form and include the 'inputType' (i.e. 'email', 'text') and 'inputLabel' (i.e. 'your name', 'example@youremail.com') properties (check your console to see this work).",
     "notes": "This component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
+  },
+  {
+    "name": "legend",
+    "description": "The Legend Component is used to display a visual page indicator of where the user is located.",
+    "component": "<Legend amount=\"5\" activeIndex={ this.props.currentPage } callback={ this.updateActiveIndex } />",
+    "instructions": "To use the Legend component, add it into view and include the amount (total number of dots), activeIndex (bind to prop/state) props, and callback (returns index of dot user clicked - check your console to see this work) props",
+    "notes": "Include a color prop to change the default color fill of the circles."
   },
   {
     "name": "modal",
@@ -31,7 +38,7 @@
     "name": "navicon",
     "description": "The Navicon is used as a button on mobile devices to toggle the main nav menu",
     "component": "<Navicon active={ this.state.naviconActive } barColor=\"#303030\" onUserInput={ this._toggleNavicon } />",
-    "instructions": "To use the Navicon component, just drop it in and include a 'onUserInput' property that binds to a callback function which a bool is passed in for you to update your 'active' state.",
+    "instructions": "To use the Navicon component, just drop it in and include a 'onUserInput' property that binds to a callback function which a bool is passed in for you to update your 'active' state. (check your console to see this work)",
     "notes": "The Navicon component is absolutely positioned so be sure to put it in a relative positioned container if needed."
   }
 ]

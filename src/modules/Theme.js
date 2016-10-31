@@ -4,7 +4,7 @@ const Theme = {
   primary: '#5134C4',
   primaryDark: '#3F00B6',
   secondary: '#EE2C8D',
-  accent: '',
+  accent: '#9B8FFF',
 
   success: '#4CAF50',
   warning: '#FFEB3B',
@@ -17,11 +17,13 @@ const Theme = {
 
   darkWhite: '#FDFDFD',
   black: '#000',
+  border: '#d5d5d5',
 
   fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
 };
 
 // shared colors
+Theme.white = Theme.whiteText;
 Theme.linkColor = Theme.primary;
 
 
