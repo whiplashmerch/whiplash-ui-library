@@ -3,9 +3,6 @@ import Theme from '../Theme';
 
 
 const LegendStyles = StyleSheet.create({
-  main: {
-
-  },
 
   list: {
     display: 'block',
