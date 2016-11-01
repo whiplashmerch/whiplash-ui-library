@@ -32,26 +32,30 @@ const LegendStyles = StyleSheet.create({
 
   dot: {
     backgroundColor: Theme.white,
-    border: '1px solid #A5A5AD',
+    border: `1px solid ${ Theme.border }`,
     borderRadius: '50%',
-    cursor: 'pointer',
     display: 'inline-block',
     height: '0.625rem',
     marginRight: '2.5rem',
     transition: 'background-color 200ms linear',
     width: '0.625rem',
-    zIndex: 10,
-    ':hover': {
-      borderColor: '#EE2C8D'
-    }
+    zIndex: 10
   },
 
   activeDot: {
-    backgroundColor: Theme.accent,
     borderColor: 'transparent',
     cursor: 'default',
     ':hover': {
       borderColor: 'transparent'
+    }
+  },
+
+  completedDot: {
+    backgroundColor: Theme.border,
+    borderColor: 'transparent',
+    cursor: 'pointer',
+    ':hover': {
+      backgroundColor: '#A5A5AD'
     }
   }
 

@@ -14,6 +14,36 @@ const defaultProps = {
   color: Theme.accent
 };
 
+const getActiveStyle = (...props) => {
+  const activeIndex = props[0];
+  const current = props[1];
+  const color   = props[2];
+
+  if (current === activeIndex) {
+    return { backgroundColor: color };
+  } else {
+    return null;
+  }
+};
+
+const getDotStyle = (...props) => {
+  const total = props[0];
+  const activeIndex = props[1];
+  const current = props[2];
+
+  // completed
+  while (current < activeIndex) {
+    return css([LegendStyles.dot, LegendStyles.completedDot]);
+  }
+
+  // active or normal
+  if (current === activeIndex) {
+    return css([LegendStyles.dot, LegendStyles.activeDot]);
+  } else {
+    return css([LegendStyles.dot]);
+  }
+};
+
 
 const Legend = ({ activeIndex, callback, color, total }) => {
   const numTotal  = Number(total);
@@ -21,8 +51,8 @@ const Legend = ({ activeIndex, callback, color, total }) => {
 
   for (var i = 0; i < numTotal; i++) {
     const date = new Date();
-    const active = i === Number(activeIndex) ? true : false;
-    const dotStyle = active ? css([LegendStyles.dot, LegendStyles.activeDot]) : css(LegendStyles.dot);
+    const dotClasses  = getDotStyle(numTotal, Number(activeIndex), i);
+    const activeStyle = getActiveStyle(Number(activeIndex), i, color);
 
     listItems.push(
       <li
@@ -30,8 +60,9 @@ const Legend = ({ activeIndex, callback, color, total }) => {
         key={ `${ date }-${ i }` }
       >
         <span
-          className={ dotStyle }
+          className={ dotClasses }
           data-eq={ i }
+          style={ activeStyle }
           onClick={(e) => callback(e.target.dataset.eq)}
         />
       </li>
