@@ -1,3 +1,10 @@
+#v.0.0.9
+Hey, d00ds! Nothing big here, just a small update on the `Legend` component.
+We've added a better UI to make it easier to understand that you have completed
+the items that fall before the active one.
+
+Have a great day and go vote, suckas!
+
 #v.0.0.8
 Aw yeah, we snuck in a tiny update 🎉! Meet the `Legend` component. It's great
 for pagination usage or any place where you need to show where along the process
