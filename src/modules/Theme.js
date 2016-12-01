@@ -1,10 +1,10 @@
 const Theme = {
 
-  primaryLight: '#726EEA',
+  primaryLight: '#8071FE',
   primary: '#5134C4',
-  primaryDark: '#3F00B6',
+  primaryDark: '#4800B6',
   secondary: '#EE2C8D',
-  accent: '#9B8FFF',
+  accent: '#00E7AE',
 
   success: '#4CAF50',
   warning: '#FFEB3B',
@@ -13,12 +13,14 @@ const Theme = {
 
   darkText: '#303030',
   whiteText: '#fff',
-  placeholder: '#909090',
+  placeholder: '#808091',
 
   darkWhite: '#FDFDFD',
   black: '#000',
-  border: '#d5d5d5',
+  border: '#EDEDF3',
 
+  headlineFont: '"Aller-Light", Helvetica, Arial, sans-serif',
+  copyFont: '"Lato", Helvetica, Arial, sans-serif',
   fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
 };
 
