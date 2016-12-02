@@ -27,12 +27,20 @@
 }
 
 .Breadcrumb-list-li:after {
+  background:
+    url('~images/icons/breadcrumb-arrow.svg')
+    no-repeat
+    right
+    center
+    transparent;
+  background-size: contain;
   color: #303030;
-  content: ">";
+  content: "";
   display: inline-block;
-  font-size: 0.625rem;
-  padding: 0 0.5rem;
+  height: 0.5625rem;
+  margin: 0.06rem 0.3rem 0 0;
   position: relative;
+  width: 0.625rem;
 }
 
 .Breadcrumb-list-li:last-child:after {
@@ -42,9 +50,9 @@
 .Breadcrumb-link {
   color: #303030;
   display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 0.625rem;
-  letter-spacing: 0.0125rem;
+  letter-spacing: 0.0125;
   text-decoration: none;
   text-transform: capitalize;
   transition: color 200ms linear;

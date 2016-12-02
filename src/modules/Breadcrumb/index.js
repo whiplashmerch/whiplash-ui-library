@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { NavLink } from 'src';
+import 'fonts/index.css';
 import './Breadcrumb.css';
 
 const propTypes = {
