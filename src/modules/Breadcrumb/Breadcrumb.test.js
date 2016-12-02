@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import expect from 'expect';
+import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 import Breadcrumb from './';
 
 
-describe('Breadcrumb Component', () => {
+describe('<Breadcrumb />', () => {
 
   const breadList = [{ name: 'test', url: 'test' }];
 
   const defaultWrapper = mount(<Breadcrumb />);
+  const shallowWrap = shallow(<Breadcrumb />);
 
   const wrapper = mount(
     <Breadcrumb bgColor="#f5f5f5" list={ breadList } />
@@ -22,43 +23,44 @@ describe('Breadcrumb Component', () => {
   });
 
   it('should have a list prop', () => {
-    // expect(defaultWrapper.props().list).not.toBeNull();
-    // expect(defaultWrapper.props().list).toBeDefined();
-    // expect(defaultWrapper.props().list).toEqual(breadList);
-    // expect(defaultWrapper.props().list).not.toEqual([]);
+    expect(wrapper.props().list).to.not.equal(null);
+    expect(wrapper.props().list).to.not.equal(undefined);
+    expect(wrapper.props().list.length).to.equal(1);
+    expect(wrapper.props().list).to.equal(breadList);
+    expect(wrapper.props().list).to.not.equal([]);
   });
 
   it('should have a bgColor prop', () => {
-    // expect(defaultWrapper.props().bgColor).not.toBeNull();
-    // expect(defaultWrapper.props().bgColor).toBeDefined();
-    // expect(defaultWrapper.props().bgColor).toEqual('#f5f5f5');
-    // expect(defaultWrapper.props().bgColor).not.toEqual('#fff');
+    expect(wrapper.props().bgColor).to.not.equal(null);
+    expect(wrapper.props().bgColor).to.not.equal(undefined);
+    expect(wrapper.props().bgColor).to.equal('#f5f5f5');
+    expect(wrapper.props().bgColor).to.not.equal('#fff');
   });
 
   it('should have a default bgColor prop value', () => {
-    // expect(defaultWrapper.props().bgColor).not.toBeNull();
-    // expect(defaultWrapper.props().bgColor).toBeDefined();
-    // expect(defaultWrapper.props().bgColor).toEqual('#fff');
-    // expect(defaultWrapper.props().bgColor).not.toEqual('');
+    expect(defaultWrapper.props().bgColor).to.not.equal(null);
+    expect(defaultWrapper.props().bgColor).to.not.equal(undefined);
+    expect(defaultWrapper.props().bgColor).to.equal('#fff');
+    expect(defaultWrapper.props().bgColor).to.not.equal('');
   });
 
   it('should have a default list prop value', () => {
-    // expect(defaultWrapper.props().list).not.toBeNull();
-    // expect(defaultWrapper.props().list).toBeDefined();
-    // expect(defaultWrapper.props().list).toEqual([]);
-    // expect(defaultWrapper.props().list).not.toEqual(breadList);
+    expect(defaultWrapper.props().list).to.not.equal(null);
+    expect(defaultWrapper.props().list).to.not.equal(undefined);
+    expect(defaultWrapper.props().list.length).to.equal(0);
+    expect(defaultWrapper.props().list).to.not.equal(breadList);
   });
 
   it('should display the list items of array length', () => {
-    // expect(wrapper.find('.Breadcrumb-list-li').length).not.toBeNull();
-    // expect(wrapper.find('.Breadcrumb-list-li').length).not.toEqual(0);
-    // expect(wrapper.find('.Breadcrumb-list-li').length).toEqual(1);
+    expect(wrapper.find('.Breadcrumb-list-li').length).to.not.equal(null);
+    expect(wrapper.find('.Breadcrumb-list-li').length).to.not.equal(0);
+    expect(wrapper.find('.Breadcrumb-list-li').length).to.equal(1);
   });
 
   it('should be hidden if list length is 0', () => {
-    const wrapper = mount(<Breadcrumb list={[]} />);
-    expect(wrapper.props().list.length).toEqual(0);
-    expect(wrapper.find('.hidden')).not.toBeNull();
+    expect(shallowWrap.find('.hidden')).to.not.equal(null);
+    expect(shallowWrap.find('.hidden')).to.not.equal(true);
+    expect(shallowWrap.find('.hidden').length).to.equal(1);
   });
 
 });
