@@ -1,6 +1,6 @@
 {
   "name": "whiplash-ui-library",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -31,6 +31,7 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "coveralls": "^2.11.14",
     "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
