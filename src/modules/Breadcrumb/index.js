@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
 import { NavLink } from 'src';
 import 'fonts/index.css';
 import './Breadcrumb.css';
@@ -44,12 +43,15 @@ const getItems = (usingRouter, list) => {
 
 
 const Breadcrumb = ({ bgColor, list, router }) => {
-  const MainClass = classnames('Breadcrumb', { hidden: !!!list.length });
   const listItems = !!list.length ? getItems(router, list) : null;
   const bgStyle   = { backgroundColor: bgColor };
 
+  if (!!!list.length) {
+    return null;
+  }
+
   return(
-    <div className={ MainClass } style={ bgStyle }>
+    <div className="Breadcrumb" style={ bgStyle }>
       <ul className="Breadcrumb-list">
         { listItems }
       </ul>

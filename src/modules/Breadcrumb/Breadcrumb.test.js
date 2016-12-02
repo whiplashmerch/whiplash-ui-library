@@ -57,10 +57,10 @@ describe('<Breadcrumb />', () => {
     expect(wrapper.find('.Breadcrumb-list-li').length).to.equal(1);
   });
 
-  it('should be hidden if list length is 0', () => {
-    expect(shallowWrap.find('.hidden')).to.not.equal(null);
-    expect(shallowWrap.find('.hidden')).to.not.equal(true);
-    expect(shallowWrap.find('.hidden').length).to.equal(1);
+  it('should not show if list length is 0', () => {
+    expect(shallowWrap.find('.Breadcrumb')).to.not.equal(true);
+    expect(shallowWrap.find('.Breadcrumb').length).to.equal(0);
+    expect(shallowWrap.find('.Breadcrumb').length).to.not.equal(1);
   });
 
 });
