@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
-import { css } from 'aphrodite/no-important';
+import classnames from 'classnames';
 import Theme from '../Theme';
-import LegendStyles from './styles';
-
+import './Legend.css';
 
 const propTypes = {
   activeIndex: PropTypes.string.isRequired,
@@ -11,7 +10,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  color: Theme.accent
+  color: Theme.primaryLight
 };
 
 const getActiveStyle = (...props) => {
@@ -20,27 +19,9 @@ const getActiveStyle = (...props) => {
   const color   = props[2];
 
   if (current === activeIndex) {
-    return { backgroundColor: color };
+    return { backgroundColor: color, borderColor: color };
   } else {
     return null;
-  }
-};
-
-const getDotStyle = (...props) => {
-  const total = props[0];
-  const activeIndex = props[1];
-  const current = props[2];
-
-  // completed
-  while (current < activeIndex) {
-    return css([LegendStyles.dot, LegendStyles.completedDot]);
-  }
-
-  // active or normal
-  if (current === activeIndex) {
-    return css([LegendStyles.dot, LegendStyles.activeDot]);
-  } else {
-    return css([LegendStyles.dot]);
   }
 };
 
@@ -48,15 +29,18 @@ const getDotStyle = (...props) => {
 const Legend = ({ activeIndex, callback, color, total }) => {
   const numTotal  = Number(total);
   const listItems = [];
+  let date = null;
+  let dotClasses = null;
+  let activeStyle = null;
 
   for (var i = 0; i < numTotal; i++) {
-    const date = new Date();
-    const dotClasses  = getDotStyle(numTotal, Number(activeIndex), i);
-    const activeStyle = getActiveStyle(Number(activeIndex), i, color);
+    date = new Date();
+    dotClasses  = classnames('Legend-dot', { active: i === activeIndex, completed: i < activeIndex });
+    activeStyle = getActiveStyle(Number(activeIndex), i, color);
 
     listItems.push(
       <li
-        className={ css(LegendStyles.listItem) }
+        className="Legend-list-li"
         key={ `${ date }-${ i }` }
       >
         <span
@@ -72,7 +56,7 @@ const Legend = ({ activeIndex, callback, color, total }) => {
 
   return(
     <div className="Legend">
-      <ul className={ css(LegendStyles.list) }>
+      <ul className="Legend-list">
         { listItems }
       </ul>
     </div>
@@ -82,4 +66,5 @@ const Legend = ({ activeIndex, callback, color, total }) => {
 
 Legend.propTypes = propTypes;
 Legend.defaultProps = defaultProps;
+
 export default Legend;
