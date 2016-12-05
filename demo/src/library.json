@@ -9,9 +9,16 @@
   {
     "name": "button",
     "description": "No need for description...",
-    "component": "<Button buttonText=\"default filled\" callback={ this._clickButton } />",
+    "component": "<Button buttonText=\"defaultFilled\" callback={ this._clickButton } />",
     "instructions": "To use the Button component, just drop it in and include a 'buttonText', 'theme', and optional 'buttonType' (i.e. 'submit') and 'callback' (fired onClick - check your console to see this work) property.",
-    "notes": "theme types: default, primary, secondary, danger, filled, text."
+    "notes": "theme types: default, primary, secondary, danger, primaryFilled (camel-case 'Filled' to most any colors), text."
+  },
+  {
+    "name": "checkbutton",
+    "description": "A Nice Radio style check btn that returns a boolean",
+    "component": "<CheckButton onUserSelect={ this._toggleCheckBtn } />",
+    "instructions": "To use the CheckButton component, just drop it in and include a 'onUserSelect' (returns a bool), and optional 'selected' property.",
+    "notes": ""
   },
   {
     "name": "input",

@@ -8,6 +8,7 @@ import './ItemView.css';
 import {
   Breadcrumb,
   Button,
+  CheckButton,
   Input,
   Legend,
   Modal,
@@ -70,9 +71,38 @@ export default class ItemView extends Component {
       case 'breadcrumb':
         return <Breadcrumb list={ list } router />;
       case 'button':
-        return <Button buttonText="default" callback={ this._clickButton } />;
+        return(
+          <div>
+            <Button
+              buttonText="default"
+              callback={ this._clickButton }
+            />
+
+            <Button
+              buttonText="secondary-border"
+              theme="secondary-border"
+              callback={ this._clickButton }
+            />
+
+            <Button
+              buttonText="text link"
+              theme="text"
+              callback={ this._clickButton }
+            />
+          </div>
+        );
+      case 'checkbutton':
+        return <CheckButton onUserSelect={ this._clickButton } />;
       case 'input':
-        return <Input inputLabel="name" onUserInput={ this._textInput } />;
+        return(
+          <Input
+            inputLabel="name"
+            type="text"
+            maxLength="220"
+            onUserInput={ this._textInput }
+            required
+          />
+        );
       case 'legend':
         return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
       case 'modal':
