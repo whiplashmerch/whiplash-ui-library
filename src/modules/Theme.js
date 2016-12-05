@@ -13,6 +13,7 @@ const Theme = {
 
   darkText: '#303030',
   whiteText: '#fff',
+  buttonText: '#F9F9FA',
   placeholder: '#808091',
 
   darkWhite: '#FDFDFD',
