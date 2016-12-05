@@ -1,0 +1,75 @@
+.Legend,
+.Legend > * {
+  box-sizing: border-box;
+}
+
+.Legend {
+  height: 1.25rem;
+}
+
+.Legend-list {
+  display: block;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.Legend-list-li {
+  display: inline-block;
+  position: relative;
+}
+
+.Legend-list-li:after {
+  background:
+    url('./images/legend-line.svg')
+    repeat-x
+    0
+    center
+    transparent;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  left: 0.6rem;
+  position: absolute;
+  top: 0.7rem;
+  width: 2.5rem;
+  z-index: 0;
+}
+
+.Legend-list-li:last-child:after {
+  display: none;
+}
+
+.Legend-dot {
+  background-color: #fff;
+  border: 1px solid #EDEDF3;
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.625rem;
+  margin-right: 2.5rem;
+  transition: background-color 200ms linear;
+  width: 0.625rem;
+  z-index: 10;
+}
+
+/* active */
+
+.Legend-dot.active {
+  border-color: transparent;
+  cursor: default;
+}
+
+.Legend-dot.active:hover {
+  border-color: transparent;
+}
+
+/* completed */
+
+.Legend-dot.completed {
+  background-color: #EDEDF3;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.Legend-dot.completed:hover {
+  background-color: #A5A5AD;
+}

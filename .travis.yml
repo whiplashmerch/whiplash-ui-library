@@ -24,4 +24,5 @@ script:
   - nwb test --coverage
 
 notifications:
+  slack: whiplashmerch:FOOw6JgjbfJEYI8DxCzXSfJo
   webhooks: https://coveralls.io/webhook?repo_token=RLeRWOziIq1pxmhc3OSlPlD069LqB9qDN

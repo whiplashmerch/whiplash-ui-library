@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="1px" viewBox="0 0 41 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-dasharray="1,2">
+        <g id="Whiplash-Integration-Interactive-UI" transform="translate(-45.000000, -1824.000000)" stroke="#D5D5D5">
+            <g id="Group-6" transform="translate(30.000000, 1724.000000)">
+                <g id="Group-10" transform="translate(6.000000, 95.000000)">
+                    <g id="Group-14">
+                        <path d="M9.5,5.5 L50.5,5.5" id="Line"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
