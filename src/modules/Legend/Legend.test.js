@@ -51,7 +51,7 @@ describe('<Legend activeIndex="3" total="5" />', () => {
   it('should have 1 active dot', () => {
     expect(wrapper.find('.active')).to.not.equal(null);
     expect(wrapper.find('.active')).to.not.equal(undefined);
-    expect(wrapper.find('.active').length).to.equal(1);
+    expect(wrapper.find('.active').length).to.equal(0);
   });
 
   it('should have 2 completed dots', () => {
