@@ -1,0 +1,31 @@
+.CheckButton {
+  background: transparent;
+  border: 1px solid #B3B3CC;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 1rem;
+  overflow: hidden;
+  transition: border 150ms ease-out;
+  width: 1rem;
+  vertical-align: middle;
+}
+
+/* hover */
+
+.CheckButton:hover {
+  border: 1px solid #8071FE;
+}
+
+/* selected */
+
+.CheckButton.selected {
+  background:
+    url(./images/check-white.svg)
+    no-repeat
+    center
+    center
+    #9B8FFF;
+  background-size: 0.6rem;
+  border: 1px solid #9B8FFF;
+}

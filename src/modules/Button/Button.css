@@ -1,0 +1,107 @@
+.Button {
+  appearance: none;
+  background-color: #5134C4;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #F9F9FA;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.08rem;
+  margin: 0.5em auto;
+  min-width: 11.9375rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease-out,
+    border 200ms ease-out,
+    color 200ms ease-out;
+  width: 100%;
+}
+
+/* themes */
+
+.Button.secondary {
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 #DCDCDF;
+  color: #303030;
+}
+
+.Button.secondary-dark {
+  background-color: #F9F8FF;
+  color: #5134C4;
+}
+
+.Button.secondary-border {
+  background-color: transparent;
+  border: 1px solid #303030;
+  color: #303030;
+}
+
+.Button.danger {
+  background-color: #CC3E4A;
+}
+
+.Button-danger-border {
+  background-color: transparent;
+  border: 1px solid #CC3E4A;
+  color: #CC3E4A;
+}
+
+.Button.text {
+  background-color: transparent;
+  border: none;
+  color: #5134C4;
+  text-transform: capitalize;
+}
+
+
+/* hover */
+
+.Button:hover {
+  background-color: #8071FE;
+}
+
+.Button.secondary:hover {
+  background-color: #FCFCFC;
+  color: #8071FE;
+}
+
+.Button.secondary-dark:hover {
+  background-color: #F9F8FF;
+  color: #8071FE;
+}
+
+.Button.secondary-border:hover {
+  background-color: #303030;
+  color: #fff;
+}
+
+.Button.danger:hover {
+  background-color: darken(#CC3E4A, 5);
+}
+
+.Button-danger-border:hover {
+  background-color: #CC3E4A;
+  color: #fff;
+}
+
+.Button.text:hover {
+  background-color: transparent;
+  border: none;
+  color: #8071FE;
+}
+
+
+/*===========================================
+                BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 768px) {
+  .Button {
+    margin: 0.5rem;
+    width: initial;
+  }
+}
