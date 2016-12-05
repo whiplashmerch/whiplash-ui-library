@@ -1,7 +1,7 @@
-import 'animate.css';
 import React, { Component, PropTypes } from 'react';
-import { css } from 'aphrodite/no-important';
-import ModalStyles from './styles.js';
+import classnames from 'classnames';
+import 'animate.css';
+import './Modal.css';
 
 const propTypes = {
   active: PropTypes.bool,
@@ -13,7 +13,7 @@ const propTypes = {
 
 const defaultProps = {
   active: false,
-  conent: null,
+  content: null,
   logo: '',
   modalWidth: '38.75rem'
 };
@@ -27,7 +27,6 @@ export default class Modal extends Component {
     this._close = this._close.bind(this);
   }
 
-
   componentDidMount() {
     // allow exit on esc press
     document.body.onkeydown = (e) => {
@@ -36,28 +35,23 @@ export default class Modal extends Component {
         this._close();
       }
     };
-
-    this.refs.ModalContent.classList.add('animated');
-    this.refs.ModalOverlay.classList.add('animated');
   }
-
 
   componentWillUnmount() {
     document.body.onkeydown = null;
   }
 
-
   // PRIVATE
 
   _close() {
-    const modal = this.refs.Modal;
-    const overlay = this.refs.ModalOverlay;
-    const container = this.refs.ModalContent;
+    const modal = document.querySelector('.Modal');
+    const overlay = document.querySelector('.Modal-overlay');
+    const content = document.querySelector('.Modal-content');
 
-    container.classList.remove('fadeInDown');
-    container.classList.add('fadeOutUp');
-
+    content.classList.remove('fadeInDown');
     overlay.classList.remove('fadeIn');
+
+    content.classList.add('fadeOutUp');
     overlay.classList.add('fadeOut');
 
     // wait till animation finished before de-activating
@@ -68,46 +62,42 @@ export default class Modal extends Component {
 
 
   render() {
-    const HeaderStyles = css(
-      !!this.props.logo ? ModalStyles.header : ModalStyles.hidden
-    );
-
-    const ModalClass = css(
-      !this.props.active ? ModalStyles.main : [ ModalStyles.main, ModalStyles.activeModal ]
-    );
-
-    const ContentStyle = { maxWidth: this.props.modalWidth };
-
-    if (this.props.active) {
-      this.refs.ModalContent.classList.remove('fadeOutUp');
-      this.refs.ModalContent.classList.add('fadeInDown');
-
-      this.refs.ModalOverlay.classList.remove('fadeOut');
-      this.refs.ModalOverlay.classList.add('fadeIn');
-    }
+    const { active, content, logo, modalWidth } = this.props;
+    const ModalClass   = classnames('Modal', { active: !!active });
+    const ContentClass = classnames('Modal-content animated', { fadeInDown: !!active, fadeOutUp: !!!active });
+    const OverlayClass = classnames('Modal-overlay animated', { fadeIn: !!active, fadeOut: !!!active });
+    const HeaderClass  = classnames('Modal-header', { hidden: !!!logo });
+    const ContentStyle = { maxWidth: modalWidth };
 
 
     return (
-      <div ref="Modal" className={ ModalClass }>
-        <div ref="ModalOverlay" className={ css(ModalStyles.overlay) } onClick={ this._close } />
+      <div className={ ModalClass }>
+        <div
+          className={ OverlayClass }
+          onClick={ this._close }
+        />
 
-        <div ref="ModalContent"
-          className={ css([ModalStyles.content, ModalStyles.fadeOutUp]) }
-          style={ ContentStyle }>
+        <div
+          className={ ContentClass }
+          style={ ContentStyle }
+        >
 
-          <div className={ HeaderStyles }>
-            <div className={ css(ModalStyles.logoContainer) }>
+          <div className={ HeaderClass }>
+            <div className="Modal-logo-wrapper">
               <img
-                className={ css(ModalStyles.logo) }
-                src={ this.props.logo } alt="logo" />
+                alt="logo"
+                className="Modal-logo"
+                src={ logo }
+              />
             </div>
 
             <span
-              className={ css(ModalStyles.closeBtn) }
-              onClick={ this._close } />
+              className="Modal-close-btn"
+              onClick={ this._close }
+            />
           </div>
 
-          { this.props.content }
+          { content }
         </div>
       </div>
     );
