@@ -1,19 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { css } from 'aphrodite/no-important';
-import InputStyles from './styles.js';
+import classnames from 'classnames';
+import 'src/fonts/index.css';
+import './Input.css';
 
 const propTypes = {
-  inputAutoComplete: PropTypes.string,
   inputLabel: PropTypes.string,
-  inputMax: PropTypes.string,
-  inputType: PropTypes.string
+  onUserInput: PropTypes.func
 };
 
 const defaultProps = {
-  inputAutoComplete: 'on',
   inputLabel: '',
-  inputType: 'text',
-  inputMax: '220'
+  onUserInput: () => console.log('no onUserInput prop given')
 };
 
 
@@ -21,24 +18,27 @@ export default class Input extends Component {
   constructor() {
     super();
 
-    this.state = {
-      active: false
-    };
-
     // cache methods
     this._sendUpdate  = this._sendUpdate.bind(this);
     this._updateClass = this._updateClass.bind(this);
+
+    this.state = {
+      active: false
+    };
   }
 
 
   // PRIVATE
 
   _sendUpdate(e) {
-    this.props.onUserInput(e.target.value);
+    const { onUserInput } = this.props;
+    onUserInput(e.target.value);
   }
 
   _updateClass() {
-    if (!!this.state.active) {
+    const { active } = this.state;
+
+    if (!!active) {
       return;
     } else {
       this.setState({ active: true });
@@ -47,28 +47,21 @@ export default class Input extends Component {
 
 
   render() {
-    const labelStyles = css(
-      !this.state.active ? InputStyles.label : [InputStyles.label, InputStyles.activeLabel]
-    );
-
-    const wrapperStyles = css(
-      !this.state.active ? InputStyles.wrapper : [InputStyles.wrapper, InputStyles.activeWrapper]
-    );
-
+    const { active } = this.state;
+    const { inputLabel, ...props } = this.props;
+    const InputClass = classnames('Input', { active: !!active });
 
     return (
-      <div className={ css([InputStyles.main]) }>
-        <label className={ labelStyles }>
-          { this.props.inputLabel }
+      <div className={ InputClass }>
+        <label className="Input-label">
+          { inputLabel }
         </label>
 
-        <div className={ wrapperStyles }>
+        <div className="Input-wrapper">
           <input
-            className={ css(InputStyles.input) }
-            type={ this.props.inputType }
-            autoComplete={ this.props.inputAutoComplete }
-            maxLength={ this.props.inputMax }
-            required
+            className="Input-input"
+            placeholder=""
+            { ...props }
             onFocus={ this._updateClass }
             onChange={ this._sendUpdate } />
         </div>
