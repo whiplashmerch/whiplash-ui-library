@@ -1,0 +1,61 @@
+.Navicon,
+.Navicon > * {
+  box-sizing: border-box;
+}
+
+.Navicon {
+  display: inline-block;
+  height: 3rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3rem;
+}
+
+.Navicon-link {
+  display: inline-block;
+  height: 100%;
+  padding: 0.8rem 0.7rem;
+  position: relative;
+  width: 100%;
+}
+
+.Navicon-bar {
+  display: block;
+  height: 1px;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  transform-origin: center;
+  width: 100%;
+  will-change: transform;
+}
+
+.Navicon-bar.middle {
+  margin: 0.5rem 0;
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+/* active */
+
+.Navicon-bar.active_top {
+  transform: translate3d(0, 9px, 0);
+}
+
+.Navicon-bar.active_middle {
+  opacity: 0;
+}
+
+.Navicon-bar.active_bottom {
+  transform: translate3d(0, -9px, 0);
+}
+
+/* finish */
+
+.Navicon-bar.finish_top {
+  transform: translate3d(0, 9px, 0) rotate(135deg);
+}
+
+.Navicon-bar.finish_bottom {
+  transform: translate3d(0, -9px, 0) rotate(-135deg);
+}
