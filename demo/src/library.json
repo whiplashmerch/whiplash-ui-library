@@ -23,7 +23,7 @@
   {
     "name": "icons",
     "description": "Whiplash interactive icon library",
-    "component": "<Icon name=\"add\" />add</Icon>",
+    "component": "<Icon name=\"add\">add</Icon>",
     "instructions": "To use the Icon component, add it into your form and include the 'name' property.",
     "notes": ""
   },

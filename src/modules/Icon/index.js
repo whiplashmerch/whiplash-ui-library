@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import * as Icons from './Icons';
 import './Icon.css';
 
 const propTypes = {
@@ -11,9 +12,11 @@ const defaultProps = {
 
 
 export default function Icon({ children, name, ...props }) {
+  const IconComponent = Icons[name];
+
   return(
     <div className="Icon">
-      <span className={ `Icon-icon ${ name }` } />
+      <IconComponent />
       { children }
     </div>
   );
