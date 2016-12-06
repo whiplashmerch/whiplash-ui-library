@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import Legend from './';
 
 
-describe('<Legend activeIndex="3" total="5" />', () => {
+describe('<Legend />', () => {
 
   const wrapper = mount(
     <Legend

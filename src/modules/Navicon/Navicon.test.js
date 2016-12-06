@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { mount } from 'enzyme';
 import Navicon from './';
 
-describe('Navicon Component', () => {
+describe('<Navicon />', () => {
 
   const defaultWrapper = mount(<Navicon />);
 
