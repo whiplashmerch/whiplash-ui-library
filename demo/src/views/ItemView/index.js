@@ -9,6 +9,7 @@ import {
   Breadcrumb,
   Button,
   CheckButton,
+  Icon,
   Input,
   Legend,
   Modal,
@@ -103,6 +104,8 @@ export default class ItemView extends Component {
             required
           />
         );
+      case 'icons':
+        return <Icon name="add" />;
       case 'legend':
         return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
       case 'modal':

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="20px" viewBox="0 0 29 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 39</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Whiplash-Orders-Interactive-UI-Copy" transform="translate(-1212.000000, -123.000000)">
+            <g id="Group-39" transform="translate(1212.000000, 123.000000)">
+                <g id="Group-23" transform="translate(8.000000, 0.000000)" stroke="#646471" stroke-linecap="round">
+                    <path d="M0,1 L20,1" id="Line"></path>
+                    <path d="M0,10 L20,10" id="Line"></path>
+                    <path d="M0,19 L20,19" id="Line"></path>
+                </g>
+                <rect id="Rectangle-14" fill="#646471" x="0" y="0" width="2" height="2"></rect>
+                <rect id="Rectangle-14" fill="#646471" x="0" y="9" width="2" height="2"></rect>
+                <rect id="Rectangle-14" fill="#646471" x="0" y="18" width="2" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

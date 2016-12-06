@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Whiplash-Orders-Interactive-UI-Copy" transform="translate(-1218.000000, -422.000000)" stroke="#646471">
+            <g id="Group-9" transform="translate(1219.000000, 423.000000)">
+                <g id="Group-12">
+                    <polygon id="Stroke-1" points="0.11088 21.8878 6.33336 21.8878 6.33204 15.6662"></polygon>
+                    <polygon id="Stroke-3" points="21.88912 0.11044 15.6662 0.1122 15.6662 6.33292"></polygon>
+                    <path d="M3.22168,18.77656 C1.0736,16.62848 0,13.81424 0,10.99824 C0,8.18356 1.07316,5.36888 3.22124,3.2208 C5.36976,1.07316 8.18444,0 10.99956,0 C8.18488,0 5.36976,1.07316 3.22168,3.2208 C1.0736,5.36888 0,8.18356 0,10.99824 C0,13.81424 1.0736,16.62848 3.22168,18.77656 L3.22168,18.77656 Z" id="Stroke-5"></path>
+                    <path d="M18.77744,3.22256 C20.92508,5.37064 22,8.18532 22,11 C22,13.81556 20.92684,16.62936 18.77832,18.77788 C16.62892,20.92596 13.81512,22 11.00044,22 C13.81512,22 16.62892,20.92596 18.77788,18.77788 C20.92684,16.62936 22,13.81556 22,11 C22,8.18532 20.92508,5.37064 18.77744,3.22256 L18.77744,3.22256 Z" id="Stroke-7"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

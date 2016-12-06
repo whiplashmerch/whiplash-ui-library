@@ -28,7 +28,7 @@
 
 .Breadcrumb-list-li:after {
   background:
-    url('~images/icons/breadcrumb-arrow.svg')
+    url('./images/breadcrumb-arrow.svg')
     no-repeat
     right
     center
