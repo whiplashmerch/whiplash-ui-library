@@ -9,3 +9,4 @@ export { default as copy } from './components/Copy';
 export { default as edit } from './components/Edit';
 export { default as export } from './components/Export';
 export { default as grid } from './components/Grid';
+export { default as info } from './components/Info';

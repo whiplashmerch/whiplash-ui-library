@@ -23,7 +23,7 @@ export default class ItemView extends Component {
     super();
     this.icons = [
       'add', 'alarm', 'alarm_filled', 'arrow_down_circle', 'arrow_down',
-      'arrow_right', 'close', 'copy', 'edit', 'export', 'grid'
+      'arrow_right', 'close', 'copy', 'edit', 'export', 'grid', 'info'
     ];
 
     this.state = {
