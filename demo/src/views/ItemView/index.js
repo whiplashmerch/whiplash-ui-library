@@ -21,6 +21,10 @@ import {
 export default class ItemView extends Component {
   constructor() {
     super();
+    this.icons = [
+      'add', 'alarm', 'alarm_filled', 'arrow_down_circle', 'arrow_down',
+      'arrow_right', 'close', 'copy', 'edit', 'export'
+    ];
 
     this.state = {
       activeIndex: '2',
@@ -105,35 +109,16 @@ export default class ItemView extends Component {
           />
         );
       case 'icons':
+        const date = new Date();
         return(
           <div className="Icon-wrapper">
-            <div className="Icon-container">
-              <Icon name="add">add</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="alarm">alarm</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="alarm_filled">alarm_filled</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="arrow_down_circle">arrow_down_circle</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="arrow_down">arrow_down</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="arrow_right">arrow_right</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="close">close</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="copy">copy</Icon>
-            </div>
-            <div className="Icon-container">
-              <Icon name="edit">edit</Icon>
-            </div>
+            {
+              this.icons.map((ico, index) => (
+                <div className="Icon-container" key={ `${ date }-${ index }` }>
+                  <Icon name={ ico }>{ ico }</Icon>
+                </div>
+              ))
+            }
           </div>
         );
       case 'legend':

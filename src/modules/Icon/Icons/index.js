@@ -7,3 +7,4 @@ export { default as arrow_down_circle } from './components/ArrowDownCircle';
 export { default as close } from './components/Close';
 export { default as copy } from './components/Copy';
 export { default as edit } from './components/Edit';
+export { default as export } from './components/Export';
