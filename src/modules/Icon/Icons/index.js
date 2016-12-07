@@ -10,3 +10,4 @@ export { default as edit } from './components/Edit';
 export { default as export } from './components/Export';
 export { default as grid } from './components/Grid';
 export { default as info } from './components/Info';
+export { default as list } from './components/List';
