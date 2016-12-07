@@ -1,0 +1,10 @@
+.Trash {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.Trash:hover .Trash-path {
+  stroke: #8071FE;
+}

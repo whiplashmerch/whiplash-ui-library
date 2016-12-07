@@ -15,3 +15,4 @@ export { default as more_options } from './components/MoreOptions';
 export { default as refresh } from './components/Refresh';
 export { default as search } from './components/Search';
 export { default as settings } from './components/Settings';
+export { default as trash } from './components/Trash';
