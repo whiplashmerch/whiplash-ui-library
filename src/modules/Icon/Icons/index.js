@@ -6,3 +6,4 @@ export { default as arrow_right } from './components/ArrowRight';
 export { default as arrow_down_circle } from './components/ArrowDownCircle';
 export { default as close } from './components/Close';
 export { default as copy } from './components/Copy';
+export { default as edit } from './components/Edit';
