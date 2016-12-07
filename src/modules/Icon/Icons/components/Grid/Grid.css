@@ -1,0 +1,24 @@
+.Grid {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.Grid-white-path {
+  fill: #fff;
+}
+
+.Grid-mask {
+  mask: url(#mask);
+}
+
+.Grid-path {
+  fill: none;
+  stroke: #646471;
+  stroke-width:2px;
+}
+
+.Grid:hover .Grid-path {
+  stroke: #8071FE;
+}

@@ -8,3 +8,4 @@ export { default as close } from './components/Close';
 export { default as copy } from './components/Copy';
 export { default as edit } from './components/Edit';
 export { default as export } from './components/Export';
+export { default as grid } from './components/Grid';
