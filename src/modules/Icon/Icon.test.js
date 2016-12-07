@@ -35,16 +35,16 @@ describe('<Icon />', () => {
     expect(defaultWrapper.props().height).to.not.equal(null);
     expect(defaultWrapper.props().height).to.not.equal(undefined);
     expect(defaultWrapper.props().height).to.not.equal('');
-    expect(defaultWrapper.props().height).to.not.equal(26);
-    expect(defaultWrapper.props().height).to.equal('26');
+    expect(defaultWrapper.props().height).to.not.equal(24);
+    expect(defaultWrapper.props().height).to.equal('24');
   });
 
   it('should have a default width prop', () => {
     expect(defaultWrapper.props().width).to.not.equal(null);
     expect(defaultWrapper.props().width).to.not.equal(undefined);
     expect(defaultWrapper.props().width).to.not.equal('');
-    expect(defaultWrapper.props().width).to.not.equal(26);
-    expect(defaultWrapper.props().width).to.equal('26');
+    expect(defaultWrapper.props().width).to.not.equal(24);
+    expect(defaultWrapper.props().width).to.equal('24');
   });
 
   it('should take a color prop', () => {
@@ -65,7 +65,7 @@ describe('<Icon />', () => {
     expect(wrapper.props().height).to.not.equal(null);
     expect(wrapper.props().height).to.not.equal(undefined);
     expect(wrapper.props().height).to.not.equal('');
-    expect(wrapper.props().height).to.not.equal('26');
+    expect(wrapper.props().height).to.not.equal('24');
     expect(wrapper.props().height).to.equal('50');
   });
 
@@ -73,7 +73,7 @@ describe('<Icon />', () => {
     expect(wrapper.props().width).to.not.equal(null);
     expect(wrapper.props().width).to.not.equal(undefined);
     expect(wrapper.props().width).to.not.equal('');
-    expect(wrapper.props().width).to.not.equal('26');
+    expect(wrapper.props().width).to.not.equal('24');
     expect(wrapper.props().width).to.equal('50');
   });
 

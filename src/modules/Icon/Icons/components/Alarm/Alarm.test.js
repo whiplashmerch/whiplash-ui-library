@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
-import Add from './';
+import Alarm from './';
 
 
-describe('<Add />', () => {
+describe('<Alarm />', () => {
 
-  const defaultWrapper = mount(<Add />);
-  const wrapper = mount(<Add iconColor="blue" />);
+  const defaultWrapper = mount(<Alarm />);
+  const wrapper = mount(<Alarm iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Add />, div);
+    ReactDOM.render(<Alarm />, div);
   });
 
   it('should have a default iconColor prop', () => {

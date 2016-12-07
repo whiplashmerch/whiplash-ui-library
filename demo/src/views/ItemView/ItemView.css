@@ -45,3 +45,9 @@
   font-size: 0.9em;
   padding: 1rem;
 }
+
+.Icon-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}

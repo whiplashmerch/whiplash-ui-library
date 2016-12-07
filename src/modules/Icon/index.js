@@ -11,18 +11,28 @@ const propTypes = {
 
 const defaultProps = {
   color: '#646471',
-  height: '26',
-  width: '26'
+  height: '24',
+  width: '24'
 };
 
 
 export default function Icon({...props}) {
-  const { children, name } = props;
+  const { children, color, height, name, width } = props;
   const IconComponent = Icons[name];
+
+  const iconWrapperStyle = {
+    display: 'inline-block',
+    height: height,
+    width: width
+  };
+
 
   return(
     <div className="Icon">
-      <IconComponent { ...props } />
+      <span className="Icon-icon-wrapper" style={ iconWrapperStyle }>
+        <IconComponent iconColor={ color } />
+      </span>
+
       <span className="Icon-children-wrapper">
         { children }
       </span>

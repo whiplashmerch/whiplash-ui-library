@@ -105,7 +105,12 @@ export default class ItemView extends Component {
           />
         );
       case 'icons':
-        return <Icon name="add">add</Icon>;
+        return(
+          <div className="Icon-wrapper">
+            <Icon name="add">add</Icon>
+            <Icon name="alarm">alarm</Icon>
+          </div>
+        );
       case 'legend':
         return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
       case 'modal':
