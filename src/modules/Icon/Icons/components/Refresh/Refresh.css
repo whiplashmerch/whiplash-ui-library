@@ -1,0 +1,10 @@
+.Refresh {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.Refresh:hover .Refresh-path {
+  fill: #8071FE;
+}
