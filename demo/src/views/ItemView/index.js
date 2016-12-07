@@ -109,6 +109,7 @@ export default class ItemView extends Component {
           <div className="Icon-wrapper">
             <Icon name="add">add</Icon>
             <Icon name="alarm">alarm</Icon>
+            <Icon name="alarm_filled">alarm_filled</Icon>
           </div>
         );
       case 'legend':
