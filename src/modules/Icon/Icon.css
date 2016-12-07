@@ -2,10 +2,13 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  justify-content: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .Icon-children-wrapper {
   display: inline-block;
-  padding-left: 0.3rem;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
 }

@@ -128,6 +128,9 @@ export default class ItemView extends Component {
             <div className="Icon-container">
               <Icon name="close">close</Icon>
             </div>
+            <div className="Icon-container">
+              <Icon name="copy">copy</Icon>
+            </div>
           </div>
         );
       case 'legend':
