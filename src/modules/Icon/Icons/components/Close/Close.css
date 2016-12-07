@@ -1,0 +1,10 @@
+.Close {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.Close:hover .Close-path {
+  fill: #8071FE;
+}
