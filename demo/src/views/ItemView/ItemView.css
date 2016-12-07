@@ -52,3 +52,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.Icon-container {
+  padding: 0.5rem 0;
+}

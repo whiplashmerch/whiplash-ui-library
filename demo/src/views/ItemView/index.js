@@ -107,10 +107,21 @@ export default class ItemView extends Component {
       case 'icons':
         return(
           <div className="Icon-wrapper">
-            <Icon name="add">add</Icon>
-            <Icon name="alarm">alarm</Icon>
-            <Icon name="alarm_filled">alarm_filled</Icon>
-            <Icon name="arrow_down_circle">arrow_down_circle</Icon>
+            <div className="Icon-container">
+              <Icon name="add">add</Icon>
+            </div>
+            <div className="Icon-container">
+              <Icon name="alarm">alarm</Icon>
+            </div>
+            <div className="Icon-container">
+              <Icon name="alarm_filled">alarm_filled</Icon>
+            </div>
+            <div className="Icon-container">
+              <Icon name="arrow_down_circle">arrow_down_circle</Icon>
+            </div>
+            <div className="Icon-container">
+              <Icon name="arrow_down">arrow_down</Icon>
+            </div>
           </div>
         );
       case 'legend':
