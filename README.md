@@ -39,26 +39,16 @@ Live Example of all Available components:
 Updates:
 [Whiplash UI Library Change log](https://github.com/whiplashmerch/whiplash-ui-library/blob/master/CHANGELOG.md)
 
-### Testing w/ Jest
-We are currently using [aphrodite](https://github.com/Khan/aphrodite) for all of
-our styles and it causes failing tests which are definitely not ideal. For now,
-if you are running Jest or enzyme and you notice weird test failures, add this to
-the component tests that you are adding the library components to:
+### We use rem units
+In order to ensure the UI kit display's correctly in your UI, be sure to add a
+default `font-size` of 16px to your app. It's pretty common and a good practice
+to do. At the most global point, add this to your CSS if you don't have it:
 
 ```
-import { StyleSheetTestUtils } from 'aphrodite';
-
-
-beforeEach(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-});
-
-afterEach(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
+* {
+  font-size: 16px;
+}
 ```
-
-We are hoping to prevent this in the future and apologize beforehand for the probs.
 
 <br />
 *More Components Coming Soon!*
