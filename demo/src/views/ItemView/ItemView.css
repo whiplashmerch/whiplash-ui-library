@@ -45,3 +45,20 @@
   font-size: 0.9em;
   padding: 1rem;
 }
+
+.Icon-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+}
+
+.Icon-container {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  -webkit-flex: 1 1 10rem;
+  flex-direction: column;
+  min-width: 10rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}

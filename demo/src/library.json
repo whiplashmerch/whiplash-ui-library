@@ -21,6 +21,13 @@
     "notes": ""
   },
   {
+    "name": "icons",
+    "description": "Whiplash interactive icon library",
+    "component": "<Icon name=\"add\">add</Icon>",
+    "instructions": "To use the Icon component, add it into your form and include the 'name' property.",
+    "notes": ""
+  },
+  {
     "name": "input",
     "description": "The Input Component is used to display a custom style and animated input tag in your forms.",
     "component": "<Input inputLabel=\"email\" inputType=\"email\" onUserInput={ this._textInput } />",

@@ -1,0 +1,10 @@
+.ArrowRight {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.ArrowRight:hover .ArrowRight-path {
+  fill: #8071FE;
+}

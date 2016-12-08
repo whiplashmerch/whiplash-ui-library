@@ -9,6 +9,7 @@ import {
   Breadcrumb,
   Button,
   CheckButton,
+  Icon,
   Input,
   Legend,
   Modal,
@@ -20,6 +21,12 @@ import {
 export default class ItemView extends Component {
   constructor() {
     super();
+    this.icons = [
+      'add', 'alarm', 'alarm_filled', 'arrow_down_circle', 'arrow_down',
+      'arrow_right', 'clipboard', 'close', 'copy', 'edit', 'export', 'grid',
+      'info', 'list', 'more_options', 'print', 'refresh', 'search', 'settings',
+      'trash'
+    ];
 
     this.state = {
       activeIndex: '2',
@@ -103,6 +110,19 @@ export default class ItemView extends Component {
             required
           />
         );
+      case 'icons':
+        const date = new Date();
+        return(
+          <ul className="Icon-wrapper">
+            {
+              this.icons.map((ico, index) => (
+                <li className="Icon-container" key={ `${ date }-${ index }` }>
+                  <Icon name={ ico }>{ ico }</Icon>
+                </li>
+              ))
+            }
+          </ul>
+        );
       case 'legend':
         return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
       case 'modal':
@@ -159,7 +179,10 @@ export default class ItemView extends Component {
     return(
       <div className="ItemView">
         <header className="ItemView-header">
-          <h3 className="ItemView-headline">{ this.state.item.name }</h3>
+          <h3 className="ItemView-headline">
+            { this.state.item.name }
+          </h3>
+
           <p className="ItemView-description">
             { this.state.item.description }
           </p>
