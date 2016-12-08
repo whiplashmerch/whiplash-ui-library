@@ -23,16 +23,16 @@
   {
     "name": "icons",
     "description": "Whiplash informational icon library",
-    "component": "<InformationalIcon name=\"logistics\" />",
-    "instructions": "To use the Icon component, add it into your form and include the 'name' property.",
-    "notes": ""
+    "component": "<InformationalIcon name=\"logistics\" color=\"#303030\" height=\"26\" width=\"26\" />",
+    "instructions": "To use the Icon component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "notes": "This component will also stack children as shown if you want it."
   },
   {
     "name": "informational_icons",
-    "description": "Whiplash interactive icon library",
-    "component": "<Icon name=\"add\">add</Icon>",
-    "instructions": "To use the Icon component, add it into your form and include the 'name' property.",
-    "notes": ""
+    "description": "Whiplash informational icon library",
+    "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
+    "instructions": "To use the InformationalIcon component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "notes": "This component will also stack children as shown if you want it"
   },
   {
     "name": "input",
