@@ -15,7 +15,7 @@ import {
   Legend,
   Modal,
   Navicon
-} from '../../../../src';
+} from 'src';
 
 
 
