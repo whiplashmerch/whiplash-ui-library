@@ -48,7 +48,7 @@ export default class Input extends Component {
 
   render() {
     const { active } = this.state;
-    const { inputLabel, ...props } = this.props;
+    const { inputLabel, onUserInput, ...props } = this.props;
     const InputClass = classnames('Input', { active: !!active });
 
     return (
