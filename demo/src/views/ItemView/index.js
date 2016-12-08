@@ -24,7 +24,7 @@ export default class ItemView extends Component {
     this.icons = [
       'add', 'alarm', 'alarm_filled', 'arrow_down_circle', 'arrow_down',
       'arrow_right', 'close', 'copy', 'edit', 'export', 'grid', 'info', 'list',
-      'more_options', 'refresh', 'search', 'settings', 'trash'
+      'more_options', 'print', 'refresh', 'search', 'settings', 'trash'
     ];
 
     this.state = {
@@ -178,7 +178,10 @@ export default class ItemView extends Component {
     return(
       <div className="ItemView">
         <header className="ItemView-header">
-          <h3 className="ItemView-headline">{ this.state.item.name }</h3>
+          <h3 className="ItemView-headline">
+            { this.state.item.name }
+          </h3>
+
           <p className="ItemView-description">
             { this.state.item.description }
           </p>

@@ -12,6 +12,7 @@ export { default as grid } from './components/Grid';
 export { default as info } from './components/Info';
 export { default as list } from './components/List';
 export { default as more_options } from './components/MoreOptions';
+export { default as print } from './components/Print';
 export { default as refresh } from './components/Refresh';
 export { default as search } from './components/Search';
 export { default as settings } from './components/Settings';
