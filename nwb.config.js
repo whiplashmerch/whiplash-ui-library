@@ -23,7 +23,8 @@ module.exports = {
       // Enable use of require('src/path/to/module.js') for top-down imports
       // from anywhere in the app, to promote writing location-independent
       // code by avoiding ../ directory traversal.
-      src: path.resolve('src')
+      src: path.resolve('src'),
+      demo: path.resolve('demo/src')
     },
 
     compat: {

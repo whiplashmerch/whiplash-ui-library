@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { NavLink, Navicon } from '../../../../src';
-import FetchHelper from '../../classes/FetchHelper';
+import { NavLink, Navicon } from 'src';
+import FetchHelper from 'demo/classes/FetchHelper';
 import logo from '../images/whiplash-geo-logo-white.svg';
-import LibraryData from '../../library.json';
+import LibraryData from 'demo/library.json';
 import './MainIndex.css';
 
 

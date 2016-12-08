@@ -79,6 +79,10 @@
   border-left: 2px solid transparent;
   display: inline-block;
   color: #303030;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
   text-transform: capitalize;
@@ -135,9 +139,10 @@
   .MainIndex-desktop-link {
     color: #C4C2FF;
     display: inline-block;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 100;
-    letter-spacing: 0.0125rem;
+    letter-spacing: 0.04rem;
     margin-right: 1.5rem;
     text-decoration: none;
   }

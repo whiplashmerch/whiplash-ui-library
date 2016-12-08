@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import MainIndex from './views/MainIndex';
-import Home from './views/Home';
-import ItemView from './views/ItemView';
+import MainIndex from '../routes/MainIndex';
+import Home from '../routes/Home';
+import ItemView from '../routes/ItemView';
 import './App.css';
 
 

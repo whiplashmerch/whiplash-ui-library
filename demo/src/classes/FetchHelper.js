@@ -8,7 +8,6 @@ export default class FetchHelper {
     }
   }
 
-
   static parseJSON(response) {
     return response.json();
   }
