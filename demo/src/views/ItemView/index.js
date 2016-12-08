@@ -30,7 +30,7 @@ export default class ItemView extends Component {
     ];
 
     this.informationalIcons = [
-      'logistics'
+      'box', 'logistics'
     ];
 
     this.state = {
