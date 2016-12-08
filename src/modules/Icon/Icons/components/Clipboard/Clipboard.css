@@ -1,0 +1,14 @@
+.Clipboard {
+  display: block;
+  height: 100%;
+  transform-origin: 50% 50% 0;
+  width: 100%;
+}
+
+.Clipboard:hover .Clipboard-path {
+  stroke: #8071FE;
+}
+
+.Clipboard:hover .Clipboard-fill {
+  fill: #8071FE;
+}

@@ -4,6 +4,7 @@ export { default as alarm_filled } from './components/AlarmFilled';
 export { default as arrow_down } from './components/ArrowDown';
 export { default as arrow_right } from './components/ArrowRight';
 export { default as arrow_down_circle } from './components/ArrowDownCircle';
+export { default as clipboard } from './components/Clipboard';
 export { default as close } from './components/Close';
 export { default as copy } from './components/Copy';
 export { default as edit } from './components/Edit';

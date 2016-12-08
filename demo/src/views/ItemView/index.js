@@ -23,8 +23,9 @@ export default class ItemView extends Component {
     super();
     this.icons = [
       'add', 'alarm', 'alarm_filled', 'arrow_down_circle', 'arrow_down',
-      'arrow_right', 'close', 'copy', 'edit', 'export', 'grid', 'info', 'list',
-      'more_options', 'print', 'refresh', 'search', 'settings', 'trash'
+      'arrow_right', 'clipboard', 'close', 'copy', 'edit', 'export', 'grid',
+      'info', 'list', 'more_options', 'print', 'refresh', 'search', 'settings',
+      'trash'
     ];
 
     this.state = {
@@ -112,15 +113,15 @@ export default class ItemView extends Component {
       case 'icons':
         const date = new Date();
         return(
-          <div className="Icon-wrapper">
+          <ul className="Icon-wrapper">
             {
               this.icons.map((ico, index) => (
-                <div className="Icon-container" key={ `${ date }-${ index }` }>
+                <li className="Icon-container" key={ `${ date }-${ index }` }>
                   <Icon name={ ico }>{ ico }</Icon>
-                </div>
+                </li>
               ))
             }
-          </div>
+          </ul>
         );
       case 'legend':
         return <Legend total="4" activeIndex={ this.state.activeIndex } callback={ this._updateLegend } />;
