@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import FetchHelper from '../../classes/FetchHelper';
-import AppExample from '../../Example';
-import LibraryData from '../../library.json';
+import FetchHelper from 'demo/classes/FetchHelper';
+import AppExample from 'demo/Example';
+import LibraryData from 'demo/library.json';
 import geoLogo from '../images/whiplash-geo-logo-white.svg';
 import './ItemView.css';
 
@@ -58,7 +58,8 @@ export default class ItemView extends Component {
 
 
   componentDidMount() {
-    this._getItem(this.props.params.name);
+    const { params } = this.props;
+    this._getItem(params.name);
   }
 
 
@@ -151,7 +152,6 @@ export default class ItemView extends Component {
     }
   }
 
-
   _showModal() {
     this.setState({
       modalActive: true,
@@ -159,22 +159,18 @@ export default class ItemView extends Component {
     });
   }
 
-
   _textInput(val) {
     console.log(val);
   }
-
 
   _toggleModal(modalActive) {
     this.setState({ modalActive });
   }
 
-
   _toggleNavicon(naviconActive) {
     console.log(`Navicon state: ${ naviconActive }`);
     this.setState({ naviconActive });
   }
-
 
   _getItem(selectedName) {
     const obj = this.state.items.find(item => (
