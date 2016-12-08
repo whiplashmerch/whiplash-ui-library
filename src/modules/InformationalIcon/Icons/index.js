@@ -8,5 +8,6 @@ export { default as errored } from './components/Errored';
 export { default as error_shield } from './components/ErrorShield';
 export { default as graph } from './components/Graph';
 export { default as logistics } from './components/Logistics';
+export { default as secure } from './components/Secure';
 export { default as stacked_boxes } from './components/StackedBoxes';
 export { default as whiplash } from './components/Whiplash';
