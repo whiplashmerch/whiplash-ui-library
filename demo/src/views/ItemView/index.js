@@ -30,7 +30,8 @@ export default class ItemView extends Component {
     ];
 
     this.informationalIcons = [
-      'approved', 'approved_shield', 'box', 'chip', 'logistics', 'stacked_boxes'
+      'approved', 'approved_shield', 'box', 'chip', 'clock', 'logistics',
+      'stacked_boxes'
     ];
 
     this.state = {
