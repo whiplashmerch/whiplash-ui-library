@@ -10,6 +10,7 @@ import {
   Button,
   CheckButton,
   Icon,
+  InformationalIcon,
   Input,
   Legend,
   Modal,
@@ -26,6 +27,10 @@ export default class ItemView extends Component {
       'arrow_right', 'clipboard', 'close', 'copy', 'edit', 'export', 'grid',
       'info', 'list', 'more_options', 'print', 'refresh', 'search', 'settings',
       'trash'
+    ];
+
+    this.informationalIcons = [
+      'logistics'
     ];
 
     this.state = {
@@ -68,6 +73,7 @@ export default class ItemView extends Component {
 
 
   _getComponent(name) {
+    const date = new Date();
     const list = [
       { name: 'home', url: '/' },
       { name: name, url: `/library/${ name }` }
@@ -111,13 +117,24 @@ export default class ItemView extends Component {
           />
         );
       case 'icons':
-        const date = new Date();
         return(
           <ul className="Icon-wrapper">
             {
               this.icons.map((ico, index) => (
                 <li className="Icon-container" key={ `${ date }-${ index }` }>
                   <Icon name={ ico }>{ ico }</Icon>
+                </li>
+              ))
+            }
+          </ul>
+        );
+      case 'informational_icons':
+        return(
+          <ul className="Icon-wrapper">
+            {
+              this.informationalIcons.map((ico, index) => (
+                <li className="Icon-container" key={ `${ date }-${ index }` }>
+                  <InformationalIcon name={ ico }>{ ico }</InformationalIcon>
                 </li>
               ))
             }
