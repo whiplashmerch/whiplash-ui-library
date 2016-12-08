@@ -1,0 +1,7 @@
+.StackedBoxes:hover .StackedBoxes-fill {
+  fill: #8071FE;
+}
+
+.StackedBoxes:hover .StackedBoxes-stroke {
+  stroke: #8071FE;
+}

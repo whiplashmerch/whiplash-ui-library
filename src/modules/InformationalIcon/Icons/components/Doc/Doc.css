@@ -1,0 +1,7 @@
+.Doc:hover .Doc-path {
+  fill: #8071FE;
+}
+
+.Doc:hover .Doc-stroke {
+  stroke: #8071FE;
+}
