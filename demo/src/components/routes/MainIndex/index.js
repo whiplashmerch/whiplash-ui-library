@@ -91,6 +91,15 @@ export default class MainIndex extends Component {
                 API Docs
               </a>
             </li>
+
+            <li>
+              <a
+                className="MainIndex-desktop-link"
+                href="https://github.com/whiplashmerch/whiplash-ui-library"
+                target="_blank">
+                Github
+              </a>
+            </li>
           </ul>
         </header>
 
