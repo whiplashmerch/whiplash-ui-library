@@ -40,9 +40,10 @@ Updates:
 [Whiplash UI Library Change log](https://github.com/whiplashmerch/whiplash-ui-library/blob/master/CHANGELOG.md)
 
 ### We use rem units
-In order to ensure the UI kit display's correctly in your UI, be sure to add a
+To ensure the UI kit display's properly in your UI, be sure to add a
 default `font-size` of 16px to your app. It's pretty common and a good practice
-to do. At the most global point, add this to your CSS if you don't have it:
+to do. At the most global point, add this to your CSS if you don't already
+have it:
 
 ```
 * {
