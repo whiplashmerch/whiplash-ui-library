@@ -10,7 +10,8 @@ const initialState = {
   library: {
     isFetching: false,
     items: [],
-    lastUpdated: null
+    lastUpdated: null,
+    selected: {}
   }
 };
 

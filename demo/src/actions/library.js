@@ -12,3 +12,11 @@ export function receiveLibrary(components) {
     receivedAt: Date.now()
   };
 }
+
+export function setSelectedLibrary(selected) {
+  return {
+    type: 'SET_LIBRARY_SELECTED',
+    selected,
+    receivedAt: Date.now()
+  };
+}
