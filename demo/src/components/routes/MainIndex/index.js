@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { NavLink, Navicon } from 'src';
 import FetchHelper from 'demo/classes/FetchHelper';
 import logo from '../images/whiplash-geo-logo-white.svg';
-import LibraryData from 'demo/library.json';
 import './MainIndex.css';
 
 
@@ -11,31 +10,40 @@ export default class MainIndex extends Component {
   constructor() {
     super();
 
-    this.state = {
-      links: LibraryData,
-      mobileNavActive: false
-    };
-
     // cache methods
     this._getLinks = this._getLinks.bind(this);
     this._toggleNavicon = this._toggleNavicon.bind(this);
+
+    // init state
+    this.state = {
+      mobileNavActive: false
+    };
   }
 
+  componentDidMount() {
+    const { fetchLibraryIfNeeded } = this.props;
+    fetchLibraryIfNeeded();
+  }
 
   // PRIVATE
 
   _getLinks() {
-    return this.state.links.map((item, index) => {
-      return (
-        <li key={ index }>
-          <NavLink to={ `/library/${ item.name }` } className="NavLink">
-            { item.name }
-          </NavLink>
-        </li>
-      );
-    });
-  }
+    const { library } = this.props;
+    const noItems = !!!library.items.length;
+    const date = new Date();
 
+    if (noItems) {
+      return;
+    }
+
+    return library.items.map((item, index) => (
+      <li key={ `${ date }-${ index }` }>
+        <NavLink to={ `/library/${ item.name }` } className="NavLink">
+          { item.name }
+        </NavLink>
+      </li>
+    ));
+  }
 
   _toggleNavicon(mobileNavActive) {
     this.setState({ mobileNavActive });
@@ -52,7 +60,6 @@ export default class MainIndex extends Component {
         <header className="MainIndex-header">
           <div className="MainIndex-navicon-wrapper">
             <Navicon
-              active={ this.state.mobileNavActive }
               barColor="#E4E2FA"
               onUserInput={ this._toggleNavicon }
             />
@@ -106,5 +113,4 @@ export default class MainIndex extends Component {
       </div>
     );
   }
-
 }
