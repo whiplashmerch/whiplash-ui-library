@@ -24,7 +24,13 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "classnames": "^2.2.5",
-    "react-router": "^2.8.1"
+    "normalize.css": "^5.0.0",
+    "react-redux": "^4.4.6",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.7",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^1.0.0",
+    "redux-thunk": "^2.1.0"
   },
   "peerDependencies": {
     "react": "15.x"

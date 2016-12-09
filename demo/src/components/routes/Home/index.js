@@ -18,14 +18,17 @@ const Home = (props) => (
       </p>
 
       <p className="Home-description">
-        The goal is to have a fully functioning React component UI libarary
-        by the end of the year (officially the 1.0 release).
+        Our goal is to have a fully functioning React Component UI library
+        by mid 2017 (officially the 1.0 release).
       </p>
 
       <p className="Home-description">
         If there is more info you would like provided in our docs, just file
-        and issue and we'll get to it ASAP. Thanks for checking us out and
-        stay tuned for further info.
+        and issue and we'll get to it ASAP.
+      </p>
+
+      <p className="Home-description">
+        Thanks for checking us out and stay tuned for further info.
       </p>
     </div>
   </div>
