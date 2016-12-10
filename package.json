@@ -13,7 +13,7 @@
   ],
   "bugs": "https://github.com/whiplashmerch/whiplash-ui-library/issues",
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && npm clean-demo",
     "deploy": "gh-pages -d demo/dist",
     "start": "nwb serve-react-demo",
