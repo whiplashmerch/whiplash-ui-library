@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import 'fonts/index.css';
+import '../../fonts/index.css';
 import './CheckButton.css';
 
 const propTypes = {

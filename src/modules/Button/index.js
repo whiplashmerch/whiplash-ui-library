@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import 'src/fonts/index.css';
+import '../../fonts/index.css';
 import './Button.css';
 
 
