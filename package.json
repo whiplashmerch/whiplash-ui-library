@@ -1,6 +1,6 @@
 {
   "name": "whiplash-ui-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",

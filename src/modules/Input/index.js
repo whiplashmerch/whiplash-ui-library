@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import 'src/fonts/index.css';
+import '../../fonts/index.css';
 import './Input.css';
 
 const propTypes = {
