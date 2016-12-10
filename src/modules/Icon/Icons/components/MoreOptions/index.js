@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import 'fonts/index.css';
 import './MoreOptions.css';
 
 const propTypes = {
