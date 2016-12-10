@@ -1,6 +1,6 @@
 {
   "name": "whiplash-ui-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -13,7 +13,7 @@
   ],
   "bugs": "https://github.com/whiplashmerch/whiplash-ui-library/issues",
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && npm clean-demo",
     "deploy": "gh-pages -d demo/dist",
     "start": "nwb serve-react-demo",
@@ -40,7 +40,7 @@
     "coveralls": "^2.11.14",
     "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
-    "nwb": "0.12.x",
+    "nwb": "0.13.3",
     "phantomjs-prebuilt": "^2.1.13",
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
