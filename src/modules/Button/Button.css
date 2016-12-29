@@ -32,7 +32,12 @@
 
 .Button.secondary-dark {
   background-color: #F9F8FF;
+  box-shadow: none;
   color: #5134C4;
+  transition:
+    background-color 200ms ease-out,
+    box-shadow 200ms ease-out,
+    color 200ms ease-out;
 }
 
 .Button.secondary-border {
@@ -73,6 +78,7 @@
 
 .Button.secondary-dark:hover {
   background-color: #F9F8FF;
+  box-shadow: 0 2px 5px 0 #DCDCDF;
   color: #8071FE;
 }
 
