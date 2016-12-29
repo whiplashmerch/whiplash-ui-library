@@ -11,7 +11,7 @@
     "description": "No need for description...",
     "component": "<Button buttonText=\"defaultFilled\" callback={ this._clickButton } />",
     "instructions": "To use the Button component, just drop it in and include a 'buttonText', 'theme', and optional 'buttonType' (i.e. 'submit') and 'callback' (fired onClick - check your console to see this work) property.",
-    "notes": "theme types: default, primary, secondary, danger, primaryFilled (camel-case 'Filled' to most any colors), text."
+    "notes": "theme prop values: (no theme prop is default theme), secondary, secondary-border, secondary-dark, danger, danger-border, text."
   },
   {
     "name": "CheckButton",

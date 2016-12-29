@@ -20,6 +20,12 @@ export default function DemoButton({ onCallback }) {
       />
 
       <Button
+        buttonText="secondary-dark"
+        theme="secondary-dark"
+        callback={ onCallback }
+      />
+
+      <Button
         buttonText="text link"
         theme="text"
         callback={ onCallback }
