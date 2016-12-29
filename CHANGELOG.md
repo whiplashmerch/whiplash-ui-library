@@ -1,3 +1,7 @@
+#v1.0.5
+Nothing big here, just a small adjustment to the Button docs and a style update
+for the `secondary-dark` Button `theme`. 😎
+
 #v1.0.3
 Alrighty! Just in time for the holiday's, we have a pretty big update including:
 
