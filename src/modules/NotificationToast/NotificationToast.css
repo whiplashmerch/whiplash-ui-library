@@ -1,0 +1,25 @@
+.NotificationToast {
+  display: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+.NotificationToast-text {
+  color: #00BC93;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+}
+
+.NotificationToast-text.pending {
+  color: #5134C4;
+}
+
+.NotificationToast-text.error {
+  color: #fff;
+}
+
+/* active */
+
+.NotificationToast.active {
+  display: block;
+}
