@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { InformationalIcon } from 'src';
 import '../../fonts/index.css';
 import './NotificationToast.css';
 
@@ -17,13 +18,16 @@ const defaultProps = {
 
 
 export default function NotificationToast({ active, theme, message }) {
-  const MainClass = classnames('NotificationToast', theme, { active });
+  const MainClass = classnames('NotificationToast', theme);
+  let NotificationIcon = null;
+
+  if (!active) {
+    return null;
+  }
+
 
   return(
     <div className={ MainClass }>
-      <span className="NotificationToast-icon-wrapper">
-      </span>
-
       <p className="NotificationToast-text">
         { message }.
       </p>

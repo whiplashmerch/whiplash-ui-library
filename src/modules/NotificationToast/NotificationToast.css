@@ -3,7 +3,7 @@
   background: -webkit-linear-gradient(left,  rgba(233,250,246,1) 1%,rgba(222,234,234,1) 100%);
   background: linear-gradient(to right,  rgba(233,250,246,1) 1%,rgba(222,234,234,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9faf6', endColorstr='#c1cccb',GradientType=1 );
-  display: none;
+  border-radius: 2px;
   margin-bottom: 1rem;
   margin-top: 1rem;
   padding: 1rem;

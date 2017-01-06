@@ -65,8 +65,8 @@
   {
     "name": "NotificationToast",
     "description": "The NotificationToast Component is used to display flash/toast/notification messages in the UI.",
-    "component": "<NotificationToast active={ activeState } theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
-    "instructions": "To use the NotificationToast Component, just drop it in and include a 'message' property along with the optional 'theme' (controls the color & icon) & 'active' (bool) props.",
+    "component": "<NotificationToast active theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
+    "instructions": "To use the NotificationToast Component, just drop it in and include a 'message' property along with the optional 'theme' (controls the color) & 'active' (bool) props.",
     "notes": "Themes: (not including the theme prop will be 'default'), pending, error"
   }
 ]
