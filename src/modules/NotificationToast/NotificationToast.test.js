@@ -11,6 +11,7 @@ describe('<NotificationToast />', () => {
 
   const wrapper = mount(
     <NotificationToast
+      active
       message="test notification message"
       theme="pending"
     />
