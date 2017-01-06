@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { NotificationToast } from 'src';
 
 
-export default function DemoNotificationToas() {
+export default function DemoNotificationToast() {
   return(
     <div>
       <NotificationToast
