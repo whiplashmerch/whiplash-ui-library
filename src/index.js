@@ -8,3 +8,4 @@ export { default as Legend } from './modules/Legend';
 export { default as Modal } from './modules/Modal';
 export { default as Navicon } from './modules/Navicon';
 export { default as NavLink } from './modules/NavLink';
+export { default as NotificationToast } from './modules/NotificationToast';
