@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import { InformationalIcon } from 'src';
 import '../../fonts/index.css';
 import './NotificationToast.css';
 
