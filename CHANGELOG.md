@@ -1,3 +1,27 @@
+#v1.0.6
+Ever find yourself needing to post a small "flash" message in the UI that is just
+temporary but imperitive for informing the user about something which has happened?
+Look no further, for the NotificationToast Component is here! 🎉
+
+It comes with a default, pending, and error theme to meet your needs. 
+
+Keep a look out for our next update which will close out this milestone bringing the
+ShopCard Component.
+
+It will be a "card" influenced component that will display information along with
+including a footer to add extra icons for things if you need them.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.0.3 --exact
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.0.3 --exact
+```
+
 #v1.0.5
 Nothing big here, just a small adjustment to the Button docs and a style update
 for the `secondary-dark` Button `theme`. 😎
