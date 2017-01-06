@@ -1,4 +1,4 @@
-#v1.0.6
+#v1.0.7
 Ever find yourself needing to post a small "flash" message in the UI that is just
 temporary but imperitive for informing the user about something which has happened?
 Look no further, for the NotificationToast Component is here! 🎉
@@ -14,12 +14,12 @@ including a footer to add extra icons for things if you need them.
 #### Upgrading
 yarn:
 ```
-yarn upgrade whiplash-ui-library@1.0.6 --exact
+yarn upgrade whiplash-ui-library@1.0.7 --exact
 ```
 
 npm:
 ```
-npm install whiplash-ui-library@1.0.6 --exact
+npm install whiplash-ui-library@1.0.7 --exact
 ```
 
 #v1.0.5
