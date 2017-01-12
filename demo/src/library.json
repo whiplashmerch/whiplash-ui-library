@@ -68,5 +68,12 @@
     "component": "<NotificationToast active theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
     "instructions": "To use the NotificationToast Component, just drop it in and include a 'message' property along with the optional 'theme' (controls the color) & 'active' (bool) props.",
     "notes": "Themes: (not including the theme prop will be 'default'), pending, error"
+  },
+  {
+    "name": "Toggle",
+    "description": "The toggle Component is used to visualize a toggle option in a form, etc.",
+    "component": "<Toggle active onChecked={ this.callbackFn } />",
+    "instructions": "To use the Toggle Component, just drop it in and include the onChecked (passes back a bool of current active state) prop along with an optional active one (bool).",
+    "notes": "Not including the 'active' prop will render toggled disabled as expected."
   }
 ]
