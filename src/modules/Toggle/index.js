@@ -15,6 +15,7 @@ const defaultProps = {
 export default class Toggle extends Component {
   constructor() {
     super();
+    this._updateState = this._updateState.bind(this);
 
     this.state = {
       active: false
@@ -27,6 +28,13 @@ export default class Toggle extends Component {
     if (!!active) {
       this.setState({ active });
     }
+  }
+
+  // PRIVATE
+
+  _updateState() {
+    const { active } = this.state;
+    this.setState({ active: !active });
   }
 
 
@@ -43,6 +51,7 @@ export default class Toggle extends Component {
             className="Toggle-input"
             ref={ toggleRef }
             type="checkbox"
+            onClick={ this._updateState }
           />
         </div>
       </div>
