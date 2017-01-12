@@ -75,6 +75,8 @@ export default class ItemView extends Component {
         return <Button buttonText="open modal" theme="text" callback={ this._showModal } />;
       case 'Navicon':
         return <Navicon onUserInput={ this._clickButton } />;
+      case 'Toggle':
+        return <DemoComponent active />;
       default:
         return <DemoComponent />;
     }

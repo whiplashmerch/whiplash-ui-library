@@ -4,8 +4,7 @@ import './Toggle.css';
 
 const propTypes = {
   active: PropTypes.bool,
-  toggleRef: PropTypes.func,
-  onChecked: PropTypes.func
+  toggleRef: PropTypes.func
 };
 
 const defaultProps = {
@@ -33,7 +32,7 @@ export default class Toggle extends Component {
 
   render() {
     const { active } = this.state;
-    const { onChecked, toggleRef } = this.props;
+    const { toggleRef } = this.props;
     const MainClass = classnames('Toggle', { active });
 
     return(
