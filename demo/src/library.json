@@ -15,9 +15,9 @@
   },
   {
     "name": "CheckButton",
-    "description": "A nice radio-style check button that returns a boolean",
-    "component": "<CheckButton onUserSelect={ this._toggleCheckBtn } />",
-    "instructions": "To use the CheckButton component, just drop it in and include a 'onUserSelect' (returns a bool), and optional 'selected' property.",
+    "description": "A nice checkbox-style element that toggles a bool state.",
+    "component": "<CheckButton defaultSelected />",
+    "instructions": "To use the CheckButton component, just drop it in and include the optional 'defaultSelected' property if you want it rendered in the 'selected' state.",
     "notes": ""
   },
   {
