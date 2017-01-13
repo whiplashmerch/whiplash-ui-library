@@ -8,7 +8,10 @@ import CheckButton from './';
 describe('<CheckButton />', () => {
 
   const defaultWrapper = mount(<CheckButton />);
-  const wrapper = mount(<CheckButton onUserSelect={e => console.log(e)} />);
+
+  const wrapper = mount(
+    <CheckButton defaultChecked />
+  );
 
 
   it('should render without crashing', () => {
@@ -16,25 +19,18 @@ describe('<CheckButton />', () => {
     ReactDOM.render(<CheckButton />, div);
   });
 
-  it('should have a default onUserSelect prop', () => {
-    expect(defaultWrapper.props().onUserSelect).to.not.equal(null);
-    expect(defaultWrapper.props().onUserSelect).to.not.equal(undefined);
-    expect(defaultWrapper.props().onUserSelect).to.not.throw(Error);
+  it('should have a default defaultChecked prop', () => {
+    expect(defaultWrapper.props().defaultChecked).to.not.equal(null);
+    expect(defaultWrapper.props().defaultChecked).to.not.equal(undefined);
+    expect(defaultWrapper.props().defaultChecked).to.not.equal(true);
+    expect(defaultWrapper.props().defaultChecked).to.equal(false);
   });
 
-  it('should have a default false state', () => {
-    expect(wrapper.state().active).to.not.equal(null);
-    expect(wrapper.state().active).to.not.equal(undefined);
-    expect(wrapper.state().active).to.not.equal(true);
-    expect(wrapper.state().active).to.equal(false);
-  });
-
-  it('should update the state onClick', () => {
-    expect(wrapper.state().active).to.equal(false);
-
-    wrapper.simulate('click');
-
-    expect(wrapper.state().active).to.equal(true);
+  it('should accept an defaultChecked prop', () => {
+    expect(wrapper.props().defaultChecked).to.not.equal(null);
+    expect(wrapper.props().defaultChecked).to.not.equal(undefined);
+    expect(wrapper.props().defaultChecked).to.not.equal(false);
+    expect(wrapper.props().defaultChecked).to.equal(true);
   });
 
 });

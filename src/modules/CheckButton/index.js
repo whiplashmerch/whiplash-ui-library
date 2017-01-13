@@ -1,49 +1,27 @@
-import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
-import '../../fonts/index.css';
+import React, { PropTypes } from 'react';
 import './CheckButton.css';
 
 const propTypes = {
-  onUserSelect: PropTypes.func
+  defaultChecked: PropTypes.bool
 };
 
 const defaultProps = {
-  onUserSelect: (e) => console.warn('missing onUserSelect prop')
+  defaultChecked: false
 };
 
 
-export default class CheckButton extends Component {
-  constructor() {
-    super();
+export default function CheckButton({ defaultChecked }) {
+  return(
+    <div className="CheckButton">
+      <input
+        className="CheckButton-input"
+        type="checkbox"
+        defaultChecked={ defaultChecked }
+      />
 
-    // cache methods
-    this._toggleState = this._toggleState.bind(this);
-
-    this.state = {
-      active: false
-    };
-  }
-
-  // PRIVATE
-
-  _toggleState() {
-    const { active } = this.state;
-    const { onUserSelect } = this.props;
-
-    this.setState({ active: !active }, () => {
-      onUserSelect(!active);
-    });
-  }
-
-
-  render() {
-    const { active } = this.state;
-    const CheckClass = classnames('CheckButton', { selected: !!active });
-
-    return(
-      <span className={ CheckClass } onClick={ this._toggleState } />
-    );
-  }
+      <span className="CheckButton-btn" />
+    </div>
+  );
 }
 
 

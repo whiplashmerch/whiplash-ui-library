@@ -1,8 +1,13 @@
 .CheckButton {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.8rem;
+}
+
+.CheckButton-btn {
   background: transparent;
   border: 1px solid #B3B3CC;
   border-radius: 50%;
-  cursor: pointer;
   display: inline-block;
   height: 1rem;
   overflow: hidden;
@@ -11,15 +16,29 @@
   vertical-align: middle;
 }
 
+.CheckButton-input {
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
 /* hover */
 
-.CheckButton:hover {
+.CheckButton-btn:hover {
   border: 1px solid #8071FE;
 }
 
-/* selected */
+/* checked */
 
-.CheckButton.selected {
+.CheckButton-input:checked + .CheckButton-btn {
   background:
     url(./images/check-white.svg)
     no-repeat

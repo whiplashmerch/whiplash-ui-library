@@ -7,7 +7,11 @@ const propTypes = {
 
 export default function DemoCheckButton({ onCallback }) {
   return(
-    <CheckButton onUserSelect={ onCallback } />
+    <div>
+      <CheckButton defaultChecked />
+      <CheckButton />
+      <CheckButton />
+    </div>
   );
 }
 
