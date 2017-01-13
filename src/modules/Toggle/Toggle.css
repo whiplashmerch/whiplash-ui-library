@@ -1,0 +1,102 @@
+.Toggle {
+  display: inline-block;
+  height: 1.5rem;
+  margin-right: 1rem;
+  width: 3.5rem;
+}
+
+.Toggle-wrapper {
+  background-color: #E1E1EA;
+  border-radius: 50px;
+  box-shadow: inset 0 1px 1px 0 rgba(179, 179, 204, 0.2);
+  display: block;
+  height: 100%;
+  position: relative;
+  transition:
+    background-color 150ms ease-out,
+    background-image 150ms ease-out,
+    background-position 150ms ease-out,
+    box-shadow 150ms ease-out;
+  width: 100%;
+  z-index: 0;
+}
+
+.Toggle-wrapper:before {
+  display: inline-block;
+  background-image: url(./images/unchecked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 0.7rem;
+  opacity: 1;
+  position: absolute;
+  right: 0.8rem;
+  top: 0.4rem;
+  transition: opacity 100ms ease-out;
+  width: 0.7rem;
+}
+
+.Toggle-wrapper:after {
+  display: inline-block;
+  background-image: url(./images/checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 0.7rem;
+  opacity: 0;
+  position: absolute;
+  left: 0.8rem;
+  top: 0.35rem;
+  transition: opacity 100ms ease-out;
+  width: 0.9rem;
+}
+
+.Toggle-btn {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 0 2px 0 rgba(0, 0, 9, 0.1);
+  bottom: 0;
+  display: inline-block;
+  height: 1.375rem;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  transform: translate3d(0, 0, 0);
+  transition: transform 150ms ease-out;
+  width: 1.375rem;
+  z-index: 10;
+}
+
+.Toggle-input {
+  bottom: 0;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* active */
+
+.Toggle.active .Toggle-wrapper {
+  background-color: #00E7AE;
+  box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.Toggle.active .Toggle-wrapper:before {
+  opacity: 0;
+}
+
+.Toggle.active .Toggle-wrapper:after {
+  opacity: 1;
+}
+
+.Toggle.active .Toggle-btn {
+  transform: translate3d(2rem, 0, 0);
+}

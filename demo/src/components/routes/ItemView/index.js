@@ -66,7 +66,7 @@ export default class ItemView extends Component {
       case 'Button':
         return <DemoComponent onCallback={ this._clickButton } />;
       case 'CheckButton':
-        return <DemoComponent onCallback={ this._clickButton } />;
+        return <DemoComponent defaultChecked />;
       case 'Input':
         return <DemoComponent onInputChange={ this._textInput } />;
       case 'Legend':
@@ -75,6 +75,8 @@ export default class ItemView extends Component {
         return <Button buttonText="open modal" theme="text" callback={ this._showModal } />;
       case 'Navicon':
         return <Navicon onUserInput={ this._clickButton } />;
+      case 'Toggle':
+        return <DemoComponent active />;
       default:
         return <DemoComponent />;
     }
