@@ -38,4 +38,17 @@ describe('<Toggle />', () => {
     expect(wrapper.props().active).to.equal(true);
   });
 
+  it('should add an "active" class if state active', () => {
+    expect(defaultWrapper.find('.Toggle').hasClass('active')).to.not.equal(true);
+    expect(defaultWrapper.find('.Toggle').hasClass('active')).to.equal(false);
+    expect(wrapper.find('.Toggle').hasClass('active')).to.not.equal(false);
+    expect(wrapper.find('.Toggle').hasClass('active')).to.equal(true);
+  });
+
+  it('should accept a toggleRef prop', () => {
+    expect(wrapper.props().toggleRef).to.not.equal(null);
+    expect(wrapper.props().toggleRef).to.not.equal(undefined);
+    expect(wrapper.props().toggleRef).to.equal(newRef);
+  });
+
 });
