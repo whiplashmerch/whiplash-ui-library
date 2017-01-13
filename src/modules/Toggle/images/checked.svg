@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>Fill 1</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Whiplash-Orders-Interactive-UI-Copy" transform="translate(-1215.000000, -251.000000)" stroke="#FFFFFF" stroke-width="0.6" fill="#FFFFFF">
-            <g id="Group-2" transform="translate(1202.000000, 244.000000)">
-                <path d="M17.714016,14.7338521 L14.8725442,11.8184076 C14.672923,11.6135895 14.3490816,11.6135895 14.1497159,11.8184076 C13.9500947,12.0232256 13.9500947,12.3552354 14.1497159,12.5600534 L17.3526019,15.8465832 C17.4484507,15.9449273 17.5785496,16 17.714016,16 C17.8494824,16 17.9795813,15.9449273 18.0754302,15.8465832 L24.8502841,8.89535776 C25.0499053,8.69053972 25.0499053,8.35852993 24.8502841,8.15371189 C24.6506628,7.94889385 24.3268214,7.9486316 24.1272002,8.15371189 L17.714016,14.7338521 Z" id="Fill-1"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 10"><path fill="#FFF" fill-rule="evenodd" stroke="#FFF" stroke-width=".6" d="M4.714 7.734l-2.84-2.916c-.2-.204-.525-.204-.724 0-.2.205-.2.537 0 .742l3.203 3.287c.095.098.226.153.36.153.136 0 .267-.055.362-.153l6.775-6.952c.2-.204.2-.536 0-.74-.2-.206-.523-.206-.723 0l-6.413 6.58z"/></svg>
