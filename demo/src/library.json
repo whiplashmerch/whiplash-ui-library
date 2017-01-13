@@ -72,8 +72,8 @@
   {
     "name": "Toggle",
     "description": "The toggle Component is used to visualize a toggle option in a form, etc.",
-    "component": "<Toggle active onChecked={ this.callbackFn } />",
-    "instructions": "To use the Toggle Component, just drop it in and include the onChecked (passes back a bool of current active state) prop along with an optional active one (bool).",
+    "component": "<Toggle active toggleRef={ this.createToggleRef } />",
+    "instructions": "To use the Toggle Component, just drop it in and include the optional toggleRef (func that assigns a ref variable) and active (bool) props.",
     "notes": "Not including the 'active' prop will render toggled disabled as expected."
   }
 ]
