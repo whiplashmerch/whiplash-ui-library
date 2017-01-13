@@ -1,3 +1,21 @@
+#v1.1.0
+This nice little update brings a cleaner `<CheckButton />` Component now only
+accepting a `defaultSelected` prop to compliment expected React behavior in
+addition to the introduction of the `<Toggle />` Component! 
+
+Check out the demo site for all info needed for both of these updates.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.1.0
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.1.0 --exact
+```
+
 #v1.0.7
 Ever find yourself needing to post a small "flash" message in the UI that is just
 temporary but imperitive for informing the user about something which has happened?
