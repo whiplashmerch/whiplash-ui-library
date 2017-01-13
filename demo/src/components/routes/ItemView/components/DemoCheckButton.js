@@ -5,7 +5,7 @@ const propTypes = {
   defaultChecked: PropTypes.bool
 };
 
-export default function DemoCheckButton({ onCallback }) {
+export default function DemoCheckButton({ defaultChecked }) {
   return(
     <div>
       <CheckButton defaultChecked />
