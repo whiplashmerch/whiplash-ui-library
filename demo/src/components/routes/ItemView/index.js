@@ -66,7 +66,7 @@ export default class ItemView extends Component {
       case 'Button':
         return <DemoComponent onCallback={ this._clickButton } />;
       case 'CheckButton':
-        return <DemoComponent onCallback={ this._clickButton } />;
+        return <DemoComponent defaultChecked />;
       case 'Input':
         return <DemoComponent onInputChange={ this._textInput } />;
       case 'Legend':

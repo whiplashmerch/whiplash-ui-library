@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { CheckButton } from 'src';
 
 const propTypes = {
-  onCallback: PropTypes.func
+  defaultChecked: PropTypes.bool
 };
 
 export default function DemoCheckButton({ onCallback }) {
