@@ -1,4 +1,4 @@
-#v1.1.0
+#v1.1.1
 This nice little update brings a cleaner `<CheckButton />` Component now only
 accepting a `defaultSelected` prop to compliment expected React behavior in
 addition to the introduction of the `<Toggle />` Component! 
@@ -8,12 +8,12 @@ Check out the demo site for all info needed for both of these updates.
 #### Upgrading
 yarn:
 ```
-yarn upgrade whiplash-ui-library@1.1.0
+yarn upgrade whiplash-ui-library@1.1.1
 ```
 
 npm:
 ```
-npm install whiplash-ui-library@1.1.0 --exact
+npm install whiplash-ui-library@1.1.1 --exact
 ```
 
 #v1.0.7
