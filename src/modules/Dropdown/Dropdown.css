@@ -1,8 +1,9 @@
 .Dropdown {
+  animation-duration: 200ms !important;
   background-color: #fff;
   border: 1px solid #E5E5E5;
   border-radius: 2px;
-  box-shadow: 0 0 15px rgba(132, 131, 161, 0.5);
+  box-shadow: 0 0 15px rgba(132, 131, 161, 0.2);
   display: inline-block;
   max-height: 31.25rem;
   overflow-y: auto;
@@ -18,4 +19,34 @@
 
 .Dropdown.right {
   right: 1rem;
+}
+
+.Dropdown-ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.Dropdown-ul li {
+  animation-duration: 400ms;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.0125rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.Dropdown-ul li:hover {
+  color: #8071FE;
+}
+
+.Dropdown-ui li a {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.0125rem;
+  text-transform: capitalize
 }

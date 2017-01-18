@@ -1,5 +1,9 @@
 import React, { PropTypes } from 'react';
-import { Button, Dropdown } from 'src';
+import {
+  Button,
+  Dropdown,
+  NavLink
+} from 'src';
 
 const propTypes = {
   open: PropTypes.bool,
@@ -24,9 +28,9 @@ export default function DemoDropdown({ open, onUpdate }) {
         right
         open={ open }
       >
-        <li>first item</li>
-        <li>second item</li>
-        <li>third item</li>
+        <NavLink to="/">home</NavLink>
+        <NavLink to="/button">button</NavLink>
+        <p>Normal text</p>
       </Dropdown>
     </div>
   );
