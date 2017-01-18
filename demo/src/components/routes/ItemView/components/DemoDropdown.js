@@ -7,8 +7,13 @@ const propTypes = {
 };
 
 export default function DemoDropdown({ open, onUpdate }) {
+  const containerStyles = {
+    display: 'inline-block',
+    position: 'relative'
+  };
+
   return(
-    <div>
+    <div style={ containerStyles }>
       <Button
         buttonText="settings"
         theme="text"
