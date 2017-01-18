@@ -1,3 +1,23 @@
+#v1.2.0
+With this small update comes the new `<Dropdown />` Component! Basically, all
+you do is add the children you want to display and Dropdown turns it into a
+toggable list! Nioce. We are cooking now, so keep your eyes peeled for more Components
+being added by the weeks.
+
+Check out the demo site for all info needed for this update.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.2.0
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.2.0 --exact
+```
+
+
 #v1.1.1
 This nice little update brings a cleaner `<CheckButton />` Component now only
 accepting a `defaultSelected` prop to compliment expected React behavior in
