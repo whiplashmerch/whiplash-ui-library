@@ -29,7 +29,7 @@ export default function DemoDropdown({ open, onUpdate }) {
         open={ open }
       >
         <NavLink to="/">home</NavLink>
-        <NavLink to="/button">button</NavLink>
+        <NavLink to="/library/Button">button</NavLink>
         <p>Normal text</p>
       </Dropdown>
     </div>

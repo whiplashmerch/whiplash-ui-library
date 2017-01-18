@@ -26,27 +26,29 @@
   padding: 1rem;
 }
 
-.Dropdown-ul li {
-  animation-duration: 400ms;
+.Dropdown-li {
   display: inline-block;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.0125rem;
   padding: 0.5rem 1rem;
-  text-decoration: none;
   text-transform: capitalize;
   width: 100%;
 }
 
-.Dropdown-ul li:hover {
-  color: #8071FE;
-}
-
-.Dropdown-ui li a {
+.Dropdown-li a,
+.Dropdown-li p {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
   font-weight: 100;
   letter-spacing: 0.0125rem;
-  text-transform: capitalize
+  text-transform: capitalize;
+}
+
+.Dropdown-li a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+
+.Dropdown-li a:hover {
+  color: #8071FE;
 }

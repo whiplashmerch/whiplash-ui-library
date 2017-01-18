@@ -7,19 +7,23 @@ import Dropdown from './';
 
 describe('<Dropdown />', () => {
 
-  const defaultWrapper = mount(<Dropdown />);
+  const defaultWrapper = mount(
+    <Dropdown>
+      <p></p>
+    </Dropdown>
+  );
 
   const wrapper = mount(
     <Dropdown right open={ true }>
-      <li>test 1</li>
-      <li>test 2</li>
+      <p>test 1</p>
+      <p>test 2</p>
     </Dropdown>
   );
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Dropdown />, div);
+    ReactDOM.render(<Dropdown><p></p></Dropdown>, div);
   });
 
   it('should have a default open prop', () => {
