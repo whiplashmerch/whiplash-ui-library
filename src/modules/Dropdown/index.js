@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import './Dropdown.css';
 
 const propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.array,
   left: PropTypes.bool,
   open: PropTypes.bool,
   right: PropTypes.bool

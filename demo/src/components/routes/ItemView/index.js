@@ -103,7 +103,9 @@ export default class ItemView extends Component {
   }
 
   _toggleDropdown() {
-    this.setState({ dropdownActive: !dropdownActive });
+    this.setState((prevState) => ({
+      dropdownActive: !prevState.dropdownActive
+    }));
   }
 
   _updateLegend(activeIndex) {
