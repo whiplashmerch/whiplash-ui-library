@@ -11,15 +11,17 @@ export default class ItemView extends Component {
     super();
 
     // cache methods
-    this._clickButton   = this._clickButton.bind(this);
-    this._getComponent  = this._getComponent.bind(this);
-    this._showModal     = this._showModal.bind(this);
-    this._textInput     = this._textInput.bind(this);
-    this._toCapitalize  = this._toCapitalize.bind(this);
-    this._toggleModal   = this._toggleModal.bind(this);
-    this._updateLegend  = this._updateLegend.bind(this);
+    this._clickButton    = this._clickButton.bind(this);
+    this._getComponent   = this._getComponent.bind(this);
+    this._showModal      = this._showModal.bind(this);
+    this._textInput      = this._textInput.bind(this);
+    this._toCapitalize   = this._toCapitalize.bind(this);
+    this._toggleDropdown = this._toggleDropdown.bind(this);
+    this._toggleModal    = this._toggleModal.bind(this);
+    this._updateLegend   = this._updateLegend.bind(this);
 
     this.state = {
+      dropdownActive: false,
       modalActive: false,
       modalContent: null,
       uiComponent: null
@@ -55,6 +57,7 @@ export default class ItemView extends Component {
   }
 
   _getComponent() {
+    const { dropdownActive } = this.state;
     const { library }   = this.props;
     const selectedName  = library.selected.name;
     const DemoComponent = DemoComponents[`Demo${ selectedName }`];
@@ -67,6 +70,8 @@ export default class ItemView extends Component {
         return <DemoComponent onCallback={ this._clickButton } />;
       case 'CheckButton':
         return <DemoComponent defaultChecked />;
+      case 'Dropdown':
+        return <DemoComponent open={ dropdownActive } onUpdate={ this._toggleDropdown } />;
       case 'Input':
         return <DemoComponent onInputChange={ this._textInput } />;
       case 'Legend':
@@ -95,6 +100,10 @@ export default class ItemView extends Component {
 
   _toggleModal(modalActive) {
     this.setState({ modalActive });
+  }
+
+  _toggleDropdown() {
+    this.setState({ dropdownActive: !dropdownActive });
   }
 
   _updateLegend(activeIndex) {
