@@ -13,26 +13,30 @@ const propTypes = {
 const defaultProps = {
   buttonText: 'add buttonText prop',
   buttonType: 'button',
-  callback: () => console.warn('no callback prop given'),
   theme: ''
 };
 
-const triggerCallback = (e, callback) => {
-  callback(e);
+const triggerCallback = (e, cb) => {
+  if (!!cb) {
+    cb(e);
+  } else {
+    return;
+  }
 };
 
 
-const Button = ({ buttonText, buttonType, theme, callback }) => (
-  <button
-    type={ buttonType }
-    className={ `Button ${ theme }` }
-    onClick={(e) => triggerCallback(e, callback)}
-  >
-    { buttonText }
-  </button>
-);
+export default function Button({ buttonText, buttonType, theme, callback }) {
+  return(
+    <button
+      type={ buttonType }
+      className={ `Button ${ theme }` }
+      onClick={e => triggerCallback(e, callback)}
+    >
+      { buttonText }
+    </button>
+  );
+}
 
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
-export default Button;

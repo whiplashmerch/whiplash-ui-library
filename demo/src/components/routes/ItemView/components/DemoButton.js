@@ -22,7 +22,6 @@ export default function DemoButton({ onCallback }) {
       <Button
         buttonText="secondary-dark"
         theme="secondary-dark"
-        callback={ onCallback }
       />
 
       <Button
