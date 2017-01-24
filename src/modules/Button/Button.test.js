@@ -47,12 +47,6 @@ describe('<Button />', () => {
     expect(defaultWrapper.props().theme).to.not.equal('secondary');
   });
 
-  it('should have a default callback prop', () => {
-    expect(defaultWrapper.props().callback).to.not.equal(null);
-    expect(defaultWrapper.props().callback).to.not.equal(undefined);
-    expect(defaultWrapper.props().callback).to.not.throw(Error);
-  });
-
   it('should add buttonText to UI', () => {
     expect(wrapper.find('.Button').text()).to.not.equal(null);
     expect(wrapper.find('.Button').text()).to.not.equal(undefined);
