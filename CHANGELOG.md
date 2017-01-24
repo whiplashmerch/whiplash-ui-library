@@ -1,20 +1,25 @@
-#v1.2.0
+#v1.2.1
 With this small update comes the new `<Dropdown />` Component! Basically, all
 you do is add the children you want to display and Dropdown turns it into a
-toggable list! Nioce. We are cooking now, so keep your eyes peeled for more Components
-being added by the weeks.
+toggable list! Additionally, we have now removed the console message for the `<Button />`
+Component if you did not include the optional `callback` prop. Along with that, we
+tightened up the `<Legend />` Component to only trigger the `callback` prop for
+"completed" dots. Nioce. 
+
+We are cooking now, so keep your eyes peeled for more Components being added 
+by the weeks.
 
 Check out the demo site for all info needed for this update.
 
 #### Upgrading
 yarn:
 ```
-yarn upgrade whiplash-ui-library@1.2.0
+yarn upgrade whiplash-ui-library@1.2.1
 ```
 
 npm:
 ```
-npm install whiplash-ui-library@1.2.0 --exact
+npm install whiplash-ui-library@1.2.1 --exact
 ```
 
 
