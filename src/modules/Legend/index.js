@@ -26,16 +26,22 @@ const getActiveStyle = (...props) => {
 };
 
 
-const Legend = ({ activeIndex, callback, color, total }) => {
+export default function Legend({ activeIndex, callback, color, total }) {
+  let activeStyle, date, dotClasses = null;
   const numTotal  = Number(total);
   const listItems = [];
-  let date = null;
-  let dotClasses = null;
-  let activeStyle = null;
+
+  const triggerCallback = (e) => {
+    if (!!callback && e.target.classList.contains('completed')) {
+      callback(e.target.dataset.eq);
+    } else {
+      return;
+    }
+  };
 
   for (var i = 0; i < numTotal; i++) {
     date = new Date();
-    dotClasses  = classnames('Legend-dot', { active: i === activeIndex, completed: i < activeIndex });
+    dotClasses  = classnames('Legend-dot', { active: i === Number(activeIndex), completed: i < activeIndex });
     activeStyle = getActiveStyle(Number(activeIndex), i, color);
 
     listItems.push(
@@ -47,10 +53,10 @@ const Legend = ({ activeIndex, callback, color, total }) => {
           className={ dotClasses }
           data-eq={ i }
           style={ activeStyle }
-          onClick={(e) => callback(e.target.dataset.eq)}
+          onClick={ triggerCallback }
         />
       </li>
-    )
+    );
   }
 
 
@@ -61,10 +67,8 @@ const Legend = ({ activeIndex, callback, color, total }) => {
       </ul>
     </div>
   );
-};
+}
 
 
 Legend.propTypes = propTypes;
 Legend.defaultProps = defaultProps;
-
-export default Legend;

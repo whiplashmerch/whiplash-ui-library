@@ -42,7 +42,7 @@ const getItems = (usingRouter, list) => {
 };
 
 
-const Breadcrumb = ({ bgColor, list, router }) => {
+export default function Breadcrumb({ bgColor, list, router }) {
   const listItems = !!list.length ? getItems(router, list) : null;
   const bgStyle   = { backgroundColor: bgColor };
 
@@ -61,4 +61,3 @@ const Breadcrumb = ({ bgColor, list, router }) => {
 
 Breadcrumb.propTypes = propTypes;
 Breadcrumb.defaultProps = defaultProps;
-export default Breadcrumb;

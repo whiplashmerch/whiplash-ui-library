@@ -22,17 +22,18 @@ const triggerCallback = (e, callback) => {
 };
 
 
-const Button = ({ buttonText, buttonType, theme, callback }) => (
-  <button
-    type={ buttonType }
-    className={ `Button ${ theme }` }
-    onClick={(e) => triggerCallback(e, callback)}
-  >
-    { buttonText }
-  </button>
-);
+export default function Button({ buttonText, buttonType, theme, callback }) {
+  return(
+    <button
+      type={ buttonType }
+      className={ `Button ${ theme }` }
+      onClick={(e) => triggerCallback(e, callback)}
+    >
+      { buttonText }
+    </button>
+  );
+}
 
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
-export default Button;
