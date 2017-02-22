@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import '../../fonts/index.css';
+import classnames from 'classnames';
 import './SelectBox.css';
 
 
@@ -15,6 +17,7 @@ export default class SelectBox extends Component {
   }
 
   state = {
+    open: false,
     selected: ''
   }
 
@@ -37,6 +40,23 @@ export default class SelectBox extends Component {
     );
   }
 
+  _getOptionsContent = () => {
+    const { open } = this.state;
+    const listItems = this._getList();
+
+    if (!open) {
+      return null;
+    }
+
+    return(
+      <div className="SelectBox-list-wrapper animated fadeIn">
+        <ul className="SelectBox-ul">
+          { listItems }
+        </ul>
+      </div>
+    );
+  }
+
   _getList = () => {
     const { list } = this.props;
 
@@ -51,50 +71,42 @@ export default class SelectBox extends Component {
     ))
   }
 
-  _getSelection = () => {
-    const { selected } = this.state;
-
-    if (!!!selected) {
-      return null;
-    }
-
-    return(
-      <div className="SelectBox-selection">
-        { selected }
-      </div>
-    );
-  }
-
   _selectItem = (selected) => {
     const { callback } = this.props;
 
-    this.setState({ selected }, () => {
+    this.setState({
+      open: false,
+      selected
+    }, () => {
       callback(selected);
     })
   }
 
+  _showOptions = () => {
+    this.setState({ open: true });
+  }
+
 
   render() {
+    const { open, selected } = this.state;
     const { list } = this.props;
+    const MainClass = classnames('SelectBox', { open });
     const formInput = this._getFormContent();
-    const selection = this._getSelection();
-    const listItems = this._getList();
+    const optionsContent = this._getOptionsContent();
 
     if (!!!list.length) {
       return null;
     }
 
     return(
-      <div className="SelectBox">
+      <div className={ MainClass }>
         { formInput }
 
-        { selection }
-
-        <div className="SelectBox-list-wrapper">
-          <ul className="SelectBox-ul">
-            { listItems }
-          </ul>
+        <div className="SelectBox-selection" onClick={ this._showOptions }>
+          { selected || 'choose option' }
         </div>
+
+        { optionsContent }
       </div>
     );
   }

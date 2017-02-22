@@ -68,6 +68,13 @@ describe('<SelectBox />', () => {
     expect(wrapper.props().name).to.equal('test name');
   });
 
+  it('should have a default open state', () => {
+    expect(wrapper.state().open).to.not.equal(null);
+    expect(wrapper.state().open).to.not.equal(undefined);
+    expect(wrapper.state().open).to.not.equal('false');
+    expect(wrapper.state().open).to.equal(false);
+  });
+
   it('should have a default selected state', () => {
     expect(wrapper.state().selected).to.not.equal(null);
     expect(wrapper.state().selected).to.not.equal(undefined);

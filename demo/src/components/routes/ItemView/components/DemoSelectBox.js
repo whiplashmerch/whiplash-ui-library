@@ -8,7 +8,7 @@ const propTypes = {
 
 export default function DemoSelectBox({ callback }) {
   const list1 = ['item 1', 'item 2', 'item 3'];
-  const list2 = ['austin', 'denver', 'portland'];
+  const list2 = ['austin', 'denver', 'portland', 'seattle', 'los angeles'];
 
   return(
     <div>
