@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { ValidateChildren } from '../../utils';
 import * as Icons from './Icons';
 import './InformationalIcon.css';
 
@@ -19,12 +20,18 @@ const defaultProps = {
 export default function InformationalIcon({...props}) {
   const { children, color, height, name, width } = props;
   const IconComponent = Icons[name];
+  const childContent  = ValidateChildren(children, 'InformationalIcon');
+  let iconWrapperStyle = null;
 
-  const iconWrapperStyle = {
-    display: 'inline-block',
-    height: height,
-    width: width
-  };
+  if (!!!height && !!!width) {
+    iconWrapperStyle = { display: 'inline-block' };
+  } else {
+    iconWrapperStyle = {
+      display: 'inline-block',
+      height: Number(height),
+      width: Number(width)
+    };
+  }
 
 
   return(
@@ -33,9 +40,7 @@ export default function InformationalIcon({...props}) {
         <IconComponent iconColor={ color } />
       </span>
 
-      <span className="InformationalIcon-children-wrapper">
-        { children }
-      </span>
+      { childContent }
     </div>
   );
 }
