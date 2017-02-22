@@ -3,71 +3,71 @@
     "name": "Breadcrumb",
     "description": "A breadcrumb nav list for apps with and without use of React-Router",
     "component": "<Breadcrumb list={ anArrayOfObjects }  />",
-    "instructions": "To use the Breadcrumb component, just drop it in and include a 'list' prop that takes an array of objects containing 'name' and 'url' properties.",
+    "instructions": "To use the Breadcrumb Component, just drop it in and include a 'list' prop that takes an array of objects containing 'name' and 'url' properties.",
     "notes": "Include the 'router' prop if you want a React-Router specific 'Link' tag included. Additionally, you can add a 'bgColor' (type String) that will change the background color to your liking."
   },
   {
     "name": "Button",
     "description": "No need for description...",
     "component": "<Button buttonText=\"secondary-dark\" callback={ this._clickButton } />",
-    "instructions": "To use the Button component, just drop it in and include a 'buttonText', and optional 'theme', 'buttonType' (i.e. 'submit'), and 'callback' (fired onClick/passes Event Obj - check your console to see this work) props.",
+    "instructions": "To use the Button Component, just drop it in and include a 'buttonText', and optional 'theme', 'buttonType' (i.e. 'submit'), and 'callback' (fired onClick/passes Event Obj - check your console to see this work) props.",
     "notes": "theme prop values: (no theme prop is default theme), secondary, secondary-border, secondary-dark, danger, danger-border, text."
   },
   {
     "name": "CheckButton",
     "description": "A nice checkbox-style element that toggles a bool state.",
     "component": "<CheckButton defaultSelected />",
-    "instructions": "To use the CheckButton component, just drop it in and include the optional 'defaultSelected' property if you want it rendered in the 'selected' state.",
+    "instructions": "To use the CheckButton Component, just drop it in and include the optional 'defaultSelected' property if you want it rendered in the 'selected' state.",
     "notes": ""
   },
   {
     "name": "Dropdown",
     "description": "A dropdown-based element that display's its children.",
     "component": "<Dropdown right open={ this.state.dropdownActive }><a href=\"#\">Home</a></Dropdown>",
-    "instructions": "To use the Dropdown component, just drop it in and include the 'open' ( bool: bind to a state change ) prop along with the optional 'right' or 'left' property for positioning",
+    "instructions": "To use the Dropdown Component, just drop it in and include the 'open' ( bool: bind to a state change ) prop along with the optional 'right' or 'left' property for positioning",
     "notes": "Make sure you set a property of 'position: relative' on the conatiner node."
   },
   {
     "name": "Icons",
     "description": "Whiplash basic icon library",
     "component": "<Icon name=\"logistics\" color=\"#303030\" height=\"26\" width=\"26\" />",
-    "instructions": "To use the Icon component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
-    "notes": "This component will also stack children as shown if you want it."
+    "instructions": "To use the Icon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "notes": "This Component will also stack children as shown if you want it."
   },
   {
     "name": "InformationalIcons",
     "description": "Whiplash informational icon library",
     "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
-    "instructions": "To use the InformationalIcon component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
-    "notes": "This component will also stack children as shown if you want it"
+    "instructions": "To use the InformationalIcon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "notes": "This Component will also stack children as shown if you want it"
   },
   {
     "name": "Input",
-    "description": "An input that displays a custom style with animation in your forms.",
-    "component": "<Input inputLabel=\"email\" inputType=\"email\" onUserInput={ this._textInput } />",
-    "instructions": "To use the Input component, add it into your form and include the 'inputType' (i.e. 'email', 'text') and 'inputLabel' (i.e. 'your name', 'example@youremail.com') properties (check your console to see this work).",
-    "notes": "This component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
+    "description": "An input that displays either a animating (default) or basic style theme in your forms.",
+    "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required />",
+    "instructions": "To use the Input Component, add it into your form and include the 'inputLabel' (i.e. 'your name', 'email', etc.), basic (bool - optional), and onUserInput (check your console to see this work) properties (along with any other input related attributes you need).",
+    "notes": "This Component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
   },
   {
     "name": "Legend",
     "description": "A visual used to display a page indicator of where the user is located or something similar.",
     "component": "<Legend amount=\"5\" activeIndex={ this.props.currentPage } callback={ this.updateActiveIndex } />",
-    "instructions": "To use the Legend component, add it into view and include the amount (total number of dots), activeIndex (bind to prop/state) props, and callback (returns index of dot user clicked - check your console to see this work) props",
+    "instructions": "To use the Legend Component, add it into view and include the amount (total number of dots), activeIndex (bind to prop/state) props, and callback (returns index of dot user clicked - check your console to see this work) props",
     "notes": "Include a color prop to change the default color fill of the circles."
   },
   {
     "name": "Modal",
     "description": "A way to have dynamic modals within your app triggered from it's active property.",
     "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } logo={ yourLogoRef } onCloseModal={ this._toggleModal } />",
-    "instructions": "To use the Modal component, add it into the parent component in your project binding it's active prop to the state of your choioce (boolean). Additionally, you can store another Component in your 'content' state to be passed in as well. You can exit the modal by clicking the overlay or pressing the 'esc' key.",
+    "instructions": "To use the Modal Component, add it into the parent Component in your project binding it's active prop to the state of your choioce (boolean). Additionally, you can store another Component in your 'content' state to be passed in as well. You can exit the modal by clicking the overlay or pressing the 'esc' key.",
     "notes": "If you do not provide a logo, the header will be blank."
   },
   {
     "name": "Navicon",
     "description": "A button for mobile or desktop devices that show a toggled state",
     "component": "<Navicon active={ this.state.naviconActive } barColor=\"#303030\" onUserInput={ this._toggleNavicon } />",
-    "instructions": "To use the Navicon component, just drop it in and include a 'onUserInput' property that binds to a callback function which a bool is passed in for you to update your 'active' state. (check your console to see this work)",
-    "notes": "The Navicon component is absolutely positioned so be sure to put it in a relative positioned container if needed."
+    "instructions": "To use the Navicon Component, just drop it in and include a 'onUserInput' property that binds to a callback function which a bool is passed in for you to update your 'active' state. (check your console to see this work)",
+    "notes": "The Navicon Component is absolutely positioned so be sure to put it in a relative positioned container if needed."
   },
   {
     "name": "NotificationToast",

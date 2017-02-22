@@ -2,22 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
-import Input from './';
+import AnimatedInput from './';
 
 
-describe('<Input />', () => {
+describe('<AnimatedInput />', () => {
 
   const testFn = () => console.log('');
 
-  const defaultWrapper = mount(<Input />);
+  const defaultWrapper = mount(<AnimatedInput />);
 
   const wrapper = mount(
-    <Input
-      basic
+    <AnimatedInput
       inputLabel="test label"
       type="email"
-      maxLength="220"
       placeholder="test"
+      maxLength="220"
       onUserInput={ testFn }
       required
     />
@@ -26,14 +25,14 @@ describe('<Input />', () => {
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Input />, div);
+    ReactDOM.render(<AnimatedInput />, div);
   });
 
   it('should have a default inputLabel prop', () => {
     expect(defaultWrapper.props().inputLabel).to.not.equal(null);
     expect(defaultWrapper.props().inputLabel).to.not.equal(undefined);
-    expect(defaultWrapper.props().inputLabel).to.not.equal('test label');
     expect(defaultWrapper.props().inputLabel).to.equal('');
+    expect(defaultWrapper.props().inputLabel).to.not.equal('test label');
   });
 
   it('should accept a inputLabel prop', () => {
@@ -41,21 +40,6 @@ describe('<Input />', () => {
     expect(wrapper.props().inputLabel).to.not.equal(undefined);
     expect(wrapper.props().inputLabel).to.not.equal('');
     expect(wrapper.props().inputLabel).to.equal('test label');
-  });
-
-  it('should have a default basic prop', () => {
-    expect(defaultWrapper.props().basic).to.not.equal(null);
-    expect(defaultWrapper.props().basic).to.not.equal(undefined);
-    expect(defaultWrapper.props().basic).to.not.equal('false');
-    expect(defaultWrapper.props().basic).to.equal(false);
-  });
-
-  it('should accept a basic prop', () => {
-    expect(wrapper.props().basic).to.not.equal(null);
-    expect(wrapper.props().basic).to.not.equal(undefined);
-    expect(wrapper.props().basic).to.not.equal(false);
-    expect(wrapper.props().basic).to.not.equal('true');
-    expect(wrapper.props().basic).to.equal(true);
   });
 
   it('should have a default onUserInput prop', () => {
@@ -78,20 +62,17 @@ describe('<Input />', () => {
     expect(wrapper.props().placeholder).to.equal('test');
   });
 
-  it('should display a <AnimatedInput /> if basic prop false', () => {
-    expect(defaultWrapper.find('.AnimatedInput').length).to.not.equal(null);
-    expect(defaultWrapper.find('.AnimatedInput').length).to.not.equal(undefined);
-    expect(defaultWrapper.find('.AnimatedInput').length).to.not.equal(0);
-    expect(defaultWrapper.find('.AnimatedInput').length).to.equal(1);
-
-    expect(wrapper.find('.AnimatedInput').length).to.not.equal(1);
-    expect(wrapper.find('.AnimatedInput').length).to.equal(0);
+  it('should have a default active state', () => {
+    expect(wrapper.state().active).to.not.equal(null);
+    expect(wrapper.state().active).to.not.equal(undefined);
+    expect(wrapper.state().active).to.not.equal('false');
+    expect(wrapper.state().active).to.equal(false);
   });
 
   it('should display the inputLabel in the UI', () => {
     expect(wrapper.props().inputLabel).to.equal('test label');
     expect(wrapper.props().inputLabel).to.not.equal('');
-    expect(wrapper.find('.Input-label').text()).to.not.equal('');
+    expect(wrapper.find('.AnimatedInput-label').text()).to.not.equal('');
     expect(wrapper.props().inputLabel).to.equal('test label');
   });
 

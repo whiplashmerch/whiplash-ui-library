@@ -1,58 +1,53 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import AnimatedInput from './components/AnimatedInput';
 import '../../fonts/index.css';
 import './Input.css';
 
-const propTypes = {
-  inputLabel: PropTypes.string,
-  onUserInput: PropTypes.func
-};
-
-const defaultProps = {
-  inputLabel: '',
-  onUserInput: () => console.log('no onUserInput prop given')
-};
-
 
 export default class Input extends Component {
-  constructor() {
-    super();
-
-    // cache methods
-    this._sendUpdate  = this._sendUpdate.bind(this);
-    this._updateClass = this._updateClass.bind(this);
-
-    this.state = {
-      active: false
-    };
+  static propTypes = {
+    basic: PropTypes.bool,
+    inputLabel: PropTypes.string,
+    onUserInput: PropTypes.func
   }
 
+  static defaultProps = {
+    basic: false,
+    inputLabel: '',
+    onUserInput: () => console.warn('no onUserInput prop given')
+  }
 
   // PRIVATE
 
-  _sendUpdate(e) {
+  _sendUpdate = (e) => {
     const { onUserInput } = this.props;
     onUserInput(e.target.value);
   }
 
-  _updateClass() {
-    const { active } = this.state;
-
-    if (!!active) {
-      return;
-    } else {
-      this.setState({ active: true });
-    }
-  }
-
 
   render() {
-    const { active } = this.state;
-    const { inputLabel, onUserInput, ...props } = this.props;
-    const InputClass = classnames('Input', { active: !!active });
+    const {
+      basic,
+      inputLabel,
+      onUserInput,
+      ...props
+    } = this.props;
+
+
+    if (!basic) {
+      return(
+        <AnimatedInput
+          inputLabel={ inputLabel }
+          onUserInput={ onUserInput }
+          { ...props }
+        />
+      );
+    }
+
 
     return (
-      <div className={ InputClass }>
+      <div className="Input">
         <label className="Input-label">
           { inputLabel }
         </label>
@@ -60,7 +55,6 @@ export default class Input extends Component {
         <div className="Input-wrapper">
           <input
             className="Input-input"
-            placeholder=""
             { ...props }
             onFocus={ this._updateClass }
             onChange={ this._sendUpdate } />
@@ -69,7 +63,3 @@ export default class Input extends Component {
     );
   }
 }
-
-
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
