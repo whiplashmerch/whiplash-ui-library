@@ -39,8 +39,8 @@ export default function Icon({...props}) {
   } else {
     iconWrapperStyle = {
       display: 'inline-block',
-      height: height,
-      width: width
+      height: Number(height),
+      width: Number(width)
     };
   }
 

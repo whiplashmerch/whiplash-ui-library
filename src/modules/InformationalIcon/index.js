@@ -15,16 +15,34 @@ const defaultProps = {
   width: '50'
 };
 
+const getChildContent = (childrenProp) => {
+  if (!!!childrenProp) {
+    return null;
+  }
+
+  return(
+    <span className="InformationalIcon-children-wrapper">
+      { childrenProp }
+    </span>
+  );
+};
+
 
 export default function InformationalIcon({...props}) {
   const { children, color, height, name, width } = props;
   const IconComponent = Icons[name];
+  const childContent = getChildContent(children);
+  let iconWrapperStyle = null;
 
-  const iconWrapperStyle = {
-    display: 'inline-block',
-    height: height,
-    width: width
-  };
+  if (!!!height && !!!width) {
+    iconWrapperStyle = { display: 'inline-block' };
+  } else {
+    iconWrapperStyle = {
+      display: 'inline-block',
+      height: Number(height),
+      width: Number(width)
+    };
+  }
 
 
   return(
@@ -33,9 +51,7 @@ export default function InformationalIcon({...props}) {
         <IconComponent iconColor={ color } />
       </span>
 
-      <span className="InformationalIcon-children-wrapper">
-        { children }
-      </span>
+      { childContent }
     </div>
   );
 }
