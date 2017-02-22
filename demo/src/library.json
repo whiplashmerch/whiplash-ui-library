@@ -84,6 +84,13 @@
     "notes": "Themes: (not including the theme prop will be 'default'), pending, error"
   },
   {
+    "name": "SelectBox",
+    "description": "A select-based element which represents a control that provides a menu of options.",
+    "component": "<SelectBox form callback={ this._updateSelection } name=\"items\" required><p>item 1</p><p>item 2</p><p>item 3</p></SelectBox>",
+    "instructions": "To use the SelectBox Component, just drop it in and include the callback (func that returns the value of selected option) prop and all other select element related attributes (props) needed.",
+    "notes": "To give options to the SelectBox just nest the children inside the Component as shown in the 'example usage' section."
+  },
+  {
     "name": "Toggle",
     "description": "A checkbox-based input used to visualize a toggle option in a form.",
     "component": "<Toggle active toggleRef={ this.createToggleRef } />",
