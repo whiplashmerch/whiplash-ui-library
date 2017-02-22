@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import { ValidComponentChildren } from '../../utils';
 import '../../fonts/index.css';
 import './Dropdown.css';
 
@@ -16,24 +17,11 @@ const defaultProps = {
 };
 
 const getItems = (childComponents) => {
-  const date = new Date();
-
-  if (!!childComponents.length) {
-    return childComponents.map((item, index) => (
-      <li
-        key={ `${ date }-${ index }` }
-        className="Dropdown-li"
-      >
-        { item }
-      </li>
-    ));
-  } else {
-    return(
-      <li className="Dropdown-li">
-        { childComponents }
-      </li>
-    );
-  }
+  return ValidComponentChildren.map(childComponents, child => (
+    <li className="Dropdown-li">
+      { child }
+    </li>
+  ))
 };
 
 
