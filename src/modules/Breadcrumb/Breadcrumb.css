@@ -50,12 +50,13 @@
 .Breadcrumb-link {
   color: #303030;
   display: inline-block;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 0.625rem;
   letter-spacing: 0.0125;
   text-decoration: none;
   text-transform: capitalize;
   transition: color 200ms linear;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* hover */

@@ -8,7 +8,8 @@
 
 .Icon-children-wrapper {
   display: inline-block;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
   padding-top: 0.4rem;
+  -webkit-font-smoothing: antialiased;
 }

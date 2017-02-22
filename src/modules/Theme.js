@@ -20,8 +20,8 @@ const Theme = {
   black: '#000',
   border: '#EDEDF3',
 
-  headlineFont: '"Aller-Light", Helvetica, Arial, sans-serif',
-  copyFont: '"Lato", Helvetica, Arial, sans-serif',
+  headlineFont: '"Aller-Light", "Lato", Helvetica, Arial, sans-serif',
+  copyFont: '"Lato", "Aller-Light", Helvetica, Arial, sans-serif',
   fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
 };
 

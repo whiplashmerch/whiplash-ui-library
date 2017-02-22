@@ -12,10 +12,10 @@
 
 .NotificationToast-text {
   color: #00BC93;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
-  font-weight: 100;
   letter-spacing: 0.04rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* active */

@@ -8,7 +8,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 0.8125rem;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   letter-spacing: 0.08rem;
   margin: 0.5em auto;
   min-width: 11.9375rem;
@@ -20,6 +20,7 @@
     border 200ms ease-out,
     color 200ms ease-out;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* themes */

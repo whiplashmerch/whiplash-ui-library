@@ -36,11 +36,11 @@
 
 .Dropdown-li a,
 .Dropdown-li p {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
-  font-weight: 100;
   letter-spacing: 0.0125rem;
   text-transform: capitalize;
+  -webkit-font-smoothing: antialiased;
 }
 
 .Dropdown-li a {
