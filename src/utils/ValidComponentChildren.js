@@ -1,5 +1,7 @@
 import React from 'react';
 
+// From react-bootstrap
+
 /**
  * Iterates through children that are typically specified as `props.children`,
  * but only maps over children that are "valid components".
