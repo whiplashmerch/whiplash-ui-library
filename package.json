@@ -36,6 +36,7 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "babel-plugin-syntax-class-properties": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",

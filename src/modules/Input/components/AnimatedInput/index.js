@@ -1,21 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import AnimatedInput from './components/AnimatedInput';
-import '../../fonts/index.css';
-import './Input.css';
+import '../../../../fonts/index.css';
+import './AnimatedInput.css';
 
 
-export default class Input extends Component {
+export default class AnimatedInput extends Component {
   static propTypes = {
     inputLabel: PropTypes.string,
-    theme: PropTypes.string,
     onUserInput: PropTypes.func
   }
 
   static defaultProps = {
     inputLabel: '',
-    theme: null,
     onUserInput: () => console.warn('no onUserInput prop given')
+  }
+
+  state = {
+    active: false
   }
 
   // PRIVATE
@@ -25,29 +26,31 @@ export default class Input extends Component {
     onUserInput(e.target.value);
   }
 
+  _updateClass = () => {
+    const { active } = this.state;
+
+    if (!!active) {
+      return;
+    } else {
+      this.setState({ active: true });
+    }
+  }
+
 
   render() {
-    const { inputLabel, theme, onUserInput, ...props } = this.props;
-
-    if (!!!theme) {
-      return(
-        <AnimatedInput
-          inputLabel={ inputLabel }
-          onUserInput={ onUserInput }
-          { ...props }
-        />
-      );
-    }
+    const { active } = this.state;
+    const { inputLabel, onUserInput, ...props } = this.props;
+    const InputClass = classnames('AnimatedInput', { active: !!active });
 
     return (
-      <div className="Input">
-        <label className="Input-label">
+      <div className={ InputClass }>
+        <label className="AnimatedInput-label">
           { inputLabel }
         </label>
 
-        <div className="Input-wrapper">
+        <div className="AnimatedInput-wrapper">
           <input
-            className="Input-input"
+            className="AnimatedInput-input"
             placeholder=""
             { ...props }
             onFocus={ this._updateClass }

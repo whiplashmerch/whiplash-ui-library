@@ -10,64 +10,25 @@
 }
 
 .Input-label {
-  bottom: 1rem;
   color: #808091;
-  color: text;
-  display: inline-block;
+  display: block;
   font-family: 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   letter-spacing: 0.0125rem;
-  left: 0;
-  position: absolute;
-  text-transform: capitalize;
-  transform: translate3d(0, 0, 0);
-  transition: transform 200ms ease-out, font-size 200ms ease-out;
-  will-change: transform;
-  z-index: 0;
-}
-
-.Input-wrapper {
-  background:
-    url('./images/input-border-bottom.svg')
-    repeat-x
-    0
-    bottom
-    transparent;
-  height: 5.0625rem;
-  position: relative;
-}
-
-.Input-wrapper:before {
-  background-color: transparent;
-  bottom: 0;
-  content: "";
-  height: 2px;
-  left: 0;
-  display: block;
-  position: absolute;
-  right: 0;
-  transition: width 200ms ease-out;
-  width: 0;
-  will-change: width;
-  z-index: 15;
 }
 
 .Input-input {
   appearance: none;
   background-color: transparent;
   border: none;
-  bottom: 0;
   box-shadow: none;
   color: #303030;
   display: block;
   font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   letter-spacing: 0.011875rem;
-  left: 0;
   outline: 0;
   padding: 1.1rem 0;
-  position: absolute;
-  right: 0;
   width: 100%;
   z-index: 10;
   -webkit-font-smoothing: antialiased;
@@ -76,20 +37,4 @@
 .Input-input:focus {
   box-shadow: none;
   outline: 0;
-}
-
-/* active */
-
-.Input.active .Input-label {
-  font-size: 0.875rem;
-  transform: translate3d(0, -2.5rem, 0);
-}
-
-.Input.active .Input-wrapper {
-  background: none;
-}
-
-.Input.active .Input-wrapper:before {
-  background-color: #9B8FFF;
-  width: 100%;
 }
