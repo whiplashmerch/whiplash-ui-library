@@ -93,4 +93,11 @@ describe('<SelectBox />', () => {
     expect(wrapper.find('.SelectBox-selection').text()).to.equal('test 2');
   });
 
+  it('should display a hidden form input if form prop given', () => {
+    expect(wrapper.find('input').length).to.not.equal(undefined);
+    expect(wrapper.find('input').length).to.not.equal(null);
+    expect(wrapper.find('input').length).to.not.equal(0);
+    expect(wrapper.find('input').length).to.equal(1);
+  });
+
 });
