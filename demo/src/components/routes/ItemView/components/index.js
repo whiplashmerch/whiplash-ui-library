@@ -6,5 +6,6 @@ export { default as DemoIcons } from './DemoIcons';
 export { default as DemoInformationalIcons } from './DemoInformationalIcons';
 export { default as DemoInput } from './DemoInput';
 export { default as DemoLegend } from './DemoLegend';
+export { default as DemoNavLink } from './DemoNavLink';
 export { default as DemoNotificationToast } from './DemoNotificationToast';
 export { default as DemoToggle } from './DemoToggle';
