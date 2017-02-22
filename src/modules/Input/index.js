@@ -3,39 +3,30 @@ import classnames from 'classnames';
 import '../../fonts/index.css';
 import './Input.css';
 
-const propTypes = {
-  inputLabel: PropTypes.string,
-  onUserInput: PropTypes.func
-};
-
-const defaultProps = {
-  inputLabel: '',
-  onUserInput: () => console.log('no onUserInput prop given')
-};
-
 
 export default class Input extends Component {
-  constructor() {
-    super();
-
-    // cache methods
-    this._sendUpdate  = this._sendUpdate.bind(this);
-    this._updateClass = this._updateClass.bind(this);
-
-    this.state = {
-      active: false
-    };
+  static propTypes = {
+    inputLabel: PropTypes.string,
+    onUserInput: PropTypes.func
   }
 
+  static defaultProps = {
+    inputLabel: '',
+    onUserInput: () => console.log('no onUserInput prop given')
+  }
+
+  state = {
+    active: false
+  }
 
   // PRIVATE
 
-  _sendUpdate(e) {
+  _sendUpdate = (e) => {
     const { onUserInput } = this.props;
     onUserInput(e.target.value);
   }
 
-  _updateClass() {
+  _updateClass = () => {
     const { active } = this.state;
 
     if (!!active) {
@@ -69,7 +60,3 @@ export default class Input extends Component {
     );
   }
 }
-
-
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
