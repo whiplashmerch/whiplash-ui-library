@@ -60,7 +60,7 @@
   box-shadow: none;
   color: #303030;
   display: block;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   letter-spacing: 0.011875rem;
   left: 0;
@@ -70,6 +70,7 @@
   right: 0;
   width: 100%;
   z-index: 10;
+  -webkit-font-smoothing: antialiased;
 }
 
 .Input-input:focus {

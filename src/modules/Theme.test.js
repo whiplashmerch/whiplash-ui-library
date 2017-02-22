@@ -129,14 +129,14 @@ describe('Theme', () => {
     expect(Theme.headlineFont).to.not.equal(null);
     expect(Theme.headlineFont).to.not.equal(undefined);
     expect(Theme.headlineFont).to.not.equal('');
-    expect(Theme.headlineFont).to.equal('"Aller-Light", Helvetica, Arial, sans-serif');
+    expect(Theme.headlineFont).to.equal('"Aller-Light", "Lato", Helvetica, Arial, sans-serif');
   });
 
   it('should have a copyFont prop', () => {
     expect(Theme.copyFont).to.not.equal(null);
     expect(Theme.copyFont).to.not.equal(undefined);
     expect(Theme.copyFont).to.not.equal('');
-    expect(Theme.copyFont).to.equal('"Lato", Helvetica, Arial, sans-serif');
+    expect(Theme.copyFont).to.equal('"Lato", "Aller-Light", Helvetica, Arial, sans-serif');
   });
 
   it('should have a fontFamily prop', () => {

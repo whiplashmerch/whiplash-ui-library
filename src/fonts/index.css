@@ -1,14 +1,3 @@
-/* Webfont: Aller */
-@font-face {
-  font-family: 'Aller';
-  src:url('./Aller.ttf.woff') format('woff'),
-    url('./Aller.ttf.svg#Aller') format('svg'),
-    url('./Aller.ttf.eot'),
-    url('./Aller.ttf.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Webfont: Aller-light */
 @font-face {
   font-family: 'Aller-Light';
@@ -31,4 +20,5 @@
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
