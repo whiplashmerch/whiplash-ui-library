@@ -13,14 +13,17 @@
   color: #808091;
   display: block;
   font-family: 'Aller-Light', Helvetica, Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   letter-spacing: 0.0125rem;
+  padding-bottom: 0.875rem;
+  text-transform: capitalize;
 }
 
 .Input-input {
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 1px solid #B3B3CC;
+  border-radius: 1px;
   box-shadow: none;
   color: #303030;
   display: block;
@@ -28,10 +31,18 @@
   font-size: 1rem;
   letter-spacing: 0.011875rem;
   outline: 0;
-  padding: 1.1rem 0;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.8rem;
+  transition: border 150ms ease-out;
   width: 100%;
   z-index: 10;
   -webkit-font-smoothing: antialiased;
+}
+
+.Input-input:hover {
+  border: 1px solid #8071FE;
 }
 
 .Input-input:focus {

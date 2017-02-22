@@ -18,9 +18,9 @@ export default function DemoInput({ onInputChange }) {
 
       <div style={{ paddingTop: '1rem' }}>
         <Input
+          basic
           inputLabel="email"
           type="email"
-          theme="basic"
           maxLength="220"
           placeholder="email@example.com"
           onUserInput={ onInputChange }

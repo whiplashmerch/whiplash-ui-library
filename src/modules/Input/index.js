@@ -7,14 +7,14 @@ import './Input.css';
 
 export default class Input extends Component {
   static propTypes = {
+    basic: PropTypes.bool,
     inputLabel: PropTypes.string,
-    theme: PropTypes.string,
     onUserInput: PropTypes.func
   }
 
   static defaultProps = {
+    basic: false,
     inputLabel: '',
-    theme: null,
     onUserInput: () => console.warn('no onUserInput prop given')
   }
 
@@ -27,9 +27,15 @@ export default class Input extends Component {
 
 
   render() {
-    const { inputLabel, theme, onUserInput, ...props } = this.props;
+    const {
+      basic,
+      inputLabel,
+      onUserInput,
+      ...props
+    } = this.props;
 
-    if (!!!theme) {
+
+    if (!basic) {
       return(
         <AnimatedInput
           inputLabel={ inputLabel }
@@ -38,6 +44,7 @@ export default class Input extends Component {
         />
       );
     }
+
 
     return (
       <div className="Input">
@@ -48,7 +55,6 @@ export default class Input extends Component {
         <div className="Input-wrapper">
           <input
             className="Input-input"
-            placeholder=""
             { ...props }
             onFocus={ this._updateClass }
             onChange={ this._sendUpdate } />
