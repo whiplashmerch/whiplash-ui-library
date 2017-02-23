@@ -69,8 +69,27 @@
     "name": "Dropdown",
     "description": "A dropdown-based element that display's its children.",
     "component": "<Dropdown right open={ this.state.dropdownActive }><a href=\"#\">Home</a></Dropdown>",
-    "instructions": "To use the Dropdown Component, just drop it in and include the 'open' ( bool: bind to a state change ) prop along with the optional 'right' or 'left' property for positioning",
-    "notes": "Make sure you set a property of 'position: relative' on the conatiner node."
+    "props": [
+      {
+        "name": "left",
+        "type": "Bool",
+        "default": "true",
+        "description": "Component positioning"
+      },
+      {
+        "name": "open",
+        "type": "Bool",
+        "default": "false",
+        "description": "Component visibility"
+      },
+      {
+        "name": "right",
+        "type": "Bool",
+        "default": "false",
+        "description": "Component positioning"
+      }
+    ],
+    "notes": "Make sure you set a property of 'position: relative' on the conatiner element."
   },
   {
     "name": "Icons",

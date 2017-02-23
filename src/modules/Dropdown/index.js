@@ -11,7 +11,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  left: false,
+  left: true,
   open: false,
   right: false
 };

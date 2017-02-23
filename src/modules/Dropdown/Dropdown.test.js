@@ -45,9 +45,9 @@ describe('<Dropdown />', () => {
   it('should have a default left prop', () => {
     expect(defaultWrapper.props().left).to.not.equal(null);
     expect(defaultWrapper.props().left).to.not.equal(undefined);
-    expect(defaultWrapper.props().left).to.not.equal(true);
-    expect(defaultWrapper.props().left).to.not.equal('false');
-    expect(defaultWrapper.props().left).to.equal(false);
+    expect(defaultWrapper.props().left).to.not.equal(false);
+    expect(defaultWrapper.props().left).to.not.equal('true');
+    expect(defaultWrapper.props().left).to.equal(true);
   });
 
   it('should accept an left prop', () => {
