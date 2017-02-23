@@ -87,7 +87,7 @@
     "name": "SelectBox",
     "description": "A select-based element which represents a control that provides a menu of options.",
     "component": "<SelectBox form list={ listArr } callback={ this._updateSelection } name=\"items\" required />",
-    "instructions": "To use the SelectBox Component, just drop it in and include the 'list' (Array), 'callback' (func that returns the value of selected option), and optional 'form' (bool) props along with all other select element related attributes (props) needed.",
+    "instructions": "To use the SelectBox Component, just drop it in and include the 'list' (Array), label (String / optional), 'callback' (func that returns the value of selected option), and optional 'form' (bool) props along with all other select element related attributes (props) needed.",
     "notes": "List Array format: [ 'item 1', 'item 2' ]."
   },
   {

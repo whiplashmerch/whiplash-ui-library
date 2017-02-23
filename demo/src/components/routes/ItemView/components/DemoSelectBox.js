@@ -12,7 +12,7 @@ export default function DemoSelectBox({ callback }) {
 
   return(
     <div>
-      <div style={{ paddingBottom: '1rem' }}>
+      <div style={{ paddingBottom: '2rem' }}>
         <SelectBox
           list={ list1 }
           callback={ callback }
@@ -22,9 +22,10 @@ export default function DemoSelectBox({ callback }) {
       <div>
         <SelectBox
           form
+          label="select city"
+          list={ list2 }
           name="city"
           required
-          list={ list2 }
           callback={ callback }
         />
       </div>

@@ -8,11 +8,13 @@ export default class SelectBox extends Component {
   static propTypes = {
     callback: PropTypes.func,
     form: PropTypes.bool,
+    label: PropTypes.string,
     list: PropTypes.array
   }
 
   static defaultProps = {
     form: false,
+    label: null,
     list: []
   }
 
@@ -57,6 +59,20 @@ export default class SelectBox extends Component {
     );
   }
 
+  _getLabelContent = () => {
+    const { label } = this.props;
+
+    if (!!!label) {
+      return null;
+    }
+
+    return(
+      <label className="SelectBox-label">
+        { label }
+      </label>
+    );
+  }
+
   _getList = () => {
     const { list } = this.props;
 
@@ -92,6 +108,7 @@ export default class SelectBox extends Component {
     const { list } = this.props;
     const MainClass = classnames('SelectBox', { open });
     const formInput = this._getFormContent();
+    const labelContent = this._getLabelContent();
     const optionsContent = this._getOptionsContent();
 
     if (!!!list.length) {
@@ -100,13 +117,17 @@ export default class SelectBox extends Component {
 
     return(
       <div className={ MainClass }>
-        { formInput }
+        { labelContent }
 
-        <div className="SelectBox-selection" onClick={ this._showOptions }>
-          { selected || 'choose option' }
+        <div className="SelectBox-wrapper">
+          { formInput }
+
+          <div className="SelectBox-selection" onClick={ this._showOptions }>
+            { selected || 'choose option' }
+          </div>
+
+          { optionsContent }
         </div>
-
-        { optionsContent }
       </div>
     );
   }

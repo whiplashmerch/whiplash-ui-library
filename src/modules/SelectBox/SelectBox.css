@@ -1,4 +1,17 @@
 .SelectBox {
+  display: inline-block;
+}
+
+.SelectBox-label {
+  color: #646471;
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 0.0245rem;
+  padding-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+.SelectBox-wrapper {
   border: 1px solid #B3B3CC;
   border-radius: 2px;
   box-shadow: none;
@@ -12,7 +25,7 @@
   width: 28.125rem;
 }
 
-.SelectBox:after {
+.SelectBox-wrapper:after {
   background:
     url(./images/arrow.svg)
     no-repeat
@@ -28,7 +41,7 @@
   width: 0.625rem;
 }
 
-.SelectBox:hover {
+.SelectBox-wrapper:hover {
   border: 1px solid #8071FE;
   box-shadow: 0 1px 3px 0 rgba(128, 113, 254, 0.2);
 }
@@ -95,7 +108,7 @@
 
 /* open */
 
-.SelectBox.open {
+.SelectBox.open .SelectBox-wrapper {
   border: 1px solid transparent;
   overflow: visible;
 }

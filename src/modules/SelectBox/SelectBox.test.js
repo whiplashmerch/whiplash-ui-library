@@ -15,6 +15,7 @@ describe('<SelectBox />', () => {
   const wrapper = mount(
     <SelectBox
       form
+      label="test label"
       name="test name"
       list={ testList }
       callback={ testFn }
@@ -40,6 +41,18 @@ describe('<SelectBox />', () => {
     expect(wrapper.props().form).to.not.equal(false);
     expect(wrapper.props().form).to.not.equal('true');
     expect(wrapper.props().form).to.equal(true);
+  });
+
+  it('should have a default label prop', () => {
+    expect(defaultWrapper.props().label).to.not.equal(undefined);
+    expect(defaultWrapper.props().label).to.equal(null);
+  });
+
+  it('should accept a label prop', () => {
+    expect(wrapper.props().label).to.not.equal(null);
+    expect(wrapper.props().label).to.not.equal(undefined);
+    expect(wrapper.props().label).to.not.equal('');
+    expect(wrapper.props().label).to.equal('test label');
   });
 
   it('should have a default list prop', () => {
@@ -86,6 +99,15 @@ describe('<SelectBox />', () => {
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(undefined);
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(2);
     expect(wrapper.find('.SelectBox-li').length).to.equal(0);
+  });
+
+  it('should display the label in the UI if given', () => {
+    expect(defaultWrapper.find('.SelectBox-label').length).to.not.equal(1);
+    expect(defaultWrapper.find('.SelectBox-label').length).to.equal(0);
+    expect(wrapper.find('.SelectBox-label').length).to.not.equal(0);
+    expect(wrapper.find('.SelectBox-label').length).to.equal(1);
+    expect(wrapper.find('.SelectBox-label').text()).to.not.equal('');
+    expect(wrapper.find('.SelectBox-label').text()).to.equal('test label');
   });
 
   it('should display the selected choice in the UI', () => {
