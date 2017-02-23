@@ -34,7 +34,7 @@ export default class Toggle extends Component {
 
 
   render() {
-    const { active } = this.state;
+    const { active, ...props } = this.state;
     const { toggleRef } = this.props;
     const MainClass = classnames('Toggle', { active });
 
@@ -47,6 +47,7 @@ export default class Toggle extends Component {
             ref={ toggleRef }
             type="checkbox"
             onClick={ this._updateState }
+            { ...props }
           />
         </div>
       </div>

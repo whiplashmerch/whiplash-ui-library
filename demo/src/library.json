@@ -347,7 +347,20 @@
     "name": "Toggle",
     "description": "A checkbox-based input used to visualize a toggle option in a form.",
     "component": "<Toggle active toggleRef={ this.createToggleRef } />",
-    "instructions": "To use the Toggle Component, just drop it in and include the optional toggleRef (func that assigns a ref variable) and active (bool) props.",
-    "notes": "Not including the 'active' prop will render toggled disabled as expected."
+    "props": [
+      {
+        "name": "active",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Controls selected state for Component."
+      },
+      {
+        "name": "toggleRef",
+        "type": "Function",
+        "default": "",
+        "description": "Returns a reference to the Component checkbox."
+      }
+    ],
+    "notes": "Component also passes down all props given."
   }
 ]
