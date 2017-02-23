@@ -40,7 +40,7 @@
         "name": "callback",
         "type": "Function",
         "default": "",
-        "description": "Function that returns the Event Obj of Component."
+        "description": "Function that returns the Event Obj of Component onClick."
       },
       {
         "name": "theme",
@@ -54,9 +54,16 @@
   {
     "name": "CheckButton",
     "description": "A nice checkbox-style element that toggles a bool state.",
-    "component": "<CheckButton defaultSelected />",
-    "instructions": "To use the CheckButton Component, just drop it in and include the optional 'defaultSelected' property if you want it rendered in the 'selected' state.",
-    "notes": ""
+    "component": "<CheckButton name=\"accept_emails\" defaultSelected />",
+    "props": [
+      {
+        "name": "defaultChecked",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Component checked value"
+      }
+    ],
+    "notes": "Component also passes down all input & React props given for the ability to control state of a radio group if needed."
   },
   {
     "name": "Dropdown",

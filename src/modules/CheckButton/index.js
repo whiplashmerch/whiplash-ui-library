@@ -10,13 +10,14 @@ const defaultProps = {
 };
 
 
-export default function CheckButton({ defaultChecked }) {
+export default function CheckButton({ defaultChecked, ...props }) {
   return(
     <div className="CheckButton">
       <input
         className="CheckButton-input"
         type="checkbox"
         defaultChecked={ defaultChecked }
+        { ...props }
       />
 
       <span className="CheckButton-btn" />

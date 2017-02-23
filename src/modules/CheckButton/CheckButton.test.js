@@ -10,7 +10,10 @@ describe('<CheckButton />', () => {
   const defaultWrapper = mount(<CheckButton />);
 
   const wrapper = mount(
-    <CheckButton defaultChecked />
+    <CheckButton
+      defaultChecked
+      name="test"
+    />
   );
 
 
@@ -31,6 +34,13 @@ describe('<CheckButton />', () => {
     expect(wrapper.props().defaultChecked).to.not.equal(undefined);
     expect(wrapper.props().defaultChecked).to.not.equal(false);
     expect(wrapper.props().defaultChecked).to.equal(true);
+  });
+
+  it('should accept all other props given', () => {
+    expect(wrapper.props().name).to.not.equal(null);
+    expect(wrapper.props().name).to.not.equal(undefined);
+    expect(wrapper.props().name).to.not.equal('');
+    expect(wrapper.props().name).to.equal('test');
   });
 
 });
