@@ -1,0 +1,129 @@
+table {
+  border-collapse: collapse;
+  border-spacing: none;
+}
+
+.Table {
+  width: 100%;
+}
+
+thead {
+  display: table-header-group;
+  background-color: #F5F5F7;
+  vertical-align: middle;
+  width: 100%;
+}
+
+th {
+  background:
+    url(./images/table-border.svg)
+    repeat-y
+    right
+    center
+    transparent;
+  color: #808091;
+  font-size: 0.8rem;
+  font-weight: 100;
+  height: 2.125rem;
+  letter-spacing: 0.0125rem;
+  padding: 0 1rem;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+th:last-child {
+  background: none;
+}
+
+tbody tr {
+  background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+tbody tr:last-child {
+  border-bottom: 1px solid #E6E6ED;
+}
+
+tbody tr:hover {
+  background-color: #F7F6FF;
+}
+
+td {
+  position: relative;
+}
+
+td .Dropdown {
+  width: 22rem;
+}
+
+td,
+td p {
+  background:
+    url(./images/table-border.svg)
+    repeat-y
+    right
+    center
+    transparent;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.04rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  text-transform: capitalize;
+  -webkit-font-smoothing: antialiased;
+}
+
+td p {
+  background: initial;
+  padding: 0;
+}
+
+td a {
+  display: inline-block;
+  color: #5134C4;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  height: 100%;
+  letter-spacing: 0.04rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 150ms ease-out;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+td a:hover {
+  color: #8071FE;
+}
+
+td {
+  text-transform: initial;
+}
+
+td:last-child {
+  background: none;
+}
+
+
+/* no data */
+
+.Table-no-data {
+  color: #808091;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/*===========================================
+                BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 768px) {
+  th {
+    height: 2.4rem;
+  }
+}

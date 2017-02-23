@@ -344,6 +344,13 @@
     "notes": "Component also passes down all select related props given if needed for form purposes."
   },
   {
+    "name": "Table",
+    "description": "A table-based element used to display data.",
+    "component": "<Table>{ ... }</Table>",
+    "props": [],
+    "notes": "Just add in all your normal table child elements and you are good. Component also passes down any props given."
+  },
+  {
     "name": "Toggle",
     "description": "A checkbox-based input used to visualize a toggle option in a form.",
     "component": "<Toggle active toggleRef={ this.createToggleRef } />",

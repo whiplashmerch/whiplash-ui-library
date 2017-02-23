@@ -9,4 +9,5 @@ export { default as DemoLegend } from './DemoLegend';
 export { default as DemoNavLink } from './DemoNavLink';
 export { default as DemoNotificationToast } from './DemoNotificationToast';
 export { default as DemoSelectBox } from './DemoSelectBox';
+export { default as DemoTable } from './DemoTable';
 export { default as DemoToggle } from './DemoToggle';
