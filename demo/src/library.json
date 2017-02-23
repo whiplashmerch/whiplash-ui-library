@@ -127,8 +127,33 @@
     "name": "InformationalIcons",
     "description": "Whiplash informational icon library",
     "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
-    "instructions": "To use the InformationalIcon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (String - optional) property.",
-    "notes": "This Component will also stack children as shown if you want it"
+    "props": [
+      {
+        "name": "color (optional)",
+        "type": "String",
+        "default": "#646471",
+        "description": "Component fill/stroke styling"
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "default": "",
+        "description": "Component icon name"
+      },
+      {
+        "name": "height (optional)",
+        "type": "String",
+        "default": "24",
+        "description": "Component height style restriction."
+      },
+      {
+        "name": "width (optional)",
+        "type": "String",
+        "default": "24",
+        "description": "Component width style restriction."
+      }
+    ],
+    "notes": "This Component will also stack children as shown if given."
   },
   {
     "name": "Input",
