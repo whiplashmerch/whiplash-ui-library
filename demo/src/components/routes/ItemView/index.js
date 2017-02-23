@@ -93,7 +93,7 @@ export default class ItemView extends Component {
     const { library } = this.props;
     const currentItem = library.selected;
 
-    if (!!!currentItem.props) {
+    if (!!!currentItem.props || !!!currentItem.props.length) {
       return null;
     }
 
@@ -105,6 +105,32 @@ export default class ItemView extends Component {
         <td>{ item.description }</td>
       </tr>
     ));
+  }
+
+  _getTableHead = () => {
+    const { library } = this.props;
+    const currentItem = library.selected;
+
+    if (!!!currentItem.props || !!!currentItem.props.length) {
+      return null;
+    }
+
+    return(
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          type
+        </th>
+        <th>
+          default
+        </th>
+        <th>
+          description
+        </th>
+      </tr>
+    );
   }
 
   _showModal() {
@@ -138,6 +164,7 @@ export default class ItemView extends Component {
     const { modalActive, modalContent, naviconActive } = this.state;
     const uiComponent = !!library.selected.name ? this._getComponent() : null;
     const currentItem = library.selected;
+    const tableHead   = this._getTableHead();
     const propsContent = this._getPropsContent();
 
     return(
@@ -170,20 +197,7 @@ export default class ItemView extends Component {
             <h3 className="ItemView-title">props</h3>
             <Table>
               <thead>
-                <tr>
-                  <th>
-                    name
-                  </th>
-                  <th>
-                    type
-                  </th>
-                  <th>
-                    default
-                  </th>
-                  <th>
-                    description
-                  </th>
-                </tr>
+                { tableHead }
               </thead>
               <tbody>
                 { propsContent }

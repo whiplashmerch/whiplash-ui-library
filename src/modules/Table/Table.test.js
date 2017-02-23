@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { expect } from 'chai';
 import { mount } from 'enzyme';
 import Table from './';
 
@@ -26,19 +27,19 @@ describe('<Table />', () => {
   });
 
   it('should return null if no children given', () => {
-    expect(defaultWrapper.find('.Table').length).toBeDefined();
-    expect(defaultWrapper.find('.Table').length).not.toEqual(1);
-    expect(defaultWrapper.find('.Table').length).toEqual(0);
+    expect(defaultWrapper.find('.Table').length).to.not.equal(undefined);
+    expect(defaultWrapper.find('.Table').length).to.not.equal(1);
+    expect(defaultWrapper.find('.Table').length).to.equal(0);
   });
 
   it('should display the children in the UI', () => {
-    expect(wrapper.props().children).not.toBeNull();
-    expect(wrapper.props().children).toBeDefined();
-    expect(wrapper.props().children.length).not.toEqual(0);
-    expect(wrapper.find('th').text()).not.toEqual('');
-    expect(wrapper.find('th').text()).toEqual('test');
-    expect(wrapper.find('td').text()).not.toEqual('');
-    expect(wrapper.find('td').text()).toEqual('test data');
+    expect(wrapper.props().children).to.not.equal(null);
+    expect(wrapper.props().children).to.not.equal(undefined);
+    expect(wrapper.props().children.length).to.not.equal(0);
+    expect(wrapper.find('th').text()).to.not.equal('');
+    expect(wrapper.find('th').text()).to.equal('test');
+    expect(wrapper.find('td').text()).to.not.equal('');
+    expect(wrapper.find('td').text()).to.equal('test data');
   });
 
 });
