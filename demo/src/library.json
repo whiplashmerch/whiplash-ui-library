@@ -184,9 +184,34 @@
   {
     "name": "Legend",
     "description": "A visual used to display a page indicator of where the user is located or something similar.",
-    "component": "<Legend amount=\"5\" activeIndex={ this.props.currentPage } callback={ this.updateActiveIndex } />",
-    "instructions": "To use the Legend Component, add it into view and include the amount (total number of dots), activeIndex (bind to prop/state) props, and callback (returns index of dot user clicked - check your console to see this work) props",
-    "notes": "Include a color prop to change the default color fill of the circles."
+    "component": "<Legend activeIndex=\"3\" totalPages=\"4\" callback={ this.updateActiveIndex } />",
+    "props": [
+      {
+        "name": "activeIndex",
+        "type": "String",
+        "default": "",
+        "description": "Component styling for active index related dot in group."
+      },
+      {
+        "name": "callback (optional)",
+        "type": "Function",
+        "default": "",
+        "description": "Returns the index of dot user selected onClick."
+      },
+      {
+        "name": "color (optional)",
+        "type": "String",
+        "default": "#8071FE",
+        "description": "Component styling for active index color."
+      },
+      {
+        "name": "total",
+        "type": "String",
+        "default": "",
+        "description": "Tells Component how many dots to create."
+      }
+    ],
+    "notes": ""
   },
   {
     "name": "Modal",
