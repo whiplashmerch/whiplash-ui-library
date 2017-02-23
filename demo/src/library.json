@@ -289,8 +289,27 @@
     "name": "NotificationToast",
     "description": "A visual that is used to represent a flash/toast/notification for small messages in the UI.",
     "component": "<NotificationToast active theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
-    "instructions": "To use the NotificationToast Component, just drop it in and include a 'message' property along with the optional 'theme' (controls the color) & 'active' (bool) props.",
-    "notes": "Themes: (not including the theme prop will be 'default'), pending, error"
+    "props": [
+      {
+        "name": "active",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Controls Component visiblility."
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "default": "add your notification message prop",
+        "description": "Displays value in Component feature section."
+      },
+      {
+        "name": "theme (optional)",
+        "type": "String",
+        "default": "",
+        "description": "Available themes: default (no theme prop), pending, error"
+      }
+    ],
+    "notes": ""
   },
   {
     "name": "SelectBox",

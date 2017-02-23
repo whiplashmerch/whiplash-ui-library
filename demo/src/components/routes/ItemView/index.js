@@ -93,7 +93,7 @@ export default class ItemView extends Component {
     const { library } = this.props;
     const currentItem = library.selected;
 
-    if (!!!currentItem) {
+    if (!!!currentItem.props) {
       return null;
     }
 
