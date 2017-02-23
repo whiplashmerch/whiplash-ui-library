@@ -79,7 +79,7 @@ export default class ItemView extends Component {
       case 'Modal':
         return <Button buttonText="open modal" theme="text" callback={ this._showModal } />;
       case 'Navicon':
-        return <Navicon onUserInput={ this._clickButton } />;
+        return <Navicon onUserClick={ this._clickButton } />;
       case 'SelectBox':
         return <DemoComponent callback={ this._clickButton } />;
       case 'Toggle':
@@ -87,6 +87,24 @@ export default class ItemView extends Component {
       default:
         return <DemoComponent />;
     }
+  }
+
+  _getPropsContent() {
+    const { library } = this.props;
+    const currentItem = library.selected;
+
+    if (!!!currentItem.props) {
+      return null;
+    }
+
+    return currentItem.props.map((item, index) => (
+      <tr key={ `${ new Date() }-${ index }` }>
+        <td>{ item.name }</td>
+        <td>{ item.type }</td>
+        <td>{ item.default }</td>
+        <td>{ item.description }</td>
+      </tr>
+    ));
   }
 
   _showModal() {
@@ -120,6 +138,7 @@ export default class ItemView extends Component {
     const { modalActive, modalContent, naviconActive } = this.state;
     const uiComponent = !!library.selected.name ? this._getComponent() : null;
     const currentItem = library.selected;
+    const propsContent = this._getPropsContent();
 
     return(
       <div className="ItemView">
@@ -148,10 +167,28 @@ export default class ItemView extends Component {
           </div>
 
           <div className="ItemView-section-wrapper">
-            <h3 className="ItemView-title">instructions</h3>
-            <p className="ItemView-description">
-              { currentItem.instructions }
-            </p>
+            <h3 className="ItemView-title">props</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    type
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                { propsContent }
+              </tbody>
+            </table>
           </div>
 
           <div className="ItemView-section-wrapper">

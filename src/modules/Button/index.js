@@ -1,18 +1,17 @@
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import '../../fonts/index.css';
 import './Button.css';
 
 
 const propTypes = {
   buttonText: PropTypes.string,
-  buttonType: PropTypes.string,
   callback: PropTypes.func,
   theme: PropTypes.string
 };
 
 const defaultProps = {
-  buttonText: 'add buttonText prop',
-  buttonType: 'button',
+  buttonText: 'do it',
   theme: ''
 };
 
@@ -25,12 +24,14 @@ const triggerCallback = (e, cb) => {
 };
 
 
-export default function Button({ buttonText, buttonType, theme, callback }) {
+export default function Button({ buttonText, theme, callback, ...props }) {
+  const MainClass = classnames('Button', theme);
+
   return(
     <button
-      type={ buttonType }
-      className={ `Button ${ theme }` }
+      className={ MainClass }
       onClick={e => triggerCallback(e, callback)}
+      { ...props }
     >
       { buttonText }
     </button>

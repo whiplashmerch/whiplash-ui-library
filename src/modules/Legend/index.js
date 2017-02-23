@@ -6,7 +6,8 @@ import './Legend.css';
 const propTypes = {
   activeIndex: PropTypes.string.isRequired,
   color: PropTypes.string,
-  total: PropTypes.string.isRequired
+  total: PropTypes.string.isRequired,
+  callback: PropTypes.func
 };
 
 const defaultProps = {

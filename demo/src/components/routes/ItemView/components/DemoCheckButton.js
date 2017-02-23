@@ -8,9 +8,9 @@ const propTypes = {
 export default function DemoCheckButton({ defaultChecked }) {
   return(
     <div>
-      <CheckButton defaultChecked />
-      <CheckButton />
-      <CheckButton />
+      <CheckButton defaultChecked name="test" />
+      <CheckButton name="test" />
+      <CheckButton name="test" />
     </div>
   );
 }
