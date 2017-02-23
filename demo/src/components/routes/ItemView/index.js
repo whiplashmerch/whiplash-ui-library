@@ -148,10 +148,37 @@ export default class ItemView extends Component {
           </div>
 
           <div className="ItemView-section-wrapper">
-            <h3 className="ItemView-title">instructions</h3>
-            <p className="ItemView-description">
-              { currentItem.instructions }
-            </p>
+            <h3 className="ItemView-title">props</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    name
+                  </th>
+                  <th>
+                    type
+                  </th>
+                  <th>
+                    default
+                  </th>
+                  <th>
+                    description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  currentItem.props.map((item, index) => (
+                    <tr key={ `${ new Date() }-${ index }` }>
+                      <td>{ item.name }</td>
+                      <td>{ item.type }</td>
+                      <td>{ item.default }</td>
+                      <td>{ item.description }</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
           </div>
 
           <div className="ItemView-section-wrapper">

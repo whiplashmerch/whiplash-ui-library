@@ -33,15 +33,15 @@ describe('<Breadcrumb />', () => {
   it('should have a bgColor prop', () => {
     expect(wrapper.props().bgColor).to.not.equal(null);
     expect(wrapper.props().bgColor).to.not.equal(undefined);
+    expect(wrapper.props().bgColor).to.not.equal('transparent');
     expect(wrapper.props().bgColor).to.equal('#f5f5f5');
-    expect(wrapper.props().bgColor).to.not.equal('#fff');
   });
 
   it('should have a default bgColor prop value', () => {
     expect(defaultWrapper.props().bgColor).to.not.equal(null);
     expect(defaultWrapper.props().bgColor).to.not.equal(undefined);
-    expect(defaultWrapper.props().bgColor).to.equal('#fff');
     expect(defaultWrapper.props().bgColor).to.not.equal('');
+    expect(defaultWrapper.props().bgColor).to.equal('transparent');
   });
 
   it('should have a default list prop value', () => {

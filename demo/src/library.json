@@ -2,9 +2,28 @@
   {
     "name": "Breadcrumb",
     "description": "A breadcrumb nav list for apps with and without use of React-Router",
-    "component": "<Breadcrumb list={ anArrayOfObjects }  />",
-    "instructions": "To use the Breadcrumb Component, just drop it in and include a 'list' prop that takes an array of objects containing 'name' and 'url' properties.",
-    "notes": "Include the 'router' prop if you want a React-Router specific 'Link' tag included. Additionally, you can add a 'bgColor' (type String) that will change the background color to your liking."
+    "component": "<Breadcrumb router list={ anArrayOfObjects }  />",
+    "props": [
+      {
+        "name": "bgColor",
+        "type": "String",
+        "default": "transparent",
+        "description": "Component background color variation."
+      },
+      {
+        "name": "list",
+        "type": "Array of Objects",
+        "default": "[]",
+        "description": "[{ name: 'home', url: '/' }, { name: 'details', url: '/home/details' }]"
+      },
+      {
+        "name": "router",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Allow compbatability with React-Router navigation."
+      }
+    ],
+    "notes": ""
   },
   {
     "name": "Button",

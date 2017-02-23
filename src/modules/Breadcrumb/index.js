@@ -5,12 +5,14 @@ import './Breadcrumb.css';
 
 const propTypes = {
   bgColor: PropTypes.string,
-  list: PropTypes.array.isRequired
+  list: PropTypes.array,
+  router: PropTypes.bool
 };
 
 const defaultProps = {
-  bgColor: '#fff',
-  list: []
+  bgColor: 'transparent',
+  list: [],
+  router: false
 };
 
 const getItems = (usingRouter, list) => {
