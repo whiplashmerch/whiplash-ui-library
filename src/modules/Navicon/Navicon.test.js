@@ -6,12 +6,14 @@ import Navicon from './';
 
 describe('<Navicon />', () => {
 
+  const testFn = () => console.log('onUserClick');
+
   const defaultWrapper = mount(<Navicon />);
 
   const wrapper = mount(
     <Navicon
       barColor="blue"
-      onUserInput={() => console.log('onUserInput')}
+      onUserClick={ testFn }
     />
   );
 
@@ -26,6 +28,33 @@ describe('<Navicon />', () => {
     expect(defaultWrapper.props().barColor).to.not.equal(undefined);
     expect(defaultWrapper.props().barColor).to.not.equal('');
     expect(defaultWrapper.props().barColor).to.equal('#303030');
+  });
+
+  it('should accept a barColor prop', () => {
+    expect(wrapper.props().barColor).to.not.equal(null);
+    expect(wrapper.props().barColor).to.not.equal(undefined);
+    expect(wrapper.props().barColor).to.not.equal('#303030');
+    expect(wrapper.props().barColor).to.equal('blue');
+  });
+
+  it('should accept a onUserClick prop', () => {
+    expect(wrapper.props().onUserClick).to.not.equal(null);
+    expect(wrapper.props().onUserClick).to.not.equal(undefined);
+    expect(wrapper.props().onUserClick).to.equal(testFn);
+  });
+
+  it('should have a default active state', () => {
+    expect(wrapper.state().active).to.not.equal(null);
+    expect(wrapper.state().active).to.not.equal(undefined);
+    expect(wrapper.state().active).to.not.equal('false');
+    expect(wrapper.state().active).to.equal(false);
+  });
+
+  it('should have a default finish state', () => {
+    expect(wrapper.state().finish).to.not.equal(null);
+    expect(wrapper.state().finish).to.not.equal(undefined);
+    expect(wrapper.state().finish).to.not.equal('false');
+    expect(wrapper.state().finish).to.equal(false);
   });
 
   it('should have 3 bars in the UI', () => {

@@ -2,36 +2,28 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import './Navicon.css';
 
-const propTypes = {
-  barColor: PropTypes.string,
-  onUserInput: PropTypes.func
-};
-
-const defaultProps = {
-  barColor: '#303030'
-};
-
 
 
 export default class Navicon extends Component {
-  constructor() {
-    super();
+  static propTypes = {
+    barColor: PropTypes.string,
+    onUserClick: PropTypes.func
+  }
 
-    // cache methods
-    this._toggleIcon = this._toggleIcon.bind(this);
+  static defaultProps = {
+    barColor: '#303030'
+  }
 
-    // init state
-    this.state = {
-      active: false,
-      finish: false
-    };
+  state = {
+    active: false,
+    finish: false
   }
 
   // PRIVATE
 
-  _toggleIcon(e) {
+  _toggleIcon = (e) => {
     const { active } = this.state;
-    const { onUserInput } = this.props;
+    const { onUserClick } = this.props;
 
     e.preventDefault();
 
@@ -40,13 +32,13 @@ export default class Navicon extends Component {
         active: false,
         finish: false
       }, () => {
-        onUserInput(!active);
+        onUserClick(!active);
       });
     } else {
       this.setState({
         active: true,
       }, () => {
-        onUserInput(!active);
+        onUserClick(!active);
 
         window.setTimeout(() => {
           this.setState({ finish: true });
@@ -77,7 +69,3 @@ export default class Navicon extends Component {
     );
   }
 }
-
-
-Navicon.propTypes = propTypes;
-Navicon.defaultProps = defaultProps;

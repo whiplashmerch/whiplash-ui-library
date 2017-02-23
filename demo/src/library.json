@@ -254,8 +254,21 @@
   {
     "name": "Navicon",
     "description": "A button for mobile or desktop devices that show a toggled state",
-    "component": "<Navicon active={ this.state.naviconActive } barColor=\"#303030\" onUserInput={ this._toggleNavicon } />",
-    "instructions": "To use the Navicon Component, just drop it in and include a 'onUserInput' property that binds to a callback function which a bool is passed in for you to update your 'active' state. (check your console to see this work)",
+    "component": "<Navicon barColor=\"#303030\" onUserClick={ this._toggleNavicon } />",
+    "props": [
+      {
+        "name": "barColor (optional)",
+        "type": "String",
+        "default": "#303030",
+        "description": "Controls Component bar color styles."
+      },
+      {
+        "name": "onUserClick",
+        "type": "Function",
+        "default": "",
+        "description": "Returns active state Boolean onClick (check console to see this work)."
+      }
+    ],
     "notes": "The Navicon Component is absolutely positioned so be sure to put it in a relative positioned container if needed."
   },
   {
