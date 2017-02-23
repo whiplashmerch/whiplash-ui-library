@@ -81,22 +81,20 @@ describe('<SelectBox />', () => {
     expect(wrapper.state().selected).to.equal('');
   });
 
-  it('should display the children in the UI', () => {
+  it('should not display the list options in the UI by default', () => {
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(null);
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(undefined);
-    expect(wrapper.find('.SelectBox-li').length).to.not.equal(0);
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(2);
+    expect(wrapper.find('.SelectBox-li').length).to.equal(0);
   });
 
   it('should display the selected choice in the UI', () => {
-    expect(wrapper.find('.SelectBox-selection').length).to.not.equal(1);
-    expect(wrapper.find('.SelectBox-selection').length).to.equal(0);
-
+    // open menu
+    wrapper.find('.SelectBox-selection').simulate('click');
+    // select item
     wrapper.find('.SelectBox-li').at(1).simulate('click');
 
-    expect(wrapper.find('.SelectBox-selection').length).to.not.equal(0);
-    expect(wrapper.find('.SelectBox-selection').length).to.equal(1);
-    expect(wrapper.find('.SelectBox-selection').text()).to.not.equal('');
+    expect(wrapper.find('.SelectBox-selection').text()).to.not.equal('choose option');
     expect(wrapper.find('.SelectBox-selection').text()).to.equal('test 2');
   });
 
@@ -105,6 +103,21 @@ describe('<SelectBox />', () => {
     expect(wrapper.find('input').length).to.not.equal(null);
     expect(wrapper.find('input').length).to.not.equal(0);
     expect(wrapper.find('input').length).to.equal(1);
+  });
+
+  it('should change the open state to true when .SelectBox-selection clicked', () => {
+    expect(wrapper.state().open).to.equal(false);
+    wrapper.find('.SelectBox-selection').simulate('click');
+    expect(wrapper.state().open).to.equal(true);
+  });
+
+  it('should change the open state to false when .SelectBox-li clicked', () => {
+    wrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(wrapper.state().open).to.equal(false);
+    wrapper.find('.SelectBox-selection').simulate('click');
+    expect(wrapper.state().open).to.equal(true);
+    wrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(wrapper.state().open).to.equal(false);
   });
 
 });
