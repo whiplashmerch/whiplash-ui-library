@@ -34,6 +34,10 @@
   width: 100%;
 }
 
+.Dropdown-li p {
+  cursor: default;
+}
+
 .Dropdown-li a,
 .Dropdown-li p {
   font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;

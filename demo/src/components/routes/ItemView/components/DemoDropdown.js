@@ -10,7 +10,20 @@ const propTypes = {
   onUpdate: PropTypes.func
 };
 
+const getOthers = () => {
+  const items = ['Plain text', 'another plain text'];
+
+  return items.map((item, index) => (
+    <p key={ `${ new Date() }-${ index }` }>
+      { item }
+    </p>
+  ));
+}
+
+
 export default function DemoDropdown({ open, onUpdate }) {
+  const others = getOthers();
+
   const containerStyles = {
     display: 'inline-block',
     position: 'relative'
@@ -30,7 +43,7 @@ export default function DemoDropdown({ open, onUpdate }) {
       >
         <NavLink to="/">home</NavLink>
         <NavLink to="/library/Button">button</NavLink>
-        <p>Normal text</p>
+        { others }
       </Dropdown>
     </div>
   );

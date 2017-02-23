@@ -31,21 +31,21 @@
     "name": "Icons",
     "description": "Whiplash basic icon library",
     "component": "<Icon name=\"logistics\" color=\"#303030\" height=\"26\" width=\"26\" />",
-    "instructions": "To use the Icon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "instructions": "To use the Icon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (String - optional) property.",
     "notes": "This Component will also stack children as shown if you want it."
   },
   {
     "name": "InformationalIcons",
     "description": "Whiplash informational icon library",
     "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
-    "instructions": "To use the InformationalIcon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (both typeof String) property.",
+    "instructions": "To use the InformationalIcon Component, add it into your view and include the 'name' (choose icon), 'color' (choose color if available), 'height, & 'width' (String - optional) property.",
     "notes": "This Component will also stack children as shown if you want it"
   },
   {
     "name": "Input",
     "description": "An input that displays either a animating (default) or basic style theme in your forms.",
     "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required />",
-    "instructions": "To use the Input Component, add it into your form and include the 'inputLabel' (i.e. 'your name', 'email', etc.), basic (bool - optional), and onUserInput (check your console to see this work) properties (along with any other input related attributes you need).",
+    "instructions": "To use the Input Component, add it into your form and include the 'inputLabel' (i.e. 'your name', 'email', etc.), 'basic' (bool - optional), and 'onUserInput' (check your console to see this work) properties (along with any other input related attributes you need).",
     "notes": "This Component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
   },
   {
@@ -70,11 +70,25 @@
     "notes": "The Navicon Component is absolutely positioned so be sure to put it in a relative positioned container if needed."
   },
   {
+    "name": "NavLink",
+    "description": "A react-router Link-based Component for navigating to specific routes.",
+    "component": "<NavLink to=\"/orders\">orders</NavLink>",
+    "instructions": "To use the NavLink Component, just drop it in and include the 'to' prop that contains the route URL needed.",
+    "notes": "This Component also binds all other props given, automatically gives an 'active' class name to urls that match the route, and displays children nested within it."
+  },
+  {
     "name": "NotificationToast",
     "description": "A visual that is used to represent a flash/toast/notification for small messages in the UI.",
     "component": "<NotificationToast active theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
     "instructions": "To use the NotificationToast Component, just drop it in and include a 'message' property along with the optional 'theme' (controls the color) & 'active' (bool) props.",
     "notes": "Themes: (not including the theme prop will be 'default'), pending, error"
+  },
+  {
+    "name": "SelectBox",
+    "description": "A select-based element which represents a control that provides a menu of options.",
+    "component": "<SelectBox form label=\"select item\" list={ listArr } callback={ this._updateSelection } name=\"items\" required />",
+    "instructions": "To use the SelectBox Component, just drop it in and include the 'list' (Array), label (String / optional), 'callback' (func that returns the value of selected option), and optional 'form' (bool) props along with all other select element related attributes (props) needed.",
+    "notes": "List Array format: [ 'item 1', 'item 2' ] (if no list prop given, will return null)"
   },
   {
     "name": "Toggle",

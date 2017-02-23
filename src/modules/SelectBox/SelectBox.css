@@ -1,0 +1,114 @@
+.SelectBox {
+  display: inline-block;
+}
+
+.SelectBox-label {
+  color: #646471;
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 0.0245rem;
+  padding-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+.SelectBox-wrapper {
+  border: 1px solid #B3B3CC;
+  border-radius: 2px;
+  box-shadow: none;
+  display: inline-block;
+  height: 2.75rem;
+  overflow: hidden;
+  position: relative;
+  transition:
+    border 150ms ease-out,
+    box-shadow 150ms ease-out;
+  width: 28.125rem;
+}
+
+.SelectBox-wrapper:after {
+  background:
+    url(./images/arrow.svg)
+    no-repeat
+    center
+    center
+    transparent;
+  background-size: contain;
+  content: "";
+  height: 0.4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 0.625rem;
+}
+
+.SelectBox-wrapper:hover {
+  border: 1px solid #8071FE;
+  box-shadow: 0 1px 3px 0 rgba(128, 113, 254, 0.2);
+}
+
+.SelectBox-selection {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.03rem;
+  padding-left: 1rem;
+  text-transform: capitalize;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.SelectBox-list-wrapper {
+  animation-duration: 200ms;
+  background-color: #fff;
+  border: 1px solid #B3B3CC;
+  box-shadow: 2px 2px 30px 0 rgba(128, 128, 145, 0.1);
+  border-radius: 2px;
+  left: 0;
+  max-height: 13.75rem;
+  overflow-y: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.SelectBox-ul {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+}
+
+.SelectBox-li {
+  border-bottom: 1px solid #EDEDF3;
+  cursor: pointer;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.03rem;
+  margin-left: 0.625rem;
+  margin-right: 1.9375rem;
+  padding-bottom: 0.75rem;
+  padding-top: 1.625rem;
+  text-transform: capitalize;
+  transition:
+    border 150ms ease-out,
+    color 150ms ease-out;
+  -webkit-font-smoothing: antialiased;
+}
+
+.SelectBox-li:last-child {
+  margin-bottom: 1rem;
+}
+
+.SelectBox-li:hover {
+  border-bottom: 1px solid #9B8FFF;
+  color: #8071FE;
+}
+
+/* open */
+
+.SelectBox.open .SelectBox-wrapper {
+  border: 1px solid transparent;
+  overflow: visible;
+}
