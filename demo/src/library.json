@@ -28,9 +28,28 @@
   {
     "name": "Button",
     "description": "No need for description...",
-    "component": "<Button buttonText=\"secondary-dark\" callback={ this._clickButton } />",
-    "instructions": "To use the Button Component, just drop it in and include a 'buttonText', and optional 'theme', 'buttonType' (i.e. 'submit'), and 'callback' (fired onClick/passes Event Obj - check your console to see this work) props.",
-    "notes": "theme prop values: (no theme prop is default theme), secondary, secondary-border, secondary-dark, danger, danger-border, text."
+    "component": "<Button type=\"button\" buttonText=\"secondary-dark\" callback={ this._clickButton } />",
+    "props": [
+      {
+        "name": "buttonText",
+        "type": "String",
+        "default": "do it",
+        "description": "Component text contents (value)"
+      },
+      {
+        "name": "callback",
+        "type": "Function",
+        "default": "",
+        "description": "Function that returns the Event Obj of Component."
+      },
+      {
+        "name": "theme",
+        "type": "String",
+        "default": "default",
+        "description": "Available Themes: default (no theme prop), secondary-border, secondary-dark, text-link, danger"
+      }
+    ],
+    "notes": "Component also passes down all button related props given (i.e. type, id, autofocus, etc.)."
   },
   {
     "name": "CheckButton",
