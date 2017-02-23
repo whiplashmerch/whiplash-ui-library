@@ -11,4 +11,5 @@ export { default as Navicon } from './modules/Navicon';
 export { default as NavLink } from './modules/NavLink';
 export { default as NotificationToast } from './modules/NotificationToast';
 export { default as SelectBox } from './modules/SelectBox';
+export { default as Table } from './modules/Table';
 export { default as Toggle } from './modules/Toggle';
