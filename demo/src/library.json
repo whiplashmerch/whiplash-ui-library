@@ -159,8 +159,27 @@
     "name": "Input",
     "description": "An input that displays either a animating (default) or basic style theme in your forms.",
     "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required />",
-    "instructions": "To use the Input Component, add it into your form and include the 'inputLabel' (i.e. 'your name', 'email', etc.), 'basic' (bool - optional), and 'onUserInput' (check your console to see this work) properties (along with any other input related attributes you need).",
-    "notes": "This Component has a built-in callback prop (onUserInput) that will send back the value of the input onChange."
+    "props": [
+      {
+        "name": "basic (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Component traditional non-animated styling."
+      },
+      {
+        "name": "inputLabel",
+        "type": "String",
+        "default": "",
+        "description": "Component label text context."
+      },
+      {
+        "name": "onUserInput",
+        "type": "Function",
+        "default": "",
+        "description": "Returns input value onChange (check your console to see work)."
+      }
+    ],
+    "notes": "Component also passes down all input related props given."
   },
   {
     "name": "Legend",
