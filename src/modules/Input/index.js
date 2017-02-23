@@ -9,13 +9,15 @@ export default class Input extends Component {
   static propTypes = {
     basic: PropTypes.bool,
     inputLabel: PropTypes.string,
-    onUserInput: PropTypes.func
+    onUserInput: PropTypes.func,
+    search: PropTypes.bool
   }
 
   static defaultProps = {
     basic: false,
     inputLabel: '',
-    onUserInput: () => console.warn('no onUserInput prop given')
+    onUserInput: () => console.warn('no onUserInput prop given'),
+    search: false
   }
 
   // PRIVATE
@@ -31,8 +33,11 @@ export default class Input extends Component {
       basic,
       inputLabel,
       onUserInput,
+      search,
       ...props
     } = this.props;
+
+    const MainClass = classnames('Input', { search });
 
 
     if (!basic) {
@@ -47,7 +52,7 @@ export default class Input extends Component {
 
 
     return (
-      <div className="Input">
+      <div className={ MainClass }>
         <label className="Input-label">
           { inputLabel }
         </label>
