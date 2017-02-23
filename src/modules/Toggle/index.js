@@ -2,24 +2,19 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import './Toggle.css';
 
-const propTypes = {
-  active: PropTypes.bool,
-  toggleRef: PropTypes.func
-};
-
-const defaultProps = {
-  active: false
-};
-
 
 export default class Toggle extends Component {
-  constructor() {
-    super();
-    this._updateState = this._updateState.bind(this);
+  static propTypes = {
+    active: PropTypes.bool,
+    toggleRef: PropTypes.func
+  }
 
-    this.state = {
-      active: false
-    };
+  static defaultProps = {
+    active: false
+  }
+
+  state = {
+    active: false
   }
 
   componentWillMount() {
@@ -32,7 +27,7 @@ export default class Toggle extends Component {
 
   // PRIVATE
 
-  _updateState() {
+  _updateState = () => {
     const { active } = this.state;
     this.setState({ active: !active });
   }
@@ -58,6 +53,3 @@ export default class Toggle extends Component {
     );
   }
 }
-
-Toggle.propTypes = propTypes;
-Toggle.defaultProps = defaultProps;
