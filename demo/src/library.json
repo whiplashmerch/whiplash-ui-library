@@ -275,8 +275,15 @@
     "name": "NavLink",
     "description": "A react-router Link-based Component for navigating to specific routes.",
     "component": "<NavLink to=\"/orders\">orders</NavLink>",
-    "instructions": "To use the NavLink Component, just drop it in and include the 'to' prop that contains the route URL needed.",
-    "notes": "This Component also binds all other props given, automatically gives an 'active' class name to urls that match the route, and displays children nested within it."
+    "props": [
+      {
+        "name": "to",
+        "type": "String",
+        "default": "",
+        "description": "Tells Component where to navigate onClick."
+      }
+    ],
+    "notes": "Component also passes down all props given and accepts children."
   },
   {
     "name": "NotificationToast",
