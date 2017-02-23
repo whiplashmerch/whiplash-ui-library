@@ -3,28 +3,21 @@ import classnames from 'classnames';
 import 'animate.css';
 import './Modal.css';
 
-const propTypes = {
-  active: PropTypes.bool,
-  content: PropTypes.object,
-  logo: PropTypes.string,
-  modalWidth: PropTypes.string,
-  onCloseModal: PropTypes.func
-};
-
-const defaultProps = {
-  active: false,
-  content: null,
-  logo: '',
-  modalWidth: '38.75rem'
-};
-
 
 export default class Modal extends Component {
-  constructor(props) {
-    super();
+  static propTypes = {
+    active: PropTypes.bool,
+    content: PropTypes.object,
+    logo: PropTypes.string,
+    modalWidth: PropTypes.string,
+    onCloseModal: PropTypes.func
+  }
 
-    // cache methods
-    this._close = this._close.bind(this);
+  static defaultProps = {
+    active: false,
+    content: null,
+    logo: '',
+    modalWidth: '38.75rem'
   }
 
   componentDidMount() {
@@ -43,7 +36,7 @@ export default class Modal extends Component {
 
   // PRIVATE
 
-  _close() {
+  _close = () => {
     const modal = document.querySelector('.Modal');
     const overlay = document.querySelector('.Modal-overlay');
     const content = document.querySelector('.Modal-content');
@@ -102,9 +95,4 @@ export default class Modal extends Component {
       </div>
     );
   }
-
 }
-
-
-Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;

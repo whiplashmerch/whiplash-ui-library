@@ -217,8 +217,39 @@
     "name": "Modal",
     "description": "A way to have dynamic modals within your app triggered from it's active property.",
     "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } logo={ yourLogoRef } onCloseModal={ this._toggleModal } />",
-    "instructions": "To use the Modal Component, add it into the parent Component in your project binding it's active prop to the state of your choioce (boolean). Additionally, you can store another Component in your 'content' state to be passed in as well. You can exit the modal by clicking the overlay or pressing the 'esc' key.",
-    "notes": "If you do not provide a logo, the header will be blank."
+    "props": [
+      {
+        "name": "active",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Controls Component visibility."
+      },
+      {
+        "name": "content",
+        "type": "String/React Element",
+        "default": "null",
+        "description": "Displays value into the 'feature' section of Component."
+      },
+      {
+        "name": "logo (optional)",
+        "type": "String",
+        "default": "",
+        "description": "Adds logo in header of Component if given."
+      },
+      {
+        "name": "modalWidth (optional)",
+        "type": "String",
+        "default": "38.75rem",
+        "description": "Sets a max-width restriction on Component."
+      },
+      {
+        "name": "onCloseModal",
+        "type": "Function",
+        "default": "",
+        "description": "Returns 'false' when Component close triggered fired onClick."
+      }
+    ],
+    "notes": "Pressing 'esc' key will also close Modal."
   },
   {
     "name": "Navicon",
