@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Navicon } from 'src';
+import { Button, Modal, Navicon, Table } from 'src';
 import * as DemoComponents from './components';
 import AppExample from 'demo/Example';
 import geoLogo from '../images/whiplash-geo-logo-white.svg';
@@ -168,7 +168,7 @@ export default class ItemView extends Component {
 
           <div className="ItemView-section-wrapper">
             <h3 className="ItemView-title">props</h3>
-            <table>
+            <Table>
               <thead>
                 <tr>
                   <th>
@@ -188,7 +188,7 @@ export default class ItemView extends Component {
               <tbody>
                 { propsContent }
               </tbody>
-            </table>
+            </Table>
           </div>
 
           <div className="ItemView-section-wrapper">
