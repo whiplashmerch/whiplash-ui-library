@@ -3,7 +3,6 @@
   "version": "1.2.1",
   "description": "whiplash-ui-library React component",
   "main": "lib/index.js",
-  "jsnext:main": "es/index.js",
   "module": "es/index.js",
   "files": [
     "css",
@@ -17,9 +16,9 @@
     "clean": "nwb clean-module && npm clean-demo",
     "deploy": "gh-pages -d demo/dist",
     "start": "nwb serve-react-demo",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
@@ -42,12 +41,10 @@
     "eslint": "^3.16.0",
     "gh-pages": "^0.11.0",
     "mocha-lcov-reporter": "^1.2.0",
-    "nwb": "^0.15.6",
-    "phantomjs-prebuilt": "^2.1.13",
+    "nwb": "0.15.x",
     "react": "^15.3.2",
-    "react-addons-test-utils": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-scripts": "0.6.0"
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "author": "Casey Baggz",
   "homepage": "https://www.whiplashmerch.com/",

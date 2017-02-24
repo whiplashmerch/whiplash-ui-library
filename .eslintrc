@@ -1,4 +1,8 @@
 {
+  "env": {
+    "mocha": true
+  },
+
   "parser": "babel-eslint",
 
   "parserOptions": {
