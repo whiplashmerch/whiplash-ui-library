@@ -3,18 +3,18 @@ Hey! It's a minor release! We have a lot of stuff to cover with some breaking
 changes regarding some Components, so here we go!
 
 New
-* <SelectBox />
-* <Table />
+* `<SelectBox />`
+* `<Table />`
 * Docs are now easier to read!
-* <Input /> now comes in 2 flavors: basic and default. Addtionally, you can now add a `search` prop and we'll deliver a sexy search UI input (basic only). Just as well, we plus'd up the password input to toggle visibility
+* `<Input />` now comes in 2 flavors: basic and default. Addtionally, you can now add a `search` prop and we'll deliver a sexy search UI input (basic only). Just as well, we plus'd up the password input to toggle visibility
 
 Breaking:
-* <Icon />/<InformationalIcon /> will now match the width of the container element if no `height`, `width` props given
-* <Button /> eliminates the `buttonType` prop in exchange for passing down all props given (`type="button"`, etc.)
+* `<Icon />/<InformationalIcon />` will now match the width of the container element if no `height`, `width` props given
+* `<Button />` eliminates the `buttonType` prop in exchange for passing down all props given (`type="button"`, etc.)
 
 Updates:
 * Cleaner fonts
-* <Dropdown /> renders children much better
+* `<Dropdown />` renders children much better
 
 Bada-bing, bada-boom! Keep a look out cause like always, we ain't done adding/adapting this sucka!
 
