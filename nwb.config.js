@@ -5,10 +5,17 @@ module.exports = {
 
   npm: {
     esModules: true,
+
     umd: {
       global: 'WhiplashUILibrary',
       externals: {
-        react: 'React'
+        'react': 'React',
+        'react-redux': 'ReactRedux',
+        'react-router': 'ReactRouter',
+        'react-router-redux': 'ReactRouterRedux',
+        'redux': 'redux',
+        'redux-devtools-extension': 'ReduxDevtoolsExtension',
+        'redux-thunk': 'ReduxThunk'
       }
     }
   },
