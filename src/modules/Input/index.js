@@ -51,10 +51,27 @@ export default class Input extends Component {
     onUserInput(e.target.value);
   }
 
+  _toggleInputType = () => {
+    const currentType = this.input.type;
+
+    switch (currentType) {
+      case 'password':
+        this.input.type = 'text';
+        break;
+      case 'text':
+        this.input.type = 'password';
+        break;
+      default:
+        return;
+    }
+  }
+
   _toggleVisibility = () => {
     this.setState(prevState => ({
       passVisibility: !prevState.passVisibility
-    }));
+    }), () => {
+      this._toggleInputType();
+    });
   }
 
 
