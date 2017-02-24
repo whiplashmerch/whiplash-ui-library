@@ -38,6 +38,16 @@ export default function DemoInput({ onInputChange }) {
           onUserInput={ onInputChange }
         />
       </div>
+
+      <div style={{ paddingTop: '1rem' }}>
+        <Input
+          basic
+          inputLabel="password"
+          type="password"
+          maxLength="222"
+          onUserInput={ onInputChange }
+        />
+      </div>
     </div>
   );
 }

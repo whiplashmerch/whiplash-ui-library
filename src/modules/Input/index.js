@@ -20,11 +20,41 @@ export default class Input extends Component {
     search: false
   }
 
+  state = {
+    passVisibility: false
+  }
+
   // PRIVATE
+
+  _getPasswordBtn = () => {
+    const { passVisibility } = this.state;
+    const { type } = this.props;
+    const BtnClass = classnames('Input-toggle-value-btn', { show: passVisibility });
+    const BtnText  = passVisibility ? 'hide' : 'show';
+
+    if (type === 'password') {
+      return(
+        <span
+          className={ BtnClass }
+          onClick={ this._toggleVisibility }
+        >
+          { BtnText }
+        </span>
+      );
+    }
+
+    return null;
+  }
 
   _sendUpdate = (e) => {
     const { onUserInput } = this.props;
     onUserInput(e.target.value);
+  }
+
+  _toggleVisibility = () => {
+    this.setState(prevState => ({
+      passVisibility: !prevState.passVisibility
+    }));
   }
 
 
@@ -38,6 +68,7 @@ export default class Input extends Component {
     } = this.props;
 
     const MainClass = classnames('Input', { search });
+    const passwordBtn = this._getPasswordBtn();
 
 
     if (!basic) {
@@ -61,8 +92,12 @@ export default class Input extends Component {
           <input
             className="Input-input"
             { ...props }
+            ref={(el) => this.input = el }
             onFocus={ this._updateClass }
-            onChange={ this._sendUpdate } />
+            onChange={ this._sendUpdate }
+          />
+
+          { passwordBtn }
         </div>
       </div>
     );
