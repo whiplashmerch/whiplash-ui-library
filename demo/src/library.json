@@ -177,6 +177,12 @@
         "type": "Function",
         "default": "",
         "description": "Returns input value onChange (check your console to see work)."
+      },
+      {
+        "name": "search (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Display a search based styled Component."
       }
     ],
     "notes": "Component also passes down all input related props given."

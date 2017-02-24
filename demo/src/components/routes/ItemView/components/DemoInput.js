@@ -27,6 +27,35 @@ export default function DemoInput({ onInputChange }) {
           required
         />
       </div>
+
+      <div style={{ paddingTop: '1rem' }}>
+        <Input
+          basic
+          search
+          type="text"
+          maxLength="222"
+          placeholder="search things..."
+          onUserInput={ onInputChange }
+        />
+      </div>
+
+      <div style={{ paddingTop: '1rem' }}>
+        <Input
+          basic
+          inputLabel="password"
+          type="password"
+          maxLength="222"
+          onUserInput={ onInputChange }
+        />
+      </div>
+
+      <Input
+        inputLabel="password"
+        type="password"
+        maxLength="220"
+        onUserInput={ onInputChange }
+        required
+      />
     </div>
   );
 }

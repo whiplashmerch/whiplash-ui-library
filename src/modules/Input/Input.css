@@ -33,7 +33,7 @@
   outline: 0;
   padding-bottom: 0.8rem;
   padding-left: 1rem;
-  padding-right: 1rem;
+  padding-right: 5rem;
   padding-top: 0.8rem;
   transition: border 150ms ease-out;
   width: 100%;
@@ -48,4 +48,66 @@
 .Input-input:focus {
   box-shadow: none;
   outline: 0;
+}
+
+/* search */
+
+.Input.search .Input-input{
+  padding-left: 2.5rem;
+}
+
+.Input.search .Input-wrapper:before {
+  background:
+    url(./images/search.svg)
+    no-repeat
+    center
+    center
+    transparent;
+  background-size: contain;
+  display: inline-block;
+  content: "";
+  height: 1.125rem;
+  left: 0.75rem;
+  position: absolute;
+  top: 1.7rem;
+  width: 1.125rem;
+  z-index: 10;
+}
+
+/* password */
+
+.Input-toggle-value-btn {
+  background:
+    url(./images/pass-show.svg)
+    no-repeat
+    left
+    0rem
+    transparent;
+  background-size: 1rem;
+  bottom: 0.8rem;
+  display: inline-block;
+  color: #808091;
+  cursor: pointer;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  height: 1rem;
+  letter-spacing: 0.03rem;
+  padding-left: 1rem;
+  position: absolute;
+  right: 1.3rem;
+  text-align: right;
+  text-transform: capitalize;
+  width: 3.125rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Input-toggle-value-btn.show {
+  background:
+    url(./images/pass-hide.svg)
+    no-repeat
+    left
+    center
+    transparent;
+  background-size: 1.5rem;
+  padding-left: 1.8rem;
 }
