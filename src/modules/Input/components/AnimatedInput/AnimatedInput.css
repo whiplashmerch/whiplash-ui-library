@@ -64,7 +64,10 @@
   letter-spacing: 0.011875rem;
   left: 0;
   outline: 0;
-  padding: 1.1rem 0;
+  padding-bottom: 1.1rem;
+  padding-left: 0rem;
+  padding-top: 1.1rem;
+  padding-right: 1rem;
   position: absolute;
   right: 0;
   width: 100%;
@@ -91,4 +94,51 @@
 .AnimatedInput.active .AnimatedInput-wrapper:before {
   background-color: #9B8FFF;
   width: 100%;
+}
+
+/* password */
+
+/* password */
+
+.AnimatedInput-toggle-value-btn {
+  background:
+    url(./images/pass-show.svg)
+    no-repeat
+    left
+    0rem
+    transparent;
+  background-size: 1rem;
+  bottom: 0.8rem;
+  display: inline-block;
+  color: #808091;
+  cursor: pointer;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  height: 1rem;
+  letter-spacing: 0.03rem;
+  padding-left: 1rem;
+  position: absolute;
+  opacity: 0;
+  right: 1.3rem;
+  text-align: right;
+  text-transform: capitalize;
+  transition: opacity 150ms ease-out;
+  width: 3.125rem;
+  -webkit-font-smoothing: antialiased;
+  z-index: 20;
+}
+
+.AnimatedInput-toggle-value-btn.active {
+  opacity: 1;
+}
+
+.AnimatedInput-toggle-value-btn.show {
+  background:
+    url(./images/pass-hide.svg)
+    no-repeat
+    left
+    center
+    transparent;
+  background-size: 1.5rem;
+  padding-left: 1.8rem;
 }

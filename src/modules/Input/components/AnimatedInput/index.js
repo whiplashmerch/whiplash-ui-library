@@ -16,14 +16,58 @@ export default class AnimatedInput extends Component {
   }
 
   state = {
-    active: false
+    active: false,
+    passVisibility: false
   }
 
   // PRIVATE
 
+  _getPasswordBtn = () => {
+    const { active, passVisibility } = this.state;
+    const { type } = this.props;
+    const BtnClass = classnames('AnimatedInput-toggle-value-btn', { active, show: passVisibility });
+    const BtnText  = passVisibility ? 'hide' : 'show';
+
+    if (type === 'password') {
+      return(
+        <span
+          className={ BtnClass }
+          onClick={ this._toggleVisibility }
+        >
+          { BtnText }
+        </span>
+      );
+    }
+
+    return null;
+  }
+
   _sendUpdate = (e) => {
     const { onUserInput } = this.props;
     onUserInput(e.target.value);
+  }
+
+  _toggleInputType = () => {
+    const currentType = this.input.type;
+
+    switch (currentType) {
+      case 'password':
+        this.input.type = 'text';
+        break;
+      case 'text':
+        this.input.type = 'password';
+        break;
+      default:
+        return;
+    }
+  }
+
+  _toggleVisibility = () => {
+    this.setState(prevState => ({
+      passVisibility: !prevState.passVisibility
+    }), () => {
+      this._toggleInputType();
+    });
   }
 
   _updateClass = () => {
@@ -41,6 +85,7 @@ export default class AnimatedInput extends Component {
     const { active } = this.state;
     const { inputLabel, onUserInput, ...props } = this.props;
     const InputClass = classnames('AnimatedInput', { active: !!active });
+    const passwordBtn = this._getPasswordBtn();
 
     return (
       <div className={ InputClass }>
@@ -53,8 +98,12 @@ export default class AnimatedInput extends Component {
             className="AnimatedInput-input"
             placeholder=""
             { ...props }
+            ref={(el) => this.input = el }
             onFocus={ this._updateClass }
-            onChange={ this._sendUpdate } />
+            onChange={ this._sendUpdate }
+          />
+
+        { passwordBtn }
         </div>
       </div>
     );

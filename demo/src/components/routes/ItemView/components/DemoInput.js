@@ -48,6 +48,14 @@ export default function DemoInput({ onInputChange }) {
           onUserInput={ onInputChange }
         />
       </div>
+
+      <Input
+        inputLabel="password"
+        type="password"
+        maxLength="220"
+        onUserInput={ onInputChange }
+        required
+      />
     </div>
   );
 }
