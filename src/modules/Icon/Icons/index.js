@@ -7,6 +7,7 @@ export { default as arrow_down_circle } from './components/ArrowDownCircle';
 export { default as clipboard } from './components/Clipboard';
 export { default as close } from './components/Close';
 export { default as copy } from './components/Copy';
+export { default as download } from './components/Download';
 export { default as edit } from './components/Edit';
 export { default as export } from './components/Export';
 export { default as grid } from './components/Grid';
