@@ -66,6 +66,13 @@
     "notes": "Component also passes down all input & React props given for the ability to control state of a radio group if needed."
   },
   {
+    "name": "DatePicker",
+    "description": "A date selection-based element to use in forms.",
+    "component": "<DatePicker />",
+    "props": [],
+    "notes": ""
+  },
+  {
     "name": "Dropdown",
     "description": "A dropdown-based element that display's its children.",
     "component": "<Dropdown right open={ this.state.dropdownActive }><a href=\"#\">Home</a></Dropdown>",
