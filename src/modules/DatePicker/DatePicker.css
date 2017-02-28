@@ -1,3 +1,39 @@
 .DatePicker {
   display: inline-block;
 }
+
+.DatePicker-input-wrapper {
+
+}
+
+.DatePicker-input {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #B3B3CC;
+  border-radius: 1px;
+  box-shadow: none;
+  color: #303030;
+  cursor: pointer;
+  display: block;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.011875rem;
+  outline: 0;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 5rem;
+  padding-top: 0.8rem;
+  transition: border 150ms ease-out;
+  width: 100%;
+  z-index: 10;
+  -webkit-font-smoothing: antialiased;
+}
+
+.DatePicker-input:hover {
+  border: 1px solid #8071FE;
+}
+
+.DatePicker-input:focus {
+  box-shadow: none;
+  outline: 0;
+}
