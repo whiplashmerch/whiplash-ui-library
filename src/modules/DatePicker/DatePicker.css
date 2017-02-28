@@ -1,9 +1,21 @@
 .DatePicker {
   display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .DatePicker-input-wrapper {
 
+}
+
+.DatePicker-label {
+  color: #646471;
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 0.0245rem;
+  padding-bottom: 0.375rem;
+  text-transform: capitalize;
 }
 
 .DatePicker-input {
@@ -36,4 +48,14 @@
 .DatePicker-input:focus {
   box-shadow: none;
   outline: 0;
+}
+
+
+/*===========================================
+                BREAKPOINTS
+===========================================*/
+@media only screen and (min-width: 768px) {
+  .DatePicker {
+    width: 16.625rem;
+  }
 }

@@ -69,7 +69,14 @@
     "name": "DatePicker",
     "description": "A date selection-based element to use in forms.",
     "component": "<DatePicker />",
-    "props": [],
+    "props": [
+      {
+        "name": "labelText (optional)",
+        "type": "String",
+        "default": "",
+        "description": "Gives Component a label tag for display."
+      }
+    ],
     "notes": ""
   },
   {

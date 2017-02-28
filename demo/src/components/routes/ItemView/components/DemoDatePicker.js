@@ -8,7 +8,15 @@ const propTypes = {
 
 export default function DemoBreadcrumb({ active }) {
   return(
-    <DatePicker />
+    <div>
+      <DatePicker
+        labelText="from"
+      />
+
+      <DatePicker
+        labelText="to"
+      />
+    </div>
   );
 }
 
