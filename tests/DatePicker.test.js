@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
-import DatePicker from './';
+import { DatePicker } from 'src';
 
 
 describe('<DatePicker />', () => {
@@ -21,13 +21,6 @@ describe('<DatePicker />', () => {
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<DatePicker />, div);
-  });
-
-  it('should have a default labelText prop', () => {
-    expect(defaultWrapper.props().labelText).to.not.equal(null);
-    expect(defaultWrapper.props().labelText).to.not.equal(undefined);
-    expect(defaultWrapper.props().labelText).to.not.equal('');
-    expect(defaultWrapper.props().labelText).to.equal('add labelText prop');
   });
 
   it('should accept a labelText prop', () => {

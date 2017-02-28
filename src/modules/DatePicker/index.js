@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import DayPicker from './components/DayPicker';
 import './DatePicker.css';
+
 
 
 export default class DatePicker extends Component {
@@ -38,6 +40,7 @@ export default class DatePicker extends Component {
   }
 
   render() {
+    const { active } = this.state;
     const { labelText, ...props } = this.props;
     const label = this._getLabel();
 
@@ -58,22 +61,10 @@ export default class DatePicker extends Component {
           />
         </div>
 
-        <div className="DatePicker-map-wrapper">
-          <div className="DatePicker-feature">
-            <header className="DatePicker-feature-header">
-              <p className="DatePicker-feature-label">
-                { labelText || '' }
-              </p>
-            </header>
-            <div className="DatePicker-feature-main">
-              content
-            </div>
-          </div>
-
-          <div className="DatePicker-sidebar">
-
-          </div>
-        </div>
+        <DayPicker
+          active={ active }
+          infoHeader={ labelText }
+        />
       </div>
     );
   }

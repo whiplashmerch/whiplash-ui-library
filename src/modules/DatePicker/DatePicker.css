@@ -2,6 +2,7 @@
   display: inline-block;
   margin-right: 2rem;
   margin-top: 1rem;
+  position: relative;
   width: 100%;
 }
 
@@ -23,7 +24,6 @@
   height: 1.375rem;
   left: 0.6875rem;
   position: absolute;
-  transition: background 150ms ease-out;
   width: 1.375rem;
 }
 
