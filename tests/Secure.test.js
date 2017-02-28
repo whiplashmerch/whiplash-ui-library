@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { secure } from 'src/modules/Icon/Icons';
 
 
-describe('<Secure />', () => {
+describe('<secure />', () => {
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Secure />, div);
+    ReactDOM.render(<secure />, div);
   });
 
 });

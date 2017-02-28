@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { stacked_boxes } from 'src/modules/InformationalIcon/Icons';
 
 
-describe('<StackedBoxes />', () => {
+describe('<stacked_boxes />', () => {
 
-  const defaultWrapper = mount(<StackedBoxes />);
-  const wrapper = mount(<StackedBoxes iconColor="blue" />);
+  const defaultWrapper = mount(<stacked_boxes />);
+  const wrapper = mount(<stacked_boxes iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<StackedBoxes />, div);
+    ReactDOM.render(<stacked_boxes />, div);
   });
 
   it('should have a default iconColor prop', () => {

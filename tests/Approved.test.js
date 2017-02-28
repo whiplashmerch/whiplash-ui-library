@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { approved } from 'src/modules/InformationalIcon/Icons';
 
 
-describe('<Approved />', () => {
+describe('<approved />', () => {
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Approved />, div);
+    ReactDOM.render(<approved />, div);
   });
 
 });

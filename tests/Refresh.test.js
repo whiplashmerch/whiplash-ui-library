@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { refresh } from 'src/modules/Icon/Icons';
 
 
-describe('<Refresh />', () => {
+describe('<refresh />', () => {
 
-  const defaultWrapper = mount(<Refresh />);
-  const wrapper = mount(<Refresh iconColor="blue" />);
+  const defaultWrapper = mount(<refresh />);
+  const wrapper = mount(<refresh iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Refresh />, div);
+    ReactDOM.render(<refresh />, div);
   });
 
   it('should have a default iconColor prop', () => {

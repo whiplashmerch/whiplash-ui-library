@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { alarm_filled } from 'src/modules/Icon/Icons';
 
 
-describe('<AlarmFilled />', () => {
+describe('<alarm_filled />', () => {
 
-  const defaultWrapper = mount(<AlarmFilled />);
-  const wrapper = mount(<AlarmFilled iconColor="blue" />);
+  const defaultWrapper = mount(<alarm_filled />);
+  const wrapper = mount(<alarm_filled iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<AlarmFilled />, div);
+    ReactDOM.render(<alarm_filled />, div);
   });
 
   it('should have a default iconColor prop', () => {

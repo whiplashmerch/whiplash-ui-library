@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { search } from 'src/modules/Icon/Icons';
 
 
-describe('<Search />', () => {
+describe('<search />', () => {
 
-  const defaultWrapper = mount(<Search />);
-  const wrapper = mount(<Search iconColor="blue" />);
+  const defaultWrapper = mount(<search />);
+  const wrapper = mount(<search iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Search />, div);
+    ReactDOM.render(<search />, div);
   });
 
   it('should have a default iconColor prop', () => {

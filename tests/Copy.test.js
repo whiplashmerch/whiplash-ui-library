@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { copy } from 'src/modules/Icon/Icons';
 
 
-describe('<Copy />', () => {
+describe('<copy />', () => {
 
-  const defaultWrapper = mount(<Copy />);
-  const wrapper = mount(<Copy iconColor="blue" />);
+  const defaultWrapper = mount(<copy />);
+  const wrapper = mount(<copy iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Copy />, div);
+    ReactDOM.render(<copy />, div);
   });
 
   it('should have a default iconColor prop', () => {

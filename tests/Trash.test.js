@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { trash } from 'src/modules/Icon/Icons';
 
 
-describe('<Trash />', () => {
+describe('<trash />', () => {
 
-  const defaultWrapper = mount(<Trash />);
-  const wrapper = mount(<Trash iconColor="blue" />);
+  const defaultWrapper = mount(<trash />);
+  const wrapper = mount(<trash iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Trash />, div);
+    ReactDOM.render(<trash />, div);
   });
 
   it('should have a default iconColor prop', () => {

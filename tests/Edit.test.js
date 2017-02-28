@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { edit } from 'src/modules/Icon/Icons';
 
 
-describe('<Edit />', () => {
+describe('<edit />', () => {
 
-  const defaultWrapper = mount(<Edit />);
-  const wrapper = mount(<Edit iconColor="blue" />);
+  const defaultWrapper = mount(<edit />);
+  const wrapper = mount(<edit iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Edit />, div);
+    ReactDOM.render(<edit />, div);
   });
 
   it('should have a default iconColor prop', () => {

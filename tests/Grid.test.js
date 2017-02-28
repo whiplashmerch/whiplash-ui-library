@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { grid } from 'src/modules/Icon/Icons';
 
 
-describe('<Grid />', () => {
+describe('<grid />', () => {
 
-  const defaultWrapper = mount(<Grid />);
-  const wrapper = mount(<Grid iconColor="blue" />);
+  const defaultWrapper = mount(<grid />);
+  const wrapper = mount(<grid iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Grid />, div);
+    ReactDOM.render(<grid />, div);
   });
 
   it('should have a default iconColor prop', () => {

@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { settings } from 'src/modules/InformationalIcon/Icons';
 
 
-describe('<Settings />', () => {
+describe('<settings />', () => {
 
-  const defaultWrapper = mount(<Settings />);
-  const wrapper = mount(<Settings iconColor="blue" />);
+  const defaultWrapper = mount(<settings />);
+  const wrapper = mount(<settings iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Settings />, div);
+    ReactDOM.render(<settings />, div);
   });
 
   it('should have a default iconColor prop', () => {

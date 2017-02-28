@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { close } from 'src/modules/Icon/Icons';
 
 
-describe('<Close />', () => {
+describe('<close />', () => {
 
-  const defaultWrapper = mount(<Close />);
-  const wrapper = mount(<Close iconColor="blue" />);
+  const defaultWrapper = mount(<close />);
+  const wrapper = mount(<close iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Close />, div);
+    ReactDOM.render(<close />, div);
   });
 
   it('should have a default iconColor prop', () => {

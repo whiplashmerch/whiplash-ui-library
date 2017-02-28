@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { clipboard } from 'src/modules/Icon/Icons';
 
 
-describe('<Clipboard />', () => {
+describe('<clipboard />', () => {
 
-  const defaultWrapper = mount(<Clipboard />);
-  const wrapper = mount(<Clipboard iconColor="blue" />);
+  const defaultWrapper = mount(<clipboard />);
+  const wrapper = mount(<clipboard iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Clipboard />, div);
+    ReactDOM.render(<clipboard />, div);
   });
 
   it('should have a default iconColor prop', () => {

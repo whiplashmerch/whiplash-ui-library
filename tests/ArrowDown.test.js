@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { arrow_down } from 'src/modules/Icon/Icons';
 
 
-describe('<ArrowDown />', () => {
+describe('<arrow_down />', () => {
 
-  const defaultWrapper = mount(<ArrowDown />);
-  const wrapper = mount(<ArrowDown iconColor="blue" />);
+  const defaultWrapper = mount(<arrow_down />);
+  const wrapper = mount(<arrow_down iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ArrowDown />, div);
+    ReactDOM.render(<arrow_down />, div);
   });
 
   it('should have a default iconColor prop', () => {

@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { more_options } from 'src/modules/Icon/Icons';
 
 
-describe('<MoreOptions />', () => {
+describe('<more_options />', () => {
 
-  const defaultWrapper = mount(<MoreOptions />);
-  const wrapper = mount(<MoreOptions iconColor="blue" />);
+  const defaultWrapper = mount(<more_options />);
+  const wrapper = mount(<more_options iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<MoreOptions />, div);
+    ReactDOM.render(<more_options />, div);
   });
 
   it('should have a default iconColor prop', () => {

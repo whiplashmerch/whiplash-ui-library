@@ -5,15 +5,15 @@ import { mount } from 'enzyme';
 import { arrow_down_circle } from 'src/modules/Icon/Icons';
 
 
-describe('<ArrowDownCirlce />', () => {
+describe('<arrow_down_circle />', () => {
 
-  const defaultWrapper = mount(<ArrowDownCirlce />);
-  const wrapper = mount(<ArrowDownCirlce iconColor="blue" />);
+  const defaultWrapper = mount(<arrow_down_circle />);
+  const wrapper = mount(<arrow_down_circle iconColor="blue" />);
 
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ArrowDownCirlce />, div);
+    ReactDOM.render(<arrow_down_circle />, div);
   });
 
   it('should have a default iconColor prop', () => {
