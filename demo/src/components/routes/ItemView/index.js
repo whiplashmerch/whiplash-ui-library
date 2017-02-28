@@ -7,25 +7,11 @@ import './ItemView.css';
 
 
 export default class ItemView extends Component {
-  constructor() {
-    super();
-
-    // cache methods
-    this._clickButton    = this._clickButton.bind(this);
-    this._getComponent   = this._getComponent.bind(this);
-    this._showModal      = this._showModal.bind(this);
-    this._textInput      = this._textInput.bind(this);
-    this._toCapitalize   = this._toCapitalize.bind(this);
-    this._toggleDropdown = this._toggleDropdown.bind(this);
-    this._toggleModal    = this._toggleModal.bind(this);
-    this._updateLegend   = this._updateLegend.bind(this);
-
-    this.state = {
-      dropdownActive: false,
-      modalActive: false,
-      modalContent: null,
-      uiComponent: null
-    };
+  state = {
+    dropdownActive: false,
+    modalActive: false,
+    modalContent: null,
+    uiComponent: null
   }
 
   componentDidMount() {
@@ -43,7 +29,7 @@ export default class ItemView extends Component {
 
   // PRIVATE
 
-  _toCapitalize(str) {
+  _toCapitalize = (str) => {
     let capsString = null;
 
     return str.replace(/\w\S*/g, function(txt) {
@@ -52,11 +38,11 @@ export default class ItemView extends Component {
     });
   }
 
-  _clickButton(e) {
+  _clickButton = (e) => {
     console.log(e);
   }
 
-  _getComponent() {
+  _getComponent = () => {
     const { dropdownActive } = this.state;
     const { library }   = this.props;
     const selectedName  = library.selected.name;
@@ -89,7 +75,7 @@ export default class ItemView extends Component {
     }
   }
 
-  _getPropsContent() {
+  _getPropsContent = () => {
     const { library } = this.props;
     const currentItem = library.selected;
 
@@ -133,28 +119,28 @@ export default class ItemView extends Component {
     );
   }
 
-  _showModal() {
+  _showModal = () => {
     this.setState({
       modalActive: true,
       modalContent: <AppExample />
     });
   }
 
-  _textInput(val) {
+  _textInput = (val) => {
     console.log(val);
   }
 
-  _toggleModal(modalActive) {
+  _toggleModal = (modalActive) => {
     this.setState({ modalActive });
   }
 
-  _toggleDropdown() {
-    this.setState((prevState) => ({
+  _toggleDropdown = () => {
+    this.setState(prevState => ({
       dropdownActive: !prevState.dropdownActive
     }));
   }
 
-  _updateLegend(activeIndex) {
+  _updateLegend = (activeIndex) => {
     console.log(`update state to: ${ activeIndex }`);
   }
 
