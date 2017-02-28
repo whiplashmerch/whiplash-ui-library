@@ -11,6 +11,10 @@ export default class DatePicker extends Component {
     labelText: null
   }
 
+  state = {
+    active: false
+  }
+
   // PRIVATE
 
   _getLabel = () => {
@@ -27,8 +31,10 @@ export default class DatePicker extends Component {
     );
   }
 
-  _toggleMap = () => {
-    console.log('toggle map');
+  _toggleActiveState = () => {
+    this.setState(prevState => ({
+      active: !prevState.active
+    }));
   }
 
   render() {
@@ -41,19 +47,32 @@ export default class DatePicker extends Component {
           { label }
 
           <input
-            { ...props }
             className="DatePicker-input"
-            onClick={ this._toggleMap }
+            onClick={ this._toggleActiveState }
             placeholder="select date"
             ref={ ref => this.inputRef = ref }
             type="text"
             value=""
             readOnly
+            { ...props }
           />
         </div>
 
         <div className="DatePicker-map-wrapper">
+          <div className="DatePicker-feature">
+            <header className="DatePicker-feature-header">
+              <p className="DatePicker-feature-label">
+                { labelText || '' }
+              </p>
+            </header>
+            <div className="DatePicker-feature-main">
+              content
+            </div>
+          </div>
 
+          <div className="DatePicker-sidebar">
+
+          </div>
         </div>
       </div>
     );
