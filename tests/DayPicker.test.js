@@ -52,6 +52,20 @@ describe('<DayPicker />', () => {
     expect(wrapper.props().infoHeader).to.equal('to');
   });
 
+  it('should have a default currentMonth state', () => {
+    expect(wrapper.state().currentMonth).to.not.equal(null);
+    expect(wrapper.state().currentMonth).to.not.equal(undefined);
+    expect(wrapper.state().currentMonth).to.not.equal('0');
+    expect(wrapper.state().currentMonth).to.equal(0);
+  });
+
+  it('should have a default currentYear state', () => {
+    expect(wrapper.state().currentYear).to.not.equal(null);
+    expect(wrapper.state().currentYear).to.not.equal(undefined);
+    expect(wrapper.state().currentYear).to.not.equal('2017');
+    expect(wrapper.state().currentYear).to.equal(2017);
+  });
+
   it('should display the infoHeader in the UI if given', () => {
     expect(defaultWrapper.find('.DayPicker-feature-label').length).to.not.equal(1);
     expect(defaultWrapper.find('.DayPicker-feature-label').length).to.equal(0);

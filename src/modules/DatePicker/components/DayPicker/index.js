@@ -20,8 +20,8 @@ export default class DayPicker extends Component {
   }
 
   state = {
-    currentMonth: 'January',
-    currentYear: '2017'
+    currentMonth: 0,
+    currentYear: moment().year()
   }
 
   // PRIVATE
@@ -99,7 +99,7 @@ export default class DayPicker extends Component {
               />
 
               <h4 className="DayPicker-header-title">
-                { currentMonth }
+                { moment().month(currentMonth).format('MMMM') }
               </h4>
             </div>
           </header>
