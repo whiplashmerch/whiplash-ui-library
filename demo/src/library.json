@@ -68,7 +68,7 @@
   {
     "name": "DatePicker",
     "description": "A date selection-based element to use in forms.",
-    "component": "<DatePicker />",
+    "component": "<DatePicker labelText=\"from\" onDayClick={ doSomething } />",
     "props": [
       {
         "name": "labelText (optional)",
@@ -83,7 +83,7 @@
         "description": "Returns the moment.js Obj for the day selected onClick."
       }
     ],
-    "notes": ""
+    "notes": "This Component also passes down any other props given to a hidden input element for form purposes."
   },
   {
     "name": "Dropdown",
