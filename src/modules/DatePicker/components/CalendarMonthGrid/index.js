@@ -3,7 +3,6 @@ import moment from 'moment';
 import classnames from 'classnames';
 import getCalendarMonthWeeks from './utils/getCalendarMonthWeeks';
 
-import 'animate.css';
 import '../../../../fonts/index.css';
 import './CalendarMonthGrid.css';
 

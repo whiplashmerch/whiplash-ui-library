@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import moment from 'moment';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import DayPicker from 'src/modules/DatePicker/components/DayPicker';
@@ -15,6 +16,7 @@ describe('<DayPicker />', () => {
     <DayPicker
       active={ true }
       infoHeader="to"
+      onDayClick={ testFn }
     />
   );
 
@@ -52,6 +54,13 @@ describe('<DayPicker />', () => {
     expect(wrapper.props().infoHeader).to.equal('to');
   });
 
+  it('should accept an onDayClick prop', () => {
+    expect(wrapper.props().onDayClick).to.not.equal(null);
+    expect(wrapper.props().onDayClick).to.not.equal(undefined);
+    expect(wrapper.props().onDayClick).to.not.equal('');
+    expect(wrapper.props().onDayClick).to.equal(testFn);
+  });
+
   it('should have a default currentMonth state', () => {
     expect(wrapper.state().currentMonth).to.not.equal(null);
     expect(wrapper.state().currentMonth).to.not.equal(undefined);
@@ -62,7 +71,7 @@ describe('<DayPicker />', () => {
     expect(wrapper.state().currentYear).to.not.equal(null);
     expect(wrapper.state().currentYear).to.not.equal(undefined);
     expect(wrapper.state().currentYear).to.not.equal('2017');
-    expect(wrapper.state().currentYear).to.equal(2017);
+    expect(wrapper.state().currentYear).to.equal(moment().year());
   });
 
   it('should display the infoHeader in the UI if given', () => {
@@ -72,6 +81,13 @@ describe('<DayPicker />', () => {
     expect(wrapper.find('.DayPicker-feature-label').length).to.equal(1);
     expect(wrapper.find('.DayPicker-feature-label').text()).to.not.equal('');
     expect(wrapper.find('.DayPicker-feature-label').text()).to.equal('to');
+  });
+
+  it('should display the currentMonth state in the UI', () => {
+    expect(wrapper.find('.DayPicker-header-title').text()).to.not.equal(null);
+    expect(wrapper.find('.DayPicker-header-title').text()).to.not.equal(undefined);
+    expect(wrapper.find('.DayPicker-header-title').text()).to.not.equal('');
+    expect(wrapper.find('.DayPicker-header-title').text()).to.equal(moment().format('MMMM'));
   });
 
   it('should display the weekdays', () => {
