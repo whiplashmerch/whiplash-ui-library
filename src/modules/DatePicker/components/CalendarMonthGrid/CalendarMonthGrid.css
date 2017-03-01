@@ -1,4 +1,19 @@
 .CalendarMonthGrid {
-  padding-top: 1.3rem;
   width: 100%;
+}
+
+tbody tr.CalendarMonthGrid-tr,
+tbody tr.CalendarMonthGrid-tr:nth-child(even) {
+  background-color: none !important;
+}
+
+tbody tr.CalendarMonthGrid-tr:last-child {
+  border-bottom: none;
+}
+
+tbody td.CalendarMonthGrid-td {
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
 }

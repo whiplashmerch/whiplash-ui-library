@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import classnames from 'classnames';
-import getCalendarMonthWeeks from './getCalendarMonthWeeks';
+import getCalendarMonthWeeks from './utils/getCalendarMonthWeeks';
 
 import 'animate.css';
 import '../../../../fonts/index.css';
@@ -23,6 +23,23 @@ export default class CalendarMonthGrid extends Component {
     const { initialMonth } = this.props;
     const weeks = getCalendarMonthWeeks(moment(), false);
 
+    return weeks.map((week, index) => (
+      <tr
+        className="CalendarMonthGrid-tr"
+        key={ `${ week }-${ index }` }
+      >
+        {
+          week.map((day, dayOfWeek) => (
+            <td
+              className="CalendarMonthGrid-td"
+              key={ `${ day }-${ dayOfWeek }` }
+            >
+              { day ? day.format('D') : '' }
+            </td>
+          ))
+        }
+      </tr>
+    ))
   }
 
 
