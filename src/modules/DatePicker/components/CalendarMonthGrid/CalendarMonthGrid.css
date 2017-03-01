@@ -2,18 +2,42 @@
   width: 100%;
 }
 
-tbody tr.CalendarMonthGrid-tr,
-tbody tr.CalendarMonthGrid-tr:nth-child(even) {
-  background-color: none !important;
-}
-
-tbody tr.CalendarMonthGrid-tr:last-child {
-  border-bottom: none;
-}
-
-tbody td.CalendarMonthGrid-td {
+.CalendarMonthGrid-td {
+  color: #646471;
+  cursor: pointer;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
   padding-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
   padding-top: 1rem;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.CalendarMonthGrid-td:before {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  bottom: 0;
+  display: inline-block;
+  content: "";
+  height: 2.1rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.1rem;
+}
+
+/* hover */
+
+.CalendarMonthGrid-td:hover:before {
+  border: 1px solid #8071FE;
+}
+
+/* blank day */
+
+.CalendarMonthGrid-td.blank:before {
+  display: none;
 }

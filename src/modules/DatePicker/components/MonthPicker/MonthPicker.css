@@ -67,9 +67,8 @@
 .MonthPicker-link-bar-wrapper {
   bottom: 0;
   display: inline-block;
-  margin-left: 0.875rem;
   position: absolute;
-  right: 1.4rem;
+  right: 1rem;
 }
 
 .MonthPicker-link-bar {

@@ -21,8 +21,8 @@
   flex-flow: column nowrap;
   height: 100%;
   padding-bottom: 2.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
   padding-top: 2.5rem;
 }
 
@@ -56,31 +56,6 @@
   letter-spacing: 0.4rem;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-}
-
-.DayPicker-arrow {
-  background:
-    url(./images/arrow.svg)
-    no-repeat
-    center
-    center
-    transparent;
-  background-size: contain;
-  bottom: 0.2rem;
-  cursor: pointer;
-  display: inline-block;
-  height: 0.875rem;
-  position: absolute;
-  width: 0.4375rem;
-}
-
-.DayPicker-arrow.prev {
-  left: 0;
-}
-
-.DayPicker-arrow.next {
-  right: 0;
-  transform: rotate(180deg);
 }
 
 .DayPicker-feature-main {

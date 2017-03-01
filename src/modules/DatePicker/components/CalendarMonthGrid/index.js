@@ -22,6 +22,7 @@ export default class CalendarMonthGrid extends Component {
   _getWeeks = () => {
     const { initialMonth } = this.props;
     const weeks = getCalendarMonthWeeks(moment(), false);
+    let dayClass = null;
 
     return weeks.map((week, index) => (
       <tr
@@ -29,14 +30,18 @@ export default class CalendarMonthGrid extends Component {
         key={ `${ week }-${ index }` }
       >
         {
-          week.map((day, dayOfWeek) => (
-            <td
-              className="CalendarMonthGrid-td"
-              key={ `${ day }-${ dayOfWeek }` }
-            >
-              { day ? day.format('D') : '' }
-            </td>
-          ))
+          week.map((day, dayOfWeek) => {
+            dayClass = classnames('CalendarMonthGrid-td', { blank: !!!day });
+
+            return(
+              <td
+                className={ dayClass }
+                key={ `${ day }-${ dayOfWeek }` }
+              >
+                { day ? day.format('D') : '' }
+              </td>
+            )
+          })
         }
       </tr>
     ))
