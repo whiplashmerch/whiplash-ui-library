@@ -8,13 +8,13 @@ import './MonthPicker.css';
 
 export default class MonthPicker extends Component {
   static propTypes = {
-    active: PropTypes.number,
-    year: PropTypes.string,
+    active: PropTypes.object,
+    year: PropTypes.number,
     onSelect: PropTypes.func
   }
 
   static defaultProps = {
-    active: 0,
+    active: moment(),
     year: moment().year()
   }
 
@@ -23,10 +23,11 @@ export default class MonthPicker extends Component {
   _getMonths = () => {
     const { active, onSelect } = this.props;
     const months  = Array.from({length: 12}, (v, i) => i);
-    let linkClass = null;
+    let activeMonth, linkClass = null;
 
     return months.map(mo => {
-      linkClass = classnames('MonthPicker-li-link', { active: mo === active });
+      activeMonth = Number(active.format('M')) - 1;
+      linkClass = classnames('MonthPicker-li-link', { active: mo === Number(activeMonth) });
 
       return(
         <li

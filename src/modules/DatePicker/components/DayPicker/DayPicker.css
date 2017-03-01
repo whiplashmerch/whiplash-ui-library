@@ -95,9 +95,11 @@
 
 .DayPicker-week-ul {
   align-items: center;
+  border-bottom: 1px solid #EDEDF3;
   display: flex;
   justify-content: center;
   list-style: none;
+  padding-bottom: 1.3rem;
   width: 100%;
 }
 

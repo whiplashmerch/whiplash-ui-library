@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import classnames from 'classnames';
+import CalendarMonthGrid from '../CalendarMonthGrid';
 import MonthPicker from '../MonthPicker';
 
 import 'animate.css';
@@ -20,7 +21,7 @@ export default class DayPicker extends Component {
   }
 
   state = {
-    currentMonth: 0,
+    currentMonth: moment(),
     currentYear: moment().year()
   }
 
@@ -99,7 +100,7 @@ export default class DayPicker extends Component {
               />
 
               <h4 className="DayPicker-header-title">
-                { moment().month(currentMonth).format('MMMM') }
+                { currentMonth.format('MMMM') }
               </h4>
             </div>
           </header>
@@ -110,11 +111,15 @@ export default class DayPicker extends Component {
                 { weekDays }
               </ul>
             </div>
+
+            <CalendarMonthGrid
+              initialMonth={ currentMonth }
+            />
           </div>
         </div>
 
         <MonthPicker
-          active={ 0 }
+          active={ currentMonth }
           year={ currentYear }
           onSelect={ this._goToMonth }
         />
