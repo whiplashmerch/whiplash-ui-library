@@ -10,7 +10,8 @@ import './CalendarMonthGrid.css';
 
 export default class CalendarMonthGrid extends Component {
   static propTypes = {
-    initialMonth: PropTypes.object
+    initialMonth: PropTypes.object,
+    onDayClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -20,7 +21,7 @@ export default class CalendarMonthGrid extends Component {
   // PRIVATE
 
   _getWeeks = () => {
-    const { initialMonth } = this.props;
+    const { initialMonth, onDayClick } = this.props;
     const weeks = getCalendarMonthWeeks(initialMonth, false);
     let dayClass = null;
 
@@ -37,6 +38,7 @@ export default class CalendarMonthGrid extends Component {
               <td
                 className={ dayClass }
                 key={ `${ day }-${ dayOfWeek }` }
+                onClick={e => onDayClick(e, day)}
               >
                 { day ? day.format('D') : '' }
               </td>

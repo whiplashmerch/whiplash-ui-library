@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import DayPicker from './components/DayPicker';
+
 import './DatePicker.css';
 
 
 
 export default class DatePicker extends Component {
   static propTypes = {
-    labelText: PropTypes.string
+    labelText: PropTypes.string,
+    onDayClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -14,7 +17,8 @@ export default class DatePicker extends Component {
   }
 
   state = {
-    active: false
+    active: false,
+    inputValue: ''
   }
 
   // PRIVATE
@@ -39,9 +43,21 @@ export default class DatePicker extends Component {
     }));
   }
 
+  _updateInputValue = (e, day) => {
+    const { onDayClick } = this.props;
+
+    this.setState(prevState => ({
+      active: !prevState.active,
+      inputValue: day.format('MMM Do Y')
+    }), () => {
+      onDayClick(e, day);
+    })
+  }
+
+
   render() {
-    const { active } = this.state;
-    const { labelText, ...props } = this.props;
+    const { active, inputValue } = this.state;
+    const { labelText, onDayClick, ...props } = this.props;
     const label = this._getLabel();
 
     return(
@@ -52,11 +68,11 @@ export default class DatePicker extends Component {
           <input
             className="DatePicker-input"
             onClick={ this._toggleActiveState }
-            placeholder="select date"
+            placeholder={ !!!inputValue ? 'select date' : '' }
             ref={ ref => this.inputRef = ref }
             type="text"
-            value=""
-            readOnly
+            value={ inputValue }
+            readOnly={ active }
             { ...props }
           />
         </div>
@@ -64,6 +80,7 @@ export default class DatePicker extends Component {
         <DayPicker
           active={ active }
           infoHeader={ labelText }
+          onDayClick={ this._updateInputValue }
         />
       </div>
     );

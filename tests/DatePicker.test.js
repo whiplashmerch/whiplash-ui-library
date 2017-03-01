@@ -39,6 +39,12 @@ describe('<DatePicker />', () => {
     expect(wrapper.state().active).to.equal(false);
   });
 
+  it('should have a default inputValue state', () => {
+    expect(wrapper.state().inputValue).to.not.equal(null);
+    expect(wrapper.state().inputValue).to.not.equal(undefined);
+    expect(wrapper.state().inputValue).to.equal('');
+  });
+
   it('should display a <label> tag if labelText is given', () => {
     expect(defaultWrapper.find('.DatePicker-label').length).to.not.equal(1);
     expect(defaultWrapper.find('.DatePicker-label').length).to.equal(0);

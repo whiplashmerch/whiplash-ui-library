@@ -53,7 +53,7 @@
   border: 1px solid #B3B3CC;
   border-radius: 2px;
   box-shadow: none;
-  color: #303030;
+  color: transparent;
   cursor: pointer;
   display: block;
   font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
@@ -66,6 +66,7 @@
   padding-top: 0.8rem;
   transition: border 150ms ease-out;
   text-transform: capitalize;
+  text-shadow: 0 0 0 #303030;
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }

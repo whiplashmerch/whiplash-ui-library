@@ -12,7 +12,8 @@ import './DayPicker.css';
 export default class DayPicker extends Component {
   static propTypes = {
     active: PropTypes.bool,
-    infoHeader: PropTypes.string
+    infoHeader: PropTypes.string,
+    onDayClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -75,7 +76,7 @@ export default class DayPicker extends Component {
 
   render() {
     const { currentMonth, currentYear } = this.state;
-    const { active } = this.props;
+    const { active, onDayClick } = this.props;
     const infoHeaderContent = this._getInfoHeader();
     const weekDays = this._getWeekdays();
 
@@ -115,6 +116,7 @@ export default class DayPicker extends Component {
 
             <CalendarMonthGrid
               initialMonth={ currentMonth }
+              onDayClick={ onDayClick }
             />
           </div>
         </div>
