@@ -21,7 +21,7 @@ export default class CalendarMonthGrid extends Component {
 
   _getWeeks = () => {
     const { initialMonth } = this.props;
-    const weeks = getCalendarMonthWeeks(moment(), false);
+    const weeks = getCalendarMonthWeeks(initialMonth, false);
     let dayClass = null;
 
     return weeks.map((week, index) => (

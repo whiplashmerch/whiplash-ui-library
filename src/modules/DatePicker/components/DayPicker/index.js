@@ -60,7 +60,16 @@ export default class DayPicker extends Component {
   }
 
   _goToMonth = (month) => {
-    console.log(month);
+    const currentMonth = moment().month(month);
+    this.setState({ currentMonth });
+  }
+
+  _goToNext = () => {
+    console.log('go to next');
+  }
+
+  _goToPrev = () => {
+    console.log('go to prev');
   }
 
 
@@ -81,6 +90,16 @@ export default class DayPicker extends Component {
             { infoHeaderContent }
 
             <div className="DayPicker-header-title-wrapper">
+              <span
+                className="DayPicker-arrow prev"
+                onClick={ this._goToPrev }
+              />
+
+              <span
+                className="DayPicker-arrow next"
+                onClick={ this._goToNext }
+              />
+
               <h4 className="DayPicker-header-title">
                 { currentMonth.format('MMMM') }
               </h4>

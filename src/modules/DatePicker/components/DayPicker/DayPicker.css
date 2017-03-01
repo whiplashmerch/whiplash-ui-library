@@ -58,6 +58,31 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.DayPicker-arrow {
+  background:
+    url(./images/arrow.svg)
+    no-repeat
+    center
+    center
+    transparent;
+  background-size: contain;
+  bottom: 0.2rem;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.875rem;
+  position: absolute;
+  width: 0.4375rem;
+}
+
+.DayPicker-arrow.prev {
+  left: 0;
+}
+
+.DayPicker-arrow.next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
 .DayPicker-feature-main {
   text-align: center;
   width: 100%;
