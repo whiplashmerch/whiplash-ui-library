@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import classnames from 'classnames';
+import MonthPicker from '../MonthPicker';
+
 import 'animate.css';
 import '../../../../fonts/index.css';
 import './DayPicker.css';
@@ -15,6 +17,11 @@ export default class DayPicker extends Component {
   static defaultProps = {
     active: false,
     infoHeader: null
+  }
+
+  state = {
+    currentMonth: 'January',
+    currentYear: '2017'
   }
 
   // PRIVATE
@@ -51,6 +58,10 @@ export default class DayPicker extends Component {
     })
   }
 
+  _goToMonth = (month) => {
+    console.log(month);
+  }
+
   _goToNext = () => {
     console.log('go to next month');
   }
@@ -61,6 +72,7 @@ export default class DayPicker extends Component {
 
 
   render() {
+    const { currentMonth, currentYear } = this.state;
     const { active } = this.props;
     const infoHeaderContent = this._getInfoHeader();
     const weekDays = this._getWeekdays();
@@ -87,7 +99,7 @@ export default class DayPicker extends Component {
               />
 
               <h4 className="DayPicker-header-title">
-                January
+                { currentMonth }
               </h4>
             </div>
           </header>
@@ -101,9 +113,11 @@ export default class DayPicker extends Component {
           </div>
         </div>
 
-        <div className="DayPicker-sidebar">
-
-        </div>
+        <MonthPicker
+          active={ 0 }
+          year={ currentYear }
+          onSelect={ this._goToMonth }
+        />
       </div>
     );
   }

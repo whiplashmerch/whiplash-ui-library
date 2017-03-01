@@ -115,14 +115,6 @@
   color: #9695AB;
 }
 
-.DayPicker-sidebar {
-  background-color: #f7f8f9;
-  border-radius: 0 6px 6px 0;
-  display: flex;
-  flex: 1;
-  height: 100%;
-}
-
 /* arrow */
 
 .DayPicker:after,
