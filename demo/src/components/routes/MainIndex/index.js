@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { NavLink, Navicon } from 'src';
+
 import FetchHelper from 'demo/classes/FetchHelper';
+
 import logo from '../images/whiplash-geo-logo-white.svg';
 import './MainIndex.css';
 
@@ -29,20 +31,41 @@ export default class MainIndex extends Component {
 
   _getLinks() {
     const { library } = this.props;
+    const categories = ['layout', 'forms', 'icons', 'navigation', 'notifiers'];
     const noItems = !!!library.items.length;
     const date = new Date();
+    let navItems = null;
 
     if (noItems) {
       return;
     }
 
-    return library.items.map((item, index) => (
-      <li key={ `${ date }-${ index }` }>
-        <NavLink to={ `/library/${ item.name }` } className="NavLink">
-          { item.name }
-        </NavLink>
-      </li>
-    ));
+    return categories.map((item, index) => {
+      navItems = library.items.filter(i => i.group === item);
+
+      return(
+        <li key={ item }>
+          <p className="MainIndex-sidebar-accent">
+            { item }
+          </p>
+
+          <ul className="MainIndex-nav-list">
+            {
+              navItems.map((whipComponent, index) => (
+                <li key={ `${ date }-${ index }` }>
+                  <NavLink
+                    to={ `/library/${ whipComponent.name }` }
+                    className="NavLink"
+                  >
+                    { whipComponent.name }
+                  </NavLink>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+      )
+    });
   }
 
   _toggleNavicon(mobileNavActive) {
@@ -77,7 +100,7 @@ export default class MainIndex extends Component {
             <li>
               <a
                 className="MainIndex-desktop-link"
-                href="https://www.whiplashmerch.com/"
+                href="https://www.getwhiplash.com/"
                 target="_blank">
                 Whiplash
               </a>

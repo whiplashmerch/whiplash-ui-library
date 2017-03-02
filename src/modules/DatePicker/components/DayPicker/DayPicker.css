@@ -1,0 +1,157 @@
+.DayPicker {
+  align-items: center;
+  animation-duration: 150ms;
+  background-color: #fff;
+  border: 1px solid #B3B3CC;
+  border-radius: 6px;
+  box-shadow: 2px 2px 30px 0 rgba(128, 128, 145, 0.1);
+  display: flex;
+  justify-content: flex-start;
+  height: 30rem;
+  left: 0;
+  position: absolute;
+  top: 5.5rem;
+  width: 30rem;
+  z-index: 100;
+}
+
+.DayPicker-feature {
+  display: flex;
+  flex: 2;
+  flex-flow: column nowrap;
+  height: 100%;
+  padding-bottom: 2.5rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 2.5rem;
+}
+
+.DayPicker-feature-header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  width: 100%;
+}
+
+.DayPicker-feature-label {
+  color: #808091;
+  display: block;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+.DayPicker-header-title-wrapper {
+  padding-top: 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.DayPicker-header-title {
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+.DayPicker-arrow {
+  background:
+    url(./images/arrow.svg)
+    no-repeat
+    center
+    center
+    #fff;
+  background-size: contain;
+  bottom: 0.2rem;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.875rem;
+  position: absolute;
+  width: 0.4375rem;
+  z-index: 10;
+}
+
+.DayPicker-arrow.prev {
+  left: 0;
+}
+
+.DayPicker-arrow.next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.DayPicker-feature-main {
+  text-align: center;
+  width: 100%;
+}
+
+.DayPicker-week-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.DayPicker-week-ul {
+  align-items: center;
+  border-bottom: 1px solid #EDEDF3;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-bottom: 1.3rem;
+  width: 100%;
+}
+
+.DayPicker-week-li {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  width: 14.285714286%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.DayPicker-week-li.accent {
+  color: #9695AB;
+}
+
+/* arrow */
+
+.DayPicker:after,
+.DayPicker:before {
+	bottom: 100%;
+  border: solid transparent;
+  content: "";
+	height: 0;
+  left: 4.3rem;
+	position: absolute;
+	pointer-events: none;
+  width: 0;
+}
+
+.DayPicker:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 9px;
+	margin-left: -9px;
+}
+.DayPicker:before {
+	border-color: rgba(179, 179, 204, 0);
+	border-bottom-color: #B3B3CC;
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+/* animations */
+
+.DayPicker .animated {
+  animation-duration: 600ms;
+}
+
+.DayPicker-transition-wrapper {
+  display: block;
+  overflow: hidden;
+}

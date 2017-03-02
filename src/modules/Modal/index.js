@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+
 import 'animate.css';
 import './Modal.css';
 

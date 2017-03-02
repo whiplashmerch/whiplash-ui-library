@@ -56,6 +56,8 @@ export default class ItemView extends Component {
         return <DemoComponent onCallback={ this._clickButton } />;
       case 'CheckButton':
         return <DemoComponent defaultChecked />;
+      case 'DatePicker':
+        return <DemoComponent onCallback={ this._selectDate } />;
       case 'Dropdown':
         return <DemoComponent open={ dropdownActive } onUpdate={ this._toggleDropdown } />;
       case 'Input':
@@ -117,6 +119,10 @@ export default class ItemView extends Component {
         </th>
       </tr>
     );
+  }
+
+  _selectDate = (e, date) => {
+    console.log(date);
   }
 
   _showModal = () => {

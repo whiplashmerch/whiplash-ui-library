@@ -1,12 +1,38 @@
-.Home-headline {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
+.Home {
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
 }
 
-.Home-description {
-  font-size: 0.9rem;
-  font-weight: 100;
+.Home-headline {
+  padding-bottom: 2rem;
+  width: 20rem;
+}
+
+.Home-logo {
+  display: inline-block;
+  width: 100%;
+}
+
+.Home-description,
+.Home-change-link {
+  font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.03rem;
   line-height: 1.6;
-  max-width: 34.375rem;
+  max-width: 35.375rem;
   padding-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Home-change-link {
+  display: inline-block;
+  color: #5134C4;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  text-decoration: none;
+}
+
+.Home-change-link:hover {
+  color: #8071FE;
 }

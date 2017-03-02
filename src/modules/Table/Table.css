@@ -7,14 +7,14 @@ table {
   width: 100%;
 }
 
-thead {
+.Table thead {
   display: table-header-group;
   background-color: #F5F5F7;
   vertical-align: middle;
   width: 100%;
 }
 
-th {
+.Table th {
   background:
     url(./images/table-border.svg)
     repeat-y
@@ -31,36 +31,36 @@ th {
   text-transform: capitalize;
 }
 
-th:last-child {
+.Table th:last-child {
   background: none;
 }
 
-tbody tr {
+.Table tbody tr {
   background-color: #fff;
 }
 
-tbody tr:nth-child(even) {
+.Table tbody tr:nth-child(even) {
   background-color: #FAFAFA;
 }
 
-tbody tr:last-child {
+.Table tbody tr:last-child {
   border-bottom: 1px solid #E6E6ED;
 }
 
-tbody tr:hover {
+.Table tbody tr:hover {
   background-color: #F7F6FF;
 }
 
-td {
+.Table td {
   position: relative;
 }
 
-td .Dropdown {
+.Table td .Dropdown {
   width: 22rem;
 }
 
-td,
-td p {
+.Table td,
+.Table td p {
   background:
     url(./images/table-border.svg)
     repeat-y
@@ -78,12 +78,12 @@ td p {
   -webkit-font-smoothing: antialiased;
 }
 
-td p {
+.Table td p {
   background: initial;
   padding: 0;
 }
 
-td a {
+.Table td a {
   display: inline-block;
   color: #5134C4;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
@@ -97,15 +97,15 @@ td a {
   -webkit-font-smoothing: antialiased;
 }
 
-td a:hover {
+.Table td a:hover {
   color: #8071FE;
 }
 
-td {
+.Table td {
   text-transform: initial;
 }
 
-td:last-child {
+.Table td:last-child {
   background: none;
 }
 
@@ -123,7 +123,7 @@ td:last-child {
                 BREAKPOINTS
 ===========================================*/
 @media only screen and (min-width: 768px) {
-  th {
+  .Table th {
     height: 2.4rem;
   }
 }

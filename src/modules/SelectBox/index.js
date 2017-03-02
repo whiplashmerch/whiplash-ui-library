@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import '../../fonts/index.css';
 import classnames from 'classnames';
+
+import '../../fonts/index.css';
 import './SelectBox.css';
 
 

@@ -3,6 +3,7 @@
     "name": "Breadcrumb",
     "description": "A breadcrumb nav list for apps with and without use of React-Router",
     "component": "<Breadcrumb router list={ anArrayOfObjects }  />",
+    "group": "layout",
     "props": [
       {
         "name": "bgColor (optional)",
@@ -29,6 +30,7 @@
     "name": "Button",
     "description": "No need for description...",
     "component": "<Button type=\"button\" buttonText=\"secondary-dark\" callback={ this._clickButton } />",
+    "group": "layout",
     "props": [
       {
         "name": "buttonText",
@@ -55,6 +57,7 @@
     "name": "CheckButton",
     "description": "A nice checkbox-style element that toggles a bool state.",
     "component": "<CheckButton name=\"accept_emails\" defaultSelected />",
+    "group": "forms",
     "props": [
       {
         "name": "defaultChecked (optional)",
@@ -66,9 +69,31 @@
     "notes": "Component also passes down all input & React props given for the ability to control state of a radio group if needed."
   },
   {
+    "name": "DatePicker",
+    "description": "A date selection-based element to use in forms.",
+    "component": "<DatePicker labelText=\"from\" onDayClick={ doSomething } />",
+    "group": "forms",
+    "props": [
+      {
+        "name": "labelText (optional)",
+        "type": "String",
+        "default": "",
+        "description": "Gives Component a label tag for display."
+      },
+      {
+        "name": "onDayClick",
+        "type": "Function",
+        "default": "",
+        "description": "Returns the moment.js Obj for the day selected onClick."
+      }
+    ],
+    "notes": "This Component also passes down any other props given to the input element for form purposes."
+  },
+  {
     "name": "Dropdown",
     "description": "A dropdown-based element that display's its children.",
     "component": "<Dropdown right open={ this.state.dropdownActive }><a href=\"#\">Home</a></Dropdown>",
+    "group": "forms",
     "props": [
       {
         "name": "left (optional)",
@@ -95,6 +120,7 @@
     "name": "Icons",
     "description": "Whiplash basic icon library",
     "component": "<Icon name=\"add\" color=\"#303030\" />",
+    "group": "icons",
     "props": [
       {
         "name": "color (optional)",
@@ -127,6 +153,7 @@
     "name": "InformationalIcons",
     "description": "Whiplash informational icon library",
     "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
+    "group": "icons",
     "props": [
       {
         "name": "color (optional)",
@@ -159,6 +186,7 @@
     "name": "Input",
     "description": "An input that displays either a animating (default) or basic style theme in your forms.",
     "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required />",
+    "group": "forms",
     "props": [
       {
         "name": "basic (optional)",
@@ -191,6 +219,7 @@
     "name": "Legend",
     "description": "A visual used to display a page indicator of where the user is located or something similar.",
     "component": "<Legend activeIndex=\"3\" totalPages=\"4\" callback={ this.updateActiveIndex } />",
+    "group": "layout",
     "props": [
       {
         "name": "activeIndex",
@@ -223,6 +252,7 @@
     "name": "Modal",
     "description": "A way to have dynamic modals within your app triggered from it's active property.",
     "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } logo={ yourLogoRef } onCloseModal={ this._toggleModal } />",
+    "group": "notifiers",
     "props": [
       {
         "name": "active",
@@ -261,6 +291,7 @@
     "name": "Navicon",
     "description": "A button for mobile or desktop devices that show a toggled state",
     "component": "<Navicon barColor=\"#303030\" onUserClick={ this._toggleNavicon } />",
+    "group": "layout",
     "props": [
       {
         "name": "barColor (optional)",
@@ -281,6 +312,7 @@
     "name": "NavLink",
     "description": "A react-router Link-based Component for navigating to specific routes.",
     "component": "<NavLink to=\"/orders\">orders</NavLink>",
+    "group": "navigation",
     "props": [
       {
         "name": "to",
@@ -295,6 +327,7 @@
     "name": "NotificationToast",
     "description": "A visual that is used to represent a flash/toast/notification for small messages in the UI.",
     "component": "<NotificationToast active theme=\"error\" message=\"Oh, no! Looks like we weren't able to add your items\" />",
+    "group": "notifiers",
     "props": [
       {
         "name": "active",
@@ -321,6 +354,7 @@
     "name": "SelectBox",
     "description": "A select-based element which represents a control that provides a menu of options.",
     "component": "<SelectBox form label=\"select item\" list={ listArr } callback={ this._updateSelection } name=\"items\" required />",
+    "group": "forms",
     "props": [
       {
         "name": "callback",
@@ -353,6 +387,7 @@
     "name": "Table",
     "description": "A table-based element used to display data.",
     "component": "<Table>{ ... }</Table>",
+    "group": "layout",
     "props": [],
     "notes": "Just add in all your normal table child elements and you are good. Component also passes down any props given."
   },
@@ -360,6 +395,7 @@
     "name": "Toggle",
     "description": "A checkbox-based input used to visualize a toggle option in a form.",
     "component": "<Toggle active toggleRef={ this.createToggleRef } />",
+    "group": "forms",
     "props": [
       {
         "name": "active",

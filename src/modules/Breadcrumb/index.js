@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 import { NavLink } from '../../';
+
 import '../../fonts/index.css';
 import './Breadcrumb.css';
+
 
 const propTypes = {
   bgColor: PropTypes.string,
