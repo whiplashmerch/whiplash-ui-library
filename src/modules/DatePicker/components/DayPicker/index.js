@@ -23,7 +23,8 @@ export default class DayPicker extends Component {
 
   state = {
     currentMonth: moment(),
-    currentYear: moment().year()
+    currentYear: moment().year(),
+    transition: ''
   }
 
   // PRIVATE
@@ -66,23 +67,41 @@ export default class DayPicker extends Component {
   }
 
   _goToNext = () => {
-    console.log('go to next');
+    this.setState({
+      transition: 'fadeOutLeft'
+    }, () => {
+      setTimeout(() => {
+        this.setState({ transition: '' });
+      }, 1000);
+    });
   }
 
   _goToPrev = () => {
-    console.log('go to prev');
+    this.setState({
+      transition: 'fadeOutRight'
+    }, () => {
+      setTimeout(() => {
+        this.setState({ transition: '' });
+      }, 1000);
+    });
   }
 
 
   render() {
-    const { currentMonth, currentYear } = this.state;
+    const { currentMonth, currentYear, transition } = this.state;
     const { active, onDayClick } = this.props;
+
+    const MonthTitleClass = classnames('DayPicker-header-title', 'animated', `${ transition }`);
+    const CalendarMonthGridClass = classnames('animated', `${ transition }`);
+
     const infoHeaderContent = this._getInfoHeader();
     const weekDays = this._getWeekdays();
+
 
     if (!active) {
       return null;
     }
+
 
     return(
       <div className="DayPicker animated fadeIn">
@@ -101,9 +120,11 @@ export default class DayPicker extends Component {
                 onClick={ this._goToNext }
               />
 
-              <h4 className="DayPicker-header-title">
-                { currentMonth.format('MMMM') }
-              </h4>
+              <span className="DayPicker-transition-wrapper">
+                <h4 className={ MonthTitleClass } >
+                  { currentMonth.format('MMMM') }
+                </h4>
+              </span>
             </div>
           </header>
 
@@ -114,10 +135,14 @@ export default class DayPicker extends Component {
               </ul>
             </div>
 
-            <CalendarMonthGrid
-              initialMonth={ currentMonth }
-              onDayClick={ onDayClick }
-            />
+            <div className="DayPicker-transition-wrapper">
+              <div className={ CalendarMonthGridClass }>
+                <CalendarMonthGrid
+                  initialMonth={ currentMonth }
+                  onDayClick={ onDayClick }
+                />
+              </div>
+            </div>
           </div>
         </div>
 

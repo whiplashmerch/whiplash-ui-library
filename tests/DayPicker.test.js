@@ -74,6 +74,12 @@ describe('<DayPicker />', () => {
     expect(wrapper.state().currentYear).to.equal(moment().year());
   });
 
+  it('should have a default transition state', () => {
+    expect(wrapper.state().transition).to.not.equal(null);
+    expect(wrapper.state().transition).to.not.equal(undefined);
+    expect(wrapper.state().transition).to.equal('');
+  });
+
   it('should display the infoHeader in the UI if given', () => {
     expect(defaultWrapper.find('.DayPicker-feature-label').length).to.not.equal(1);
     expect(defaultWrapper.find('.DayPicker-feature-label').length).to.equal(0);
@@ -95,6 +101,25 @@ describe('<DayPicker />', () => {
     expect(wrapper.find('.DayPicker-week-li').length).to.not.equal(3);
     expect(wrapper.find('.DayPicker-week-li').length).to.not.equal(5);
     expect(wrapper.find('.DayPicker-week-li').length).to.equal(7);
+  });
+
+  it('should update the transition state when arrows clicked', () => {
+    expect(wrapper.state().transition).to.equal('');
+    // click prev
+    wrapper.find('.prev').simulate('click');
+    expect(wrapper.state().transition).to.equal('fadeOutRight');
+
+    setTimeout(() => {
+      expect(wrapper.state().transition).to.equal('');
+    }, 1000);
+
+    // click next
+    wrapper.find('.next').simulate('click');
+    expect(wrapper.state().transition).to.equal('fadeOutLeft');
+
+    setTimeout(() => {
+      expect(wrapper.state().transition).to.equal('');
+    }, 1000);
   });
 
 });

@@ -64,7 +64,7 @@
     no-repeat
     center
     center
-    transparent;
+    #fff;
   background-size: contain;
   bottom: 0.2rem;
   cursor: pointer;
@@ -72,6 +72,7 @@
   height: 0.875rem;
   position: absolute;
   width: 0.4375rem;
+  z-index: 10;
 }
 
 .DayPicker-arrow.prev {
@@ -142,4 +143,15 @@
 	border-bottom-color: #B3B3CC;
 	border-width: 10px;
 	margin-left: -10px;
+}
+
+/* animations */
+
+.DayPicker .animated {
+  animation-duration: 600ms;
+}
+
+.DayPicker-transition-wrapper {
+  display: block;
+  overflow: hidden;
 }
