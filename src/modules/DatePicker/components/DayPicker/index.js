@@ -29,6 +29,20 @@ export default class DayPicker extends Component {
 
   // PRIVATE
 
+  _animateMonths = (intro, outro) => {
+    this.setState({
+      transition: intro
+    }, () => {
+      setTimeout(() => {
+        this.setState({ transition: outro });
+      }, 300);
+
+      setTimeout(() => {
+        this.setState({ transition: '' });
+      }, 800);
+    });
+  }
+
   _getInfoHeader = () => {
     const { infoHeader } = this.props;
 
@@ -67,23 +81,23 @@ export default class DayPicker extends Component {
   }
 
   _goToNext = () => {
-    this.setState({
-      transition: 'fadeOutLeft'
-    }, () => {
-      setTimeout(() => {
-        this.setState({ transition: '' });
-      }, 1000);
-    });
+    const { transition } = this.state;
+
+    if (!!transition) {
+      return;
+    }
+
+    this._animateMonths('fadeOutLeft', 'fadeInRight');
   }
 
   _goToPrev = () => {
-    this.setState({
-      transition: 'fadeOutRight'
-    }, () => {
-      setTimeout(() => {
-        this.setState({ transition: '' });
-      }, 1000);
-    });
+    const { transition } = this.state;
+
+    if (!!transition) {
+      return;
+    }
+
+    this._animateMonths('fadeOutRight', 'fadeInLeft');
   }
 
 

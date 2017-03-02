@@ -110,15 +110,25 @@ describe('<DayPicker />', () => {
     expect(wrapper.state().transition).to.equal('fadeOutRight');
 
     setTimeout(() => {
-      expect(wrapper.state().transition).to.equal('');
-    }, 1000);
-
-    // click next
-    wrapper.find('.next').simulate('click');
-    expect(wrapper.state().transition).to.equal('fadeOutLeft');
+      expect(wrapper.state().transition).to.equal('fadeInLeft');
+    }, 300);
 
     setTimeout(() => {
       expect(wrapper.state().transition).to.equal('');
+    }, 800);
+
+    // click next
+    setTimeout(() => {
+      wrapper.find('.next').simulate('click');
+      expect(wrapper.state().transition).to.equal('fadeOutLeft');
+
+      setTimeout(() => {
+        expect(wrapper.state().transition).to.equal('fadeInRight');
+      }, 300);
+
+      setTimeout(() => {
+        expect(wrapper.state().transition).to.equal('');
+      }, 800);
     }, 1000);
   });
 
