@@ -1,3 +1,26 @@
+#v1.3.1
+Ey, yo! Boy, do we have a awesome patch release for you. Not only did we give
+the demo site a small face lift, we brought you `<DatePicker />`! It's pretty
+rad and comes built with moment.js.
+
+Be sure to check out our docs on how to use it. Keep an eye out for the next big
+Component to be added to the library (`<TimePicker />`);
+
+As always, thanks again for hanging with us and a special thanks to the AirBnB
+team for giving us a good starting point with our DatePicker.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.1
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.1 --exact
+```
+
+
 #v1.3.0
 Hey! It's a minor release! We have a lot of stuff to cover with some breaking
 changes regarding some Components, so here we go!
@@ -37,9 +60,9 @@ you do is add the children you want to display and Dropdown turns it into a
 toggable list! Additionally, we have now removed the console message for the `<Button />`
 Component if you did not include the optional `callback` prop. Along with that, we
 tightened up the `<Legend />` Component to only trigger the `callback` prop for
-"completed" dots. Nioce. 
+"completed" dots. Nioce.
 
-We are cooking now, so keep your eyes peeled for more Components being added 
+We are cooking now, so keep your eyes peeled for more Components being added
 by the weeks.
 
 Check out the demo site for all info needed for this update.
@@ -59,7 +82,7 @@ npm install whiplash-ui-library@1.2.1 --exact
 #v1.1.1
 This nice little update brings a cleaner `<CheckButton />` Component now only
 accepting a `defaultSelected` prop to compliment expected React behavior in
-addition to the introduction of the `<Toggle />` Component! 
+addition to the introduction of the `<Toggle />` Component!
 
 Check out the demo site for all info needed for both of these updates.
 
@@ -79,7 +102,7 @@ Ever find yourself needing to post a small "flash" message in the UI that is jus
 temporary but imperitive for informing the user about something which has happened?
 Look no further, for the NotificationToast Component is here! 🎉
 
-It comes with a default, pending, and error theme to meet your needs. 
+It comes with a default, pending, and error theme to meet your needs.
 
 Keep a look out for our next update which will close out this milestone bringing the
 ShopCard Component.
@@ -140,8 +163,8 @@ Have a great day and go vote, suckas!
 #v.0.0.8
 Aw yeah, we snuck in a tiny update 🎉! Meet the `Legend` component. It's great
 for pagination usage or any place where you need to show where along the process
-a user is (i.e. step 2 of 4). Check out the demo site for usage info. That's 
-all we have for now, but the big icon lib component is coming very soon, 
+a user is (i.e. step 2 of 4). Check out the demo site for usage info. That's
+all we have for now, but the big icon lib component is coming very soon,
 so watch out!
 
 
