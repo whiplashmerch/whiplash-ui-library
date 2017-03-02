@@ -23,7 +23,6 @@ export default class DayPicker extends Component {
 
   state = {
     currentMonth: moment(),
-    currentYear: moment().year(),
     transition: ''
   }
 
@@ -95,10 +94,8 @@ export default class DayPicker extends Component {
     })
   }
 
-  _goToMonth = (month) => {
-    this.setState({
-      currentMonth: moment().month(month)
-    });
+  _goToMonth = (currentMonth) => {
+    this.setState({ currentMonth });
   }
 
   _goToNext = () => {
@@ -183,7 +180,6 @@ export default class DayPicker extends Component {
 
         <MonthPicker
           active={ currentMonth }
-          year={ currentYear }
           onSelect={ this._goToMonth }
         />
       </div>

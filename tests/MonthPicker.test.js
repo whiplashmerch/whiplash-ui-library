@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import moment from 'moment';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import MonthPicker from 'src/modules/DatePicker/components/MonthPicker';
@@ -8,12 +9,13 @@ import MonthPicker from 'src/modules/DatePicker/components/MonthPicker';
 describe('<MonthPicker />', () => {
 
   const testFn = e => e.preventDefault();
+  const testDate = moment();
 
   const defaultWrapper = mount(<MonthPicker />);
 
   const wrapper = mount(
     <MonthPicker
-      year={ 2016 }
+      active={ testDate }
       onSelect={ testFn }
     />
   );
@@ -30,19 +32,11 @@ describe('<MonthPicker />', () => {
     expect(defaultWrapper.props().active).to.not.equal('0');
   });
 
-  it('should have a default year prop', () => {
-    expect(defaultWrapper.props().year).to.not.equal(null);
-    expect(defaultWrapper.props().year).to.not.equal(undefined);
-    expect(defaultWrapper.props().year).to.not.equal('2017');
-    expect(defaultWrapper.props().year).to.equal(2017);
-  });
-
-  it('should accept an year prop', () => {
-    expect(wrapper.props().year).to.not.equal(null);
-    expect(wrapper.props().year).to.not.equal(undefined);
-    expect(wrapper.props().year).to.not.equal(2017);
-    expect(wrapper.props().year).to.not.equal('2016');
-    expect(wrapper.props().year).to.equal(2016);
+  it('should accept an active prop', () => {
+    expect(wrapper.props().active).to.not.equal(null);
+    expect(wrapper.props().active).to.not.equal(undefined);
+    expect(wrapper.props().active).to.not.equal('');
+    expect(wrapper.props().active).to.equal(testDate);
   });
 
   it('should accept an onSelect prop', () => {
@@ -55,7 +49,7 @@ describe('<MonthPicker />', () => {
     expect(wrapper.find('.MonthPicker-year').text()).to.not.equal(null);
     expect(wrapper.find('.MonthPicker-year').text()).to.not.equal(undefined);
     expect(wrapper.find('.MonthPicker-year').text()).to.not.equal('');
-    expect(wrapper.find('.MonthPicker-year').text()).to.equal('2016');
+    expect(wrapper.find('.MonthPicker-year').text()).to.equal(String(testDate.year()));
   });
 
   it('should dispaly 12 months in the UI', () => {

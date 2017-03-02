@@ -67,13 +67,6 @@ describe('<DayPicker />', () => {
     expect(wrapper.state().currentMonth).to.not.equal('0');
   });
 
-  it('should have a default currentYear state', () => {
-    expect(wrapper.state().currentYear).to.not.equal(null);
-    expect(wrapper.state().currentYear).to.not.equal(undefined);
-    expect(wrapper.state().currentYear).to.not.equal('2017');
-    expect(wrapper.state().currentYear).to.equal(moment().year());
-  });
-
   it('should have a default transition state', () => {
     expect(wrapper.state().transition).to.not.equal(null);
     expect(wrapper.state().transition).to.not.equal(undefined);

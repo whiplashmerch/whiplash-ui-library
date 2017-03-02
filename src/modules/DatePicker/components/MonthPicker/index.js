@@ -9,13 +9,11 @@ import './MonthPicker.css';
 export default class MonthPicker extends Component {
   static propTypes = {
     active: PropTypes.object,
-    year: PropTypes.number,
     onSelect: PropTypes.func
   }
 
   static defaultProps = {
-    active: moment(),
-    year: moment().year()
+    active: moment()
   }
 
   // PRIVATE
@@ -39,7 +37,7 @@ export default class MonthPicker extends Component {
             href="#"
             onClick={e => {
               e.preventDefault();
-              onSelect(mo);
+              onSelect(active.month(mo));
             }}
           >
             { moment().month(mo).format('MMM') }
@@ -66,14 +64,14 @@ export default class MonthPicker extends Component {
 
 
   render() {
-    const { year } = this.props;
+    const { active } = this.props;
     const months = this._getMonths();
 
     return(
       <div className="MonthPicker">
         <header className="MonthPicker-header">
           <div className="MonthPicker-year">
-            { year }
+            { active.year() }
           </div>
         </header>
 
