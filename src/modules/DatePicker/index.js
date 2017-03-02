@@ -58,7 +58,9 @@ export default class DatePicker extends Component {
   render() {
     const { active, inputValue } = this.state;
     const { labelText, onDayClick, ...props } = this.props;
+
     const label = this._getLabel();
+
 
     return(
       <div className="DatePicker">

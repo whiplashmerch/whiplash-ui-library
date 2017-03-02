@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Theme from '../Theme';
+
 import './Legend.css';
+
 
 const propTypes = {
   activeIndex: PropTypes.string.isRequired,

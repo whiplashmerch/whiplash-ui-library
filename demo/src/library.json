@@ -83,7 +83,7 @@
         "description": "Returns the moment.js Obj for the day selected onClick."
       }
     ],
-    "notes": "This Component also passes down any other props given to a hidden input element for form purposes."
+    "notes": "This Component also passes down any other props given to the input element for form purposes."
   },
   {
     "name": "Dropdown",

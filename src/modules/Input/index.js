@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import AnimatedInput from './components/AnimatedInput';
+
 import '../../fonts/index.css';
 import './Input.css';
 
