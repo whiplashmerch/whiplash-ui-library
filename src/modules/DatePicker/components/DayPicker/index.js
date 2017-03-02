@@ -29,7 +29,7 @@ export default class DayPicker extends Component {
 
   // PRIVATE
 
-  _animateMonths = (intro, outro) => {
+  _animateMonths = (intro, outro, monthCb) => {
     this.setState({
       transition: intro
     }, () => {
@@ -38,9 +38,29 @@ export default class DayPicker extends Component {
       }, 300);
 
       setTimeout(() => {
+        this.setState({
+          currentMonth: this._getCurrentMonth(monthCb),
+        });
+      }, 400);
+
+      setTimeout(() => {
         this.setState({ transition: '' });
       }, 800);
     });
+  }
+
+  _getCurrentNext = () => {
+    const { currentMonth } = this.state;
+    return currentMonth.clone().add({ months: 1 });
+  }
+
+  _getCurrentMonth = (callback) => {
+    return callback();
+  }
+
+  _getCurrentPrevious = () => {
+    const { currentMonth } = this.state;
+    return currentMonth.clone().subtract({ months: 1 });
   }
 
   _getInfoHeader = () => {
@@ -76,8 +96,9 @@ export default class DayPicker extends Component {
   }
 
   _goToMonth = (month) => {
-    const currentMonth = moment().month(month);
-    this.setState({ currentMonth });
+    this.setState({
+      currentMonth: moment().month(month)
+    });
   }
 
   _goToNext = () => {
@@ -87,7 +108,7 @@ export default class DayPicker extends Component {
       return;
     }
 
-    this._animateMonths('fadeOutLeft', 'fadeInRight');
+    this._animateMonths('fadeOutLeft', 'fadeInRight', this._getCurrentNext);
   }
 
   _goToPrev = () => {
@@ -97,7 +118,7 @@ export default class DayPicker extends Component {
       return;
     }
 
-    this._animateMonths('fadeOutRight', 'fadeInLeft');
+    this._animateMonths('fadeOutRight', 'fadeInLeft', this._getCurrentPrevious);
   }
 
 
