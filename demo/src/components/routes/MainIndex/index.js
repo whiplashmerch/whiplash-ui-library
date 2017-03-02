@@ -66,16 +66,6 @@ export default class MainIndex extends Component {
         </li>
       )
     });
-
-    // return library.items.map((item, index) => {
-    //   return(
-    //     <li key={ `${ date }-${ index }` }>
-    //       <NavLink to={ `/library/${ item.name }` } className="NavLink">
-    //         { item.name }
-    //       </NavLink>
-    //     </li>
-    //   );
-    // });
   }
 
   _toggleNavicon(mobileNavActive) {
@@ -110,7 +100,7 @@ export default class MainIndex extends Component {
             <li>
               <a
                 className="MainIndex-desktop-link"
-                href="https://www.whiplashmerch.com/"
+                href="https://www.getwhiplash.com/"
                 target="_blank">
                 Whiplash
               </a>
