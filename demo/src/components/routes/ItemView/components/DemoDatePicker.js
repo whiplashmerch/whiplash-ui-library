@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 
-export default function DemoBreadcrumb({ active, onCallback }) {
+export default function DemoDatePicker({ active, onCallback }) {
   return(
     <div>
       <DatePicker
@@ -23,4 +23,4 @@ export default function DemoBreadcrumb({ active, onCallback }) {
   );
 }
 
-DemoBreadcrumb.propTypes = propTypes;
+DemoDatePicker.propTypes = propTypes;
