@@ -83,8 +83,8 @@
       {
         "name": "onDayClick",
         "type": "Function",
-        "default": "",
-        "description": "Returns the moment.js Obj for the day selected onClick."
+        "default": "returns (e, day)",
+        "description": "Returns the Event and moment.js Obj for the day selected onClick."
       }
     ],
     "notes": "This Component also passes down any other props given to the input element for form purposes."
