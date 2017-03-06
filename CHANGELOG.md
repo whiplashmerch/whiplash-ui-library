@@ -1,3 +1,22 @@
+#v1.3.2
+Gotcha! We snuck in a small update that gives the `<Toggle />` a little more
+juice for your needs. You can now dynamically control the state of the Toggle
+in addition to having a `callback` prop that returns the `defaultChecked` state
+of the input.
+
+As always, check out the new docs on it for all your questions, etc.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.2
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.2 --exact
+```
+
 #v1.3.1
 Ey, yo! Boy, do we have a awesome patch release for you. Not only did we give
 the demo site a small face lift, we brought you `<DatePicker />`! It's pretty
