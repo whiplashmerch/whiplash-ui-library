@@ -7,14 +7,15 @@ import { Toggle } from 'src';
 
 describe('<Toggle />', () => {
 
-  const newRef = () => console.log('working');
+  const newRef = () => console.log('');
 
   const defaultWrapper = mount(<Toggle />);
 
   const wrapper = mount(
     <Toggle
       active={ true }
-      toggleRef={ newRef }
+      ref={ newRef }
+      name="test name"
     />
   );
 
@@ -38,6 +39,19 @@ describe('<Toggle />', () => {
     expect(wrapper.props().active).to.equal(true);
   });
 
+  it('should accept all given props', () => {
+    expect(wrapper.props().name).to.not.equal(null);
+    expect(wrapper.props().name).to.not.equal(undefined);
+    expect(wrapper.props().name).to.equal('test name');
+  });
+
+  it('should have a default active state prop', () => {
+    expect(defaultWrapper.state().active).to.not.equal(null);
+    expect(defaultWrapper.state().active).to.not.equal(undefined);
+    expect(defaultWrapper.state().active).to.not.equal('false');
+    expect(defaultWrapper.state().active).to.equal(false);
+  });
+
   it('should add an "active" class if state active', () => {
     expect(defaultWrapper.find('.Toggle').hasClass('active')).to.not.equal(true);
     expect(defaultWrapper.find('.Toggle').hasClass('active')).to.equal(false);
@@ -45,10 +59,16 @@ describe('<Toggle />', () => {
     expect(wrapper.find('.Toggle').hasClass('active')).to.equal(true);
   });
 
-  it('should accept a toggleRef prop', () => {
-    expect(wrapper.props().toggleRef).to.not.equal(null);
-    expect(wrapper.props().toggleRef).to.not.equal(undefined);
-    expect(wrapper.props().toggleRef).to.equal(newRef);
+  it('should update the state to match defaultChecked on the input', () => {
+    expect(defaultWrapper.props().active).to.equal(false);
+    expect(defaultWrapper.state().active).to.equal(false);
+    expect(defaultWrapper.find('.Toggle-input').props().defaultChecked).to.equal(false);
+
+    defaultWrapper.setProps({ active: true });
+
+    expect(defaultWrapper.props().active).to.equal(true);
+    expect(defaultWrapper.state().active).to.equal(true);
+    expect(defaultWrapper.find('.Toggle-input').props().defaultChecked).to.equal(true);
   });
 
 });

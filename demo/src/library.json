@@ -394,22 +394,22 @@
   {
     "name": "Toggle",
     "description": "A checkbox-based input used to visualize a toggle option in a form.",
-    "component": "<Toggle active toggleRef={ this.createToggleRef } />",
+    "component": "<Toggle active callack={ this._doSomething } name=\"animagus\" />",
     "group": "forms",
     "props": [
       {
         "name": "active",
         "type": "Boolean",
         "default": "false",
-        "description": "Controls selected state for Component."
+        "description": "Controls selected state & defaultChecked state for Component."
       },
       {
-        "name": "toggleRef",
+        "name": "callback",
         "type": "Function",
         "default": "",
-        "description": "Returns a reference to the Component checkbox."
+        "description": "Returns the defaultChecked value onClick."
       }
     ],
-    "notes": "Component also passes down all props given."
+    "notes": "Component also passes down all props given to input."
   }
 ]
