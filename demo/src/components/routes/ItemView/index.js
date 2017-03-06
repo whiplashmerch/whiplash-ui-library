@@ -71,7 +71,7 @@ export default class ItemView extends Component {
       case 'SelectBox':
         return <DemoComponent callback={ this._clickButton } />;
       case 'Toggle':
-        return <DemoComponent active />;
+        return <DemoComponent active onChecked={ this._clickButton } />;
       default:
         return <DemoComponent />;
     }
