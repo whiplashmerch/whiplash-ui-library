@@ -2,18 +2,18 @@
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![CodeCov][codecov-badge]][codecov]
 
 Official React component UI library for [Whiplash Merch](https://www.whiplashmerch.com/).
 
 [build-badge]: https://travis-ci.com/whiplashmerch/whiplash-ui-library.svg?token=7sqecPgxJNHKkKxQk6v2&branch=master
 [build]: https://travis-ci.org/whiplashmerch/whiplash-ui-library
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[npm-badge]: https://img.shields.io/npm/v/whiplash-ui-library.svg
+[npm]: https://www.npmjs.com/package/whiplash-ui-library
 
-[coveralls-badge]: https://coveralls.io/repos/github/whiplashmerch/whiplash-ui-library/badge.svg?branch=master
-[coveralls]: https://coveralls.io/github/whiplashmerch/whiplash-ui-library
+[codecov-badge]: https://codecov.io/gh/whiplashmerch/whiplash-ui-library/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/whiplashmerch/whiplash-ui-library
 
 ### Installation
 with NPM:
