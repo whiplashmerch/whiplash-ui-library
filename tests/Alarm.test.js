@@ -17,10 +17,11 @@ describe('<alarm />', () => {
   });
 
   it('should take a iconColor prop', () => {
-    expect(wrapper.props().iconColor).to.not.equal(null);
-    expect(wrapper.props().iconColor).to.not.equal(undefined);
-    expect(wrapper.props().iconColor).to.not.equal('');
-    expect(wrapper.props().iconColor).to.equal('blue');
+    const prop = wrapper.props().iconColor;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('');
+    expect(prop).to.equal('blue');
   });
 
 });
