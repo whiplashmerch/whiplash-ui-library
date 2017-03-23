@@ -98,7 +98,7 @@ export default class AnimatedInput extends Component {
             className="AnimatedInput-input"
             placeholder=""
             { ...props }
-            ref={(el) => this.input = el }
+            ref={ el => this.input = el }
             onFocus={ this._updateClass }
             onChange={ this._sendUpdate }
           />

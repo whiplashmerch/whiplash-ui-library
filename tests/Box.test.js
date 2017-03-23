@@ -16,6 +16,16 @@ describe('<box />', () => {
     ReactDOM.render(<box />, div);
   });
 
+  // PROPS
+
+  it('should have a default iconColor prop', () => {
+    const prop = defaultWrapper.props().iconColor;
+    expect(prop).to.not.equal(null);
+    // expect(prop).to.not.equal(undefined);
+    // expect(prop).to.not.equal('');
+    // expect(prop).to.equal('#646471');
+  });
+
   it('should take a iconColor prop', () => {
     expect(wrapper.props().iconColor).to.not.equal(null);
     expect(wrapper.props().iconColor).to.not.equal(undefined);
