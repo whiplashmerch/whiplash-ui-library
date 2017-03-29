@@ -16,7 +16,8 @@ describe('<AnimatedInput />', () => {
     placeholder: "test",
     maxLength: "220",
     onUserInput: sinon.spy(),
-    required: true
+    required: true,
+    value: 'test'
   };
 
   const defaultWrapper = mount(<AnimatedInput />);
@@ -174,5 +175,25 @@ describe('<AnimatedInput />', () => {
     expect(passWrapper.find('.show').length).to.equal(1)
   });
 
+  it('should add a "value" class if value prop given', () => {
+    const el = wrapper.find('.value').length;
+    expect(el).to.not.equal(null);
+    expect(el).to.not.equal(undefined);
+    expect(el).to.not.equal(0);
+    expect(el).to.equal(1);
+  });
+
+  it('should add a "active" class when onFocus', () => {
+    const trigger = wrapper.find('.AnimatedInput-input');
+    let el = null;
+
+    trigger.simulate('focus');
+    el = wrapper.find('.active').length;
+
+    expect(el).to.not.equal(null);
+    expect(el).to.not.equal(undefined);
+    expect(el).to.not.equal(0);
+    expect(el).to.equal(1);
+  });
 
 });
