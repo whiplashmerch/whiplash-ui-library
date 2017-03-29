@@ -393,7 +393,7 @@
         "name": "inverted (optional)",
         "type": "Boolean",
         "default": "false",
-        "description": "Give the Component an alternate inverted style."
+        "description": "Gives the Component an alternate inverted style."
       }
     ],
     "notes": "Just add in all your normal table child elements and you are good. Component also passes down any props given."
