@@ -53,11 +53,17 @@ describe('<Textarea />', () => {
   // COMPONENT
 
   it('should display the inputLabel in the UI if given', () => {
+    const defaultText = defaultWrapper.find('.Textarea').text();
     const text = wrapper.find('.Textarea').text();
+
     expect(text).to.not.equal(null);
     expect(text).to.not.equal(undefined);
     expect(text).to.not.equal('');
     expect(text).to.equal(props.inputLabel);
+    // check for no prop
+    expect(defaultText).to.not.equal(undefined);
+    expect(defaultText).to.not.equal(null);
+    expect(defaultText).to.equal('');
   });
 
   it('should display a textarea input', () => {
