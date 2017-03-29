@@ -96,7 +96,12 @@
   width: 100%;
 }
 
-/* password */
+/* value */
+
+.AnimatedInput.value .AnimatedInput-label {
+  font-size: 0.875rem;
+  transform: translate3d(0, -2.5rem, 0);
+}
 
 /* password */
 
