@@ -39,14 +39,12 @@ export default class Modal extends Component {
 
   _close = () => {
     const modal = document.querySelector('.Modal');
-    const overlay = document.querySelector('.Modal-overlay');
-    const content = document.querySelector('.Modal-content');
 
-    content.classList.remove('fadeInDown');
-    overlay.classList.remove('fadeIn');
+    this.content.classList.remove('fadeInDown');
+    this.overlay.classList.remove('fadeIn');
 
-    content.classList.add('fadeOutUp');
-    overlay.classList.add('fadeOut');
+    this.content.classList.add('fadeOutUp');
+    this.overlay.classList.add('fadeOut');
 
     // wait till animation finished before de-activating
     window.setTimeout(() => {
@@ -69,10 +67,12 @@ export default class Modal extends Component {
         <div
           className={ OverlayClass }
           onClick={ this._close }
+          ref={ el => this.overlay = el }
         />
 
         <div
           className={ ContentClass }
+          ref={ el => this.content = el }
           style={ ContentStyle }
         >
 
