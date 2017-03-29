@@ -1,3 +1,24 @@
+#v1.3.3
+Aw, yeah! We got some new goodies for you in this small update!
+
+* NEW: <Textarea /> Component
+* UPDATE: added `inverted` prop on the <Table /> Component for alt style
+* UPDATE: <Input /> now has a default value style in case you need to load your
+Component with a given value.
+
+As always, check out the docs for all your questions, etc.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.3
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.3 --exact
+```
+
 #v1.3.2
 Gotcha! We snuck in a small update that gives the `<Toggle />` a little more
 juice for your needs. You can now dynamically control the state of the Toggle
