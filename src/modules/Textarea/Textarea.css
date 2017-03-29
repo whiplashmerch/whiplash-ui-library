@@ -1,4 +1,5 @@
 .Textarea {
+  color: #646471;
   font-family: 'Aller-Light', 'Lato', Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
   letter-spacing: 0.03rem;
@@ -9,11 +10,13 @@
 
 .Textarea-input {
   appearance: none;
-  border: 1px dashed #B3B3CC;
+  border: 1px dotted #B3B3CC;
   display: block;
   font-family: 'Lato', 'Aller-Light', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   letter-spacing: 0.03rem;
+  margin-top: 1rem;
   padding: 1rem;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
 }

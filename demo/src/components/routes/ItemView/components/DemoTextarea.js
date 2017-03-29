@@ -7,6 +7,7 @@ export default function DemoBreadcrumb() {
     <Textarea
       inputLabel="Add a Note"
       placeholder="Dear Harry, ..."
+      rows="10"
     />
   );
 }
