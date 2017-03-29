@@ -5,14 +5,22 @@
   padding-top: 2rem;
 }
 
+.Home-header {
+  padding-bottom: 2.5rem;
+}
+
 .Home-headline {
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   width: 20rem;
 }
 
 .Home-logo {
   display: inline-block;
   width: 100%;
+}
+
+.Home-pills {
+  margin-right: 0.5rem;
 }
 
 .Home-description,
@@ -35,4 +43,25 @@
 
 .Home-change-link:hover {
   color: #8071FE;
+}
+
+.Home-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.0245rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-transform: capitalize;
+}
+
+.Home-code-section {
+  padding-bottom: 2rem;
+}
+
+.Home-code {
+  background-color: #fafafa;
+  border-radius: 4px;
+  display: block;
+  font-family: monospace;
+  margin-top: 1rem;
+  padding: 1rem;
 }

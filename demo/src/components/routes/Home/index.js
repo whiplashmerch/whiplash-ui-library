@@ -14,6 +14,24 @@ const Home = (props) => (
           src={ logo }
         />
       </h3>
+
+      <div>
+        <img
+          alt="travis-ci pill"
+          className="Home-pills"
+          src="https://travis-ci.com/whiplashmerch/whiplash-ui-library.svg?token=7sqecPgxJNHKkKxQk6v2&branch=master"
+        />
+        <img
+          alt="npm pill"
+          className="Home-pills"
+          src="https://img.shields.io/npm/v/whiplash-ui-library.svg"
+        />
+        <img
+          alt="codecov pill"
+          className="Home-pills"
+          src="https://codecov.io/gh/whiplashmerch/whiplash-ui-library/branch/master/graph/badge.svg"
+        />
+      </div>
     </header>
 
     <div className="Home-feature">
@@ -43,6 +61,21 @@ const Home = (props) => (
       <p className="Home-description">
         Thanks for checking us out and stay tuned for further info.
       </p>
+
+      <h4 className="Home-title">installation</h4>
+      <div className="Home-code-section">
+        <p>yarn install</p>
+        <code className="Home-code">
+          yarn add whiplash-ui-library
+        </code>
+      </div>
+
+      <div className="Home-code-section">
+        <p>npm install</p>
+        <code className="Home-code">
+          npm install whiplash-ui-library
+        </code>
+      </div>
     </div>
   </div>
 );

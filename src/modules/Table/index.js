@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import './Table.css';
 
+const propTypes = {
+  inverted: PropTypes.bool
+};
 
-export default function Table({ children, ...props }) {
+const defaultProps = {
+  inverted: false
+};
+
+
+export default function Table({ children, inverted, ...props }) {
+  const tableClass = classnames('Table', { inverted });
 
   if (!!!children) {
     return null;
   }
 
   return(
-    <table className="Table" { ...props }>
+    <table className={ tableClass } { ...props }>
       { children }
     </table>
   );
 }
+
+Table.propTypes = propTypes;
+Table.defaultProps = defaultProps;

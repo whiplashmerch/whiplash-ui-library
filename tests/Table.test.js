@@ -10,7 +10,7 @@ describe('<Table />', () => {
   const defaultWrapper = mount(<Table />);
 
   const wrapper = mount(
-    <Table>
+    <Table inverted>
       <thead>
         <tr><th>test</th></tr>
       </thead>
@@ -24,6 +24,34 @@ describe('<Table />', () => {
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Table />, div);
+  });
+
+  // PROPS
+
+  it('should have a default inverted prop', () => {
+    const prop = defaultWrapper.props().inverted;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('false');
+    expect(prop).to.equal(false);
+  });
+
+  it('should accept an inverted prop', () => {
+    const prop = wrapper.props().inverted;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal(false);
+    expect(prop).to.equal(true);
+  });
+
+  // COMPONENT
+
+  it('should add a "inverted" class if inverted prop true', () => {
+    const el = wrapper.find('.inverted').length;
+    expect(el).to.not.equal(null);
+    expect(el).to.not.equal(undefined);
+    expect(el).to.not.equal(0);
+    expect(el).to.equal(1);
   });
 
   it('should return null if no children given', () => {
