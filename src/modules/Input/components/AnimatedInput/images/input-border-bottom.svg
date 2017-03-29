@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="28px" height="1px" viewBox="0 0 28 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>Line</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-dasharray="1,2" stroke-linejoin="round">
-        <g id="UI" transform="translate(-41.000000, -5210.000000)" stroke="#B3B3CC">
-            <path d="M41,5210.5 L68.5726314,5210.5" id="Line"></path>
+<svg width="3px" height="1px" viewBox="0 0 3 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Order-Details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-dasharray="1,2" stroke-linejoin="round">
+        <g id="1.5-Order-Details---Customer@2x" transform="translate(-410.000000, -319.000000)" stroke="#B3B3CC">
+            <g id="text-item" transform="translate(409.000000, 252.000000)">
+                <path d="M2,67.5 L4.6925824,67.5" id="Line"></path>
+            </g>
         </g>
     </g>
 </svg>
