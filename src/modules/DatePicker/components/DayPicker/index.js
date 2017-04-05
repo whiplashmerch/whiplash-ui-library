@@ -18,7 +18,8 @@ export default class DayPicker extends Component {
 
   static defaultProps = {
     active: false,
-    infoHeader: null
+    infoHeader: null,
+    onDayClick: () => null
   }
 
   state = {
