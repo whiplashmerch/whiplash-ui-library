@@ -1,3 +1,21 @@
+#v1.3.4
+Quick little update for the <Modal /> & performance!
+
+* BREAKING CHANGES: <Modal /> removed modalWidth & logo props
+* UPDATE: <Modal /> styles are less traditional and more modern
+* PERF UPDATE: <InformationalIcon /> now ref single var vs. recreating Component
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.4
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.4 --exact
+```
+
 #v1.3.3
 Aw, yeah! We got some new goodies for you in this small update!
 
