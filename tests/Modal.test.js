@@ -11,8 +11,6 @@ describe('<Modal />', () => {
   const props = {
     active: true,
     content: 'test content',
-    logo: "fake.svg",
-    modalWidth: '40rem',
     onCloseModal: sinon.spy()
   };
 
@@ -43,22 +41,6 @@ describe('<Modal />', () => {
     expect(prop).to.equal(null);
   });
 
-  it('should have a default logo prop', () => {
-    const prop = defaultWrapper.props().logo;
-    expect(prop).to.not.equal(null);
-    expect(prop).to.not.equal(undefined);
-    expect(prop).to.not.equal('test.svg');
-    expect(prop).to.equal('');
-  });
-
-  it('should have a default modalWidth prop', () => {
-    const prop = defaultWrapper.props().modalWidth;
-    expect(prop).to.not.equal(null);
-    expect(prop).to.not.equal(undefined);
-    expect(prop).to.not.equal('');
-    expect(prop).to.equal('38.75rem');
-  });
-
   it('should accept an active prop', () => {
     const prop = wrapper.props().active;
     expect(prop).to.not.equal(null);
@@ -74,22 +56,6 @@ describe('<Modal />', () => {
     expect(prop).to.equal(props.content);
   });
 
-  it('should accept an logo prop', () => {
-    const prop = wrapper.props().logo;
-    expect(prop).to.not.equal(null);
-    expect(prop).to.not.equal(undefined);
-    expect(prop).to.not.equal('');
-    expect(prop).to.equal(props.logo);
-  });
-
-  it('should accept an modalWidth prop', () => {
-    const prop = wrapper.props().modalWidth;
-    expect(prop).to.not.equal(null);
-    expect(prop).to.not.equal(undefined);
-    expect(prop).to.not.equal('38.75rem');
-    expect(prop).to.equal(props.modalWidth);
-  });
-
   // COMPONENT
 
   it('should run onCloseModal when called', () => {
@@ -99,33 +65,25 @@ describe('<Modal />', () => {
     expect(func).to.not.equal(null);
     expect(func).to.not.equal(undefined);
     expect(spy.threw).to.not.equal(true);
+    // run
     func();
-
-    setTimeout(() => {
-      expect(props.onCloseModal.called).to.equal(true);
-    }, 500);
+    expect(props.onCloseModal.called).to.equal(true);
   });
 
-  it('should add close animation classes in _close', () => {
-    const func = wrapper.instance()._close;
-    let contentEl, overlayEl = null;
-
-    func();
-    contentEl = wrapper.find('.Modal-content.fadeOutUp');
-    overlayEl = wrapper.find('.Modal-overlay.fadeOut');
-
-    expect(contentEl.length).to.not.equal(0);
-    expect(contentEl.length).to.equal(1);
-    expect(overlayEl.length).to.not.equal(0);
-    expect(overlayEl.length).to.equal(1);
-  });
-
-  it('should add an active class if active prop true', () => {
-    const el = wrapper.find('.active');
-    expect(wrapper.props().active).to.equal(true);
+  it('should return null if active prop false', () => {
+    const el = defaultWrapper.find('.Modal').length;
     expect(el).to.not.equal(null);
     expect(el).to.not.equal(undefined);
-    expect(el.length).to.equal(1);
+    expect(el).to.not.equal(1);
+    expect(el).to.equal(0);
+  });
+
+  it('should return <Modal /> if active prop true', () => {
+    const el = wrapper.find('.Modal').length;
+    expect(el).to.not.equal(null);
+    expect(el).to.not.equal(undefined);
+    expect(el).to.not.equal(0);
+    expect(el).to.equal(1);
   });
 
   it('should display the content prop in the UI', () => {
@@ -134,6 +92,16 @@ describe('<Modal />', () => {
     expect(text).to.not.equal(undefined);
     expect(text).to.not.equal('');
     expect(text).to.equal(props.content);
+  });
+
+  it('should call onCloseModal prop when button clicked', () => {
+    const btn = wrapper.find('.Modal-close-btn');
+    btn.simulate('click');
+    expect(props.onCloseModal.called).to.equal(true);
+    // make sure it removes <Modal /> component
+    setTimeout(() => {
+      expect(wrapper.find('.Modal').length).to.equal(0);
+    }, 500);
   });
 
 });

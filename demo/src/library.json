@@ -251,7 +251,7 @@
   {
     "name": "Modal",
     "description": "A way to have dynamic modals within your app triggered from it's active property.",
-    "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } logo={ yourLogoRef } onCloseModal={ this._toggleModal } />",
+    "component": "<Modal active={ this.state.modalActive } content={ this.state.modalContent } onCloseModal={ this._toggleModal } />",
     "group": "notifiers",
     "props": [
       {
@@ -265,18 +265,6 @@
         "type": "String/React Element",
         "default": "null",
         "description": "Displays value into the 'feature' section of Component."
-      },
-      {
-        "name": "logo (optional)",
-        "type": "String",
-        "default": "",
-        "description": "Adds logo in header of Component if given."
-      },
-      {
-        "name": "modalWidth (optional)",
-        "type": "String",
-        "default": "38.75rem",
-        "description": "Sets a max-width restriction on Component."
       },
       {
         "name": "onCloseModal",

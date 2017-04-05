@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Icon from '../Icon';
 import classnames from 'classnames';
 
 import 'animate.css';
@@ -9,15 +10,12 @@ export default class Modal extends Component {
   static propTypes = {
     active: PropTypes.bool,
     content: PropTypes.object,
-    logo: PropTypes.string,
-    modalWidth: PropTypes.string,
     onCloseModal: PropTypes.func
   }
 
   static defaultProps = {
     active: false,
     content: null,
-    logo: '',
     modalWidth: '38.75rem'
   }
 
@@ -38,59 +36,29 @@ export default class Modal extends Component {
   // PRIVATE
 
   _close = () => {
-    const modal = document.querySelector('.Modal');
-
-    this.content.classList.remove('fadeInDown');
-    this.overlay.classList.remove('fadeIn');
-
-    this.content.classList.add('fadeOutUp');
-    this.overlay.classList.add('fadeOut');
-
-    // wait till animation finished before de-activating
-    window.setTimeout(() => {
-      this.props.onCloseModal(false);
-    }, 400);
+    const { onCloseModal } = this.props;
+    onCloseModal(false);
   }
 
 
   render() {
-    const { active, content, logo, modalWidth } = this.props;
-    const ModalClass   = classnames('Modal', { active: !!active });
-    const ContentClass = classnames('Modal-content animated', { fadeInDown: !!active, fadeOutUp: !!!active });
-    const OverlayClass = classnames('Modal-overlay animated', { fadeIn: !!active, fadeOut: !!!active });
-    const HeaderClass  = classnames('Modal-header', { hidden: !!!logo });
-    const ContentStyle = { maxWidth: modalWidth };
+    const { active, content } = this.props;
+
+    if (!active) {
+      return null;
+    }
 
 
     return (
-      <div className={ ModalClass }>
-        <div
-          className={ OverlayClass }
+      <div className="Modal animated fadeIn">
+        <span
+          className="Modal-close-btn"
           onClick={ this._close }
-          ref={ el => this.overlay = el }
-        />
-
-        <div
-          className={ ContentClass }
-          ref={ el => this.content = el }
-          style={ ContentStyle }
         >
+          <Icon name="close" />
+        </span>
 
-          <div className={ HeaderClass }>
-            <div className="Modal-logo-wrapper">
-              <img
-                alt="logo"
-                className="Modal-logo"
-                src={ logo }
-              />
-            </div>
-
-            <span
-              className="Modal-close-btn"
-              onClick={ this._close }
-            />
-          </div>
-
+        <div className="Modal-content">
           { content }
         </div>
       </div>
