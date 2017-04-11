@@ -1,3 +1,19 @@
+#v1.3.5
+Nothing big here, just updating React to 15.5 and refactoring our PropType refs
+to use the `prop-types` package.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.5
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.5 --exact
+```
+
+
 #v1.3.4
 Quick little update for the <Modal /> & performance!
 
