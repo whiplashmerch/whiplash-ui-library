@@ -1,5 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import '../../../../fonts/index.css';
 import './AnimatedInput.css';
 
@@ -95,12 +97,12 @@ export default class AnimatedInput extends Component {
 
         <div className="AnimatedInput-wrapper">
           <input
+            { ...props }
             className="AnimatedInput-input"
             ref={ el => this.input = el }
             onFocus={ this._updateClass }
             onChange={ this._sendUpdate }
             value={ value }
-            { ...props }
             placeholder=""
           />
 

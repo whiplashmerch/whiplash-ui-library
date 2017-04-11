@@ -1,6 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import classnames from 'classnames';
+
 import getCalendarMonthWeeks from './utils/getCalendarMonthWeeks';
 
 import '../../../../fonts/index.css';

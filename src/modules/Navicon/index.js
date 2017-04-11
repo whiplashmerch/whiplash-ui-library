@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import './Navicon.css';
 
+import './Navicon.css';
 
 
 export default class Navicon extends Component {
