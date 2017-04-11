@@ -24,7 +24,8 @@ export default class DemoInput extends Component {
 
 
   render() {
-    const { onInputChange, value } = this.state;
+    const { value } = this.state;
+    const { onInputChange } = this.props;
 
     return(
       <div>
