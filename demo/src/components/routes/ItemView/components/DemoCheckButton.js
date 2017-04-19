@@ -1,19 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { CheckButton } from 'src';
 
-const propTypes = {
-  defaultChecked: PropTypes.bool
-};
 
-export default function DemoCheckButton({ defaultChecked }) {
-  return(
-    <div>
-      <CheckButton defaultChecked name="test" />
-      <CheckButton name="test" />
-      <CheckButton name="test" />
-    </div>
-  );
+export default class DemoCheckButton extends Component {
+  state = {
+    checked: true
+  }
+
+
+  render() {
+    const { checked } = this.state;
+
+    return(
+      <div>
+        <CheckButton
+          checked={ checked }
+          name="test"
+          onClick={() => {
+            this.setState(prevState => ({
+              checked: !prevState.checked
+            }));
+          }}
+        />
+
+        <CheckButton defaultChecked name="test" />
+        <CheckButton name="test" />
+      </div>
+    );
+  }
 }
-
-DemoCheckButton.propTypes = propTypes;
