@@ -56,11 +56,17 @@
   {
     "name": "CheckButton",
     "description": "A nice checkbox-style element that toggles a bool state.",
-    "component": "<CheckButton name=\"accept_emails\" defaultSelected />",
+    "component": "<CheckButton checked name=\"accept_emails\" onClick={ updateState } />",
     "group": "forms",
     "props": [
       {
         "name": "defaultChecked (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Component checked value"
+      },
+      {
+        "name": "checked (optional)",
         "type": "Boolean",
         "default": "false",
         "description": "Component checked value"

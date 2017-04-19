@@ -1,20 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
+
 import { CheckButton } from 'src';
 
 
 describe('<CheckButton />', () => {
 
-  const defaultWrapper = mount(<CheckButton />);
+  const props = {
+    checked: true,
+    onClick: sinon.spy(),
+    name: 'test'
+  };
 
-  const wrapper = mount(
-    <CheckButton
-      defaultChecked
-      name="test"
-    />
-  );
+  const defaultWrapper = mount(<CheckButton />);
+  const wrapper = mount(<CheckButton { ...props } />);
 
 
   it('should render without crashing', () => {
@@ -22,25 +25,31 @@ describe('<CheckButton />', () => {
     ReactDOM.render(<CheckButton />, div);
   });
 
-  it('should have a default defaultChecked prop', () => {
-    expect(defaultWrapper.props().defaultChecked).to.not.equal(null);
-    expect(defaultWrapper.props().defaultChecked).to.not.equal(undefined);
-    expect(defaultWrapper.props().defaultChecked).to.not.equal(true);
-    expect(defaultWrapper.props().defaultChecked).to.equal(false);
-  });
+  // PROPS
 
-  it('should accept an defaultChecked prop', () => {
-    expect(wrapper.props().defaultChecked).to.not.equal(null);
-    expect(wrapper.props().defaultChecked).to.not.equal(undefined);
-    expect(wrapper.props().defaultChecked).to.not.equal(false);
-    expect(wrapper.props().defaultChecked).to.equal(true);
+  it('should accept an checked prop', () => {
+    const prop = wrapper.props().checked;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal(false);
+    expect(prop).to.equal(true);
   });
 
   it('should accept all other props given', () => {
-    expect(wrapper.props().name).to.not.equal(null);
-    expect(wrapper.props().name).to.not.equal(undefined);
-    expect(wrapper.props().name).to.not.equal('');
-    expect(wrapper.props().name).to.equal('test');
+    const prop = wrapper.props().name;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('');
+    expect(prop).to.equal('test');
+  });
+
+  // COMPONENT
+
+  it('should fire an onClick if given', () => {
+    const el = wrapper.find('.CheckButton-input');
+    el.simulate('click');
+    expect(props.onClick.called).to.equal(true);
+    expect(props.onClick.calledOnce).to.equal(true);
   });
 
 });

@@ -1,3 +1,19 @@
+#v1.3.6
+Today, we bring a small little upgrade for our `<CheckButton />`. It will now
+pass down all props given with no strict initial props set by us. That's right
+folks - you control it completely.
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.6
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.6 --exact
+```
+
 #v1.3.5
 Nothing big here, just updating React to 15.5 and refactoring our PropType refs
 to use the `prop-types` package.
