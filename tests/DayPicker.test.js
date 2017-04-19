@@ -92,11 +92,25 @@ describe('<DayPicker />', () => {
 
   it('should update the state multiple times when called', () => {
     const func = wrapper.instance()._animateMonths;
+    const spy  = sinon.spy();
+
     // confirm state
     expect(wrapper.state().transition).to.equal('');
 
     expect(func).to.not.equal(null);
     expect(func).to.not.equal(undefined);
+
+    func('intro', 'outro', spy);
+
+    expect(wrapper.state().transition).to.equal('intro');
+
+    setTimeout(() => {
+      expect(wrapper.state().transition).to.equal('outro');
+    }, 300);
+
+    setTimeout(() => {
+      expect(spy.called).to.equal(true);
+    }, 800);
   });
 
   it('should update the currentMonth state when called', () => {

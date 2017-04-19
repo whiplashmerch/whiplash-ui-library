@@ -31,7 +31,7 @@ export default class DayPicker extends Component {
 
   // PRIVATE
 
-  _animateMonths = (intro, outro, monthCb) => {
+  _animateMonths = (intro = '', outro = '', monthCb) => {
     this.setState({
       transition: intro
     }, () => {
