@@ -354,7 +354,7 @@
         "name": "callback",
         "type": "Function",
         "default": "",
-        "description": "Returns value of selected option onClick (check your console)."
+        "description": "Returns text and value (if provided) of selected option onClick (check your console)."
       },
       {
         "name": "form (optional)",
@@ -369,10 +369,16 @@
         "description": "Adds a label tag above Component if given."
       },
       {
-        "name": "list (optional)",
+        "name": "list (optional format 1)",
         "type": "Array",
         "default": "[]",
         "description": "Format: [ 'item 1', 'item 2' ] (if no list prop given, Component will return null)."
+      },
+      {
+        "name": "list (optional format 2)",
+        "type": "Array",
+        "default": "[]",
+        "description": "Format: [{ text: 'Option 1, value: 1 }, { text: 'Option 2', value: 2 }] (if no list prop given, Component will return null)."
       }
     ],
     "notes": "Component also passes down all select related props given if needed for form purposes."
