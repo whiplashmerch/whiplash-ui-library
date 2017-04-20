@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { SelectBox } from 'src';
@@ -8,19 +9,31 @@ import { SelectBox } from 'src';
 describe('<SelectBox />', () => {
 
   const testFn = (val) => console.log(val);
+  const valueCallback = sinon.spy();
+
   const testList = ['test 1', 'test 2', 'test 3'];
+  const testList2 = [
+    { text: 'LeanUx', value: '0001' },
+    { text: 'The Lean Startup', value: '0002' },
+    { text: 'Remote: Office Not Required', value: '0003' },
+  ];
+
+  const props = {
+    form: true,
+    label: 'test label',
+    name: 'test name',
+    list: testList,
+    callback: testFn
+  };
+  const valueProps = {
+    ...props,
+    list: testList2,
+    callback: valueCallback
+  };
 
   const defaultWrapper = mount(<SelectBox />);
-
-  const wrapper = mount(
-    <SelectBox
-      form
-      label="test label"
-      name="test name"
-      list={ testList }
-      callback={ testFn }
-    />
-  );
+  const wrapper = mount(<SelectBox { ...props } />);
+  const valueWrapper = mount(<SelectBox { ...valueProps } />);
 
 
   it('should render without crashing', () => {
@@ -140,6 +153,19 @@ describe('<SelectBox />', () => {
     expect(wrapper.state().open).to.equal(true);
     wrapper.find('.SelectBox-li').at(1).simulate('click');
     expect(wrapper.state().open).to.equal(false);
+  });
+
+  // SelectBox with text and value objects -- TESTS
+  it('should have a providedValues state of true', () => {
+    expect(valueWrapper.state().providedValues).to.equal(true);
+  });
+
+  it('should callback with a text and value when providedValues is true', () => {
+    valueWrapper.find('.SelectBox-selection').simulate('click');
+    valueWrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(valueCallback.called).to.equal(true);
+    expect(valueCallback.args[0][0]).to.equal('The Lean Startup');
+    expect(valueCallback.args[0][1]).to.equal('0002');
   });
 
 });

@@ -1,3 +1,36 @@
+#v1.3.7
+We made a tiny update to our `<SelectBox />` with no breaking changes 🙌. 
+You can now provide a list of objects with `text` and `value` properties which will result in a more
+robust callback with `text` and `value` of the selected item. 
+
+List Example:
+```
+  const list = [
+    { text: 'LeanUx', value: '0001' },
+    { text: 'The Lean Startup', value: '0002' },
+    { text: 'Remote: Office Not Required', value: '0003' },
+  ];
+```
+
+Callback Example:
+```
+  <SelectBox
+    callback={ (text, value) => console.log(text, value) } 
+  />
+```
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.3.7
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.3.7 --exact
+```
+
+
 #v1.3.6
 Today, we bring a small little upgrade for our `<CheckButton />`. It will now
 pass down all props given with no strict initial props set by us. That's right
@@ -31,11 +64,11 @@ npm install whiplash-ui-library@1.3.5 --exact
 
 
 #v1.3.4
-Quick little update for the <Modal /> & performance!
+Quick little update for the `<Modal />` & performance!
 
-* BREAKING CHANGES: <Modal /> removed modalWidth & logo props
-* UPDATE: <Modal /> styles are less traditional and more modern
-* PERF UPDATE: <InformationalIcon /> now ref single var vs. recreating Component
+* BREAKING CHANGES: `<Modal />` removed modalWidth & logo props
+* UPDATE: `<Modal />` styles are less traditional and more modern
+* PERF UPDATE: `<InformationalIcon />` now ref single var vs. recreating Component
 
 #### Upgrading
 yarn:
@@ -51,9 +84,9 @@ npm install whiplash-ui-library@1.3.4 --exact
 #v1.3.3
 Aw, yeah! We got some new goodies for you in this small update!
 
-* NEW: <Textarea /> Component
-* UPDATE: added `inverted` prop on the <Table /> Component for alt style
-* UPDATE: <Input /> now has a default value style in case you need to load your
+* NEW: `<Textarea />` Component
+* UPDATE: added `inverted` prop on the `<Table />` Component for alt style
+* UPDATE: `<Input />` now has a default value style in case you need to load your
 Component with a given value.
 
 As always, check out the docs for all your questions, etc.
