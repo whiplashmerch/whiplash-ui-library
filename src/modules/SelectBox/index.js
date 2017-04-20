@@ -22,10 +22,27 @@ export default class SelectBox extends Component {
 
   state = {
     open: false,
+    providedValues: false,
     selected: ''
   }
 
+  componentDidMount() {
+    this._checkTextValue();
+  }
+
+
   // PRIVATE
+
+  _checkTextValue = () => {
+    const { list } = this.props;
+    if (!!list.length) {
+      if (typeof list[0] === 'object') {
+        if ('value' in list[0] && 'text' in list[0]) {
+          this.setState({ providedValues: true });
+        }
+      }
+    }
+  }
 
   _getFormContent = () => {
     const { selected } = this.state;
@@ -76,9 +93,11 @@ export default class SelectBox extends Component {
   }
 
   _getList = () => {
+    const { providedValues } = this.state;
     const { list } = this.props;
+    const thisList = providedValues ? list.map(item => item.text) : list;
 
-    return list.map((item, index) => (
+    return thisList.map((item, index) => (
       <li
         className="SelectBox-li"
         key={ `${ new Date() }-${ index }` }
@@ -89,14 +108,22 @@ export default class SelectBox extends Component {
     ))
   }
 
+  _getItemValue = (selected) => {
+    const { list } = this.props;
+    const index = list.map(item => item.text).indexOf(selected);
+    return list[index].value;
+  }
+
   _selectItem = (selected) => {
-    const { callback } = this.props;
+    const { callback, list } = this.props;
+    const { providedValues } = this.state;
+    const value = providedValues ? this._getItemValue(selected) : null;
 
     this.setState({
       open: false,
       selected
     }, () => {
-      callback(selected);
+      callback(selected, value);
     })
   }
 

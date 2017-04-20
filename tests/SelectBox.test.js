@@ -8,7 +8,17 @@ import { SelectBox } from 'src';
 describe('<SelectBox />', () => {
 
   const testFn = (val) => console.log(val);
+  let lastCall = null;
+  function updateLastCall(text, value) {
+    lastCall = { text, value };
+  }
+
   const testList = ['test 1', 'test 2', 'test 3'];
+  const testList2 = [
+    { text: 'LeanUx', value: '0001' },
+    { text: 'The Lean Startup', value: '0002' },
+    { text: 'Remote: Office Not Required', value: '0003' },
+  ];
 
   const defaultWrapper = mount(<SelectBox />);
 
@@ -19,6 +29,16 @@ describe('<SelectBox />', () => {
       name="test name"
       list={ testList }
       callback={ testFn }
+    />
+  );
+
+  const valueWrapper = mount(
+    <SelectBox
+      form
+      label="test label"
+      name="test name value"
+      list={ testList2 }
+      callback={ updateLastCall }
     />
   );
 
@@ -140,6 +160,18 @@ describe('<SelectBox />', () => {
     expect(wrapper.state().open).to.equal(true);
     wrapper.find('.SelectBox-li').at(1).simulate('click');
     expect(wrapper.state().open).to.equal(false);
+  });
+
+  // SelectBox with text and value objects -- TESTS
+  it('should have a providedValues state of true', () => {
+    expect(valueWrapper.state().providedValues).to.equal(true);
+  });
+
+  it('should callback with a text and value when providedValues is true', () => {
+    valueWrapper.find('.SelectBox-selection').simulate('click');
+    valueWrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(lastCall.text).to.equal('The Lean Startup');
+    expect(lastCall.value).to.equal('0002');
   });
 
 });
