@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { SelectBox } from 'src';
@@ -8,10 +9,7 @@ import { SelectBox } from 'src';
 describe('<SelectBox />', () => {
 
   const testFn = (val) => console.log(val);
-  let lastCall = null;
-  function updateLastCall(text, value) {
-    lastCall = { text, value };
-  }
+  const valueCallback = sinon.spy();
 
   const testList = ['test 1', 'test 2', 'test 3'];
   const testList2 = [
@@ -20,27 +18,22 @@ describe('<SelectBox />', () => {
     { text: 'Remote: Office Not Required', value: '0003' },
   ];
 
+  const props = {
+    form: true,
+    label: 'test label',
+    name: 'test name',
+    list: testList,
+    callback: testFn
+  };
+  const valueProps = {
+    ...props,
+    list: testList2,
+    callback: valueCallback
+  };
+
   const defaultWrapper = mount(<SelectBox />);
-
-  const wrapper = mount(
-    <SelectBox
-      form
-      label="test label"
-      name="test name"
-      list={ testList }
-      callback={ testFn }
-    />
-  );
-
-  const valueWrapper = mount(
-    <SelectBox
-      form
-      label="test label"
-      name="test name value"
-      list={ testList2 }
-      callback={ updateLastCall }
-    />
-  );
+  const wrapper = mount(<SelectBox { ...props } />);
+  const valueWrapper = mount(<SelectBox { ...valueProps } />);
 
 
   it('should render without crashing', () => {
@@ -170,8 +163,9 @@ describe('<SelectBox />', () => {
   it('should callback with a text and value when providedValues is true', () => {
     valueWrapper.find('.SelectBox-selection').simulate('click');
     valueWrapper.find('.SelectBox-li').at(1).simulate('click');
-    expect(lastCall.text).to.equal('The Lean Startup');
-    expect(lastCall.value).to.equal('0002');
+    expect(valueCallback.called).to.equal(true);
+    expect(valueCallback.args[0][0]).to.equal('The Lean Startup');
+    expect(valueCallback.args[0][1]).to.equal('0002');
   });
 
 });

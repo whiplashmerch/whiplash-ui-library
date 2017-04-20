@@ -22,12 +22,12 @@ Callback Example:
 #### Upgrading
 yarn:
 ```
-yarn upgrade whiplash-ui-library@1.3.6
+yarn upgrade whiplash-ui-library@1.3.7
 ```
 
 npm:
 ```
-npm install whiplash-ui-library@1.3.6 --exact
+npm install whiplash-ui-library@1.3.7 --exact
 ```
 
 

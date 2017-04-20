@@ -30,17 +30,16 @@ export default class SelectBox extends Component {
     this._checkTextValue();
   }
 
-
   // PRIVATE
 
   _checkTextValue = () => {
     const { list } = this.props;
-    if (!!list.length) {
-      if (typeof list[0] === 'object') {
-        if ('value' in list[0] && 'text' in list[0]) {
-          this.setState({ providedValues: true });
-        }
-      }
+    if (!list.length || (typeof list[0] !== 'object')) {
+      return;
+    }
+
+    if (('value' in list[0]) && ('text' in list[0])) {
+      this.setState({ providedValues: true });
     }
   }
 
