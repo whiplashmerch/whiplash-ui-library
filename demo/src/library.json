@@ -102,6 +102,14 @@
     "notes": "This Component also passes down any other props given to the input element for form purposes."
   },
   {
+    "name": "DotLoader",
+    "description": "An inline loading animation to display in the view.",
+    "component": "<DotLoader />",
+    "group": "layout",
+    "props": [],
+    "notes": "Not much to say...just drop it in."
+  },
+  {
     "name": "Dropdown",
     "description": "A dropdown-based element that display's its children.",
     "component": "<Dropdown right open={ this.state.dropdownActive }><a href=\"#\">Home</a></Dropdown>",

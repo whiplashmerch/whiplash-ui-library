@@ -2,6 +2,7 @@ export { default as DemoBreadcrumb } from './DemoBreadcrumb';
 export { default as DemoButton } from './DemoButton';
 export { default as DemoCheckButton } from './DemoCheckButton';
 export { default as DemoDatePicker } from './DemoDatePicker';
+export { default as DemoDotLoader } from './DemoDotLoader';
 export { default as DemoDropdown } from './DemoDropdown';
 export { default as DemoIcons } from './DemoIcons';
 export { default as DemoImage } from './DemoImage';
