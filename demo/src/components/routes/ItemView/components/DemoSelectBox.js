@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SelectBox } from 'src';
+import { Icon, SelectBox } from 'src';
 
 const propTypes = {
   callback: PropTypes.func
@@ -8,6 +8,13 @@ const propTypes = {
 
 
 export default function DemoSelectBox({ callback }) {
+  const styles = {
+    traditional: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    }
+  };
+
   const cities = [
     { name: 'austin', value: '0001' },
     { name: 'denver', value: '0002' },
@@ -38,7 +45,12 @@ export default function DemoSelectBox({ callback }) {
   ));
 
   const bikeList = bikes.map((bike, i) => (
-    <div key={ `bike-${ i }` } value={ bike.value }>{ bike.name }</div>
+    <div key={ `bike-${ i }` } style={ styles.traditional } value={ bike.value }>
+      <span>{ bike.name }</span>
+      <div className="Icon-wrapper" onClick={ () => console.log('clicked delete') }>
+        <Icon name="trash" height="12" width="12" />
+      </div>
+    </div>
   ));
 
   return(
@@ -76,6 +88,7 @@ export default function DemoSelectBox({ callback }) {
         <SelectBox
           form
           label="Select Bike"
+          traditional={ false }
           name="Bikes"
           callback={ (a,b) => console.log(a, b) }
           value={ 1001 }

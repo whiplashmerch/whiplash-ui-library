@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { ValidComponentChildren } from '../../utils';
+
 import '../../fonts/index.css';
 import './SelectBox.css';
 
@@ -11,6 +13,7 @@ export default class SelectBox extends Component {
     callback: PropTypes.func,
     form: PropTypes.bool,
     label: PropTypes.string,
+    traditional: PropTypes.bool,
     value: PropTypes.oneOfType(['number', 'string'])
   }
 
@@ -18,6 +21,7 @@ export default class SelectBox extends Component {
     callback: () => console.log('please provide a callback function to <SelectBox />'),
     form: false,
     label: null,
+    traditional: true,
     value: null
   }
 
@@ -85,11 +89,13 @@ export default class SelectBox extends Component {
       return null;
     }
 
-    const newProps = {
+    let newProps = {
       ...props,
       children: undefined,
       value: undefined
     };
+
+    delete newProps.traditional;
 
     return(
       <input
@@ -132,20 +138,19 @@ export default class SelectBox extends Component {
   }
 
   _getList = () => {
-    const { children } = this.props;
+    const { children, traditional } = this.props;
 
-    return children.map((child, index) => (
+    return ValidComponentChildren.map(children, child => (
       <li
         className="SelectBox-li"
-        key={ `${ new Date() }-${ index }` }
-        onClick={ () => this._selectItem(child) }
+        onClick={ !traditional ? null : () => this._selectItem(child) }
       >
         { child }
       </li>
     ))
   }
 
-  _selectItem = (selected) => {
+  _selectItem = (selected, e) => {
     const { callback } = this.props;
     const isControlled = this.props.value;
     const currentSelected = this.state.selected;
