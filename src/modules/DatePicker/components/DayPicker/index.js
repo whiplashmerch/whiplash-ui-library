@@ -53,6 +53,11 @@ export default class DayPicker extends Component {
 
   _getCurrentNext = () => {
     const { currentMonth } = this.state;
+
+    if (!currentMonth) {
+      return;
+    }
+
     return currentMonth.clone().add({ months: 1 });
   }
 
@@ -62,6 +67,11 @@ export default class DayPicker extends Component {
 
   _getCurrentPrevious = () => {
     const { currentMonth } = this.state;
+
+    if (!currentMonth) {
+      return;
+    }
+
     return currentMonth.clone().subtract({ months: 1 });
   }
 
@@ -131,6 +141,7 @@ export default class DayPicker extends Component {
 
     const infoHeaderContent = this._getInfoHeader();
     const weekDays = this._getWeekdays();
+    const formattedCurrentMonth = !!currentMonth ? currentMonth.format('MMMM') : null;
 
 
     if (!active) {
@@ -157,7 +168,7 @@ export default class DayPicker extends Component {
 
               <span className="DayPicker-transition-wrapper">
                 <h4 className={ MonthTitleClass } >
-                  { currentMonth.format('MMMM') }
+                  { formattedCurrentMonth }
                 </h4>
               </span>
             </div>

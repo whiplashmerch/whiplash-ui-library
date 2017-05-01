@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Button, Modal, Navicon, Table } from 'src';
 import * as DemoComponents from './components';
 import AppExample from 'demo/Example';
+
 import geoLogo from '../images/whiplash-geo-logo-white.svg';
+
 import './ItemView.css';
 
 

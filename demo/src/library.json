@@ -156,6 +156,21 @@
     "notes": "This Component will also stack children as shown if given."
   },
   {
+    "name": "Image",
+    "description": "An img-based Component to help lazy-load images elegantly.",
+    "component": "<Image alt=\"harry selfie\" onError={ this._handleError } src={ realImg } />",
+    "group": "layout",
+    "props": [
+      {
+        "name": "src",
+        "type": "String",
+        "default": "null",
+        "description": "Component content (if left out, Component will return null)."
+      }
+    ],
+    "notes": "Component also passes down all img related props given. For a bonus, wrap this component in a div and giv it a 'placeholder' background image to display while loading."
+  },
+  {
     "name": "InformationalIcons",
     "description": "Whiplash informational icon library",
     "component": "<InformationalIcon name=\"whiplash\" color=\"#303030\" height=\"26\" width=\"26\" />",
