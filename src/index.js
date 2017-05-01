@@ -4,6 +4,7 @@ export { default as CheckButton } from './modules/CheckButton';
 export { default as DatePicker } from './modules/DatePicker';
 export { default as DotLoader } from './modules/DotLoader';
 export { default as Dropdown } from './modules/Dropdown';
+export { default as EditableDiv } from './modules/EditableDiv';
 export { default as Icon } from './modules/Icon';
 export { default as Image } from './modules/Image';
 export { default as InformationalIcon } from './modules/InformationalIcon';

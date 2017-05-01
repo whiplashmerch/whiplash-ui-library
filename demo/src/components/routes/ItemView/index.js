@@ -62,6 +62,8 @@ export default class ItemView extends Component {
         return <DemoComponent onCallback={ this._selectDate } />;
       case 'Dropdown':
         return <DemoComponent open={ dropdownActive } onUpdate={ this._toggleDropdown } />;
+      case 'EditableDiv':
+        return <DemoComponent onCallback={ this._updateText } />;
       case 'Input':
         return <DemoComponent onInputChange={ this._textInput } />;
       case 'Legend':
@@ -150,6 +152,10 @@ export default class ItemView extends Component {
 
   _updateLegend = (activeIndex) => {
     console.log(`update state to: ${ activeIndex }`);
+  }
+
+  _updateText = (...props) => {
+    console.log(...props);
   }
 
 

@@ -4,6 +4,7 @@ export { default as DemoCheckButton } from './DemoCheckButton';
 export { default as DemoDatePicker } from './DemoDatePicker';
 export { default as DemoDotLoader } from './DemoDotLoader';
 export { default as DemoDropdown } from './DemoDropdown';
+export { default as DemoEditableDiv } from './DemoEditableDiv';
 export { default as DemoIcons } from './DemoIcons';
 export { default as DemoImage } from './DemoImage';
 export { default as DemoInformationalIcons } from './DemoInformationalIcons';

@@ -1,0 +1,9 @@
+.SuccessAnimation {
+  animation-duration: 350ms;
+  bottom: 0;
+  height: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+}
