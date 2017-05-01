@@ -45,6 +45,12 @@
         "description": "Function that returns the Event Obj of Component onClick."
       },
       {
+        "name": "loading (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Will show a loading animation in Component content if true."
+      },
+      {
         "name": "theme (optional)",
         "type": "String",
         "default": "default",
@@ -94,6 +100,14 @@
       }
     ],
     "notes": "This Component also passes down any other props given to the input element for form purposes."
+  },
+  {
+    "name": "DotLoader",
+    "description": "An inline loading animation to display in the view.",
+    "component": "<DotLoader />",
+    "group": "layout",
+    "props": [],
+    "notes": "Not much to say...just drop it in."
   },
   {
     "name": "Dropdown",

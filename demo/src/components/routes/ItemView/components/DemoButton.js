@@ -6,13 +6,14 @@ const propTypes = {
   onCallback: PropTypes.func
 };
 
+
 export default function DemoButton({ onCallback }) {
   return(
     <div>
       <Button
-        type="button"
         buttonText="default"
         callback={ onCallback }
+        type="button"
       />
 
       <Button
@@ -33,6 +34,28 @@ export default function DemoButton({ onCallback }) {
         buttonText="text link"
         theme="text"
         callback={ onCallback }
+      />
+
+      <Button
+        buttonText="default"
+        callback={ onCallback }
+        loading
+        type="button"
+      />
+
+      <Button
+        type="button"
+        buttonText="secondary-border"
+        callback={ onCallback }
+        loading
+        theme="secondary-border"
+      />
+
+      <Button
+        type="button"
+        buttonText="secondary-dark"
+        loading
+        theme="secondary-dark"
       />
     </div>
   );

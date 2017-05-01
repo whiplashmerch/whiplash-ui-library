@@ -10,16 +10,14 @@ describe('<Button />', () => {
 
   const props = {
     buttonText: 'test button',
+    callback: sinon.spy(),
+    loading: false,
     theme: 'secondary',
-    type: 'submit',
-    callback: sinon.spy()
+    type: 'submit'
   };
 
   const defaultWrapper = mount(<Button />);
-
-  const wrapper = mount(
-    <Button { ...props } />
-  );
+  const wrapper = mount(<Button { ...props } />);
 
 
   it('should render without crashing', () => {
@@ -45,6 +43,20 @@ describe('<Button />', () => {
     expect(prop).to.not.equal('do it');
     expect(prop).to.not.equal('');
     expect(prop).to.equal(props.buttonText);
+  });
+
+  it('should have a default loading prop', () => {
+    const prop = defaultWrapper.props().loading;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(false);
+  });
+
+  it('should accept a loading prop', () => {
+    const prop = wrapper.props().loading;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(props.loading);
   });
 
   it('should have a default theme prop', () => {
@@ -77,12 +89,26 @@ describe('<Button />', () => {
     expect(prop).to.equal(props.type);
   });
 
+  // COMPONENT
+
   it('should add a special class containing the theme prop to Component', () => {
     const el = wrapper.find('.secondary').length;
     expect(el).to.not.equal(null);
     expect(el).to.not.equal(undefined);
     expect(el).to.not.equal(0);
     expect(el).to.equal(1);
+  });
+
+  it('should add a special class containing the theme prop to Component', () => {
+    wrapper.setProps({ loading: true });
+    const el = wrapper.find('.loading').length;
+    expect(el).to.not.equal(null);
+    expect(el).to.not.equal(undefined);
+    expect(el).to.not.equal(0);
+    expect(el).to.equal(1);
+
+    // reset
+    wrapper.setProps({ loading: props.loading });
   });
 
   it('should add buttonText to UI', () => {
@@ -92,6 +118,19 @@ describe('<Button />', () => {
     expect(text).to.not.equal('');
     expect(text).to.not.equal('do it');
     expect(text).to.equal('test button');
+  });
+
+  it('should display a <DotLoader /> if loading prop true', () => {
+    wrapper.setProps({ loading: true });
+
+    const text = wrapper.find('.Button').text();
+
+      expect(text).to.not.equal(null);
+      expect(text).to.not.equal(undefined);
+      expect(text).to.not.equal(props.buttonText);
+
+      // reset
+      wrapper.setProps({ loading: props.loading });
   });
 
   it('should call the callback prop onClick', () => {
