@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NewSelect, SelectBox } from 'src';
+import { SelectBox } from 'src';
 
 const propTypes = {
   callback: PropTypes.func
@@ -8,20 +8,34 @@ const propTypes = {
 
 
 export default function DemoSelectBox({ callback }) {
-  const list1 = ['item 1', 'item 2', 'item 3'];
-  const list2 = ['austin', 'denver', 'portland', 'seattle', 'los angeles'];
-  const list3 = [
-    { text: 'LeanUx', value: '0001' },
-    { text: 'The Lean Startup', value: '0002' },
-    { text: 'Remote: Office Not Required', value: '0003' },
+  const cities = [
+    { name: 'austin', value: '0001' },
+    { name: 'denver', value: '0002' },
+    { name: 'portland', value: '0003' },
+    { name: 'seatle', value: '0004' },
+    { name: 'los angeles', value: '0005' }
+  ];
+
+  const books = [
+    { name: 'LeanUx', value: '0001' },
+    { name: 'The Lean Startup', value: '0002' },
+    { name: 'Remote: Office Not Required', value: '0003' }
   ];
 
   const bikes = [
     { name: 'sworks-tarmac', value: '1001' },
     { name: 'santa cruz stigmata', value: '222' },
     { name: 'titanium travel', value: '33300' },
-    { name: 'sworks-sagan', value: '405' },
+    { name: 'sworks-sagan', value: '405' }
   ];
+
+  const cityList = cities.map((city, i) => (
+    <div key={ `book-${ i }` } value={ city.value }>{ city.name }</div>
+  ));
+
+  const bookList = books.map((book, i) => (
+    <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
+  ));
 
   const bikeList = bikes.map((bike, i) => (
     <div key={ `bike-${ i }` } value={ bike.value }>{ bike.name }</div>
@@ -30,43 +44,44 @@ export default function DemoSelectBox({ callback }) {
   return(
     <div>
       <div style={{ paddingBottom: '2rem' }}>
-        <SelectBox
-          list={ list1 }
-          callback={ callback }
-        />
+
       </div>
 
       <div style={{ paddingBottom: '2rem' }}>
         <SelectBox
           form
           label="select city"
-          list={ list2 }
           name="city"
           required
           callback={ callback }
-        />
+        >
+          { cityList }
+        </SelectBox>
+      </div>
+
+      <div style={{ paddingBottom: '2rem' }}>
+        <SelectBox
+          form
+          callback={ (e) => console.log(e) }
+          label="select book (controlled)"
+          name="books"
+          required
+          value="0002"
+        >
+          { bookList }
+        </SelectBox>
       </div>
 
       <div>
         <SelectBox
           form
-          label="select book"
-          list={ list3 }
-          name="books"
-          required
-          callback={ (a,b) => console.log(a, b) }
-        />
-      </div>
-
-      <div>
-        <NewSelect
           label="Select Bike"
           name="Bikes"
           callback={ (a,b) => console.log(a, b) }
           value={ 1001 }
         >
           { bikeList }
-        </NewSelect>
+        </SelectBox>
       </div>
 
     </div>
