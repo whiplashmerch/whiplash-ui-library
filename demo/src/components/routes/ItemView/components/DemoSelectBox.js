@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SelectBox } from 'src';
+import { NewSelect, SelectBox } from 'src';
 
 const propTypes = {
   callback: PropTypes.func
@@ -15,6 +15,17 @@ export default function DemoSelectBox({ callback }) {
     { text: 'The Lean Startup', value: '0002' },
     { text: 'Remote: Office Not Required', value: '0003' },
   ];
+
+  const bikes = [
+    { name: 'sworks-tarmac', value: '1001' },
+    { name: 'santa cruz stigmata', value: '222' },
+    { name: 'titanium travel', value: '33300' },
+    { name: 'sworks-sagan', value: '405' },
+  ];
+
+  const bikeList = bikes.map((bike, i) => (
+    <div key={ `bike-${ i }` } value={ bike.value }>{ bike.name }</div>
+  ));
 
   return(
     <div>
@@ -46,6 +57,18 @@ export default function DemoSelectBox({ callback }) {
           callback={ (a,b) => console.log(a, b) }
         />
       </div>
+
+      <div>
+        <NewSelect
+          label="Select Bike"
+          name="Bikes"
+          callback={ (a,b) => console.log(a, b) }
+          value={ 1001 }
+        >
+          { bikeList }
+        </NewSelect>
+      </div>
+
     </div>
   );
 }
