@@ -54,7 +54,7 @@ export default class DayPicker extends Component {
   _getCurrentNext = () => {
     const { currentMonth } = this.state;
 
-    if (!!!currentMonth) {
+    if (!currentMonth) {
       return;
     }
 
@@ -68,7 +68,7 @@ export default class DayPicker extends Component {
   _getCurrentPrevious = () => {
     const { currentMonth } = this.state;
 
-    if (!!!currentMonth) {
+    if (!currentMonth) {
       return;
     }
 

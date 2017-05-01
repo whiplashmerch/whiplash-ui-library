@@ -126,6 +126,13 @@ describe('<DayPicker />', () => {
     setTimeout(() => {
       expect(wrapper.state().currentMonth).to.equal(result);
     }, 500);
+
+    // null case
+    wrapper.setState({ currentMonth: undefined });
+    expect(func()).to.equal(undefined);
+
+    // resetState
+    wrapper.setState({ currentMonth: moment() });
   });
 
   it('should call the arg func given when ran', () => {
@@ -151,6 +158,13 @@ describe('<DayPicker />', () => {
     setTimeout(() => {
       expect(wrapper.state().currentMonth).to.equal(result);
     }, 500);
+
+    // null case
+    wrapper.setState({ currentMonth: undefined });
+    expect(func()).to.equal(undefined);
+
+    // resetState
+    wrapper.setState({ currentMonth: moment() });
   });
 
   it('should return jsx if infoHeader prop exists', () => {
