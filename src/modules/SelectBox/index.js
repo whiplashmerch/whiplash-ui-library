@@ -13,7 +13,6 @@ export default class SelectBox extends Component {
     callback: PropTypes.func,
     form: PropTypes.bool,
     label: PropTypes.string,
-    traditional: PropTypes.bool,
     value: PropTypes.oneOfType(['number', 'string'])
   }
 
@@ -21,7 +20,6 @@ export default class SelectBox extends Component {
     callback: () => console.log('please provide a callback function to <SelectBox />'),
     form: false,
     label: null,
-    traditional: true,
     value: null
   }
 
@@ -95,8 +93,6 @@ export default class SelectBox extends Component {
       value: undefined
     };
 
-    delete newProps.traditional;
-
     return(
       <input
         type="hidden"
@@ -138,12 +134,12 @@ export default class SelectBox extends Component {
   }
 
   _getList = () => {
-    const { children, traditional } = this.props;
+    const { children } = this.props;
 
     return ValidComponentChildren.map(children, child => (
       <li
         className="SelectBox-li"
-        onClick={ !traditional ? null : () => this._selectItem(child) }
+        onClick={ () => this._selectItem(child) }
       >
         { child }
       </li>
@@ -155,7 +151,6 @@ export default class SelectBox extends Component {
     const isControlled = this.props.value;
     const currentSelected = this.state.selected;
     const currentValue = this.state.selectedValue;
-    //TODO: may need a text property here in the future
     const text = selected.props.children;
     const value = selected.props.value || selected.props.children;
     const obj = { target: { value, text } };
@@ -173,6 +168,10 @@ export default class SelectBox extends Component {
     this.setState({ open: true });
   }
 
+  _closeOptions = () => {
+    this.setState({ open: false });
+  }
+
   render() {
     const { open, selected } = this.state;
     const { children } = this.props;
@@ -186,7 +185,7 @@ export default class SelectBox extends Component {
     }
 
     return(
-      <div className={ MainClass }>
+      <div className={ MainClass } tabIndex="0" onBlur={ this._closeOptions }>
         { labelContent }
 
         <div className="SelectBox-wrapper">

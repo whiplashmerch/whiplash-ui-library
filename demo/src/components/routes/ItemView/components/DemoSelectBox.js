@@ -8,12 +8,6 @@ const propTypes = {
 
 
 export default function DemoSelectBox({ callback }) {
-  const styles = {
-    traditional: {
-      display: 'flex',
-      justifyContent: 'space-between'
-    }
-  };
 
   const cities = [
     { name: 'austin', value: '0001' },
@@ -29,28 +23,12 @@ export default function DemoSelectBox({ callback }) {
     { name: 'Remote: Office Not Required', value: '0003' }
   ];
 
-  const bikes = [
-    { name: 'sworks-tarmac', value: '1001' },
-    { name: 'santa cruz stigmata', value: '222' },
-    { name: 'titanium travel', value: '33300' },
-    { name: 'sworks-sagan', value: '405' }
-  ];
-
   const cityList = cities.map((city, i) => (
     <div key={ `book-${ i }` } value={ city.value }>{ city.name }</div>
   ));
 
   const bookList = books.map((book, i) => (
     <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
-  ));
-
-  const bikeList = bikes.map((bike, i) => (
-    <div key={ `bike-${ i }` } style={ styles.traditional } value={ bike.value }>
-      <span>{ bike.name }</span>
-      <div className="Icon-wrapper" onClick={ () => console.log('clicked delete') }>
-        <Icon name="trash" height="14" width="14" />
-      </div>
-    </div>
   ));
 
   return(
@@ -74,26 +52,13 @@ export default function DemoSelectBox({ callback }) {
       <div style={{ paddingBottom: '2rem' }}>
         <SelectBox
           form
-          callback={ (e) => console.log(e) }
+          callback={ callback }
           label="select book (controlled)"
           name="books"
           required
           value="0002"
         >
           { bookList }
-        </SelectBox>
-      </div>
-
-      <div>
-        <SelectBox
-          form
-          label="Select Bike"
-          traditional={ false }
-          name="Bikes"
-          callback={ (a,b) => console.log(a, b) }
-          value={ 1001 }
-        >
-          { bikeList }
         </SelectBox>
       </div>
 
