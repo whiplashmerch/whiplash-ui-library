@@ -124,7 +124,11 @@ describe('<DayPicker />', () => {
     func();
 
     setTimeout(() => {
-      expect(wrapper.state().currentMonth).to.equal(result);
+      if (!!wrapper.state().currentMonth) {
+        expect(wrapper.state().currentMonth).to.equal(result);
+      } else {
+        expect(wrapper.state().currentMonth).to.equal(undefined);
+      }
     }, 500);
 
     // null case
