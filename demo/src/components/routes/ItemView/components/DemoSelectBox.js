@@ -48,7 +48,7 @@ export default function DemoSelectBox({ callback }) {
     <div key={ `bike-${ i }` } style={ styles.traditional } value={ bike.value }>
       <span>{ bike.name }</span>
       <div className="Icon-wrapper" onClick={ () => console.log('clicked delete') }>
-        <Icon name="trash" height="12" width="12" />
+        <Icon name="trash" height="14" width="14" />
       </div>
     </div>
   ));

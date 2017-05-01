@@ -8,7 +8,6 @@ import { SelectBox } from 'src';
 
 describe('<SelectBox />', () => {
 
-  // const testFn = (val) => console.log(val);
   const callback = sinon.spy();
 
   const books = [
@@ -21,6 +20,9 @@ describe('<SelectBox />', () => {
     <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
   ));
 
+  const badBookList = books.map((book, i) => (
+    <div key={ `book-${ i }` }>{ book.name }</div>
+  ));
 
   const props = {
     form: true,
@@ -37,6 +39,12 @@ describe('<SelectBox />', () => {
     value: "0002"
   };
 
+  const noChildrenWrapper = mount(
+    <SelectBox { ...props }>
+      { [] }
+    </SelectBox>
+  );
+
   const defaultWrapper = mount(
     <SelectBox>
       { bookList }
@@ -48,6 +56,12 @@ describe('<SelectBox />', () => {
       { ...controlledProps }
     >
       { bookList }
+    </SelectBox>
+  );
+
+  const badWrapper = mount(
+    <SelectBox { ...props }>
+      { badBookList }
     </SelectBox>
   );
 
@@ -97,13 +111,19 @@ describe('<SelectBox />', () => {
     expect(prop).to.equal('test label');
   });
 
+  it('should have a default callback prop', () => {
+    const prop = defaultWrapper.props().callback;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+  });
+
   it('should accept a callback prop', () => {
     const prop = wrapper.props().callback;
     expect(prop).to.not.equal(null);
     expect(prop).to.not.equal(undefined);
     expect(prop).to.equal(callback);
     expect(prop).to.equal(callback);
-    // expect(() => prop()).to.not.throw();
+    expect(() => prop()).to.not.throw();
   });
 
   it('should accept all other props given', () => {
@@ -209,8 +229,8 @@ describe('<SelectBox />', () => {
     wrapper.find('.SelectBox-li').at(1).simulate('click');
 
     // make sure the callback was fired
-    expect(callback.args[3][0].target.text).to.equal('The Lean Startup');
-    expect(callback.args[3][0].target.value).to.equal('0002');
+    expect(callback.args[4][0].target.text).to.equal('The Lean Startup');
+    expect(callback.args[4][0].target.value).to.equal('0002');
 
     // make sure state was updated
     expect(wrapper.state().selected).to.equal('The Lean Startup');
@@ -222,8 +242,8 @@ describe('<SelectBox />', () => {
     controlledWrapper.find('.SelectBox-li').at(2).simulate('click');
 
     // make sure the callback fired the new value
-    expect(callback.args[4][0].target.text).to.equal('Remote: Office Not Required');
-    expect(callback.args[4][0].target.value).to.equal('0003');
+    expect(callback.args[5][0].target.text).to.equal('Remote: Office Not Required');
+    expect(callback.args[5][0].target.value).to.equal('0003');
 
     // make sure state did not change
     expect(controlledWrapper.state().selected).to.equal('The Lean Startup');
@@ -240,6 +260,17 @@ describe('<SelectBox />', () => {
     const method = wrapper.instance()._childrenValid;
     expect(method).to.not.equal(null);
     expect(() => method()).to.not.throw();
+  });
+
+  it('should return false on _childrenValid method when there is not a value in children', () => {
+    const result = badWrapper.instance()._childrenValid();
+    expect(result).to.not.equal(null);
+    expect(result).to.equal(false);
+  });
+
+  it('should render null if no children are provided', () => {
+    const result = noChildrenWrapper.instance().render();
+    expect(result).to.equal(null);
   });
 
 });
