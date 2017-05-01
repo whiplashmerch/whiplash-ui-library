@@ -115,13 +115,13 @@ describe('<SelectBox />', () => {
     const prop = defaultWrapper.props().callback;
     expect(prop).to.not.equal(null);
     expect(prop).to.not.equal(undefined);
+    expect(() => prop()).to.not.throw();
   });
 
   it('should accept a callback prop', () => {
     const prop = wrapper.props().callback;
     expect(prop).to.not.equal(null);
     expect(prop).to.not.equal(undefined);
-    expect(prop).to.equal(callback);
     expect(prop).to.equal(callback);
     expect(() => prop()).to.not.throw();
   });
@@ -219,6 +219,16 @@ describe('<SelectBox />', () => {
     wrapper.find('.SelectBox-selection').simulate('click');
     expect(wrapper.state().open).to.equal(true);
     wrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(wrapper.state().open).to.equal(false);
+  });
+
+  it('should change the open state to false when SelectBox is blurred', () => {
+    expect(wrapper.state().open).to.equal(false);
+    wrapper.find('.SelectBox-selection').simulate('click');
+    expect(wrapper.state().open).to.equal(true);
+
+    const selector = wrapper.find('.SelectBox');
+    selector.simulate('blur');
     expect(wrapper.state().open).to.equal(false);
   });
 
