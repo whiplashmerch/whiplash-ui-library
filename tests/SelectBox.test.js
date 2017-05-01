@@ -138,32 +138,35 @@ describe('<SelectBox />', () => {
 
   it('should have a controlled selected state', () => {
     const state = controlledWrapper.state().selected;
-    expect(wrapper.state().selected).to.not.equal(null);
-    expect(wrapper.state().selected).to.not.equal(undefined);
-    expect(wrapper.state().selected).to.equal('');
+    expect(state).to.not.equal(null);
+    expect(state).to.not.equal(undefined);
+    expect(state).to.equal('The Lean Startup');
   });
 
-  // it('should have a controlled selectedValue state', () => {
-  //   const state = controlledWrapper.state().selectedValue;
-  //   expect(wrapper.state().selectedValue).to.not.equal(null);
-  //   expect(wrapper.state().selectedValue).to.not.equal(undefined);
-  //   expect(wrapper.state().selectedValue).to.equal('lskdfjsd');
-  // });
+  it('should have a controlled selectedValue state', () => {
+    const state = controlledWrapper.state().selectedValue;
+    expect(state).to.not.equal(null);
+    expect(state).to.not.equal(undefined);
+    expect(state).to.equal('0002');
+  });
 
   it('should not display the list options in the UI by default', () => {
-    expect(wrapper.find('.SelectBox-li').length).to.not.equal(null);
-    expect(wrapper.find('.SelectBox-li').length).to.not.equal(undefined);
-    expect(wrapper.find('.SelectBox-li').length).to.not.equal(2);
-    expect(wrapper.find('.SelectBox-li').length).to.equal(0);
+    const selector = wrapper.find('.SelectBox-li').length;
+    expect(selector).to.not.equal(null);
+    expect(selector).to.not.equal(undefined);
+    expect(selector).to.not.equal(2);
+    expect(selector).to.equal(0);
   });
 
   it('should display the label in the UI if given', () => {
-    expect(defaultWrapper.find('.SelectBox-label').length).to.not.equal(1);
-    expect(defaultWrapper.find('.SelectBox-label').length).to.equal(0);
-    expect(wrapper.find('.SelectBox-label').length).to.not.equal(0);
-    expect(wrapper.find('.SelectBox-label').length).to.equal(1);
-    expect(wrapper.find('.SelectBox-label').text()).to.not.equal('');
-    expect(wrapper.find('.SelectBox-label').text()).to.equal('test label');
+    const defaultSelector = defaultWrapper.find('.SelectBox-label').length;
+    const selector = wrapper.find('.SelectBox-label');
+    expect(defaultSelector).to.not.equal(1);
+    expect(defaultSelector).to.equal(0);
+    expect(selector.length).to.not.equal(0);
+    expect(selector.length).to.equal(1);
+    expect(selector.text()).to.not.equal('');
+    expect(selector.text()).to.equal('test label');
   });
 
   it('should display the selected choice in the UI', () => {
@@ -177,10 +180,11 @@ describe('<SelectBox />', () => {
   });
 
   it('should display a hidden form input if form prop given', () => {
-    expect(wrapper.find('input').length).to.not.equal(undefined);
-    expect(wrapper.find('input').length).to.not.equal(null);
-    expect(wrapper.find('input').length).to.not.equal(0);
-    expect(wrapper.find('input').length).to.equal(1);
+    const prop = wrapper.find('input').length;
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(0);
+    expect(prop).to.equal(1);
   });
 
   it('should change the open state to true when .SelectBox-selection clicked', () => {
@@ -200,12 +204,42 @@ describe('<SelectBox />', () => {
 
   // SelectBox with text and value objects -- TESTS
 
-  it('should callback with a text and value when providedValues is true', () => {
+  it('should callback with a text and value, update state when uncontrolled', () => {
     wrapper.find('.SelectBox-selection').simulate('click');
     wrapper.find('.SelectBox-li').at(1).simulate('click');
-    expect(callback.called).to.equal(true);
-    expect(callback.args[0][0].target.text).to.equal('The Lean Startup');
-    expect(callback.args[0][0].target.value).to.equal('0002');
+
+    // make sure the callback was fired
+    expect(callback.args[3][0].target.text).to.equal('The Lean Startup');
+    expect(callback.args[3][0].target.value).to.equal('0002');
+
+    // make sure state was updated
+    expect(wrapper.state().selected).to.equal('The Lean Startup');
+    expect(wrapper.state().selectedValue).to.equal('0002');
+  });
+
+  it('should callback with a text and value, but not update state when controlled', () => {
+    controlledWrapper.find('.SelectBox-selection').simulate('click');
+    controlledWrapper.find('.SelectBox-li').at(2).simulate('click');
+
+    // make sure the callback fired the new value
+    expect(callback.args[4][0].target.text).to.equal('Remote: Office Not Required');
+    expect(callback.args[4][0].target.value).to.equal('0003');
+
+    // make sure state did not change
+    expect(controlledWrapper.state().selected).to.equal('The Lean Startup');
+    expect(controlledWrapper.state().selectedValue).to.equal('0002');
+  });
+
+  it('should handle controlled component value changes', () => {
+    controlledWrapper.setProps({ value: '0003'});
+    expect(controlledWrapper.state().selected).to.equal('Remote: Office Not Required');
+    expect(controlledWrapper.state().selectedValue).to.equal('0003');
+  });
+
+  it('should have a _childrenValid method', () => {
+    const method = wrapper.instance()._childrenValid;
+    expect(method).to.not.equal(null);
+    expect(() => method()).to.not.throw();
   });
 
 });

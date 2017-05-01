@@ -15,6 +15,7 @@ export default class SelectBox extends Component {
   }
 
   static defaultProps = {
+    callback: () => console.log('please provide a callback function to <SelectBox />'),
     form: false,
     label: null,
     value: null
@@ -22,7 +23,6 @@ export default class SelectBox extends Component {
 
   state = {
     open: false,
-    providedValues: false,
     selected: '',
     selectedValue: ''
   }
@@ -48,15 +48,7 @@ export default class SelectBox extends Component {
 
   }
 
-  _handleControlledValue = (children, value) => {
-    const selectedChild = children.filter(child => {
-      return child.props.value.toString() === value.toString();
-    });
-    this.setState({
-      selected: selectedChild[0].props.children,
-      selectedValue: selectedChild[0].props.value
-    });
-  }
+  // PRIVATE
 
   _childrenValid = () => {
     const { children } = this.props;
@@ -73,6 +65,16 @@ export default class SelectBox extends Component {
     });
 
     return childrenValid;
+  }
+
+  _handleControlledValue = (children, value) => {
+    const selectedChild = children.filter(child => {
+      return child.props.value.toString() === value.toString();
+    });
+    this.setState({
+      selected: selectedChild[0].props.children,
+      selectedValue: selectedChild[0].props.value
+    });
   }
 
   _getFormContent = () => {
@@ -130,7 +132,6 @@ export default class SelectBox extends Component {
   }
 
   _getList = () => {
-    const { providedValues } = this.state;
     const { children } = this.props;
 
     return children.map((child, index) => (
@@ -147,7 +148,6 @@ export default class SelectBox extends Component {
   _selectItem = (selected) => {
     const { callback } = this.props;
     const isControlled = this.props.value;
-    const { providedValues } = this.state;
     const currentSelected = this.state.selected;
     const currentValue = this.state.selectedValue;
     //TODO: may need a text property here in the future
