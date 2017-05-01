@@ -153,7 +153,7 @@ export default class SelectBox extends Component {
     //TODO: may need a text property here in the future
     const text = selected.props.children;
     const value = selected.props.value || selected.props.children;
-    const obj = { target: { value } };
+    const obj = { target: { value, text } };
 
     this.setState({
       open: false,

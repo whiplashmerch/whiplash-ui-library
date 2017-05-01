@@ -8,104 +8,147 @@ import { SelectBox } from 'src';
 
 describe('<SelectBox />', () => {
 
-  const testFn = (val) => console.log(val);
-  const valueCallback = sinon.spy();
+  // const testFn = (val) => console.log(val);
+  const callback = sinon.spy();
 
-  const testList = ['test 1', 'test 2', 'test 3'];
-  const testList2 = [
-    { text: 'LeanUx', value: '0001' },
-    { text: 'The Lean Startup', value: '0002' },
-    { text: 'Remote: Office Not Required', value: '0003' },
+  const books = [
+    { name: 'LeanUx', value: '0001' },
+    { name: 'The Lean Startup', value: '0002' },
+    { name: 'Remote: Office Not Required', value: '0003' }
   ];
+
+  const bookList = books.map((book, i) => (
+    <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
+  ));
+
 
   const props = {
     form: true,
     label: 'test label',
     name: 'test name',
-    list: testList,
-    callback: testFn
-  };
-  const valueProps = {
-    ...props,
-    list: testList2,
-    callback: valueCallback
+    callback
   };
 
-  const defaultWrapper = mount(<SelectBox />);
-  const wrapper = mount(<SelectBox { ...props } />);
-  const valueWrapper = mount(<SelectBox { ...valueProps } />);
+  const controlledProps = {
+    form: true,
+    label: 'test label',
+    name: 'test name',
+    callback,
+    value: "0002"
+  };
 
+  const defaultWrapper = mount(
+    <SelectBox>
+      { bookList }
+    </SelectBox>
+  );
+
+  const controlledWrapper = mount(
+    <SelectBox
+      { ...controlledProps }
+    >
+      { bookList }
+    </SelectBox>
+  );
+
+  const wrapper = mount(
+    <SelectBox { ...props }>
+      { bookList }
+    </SelectBox>
+  );
 
   it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<SelectBox />, div);
+    ReactDOM.render(
+      <SelectBox>
+        { bookList }
+      </SelectBox>
+      , div);
   });
 
   it('should have a default form prop', () => {
-    expect(defaultWrapper.props().form).to.not.equal(null);
-    expect(defaultWrapper.props().form).to.not.equal(undefined);
-    expect(defaultWrapper.props().form).to.not.equal('false');
-    expect(defaultWrapper.props().form).to.equal(false);
+    const prop = defaultWrapper.props().form;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('false');
+    expect(prop).to.equal(false);
   });
 
   it('should accept a form prop', () => {
-    expect(wrapper.props().form).to.not.equal(null);
-    expect(wrapper.props().form).to.not.equal(undefined);
-    expect(wrapper.props().form).to.not.equal(false);
-    expect(wrapper.props().form).to.not.equal('true');
-    expect(wrapper.props().form).to.equal(true);
+    const prop = wrapper.props().form;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal(false);
+    expect(prop).to.not.equal('true');
+    expect(prop).to.equal(true);
   });
 
   it('should have a default label prop', () => {
-    expect(defaultWrapper.props().label).to.not.equal(undefined);
-    expect(defaultWrapper.props().label).to.equal(null);
+    const prop = defaultWrapper.props().label;
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(null);
   });
 
   it('should accept a label prop', () => {
-    expect(wrapper.props().label).to.not.equal(null);
-    expect(wrapper.props().label).to.not.equal(undefined);
-    expect(wrapper.props().label).to.not.equal('');
-    expect(wrapper.props().label).to.equal('test label');
-  });
-
-  it('should have a default list prop', () => {
-    expect(defaultWrapper.props().list).to.not.equal(null);
-    expect(defaultWrapper.props().list).to.not.equal(undefined);
-    expect(defaultWrapper.props().list).to.not.equal('[]');
-  });
-
-  it('should accept a list prop', () => {
-    expect(wrapper.props().list).to.not.equal(null);
-    expect(wrapper.props().list).to.not.equal(undefined);
-    expect(wrapper.props().list).to.not.equal([]);
-    expect(wrapper.props().list).to.equal(testList);
+    const prop = wrapper.props().label;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('');
+    expect(prop).to.equal('test label');
   });
 
   it('should accept a callback prop', () => {
-    expect(wrapper.props().callback).to.not.equal(null);
-    expect(wrapper.props().callback).to.not.equal(undefined);
-    expect(wrapper.props().callback).to.equal(testFn);
+    const prop = wrapper.props().callback;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(callback);
+    expect(prop).to.equal(callback);
+    // expect(() => prop()).to.not.throw();
   });
 
   it('should accept all other props given', () => {
-    expect(wrapper.props().name).to.not.equal(null);
-    expect(wrapper.props().name).to.not.equal(undefined);
-    expect(wrapper.props().name).to.not.equal('');
-    expect(wrapper.props().name).to.equal('test name');
+    const prop = wrapper.props().name
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('');
+    expect(prop).to.equal('test name');
   });
 
   it('should have a default open state', () => {
-    expect(wrapper.state().open).to.not.equal(null);
-    expect(wrapper.state().open).to.not.equal(undefined);
-    expect(wrapper.state().open).to.not.equal('false');
-    expect(wrapper.state().open).to.equal(false);
+    const state = wrapper.state().open;
+    expect(state).to.not.equal(null);
+    expect(state).to.not.equal(undefined);
+    expect(state).to.not.equal('false');
+    expect(state).to.equal(false);
   });
 
   it('should have a default selected state', () => {
+    const state = wrapper.state().selected;
     expect(wrapper.state().selected).to.not.equal(null);
     expect(wrapper.state().selected).to.not.equal(undefined);
     expect(wrapper.state().selected).to.equal('');
   });
+
+  it('should have a default selectedValue state', () => {
+    const state = wrapper.state().selectedValue;
+    expect(wrapper.state().selected).to.not.equal(null);
+    expect(wrapper.state().selected).to.not.equal(undefined);
+    expect(wrapper.state().selected).to.equal('');
+  });
+
+  it('should have a controlled selected state', () => {
+    const state = controlledWrapper.state().selected;
+    expect(wrapper.state().selected).to.not.equal(null);
+    expect(wrapper.state().selected).to.not.equal(undefined);
+    expect(wrapper.state().selected).to.equal('');
+  });
+
+  // it('should have a controlled selectedValue state', () => {
+  //   const state = controlledWrapper.state().selectedValue;
+  //   expect(wrapper.state().selectedValue).to.not.equal(null);
+  //   expect(wrapper.state().selectedValue).to.not.equal(undefined);
+  //   expect(wrapper.state().selectedValue).to.equal('lskdfjsd');
+  // });
 
   it('should not display the list options in the UI by default', () => {
     expect(wrapper.find('.SelectBox-li').length).to.not.equal(null);
@@ -130,7 +173,7 @@ describe('<SelectBox />', () => {
     wrapper.find('.SelectBox-li').at(1).simulate('click');
 
     expect(wrapper.find('.SelectBox-selection').text()).to.not.equal('choose option');
-    expect(wrapper.find('.SelectBox-selection').text()).to.equal('test 2');
+    expect(wrapper.find('.SelectBox-selection').text()).to.equal('The Lean Startup');
   });
 
   it('should display a hidden form input if form prop given', () => {
@@ -156,16 +199,13 @@ describe('<SelectBox />', () => {
   });
 
   // SelectBox with text and value objects -- TESTS
-  it('should have a providedValues state of true', () => {
-    expect(valueWrapper.state().providedValues).to.equal(true);
-  });
 
   it('should callback with a text and value when providedValues is true', () => {
-    valueWrapper.find('.SelectBox-selection').simulate('click');
-    valueWrapper.find('.SelectBox-li').at(1).simulate('click');
-    expect(valueCallback.called).to.equal(true);
-    expect(valueCallback.args[0][0]).to.equal('The Lean Startup');
-    expect(valueCallback.args[0][1]).to.equal('0002');
+    wrapper.find('.SelectBox-selection').simulate('click');
+    wrapper.find('.SelectBox-li').at(1).simulate('click');
+    expect(callback.called).to.equal(true);
+    expect(callback.args[0][0].target.text).to.equal('The Lean Startup');
+    expect(callback.args[0][0].target.value).to.equal('0002');
   });
 
 });
