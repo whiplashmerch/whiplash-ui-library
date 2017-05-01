@@ -347,14 +347,14 @@
   {
     "name": "SelectBox",
     "description": "A select-based element which represents a control that provides a menu of options.",
-    "component": "<SelectBox form label=\"select item\" list={ listArr } callback={ this._updateSelection } name=\"items\" required />",
+    "component": "<SelectBox form label=\"select item\" callback={ this._updateSelection } name=\"items\" required />",
     "group": "forms",
     "props": [
       {
         "name": "callback",
         "type": "Function",
         "default": "",
-        "description": "Returns text and value (if provided) of selected option onClick (check your console)."
+        "description": "Returns an event object of selected option onClick (check your console)."
       },
       {
         "name": "form (optional)",
@@ -369,16 +369,16 @@
         "description": "Adds a label tag above Component if given."
       },
       {
-        "name": "list (optional format 1)",
+        "name": "children",
         "type": "Array",
-        "default": "[]",
-        "description": "Format: [ 'item 1', 'item 2' ] (if no list prop given, Component will return null)."
+        "default": "null",
+        "description": "Format: [<div />, <div />, <div />] (if no children are provided, Component will return null)."
       },
       {
-        "name": "list (optional format 2)",
-        "type": "Array",
-        "default": "[]",
-        "description": "Format: [{ text: 'Option 1, value: 1 }, { text: 'Option 2', value: 2 }] (if no list prop given, Component will return null)."
+        "name": "value (optional)",
+        "type": "string/number",
+        "default": "null",
+        "description": "Passing a value prop  will make this component a controlled component"
       }
     ],
     "notes": "Component also passes down all select related props given if needed for form purposes."
