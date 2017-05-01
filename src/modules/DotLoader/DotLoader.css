@@ -1,0 +1,61 @@
+.DotLoader {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 3rem;
+}
+
+.DotLoader-ul {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+.DotLoader-li {
+  background-color: #808091;
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.375rem;
+  width: 0.375rem;
+}
+
+.DotLoader-li:nth-child(1) {
+  border-radius: 0;
+  background-clip: padding-box;
+  border-radius: 500px;
+  animation: scale 1s 0.1s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.DotLoader-li:nth-child(2) {
+  background-clip: padding-box;
+  border-radius: 500px;
+  animation: scale 1s 0.2s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.DotLoader-li:nth-child(3) {
+  border-radius: 0;
+  background-clip: padding-box;
+  border-radius: 500px;
+  animation: scale 1s 0.3s infinite cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+
+/* animation */
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.9, 0.9);
+    background: #93e1d7;
+  }
+  50% {
+    transform: scale(1, 1);
+    margin: 0 3px;
+    background: #2FAC9B;
+  }
+  100% {
+    transform: scale(0);
+  }
+}

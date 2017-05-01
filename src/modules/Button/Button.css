@@ -12,7 +12,10 @@
   letter-spacing: 0.08rem;
   margin: 0.5em auto;
   min-width: 11.9375rem;
-  padding: 1rem 0.5rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
   text-align: center;
   text-transform: uppercase;
   transition:
@@ -21,6 +24,11 @@
     color 200ms ease-out;
   width: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+.Button.loading {
+  padding-bottom: 0.813rem;
+  padding-top: 0.813rem;
 }
 
 /* themes */
@@ -101,6 +109,13 @@
   background-color: transparent;
   border: none;
   color: #8071FE;
+}
+
+/* overrides */
+
+.Button .DotLoader {
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 

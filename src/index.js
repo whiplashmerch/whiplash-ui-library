@@ -2,6 +2,7 @@ export { default as Breadcrumb } from './modules/Breadcrumb';
 export { default as Button } from './modules/Button';
 export { default as CheckButton } from './modules/CheckButton';
 export { default as DatePicker } from './modules/DatePicker';
+export { default as DotLoader } from './modules/DotLoader';
 export { default as Dropdown } from './modules/Dropdown';
 export { default as Icon } from './modules/Icon';
 export { default as Image } from './modules/Image';

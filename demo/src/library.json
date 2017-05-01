@@ -45,6 +45,12 @@
         "description": "Function that returns the Event Obj of Component onClick."
       },
       {
+        "name": "loading (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Will show a loading animation in Component content if true."
+      },
+      {
         "name": "theme (optional)",
         "type": "String",
         "default": "default",

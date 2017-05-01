@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import DotLoader from '../DotLoader';
+
 import '../../fonts/index.css';
 import './Button.css';
 
@@ -9,11 +11,13 @@ import './Button.css';
 const propTypes = {
   buttonText: PropTypes.string,
   callback: PropTypes.func,
+  loading: PropTypes.bool,
   theme: PropTypes.string
 };
 
 const defaultProps = {
   buttonText: 'do it',
+  loading: false,
   theme: ''
 };
 
@@ -26,8 +30,14 @@ const triggerCallback = (e, cb) => {
 };
 
 
-export default function Button({ buttonText, theme, callback, ...props }) {
-  const MainClass = classnames('Button', theme);
+export default function Button({ buttonText, callback, loading, theme, ...props }) {
+  const MainClass = classnames('Button', theme, { loading });
+  let content = buttonText;
+
+
+  if (loading) {
+    content = <DotLoader />;
+  }
 
   return(
     <button
@@ -35,7 +45,7 @@ export default function Button({ buttonText, theme, callback, ...props }) {
       onClick={e => triggerCallback(e, callback)}
       { ...props }
     >
-      { buttonText }
+      { content }
     </button>
   );
 }
