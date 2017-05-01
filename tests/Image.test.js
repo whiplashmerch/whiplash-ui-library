@@ -42,6 +42,18 @@ describe('<Image />', () => {
 
   // COMPONENT
 
+  it('should add a "fadeIn" class if this.img exists', () => {
+    const func = wrapper.instance()._loadImage;
+
+    expect(func).to.not.equal(null);
+    expect(func).to.not.equal(undefined)
+    expect(() => sinon.spy(() => func()).threw()).to.not.equal(true);
+
+    func();
+    expect(wrapper.find('.fadeIn').length).to.not.equal(0);
+    expect(wrapper.find('.fadeIn').length).to.equal(1);
+  });
+
   it('should return null if no src prop given', () => {
     const el = shallowWrapper.type();
     expect(el).to.not.equal(undefined);
