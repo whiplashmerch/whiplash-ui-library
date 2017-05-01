@@ -137,6 +137,57 @@
     "notes": "Make sure you set a property of 'position: relative' on the conatiner element."
   },
   {
+    "name": "EditableDiv",
+    "description": "An input-based element that toggles it's editing mode.",
+    "component": "<EditableDiv dataId={ 1 } divContent=\"Weasly is our king\" name=\"fav song\" theme=\"accent\" onUpdate={ this._doSomething } />",
+    "group": "forms",
+    "props": [
+      {
+        "name": "dataId",
+        "type": "Number",
+        "default": "null",
+        "description": "Set's an unique id for the Component to send in callback."
+      },
+      {
+        "name": "divContent",
+        "type": "Number/String",
+        "default": "no content",
+        "description": "Set's the initial readable content in the Component."
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "default": "",
+        "description": "Used for the 'name' attribute for input Component."
+      },
+      {
+        "name": "readOnly (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Determine's whether Component is allowed to enter 'editing mode'."
+      },
+      {
+        "name": "theme (optional)",
+        "type": "String",
+        "default": "null",
+        "description": "Available themes: default, accent, title"
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "default": "text",
+        "description": "Set's the type attribute for the input in Component."
+      },
+      {
+        "name": "onUpdate",
+        "type": "Function",
+        "default": "",
+        "description": "Returns: dataId, name, textChanged"
+      }
+    ],
+    "notes": "Save will also be triggered when 'enter' key pressed."
+  },
+  {
     "name": "Icons",
     "description": "Whiplash basic icon library",
     "component": "<Icon name=\"add\" color=\"#303030\" />",
