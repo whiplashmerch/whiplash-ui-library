@@ -354,7 +354,7 @@
         "name": "callback",
         "type": "Function",
         "default": "",
-        "description": "Returns an event object of selected option onClick (check your console)."
+        "description": "Returns an event object of selected option on change (check your console)."
       },
       {
         "name": "form (optional)",
@@ -372,7 +372,7 @@
         "name": "children",
         "type": "Array",
         "default": "null",
-        "description": "Format: [<div />, <div />, <div />] (if no children are provided, Component will return null)."
+        "description": "Format: [<div value=\"1\">One</div>, <div value=\"2\">Two</div>] (if no children are provided, Component will return null)."
       },
       {
         "name": "value (optional)",
