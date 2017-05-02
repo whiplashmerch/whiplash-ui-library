@@ -68,13 +68,14 @@ export default class DemoToggle extends Component {
 
     return(
       <div>
+        <Toggle active callback={ onChecked } />
+        <Toggle readOnly active />
+
         <Toggle
           active={ stateActive }
           ref={ el => this.testToggle = el }
           callback={ this._changeBack }
         />
-
-        <Toggle active callback={ onChecked } />
 
         <p style={ textStyle }>
           Oh, no! Here is an example error message.

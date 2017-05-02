@@ -1,54 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SelectBox } from 'src';
+import { Icon, SelectBox } from 'src';
 
 const propTypes = {
   callback: PropTypes.func
 };
 
 
-export default function DemoSelectBox({ callback }) {
-  const list1 = ['item 1', 'item 2', 'item 3'];
-  const list2 = ['austin', 'denver', 'portland', 'seattle', 'los angeles'];
-  const list3 = [
-    { text: 'LeanUx', value: '0001' },
-    { text: 'The Lean Startup', value: '0002' },
-    { text: 'Remote: Office Not Required', value: '0003' },
-  ];
+export default class DemoSelectBox extends Component {
+  state = {
+    currentItem: '002'
+  }
 
-  return(
-    <div>
-      <div style={{ paddingBottom: '2rem' }}>
-        <SelectBox
-          list={ list1 }
-          callback={ callback }
-        />
-      </div>
 
-      <div style={{ paddingBottom: '2rem' }}>
-        <SelectBox
-          form
-          label="select city"
-          list={ list2 }
-          name="city"
-          required
-          callback={ callback }
-        />
-      </div>
+  render() {
+    const { currentItem } = this.state;
+    const { callback } = this.props;
 
+    const cities = [
+      { name: 'austin',      value: '0001' },
+      { name: 'denver',      value: '0002' },
+      { name: 'portland',    value: '0003' },
+      { name: 'seatle',      value: '0004' },
+      { name: 'los angeles', value: '0005' }
+    ];
+
+    const cityList = cities.map((city, i) => (
+      <div key={ `book-${ i }` } value={ city.value }>{ city.name }</div>
+    ));
+
+
+    return(
       <div>
-        <SelectBox
-          form
-          label="select book"
-          list={ list3 }
-          name="books"
-          required
-          callback={ (a,b) => console.log(a, b) }
-        />
+        <div style={{ paddingBottom: '2rem' }}>
+          <SelectBox
+            form
+            label="select city"
+            name="city"
+            required
+            callback={ callback }
+          >
+            { cityList }
+          </SelectBox>
+        </div>
+
+        <div style={{ paddingBottom: '2rem' }}>
+          <SelectBox
+            callback={ e => this.setState({ currentItem: e.target.value }) }
+            label="select book (controlled)"
+            required
+            value={ currentItem }
+          >
+            <div value="001">the philosopher's stone</div>
+            <div value="002">the chamber of secrets</div>
+            <div value="003">the prizoner of azkaban</div>
+          </SelectBox>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-
-DemoSelectBox.propTypes = propTypes;

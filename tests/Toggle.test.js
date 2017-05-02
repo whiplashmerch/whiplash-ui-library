@@ -12,6 +12,7 @@ describe('<Toggle />', () => {
     active: true,
     callback: sinon.spy(),
     ref: sinon.spy(),
+    toggleRef: sinon.spy(),
     name: 'test name'
   };
 
@@ -42,11 +43,40 @@ describe('<Toggle />', () => {
     expect(prop).to.equal(props.active);
   });
 
+  it('should have a default readOnly prop', () => {
+    const prop = defaultWrapper.props().readOnly;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.not.equal('false');
+    expect(prop).to.equal(false);
+  });
+
+  it('should accept a readOnly prop', () => {
+    const prop = wrapper.props().readOnly;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(false);
+  });
+
   it('should accept all given props', () => {
     const prop = wrapper.props().name;
     expect(prop).to.not.equal(null);
     expect(prop).to.not.equal(undefined);
     expect(prop).to.equal(props.name);
+  });
+
+  it('should have a default toggleRef prop', () => {
+    const prop = defaultWrapper.props().toggleRef;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(() => prop()).to.not.throw();
+  });
+
+  it('should accept a toggleRef prop', () => {
+    const prop = wrapper.props().toggleRef;
+    expect(prop).to.not.equal(null);
+    expect(prop).to.not.equal(undefined);
+    expect(prop).to.equal(props.toggleRef);
   });
 
   // STATE
@@ -93,6 +123,18 @@ describe('<Toggle />', () => {
     expect(defaultWrapper.props().active).to.equal(true);
     expect(defaultWrapper.state().active).to.equal(true);
     expect(defaultWrapper.find('.Toggle-input').props().defaultChecked).to.equal(true);
+  });
+
+  it('should not update the state if readOnly prop true', () => {
+    const el = wrapper.find('.Toggle-input');
+
+    wrapper.setProps({ readOnly: true });
+    wrapper.setState({ active: false  });
+
+    el.simulate('click');
+
+    expect(wrapper.state().active).to.not.equal(true);
+    expect(wrapper.state().active).to.equal(false);
   });
 
 });
