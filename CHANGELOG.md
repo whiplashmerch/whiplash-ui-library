@@ -1,7 +1,35 @@
+#v1.5.0
+Huge update and news for you today!  🙌
+
+* NEW: `<DotLoader />` for all your inline-loading needs!
+* NEW: `<EditableDiv />` for your sexy read me/edit mode needs!
+* UPDATE: `<Button />` now accepts a `loading` prop to show loading style
+* UPDATE: `<Toggle />` now accepts a `readOnly` prop to restrict updating
+* BREAKING: `<SelectBox />` now accepts children and mirrors the traditional `select` tag
+
+Of course, with these changes comes updated docs to help you migrate whatever
+needs to be done on your end to ensure ease of use. If there is ever anything
+more you need to know regarding our docs - create an issue and we'll make it
+happen!
+
+As always, keep a look out for our next big update (1.6.0) which you can expect
+to hit within the next couple of weeks!
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.5.0
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.5.0 --exact
+```
+
 #v1.3.7
-We made a tiny update to our `<SelectBox />` with no breaking changes 🙌. 
+We made a tiny update to our `<SelectBox />` with no breaking changes 🙌.
 You can now provide a list of objects with `text` and `value` properties which will result in a more
-robust callback with `text` and `value` of the selected item. 
+robust callback with `text` and `value` of the selected item.
 
 List Example:
 ```
@@ -15,7 +43,7 @@ List Example:
 Callback Example:
 ```
   <SelectBox
-    callback={ (text, value) => console.log(text, value) } 
+    callback={ (text, value) => console.log(text, value) }
   />
 ```
 
