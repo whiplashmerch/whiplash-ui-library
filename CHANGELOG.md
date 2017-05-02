@@ -3,6 +3,7 @@ Huge update and news for you today!  🙌
 
 * NEW: `<DotLoader />` for all your inline-loading needs!
 * NEW: `<EditableDiv />` for your sexy read me/edit mode needs!
+* NEW: `<Image />` for your sexy image loading needs!
 * UPDATE: `<Button />` now accepts a `loading` prop to show loading style
 * UPDATE: `<Toggle />` now accepts a `readOnly` prop to restrict updating
 * BREAKING: `<SelectBox />` now accepts children and mirrors the traditional `select` tag
