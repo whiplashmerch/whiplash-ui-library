@@ -376,9 +376,9 @@
       },
       {
         "name": "value (optional)",
-        "type": "string/number",
+        "type": "String/Number",
         "default": "null",
-        "description": "Passing a value prop will make this component a controlled component"
+        "description": "Configures Component to be controlled if given."
       }
     ],
     "notes": "Component also passes down all select related props given if needed for form purposes."
