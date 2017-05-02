@@ -25,17 +25,17 @@ describe('<SelectBox />', () => {
   ));
 
   const props = {
+    callback,
     form: true,
     label: 'test label',
-    name: 'test name',
-    callback
+    name: 'test name'
   };
 
   const controlledProps = {
+    callback,
     form: true,
     label: 'test label',
     name: 'test name',
-    callback,
     value: "0002"
   };
 
@@ -71,6 +71,7 @@ describe('<SelectBox />', () => {
     </SelectBox>
   );
 
+
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
@@ -79,6 +80,8 @@ describe('<SelectBox />', () => {
       </SelectBox>
       , div);
   });
+
+  // PROPS
 
   it('should have a default form prop', () => {
     const prop = defaultWrapper.props().form;
@@ -134,6 +137,8 @@ describe('<SelectBox />', () => {
     expect(prop).to.equal('test name');
   });
 
+  // STATE
+
   it('should have a default open state', () => {
     const state = wrapper.state().open;
     expect(state).to.not.equal(null);
@@ -144,16 +149,16 @@ describe('<SelectBox />', () => {
 
   it('should have a default selected state', () => {
     const state = wrapper.state().selected;
-    expect(wrapper.state().selected).to.not.equal(null);
-    expect(wrapper.state().selected).to.not.equal(undefined);
-    expect(wrapper.state().selected).to.equal('');
+    expect(state).to.not.equal(null);
+    expect(state).to.not.equal(undefined);
+    expect(state).to.equal('');
   });
 
   it('should have a default selectedValue state', () => {
     const state = wrapper.state().selectedValue;
-    expect(wrapper.state().selected).to.not.equal(null);
-    expect(wrapper.state().selected).to.not.equal(undefined);
-    expect(wrapper.state().selected).to.equal('');
+    expect(state).to.not.equal(null);
+    expect(state).to.not.equal(undefined);
+    expect(state).to.equal('');
   });
 
   it('should have a controlled selected state', () => {
@@ -169,6 +174,8 @@ describe('<SelectBox />', () => {
     expect(state).to.not.equal(undefined);
     expect(state).to.equal('0002');
   });
+
+  // COMPONENT
 
   it('should not display the list options in the UI by default', () => {
     const selector = wrapper.find('.SelectBox-li').length;
@@ -264,23 +271,6 @@ describe('<SelectBox />', () => {
     controlledWrapper.setProps({ value: '0003'});
     expect(controlledWrapper.state().selected).to.equal('Remote: Office Not Required');
     expect(controlledWrapper.state().selectedValue).to.equal('0003');
-  });
-
-  it('should have a _childrenValid method', () => {
-    const method = wrapper.instance()._childrenValid;
-    expect(method).to.not.equal(null);
-    expect(() => method()).to.not.throw();
-  });
-
-  it('should return false on _childrenValid method when there is not a value in children', () => {
-    const result = badWrapper.instance()._childrenValid();
-    expect(result).to.not.equal(null);
-    expect(result).to.equal(false);
-  });
-
-  it('should render null if no children are provided', () => {
-    const result = noChildrenWrapper.instance().render();
-    expect(result).to.equal(null);
   });
 
 });

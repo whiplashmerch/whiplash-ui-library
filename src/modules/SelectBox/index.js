@@ -13,11 +13,14 @@ export default class SelectBox extends Component {
     callback: PropTypes.func,
     form: PropTypes.bool,
     label: PropTypes.string,
-    value: PropTypes.oneOfType(['number', 'string'])
+    value: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string
+    ])
   }
 
   static defaultProps = {
-    callback: () => console.log('please provide a callback function to <SelectBox />'),
+    callback: () => console.log('add a callback prop to <SelectBox />'),
     form: false,
     label: null,
     value: null
@@ -26,25 +29,21 @@ export default class SelectBox extends Component {
   state = {
     open: false,
     selected: '',
-    selectedValue: ''
+    selectedValue: this.props.value || ''
   }
 
   componentDidMount() {
-    const { children, value } = this.props;
-    if (!this._childrenValid()) {
-      const message = 'Children must have a "value" property when using the <SelectBox /> component';
-      return console.error(message);
-    }
+    const { value } = this.props;
 
-    if (value) {
-      this._handleControlledValue(children, value);
+    if (!!value) {
+      this._handleControlledValue();
     }
   }
 
   componentWillReceiveProps({ children, value }) {
     // controlled component:
     // if component receives a new value, change appropriately
-    if (value !== this.props.value) {
+    if (!!value && (value !== this.props.value)) {
       this._handleControlledValue(children, value);
     }
 
@@ -52,52 +51,34 @@ export default class SelectBox extends Component {
 
   // PRIVATE
 
-  _childrenValid = () => {
-    const { children } = this.props;
-    let childrenValid = true;
+  _handleControlledValue = (children = this.props.children, value = this.props.value) => {
+    const selectedChild = ValidComponentChildren.find(children, child => (
+      String(child.props.value) === String(value)
+    ));
 
-    if (!children.length) {
-      return false
+    if (!!!selectedChild) {
+      return;
     }
 
-    children.forEach(child => {
-      if (!!!child.props.value) {
-        childrenValid = false;
-      }
-    });
-
-    return childrenValid;
-  }
-
-  _handleControlledValue = (children, value) => {
-    const selectedChild = children.filter(child => {
-      return child.props.value.toString() === value.toString();
-    });
     this.setState({
-      selected: selectedChild[0].props.children,
-      selectedValue: selectedChild[0].props.value
+      selected: selectedChild.props.children,
+      selectedValue: selectedChild.props.value
     });
   }
 
   _getFormContent = () => {
     const { selectedValue } = this.state;
-    const { form, callback, ...props } = this.props;
+    const { form, callback, children, ...props } = this.props;
 
     if (!!!form) {
       return null;
     }
 
-    let newProps = {
-      ...props,
-      children: undefined,
-      value: undefined
-    };
-
     return(
       <input
+        { ...props }
         type="hidden"
-        value={ selectedValue }
-        { ...newProps }
+        value={ selectedValue || '' }
       />
     );
   }
@@ -179,10 +160,6 @@ export default class SelectBox extends Component {
     const formInput = this._getFormContent();
     const labelContent = this._getLabelContent();
     const optionsContent = this._getOptionsContent();
-
-    if (!!!children.length) {
-      return null;
-    }
 
     return(
       <div className={ MainClass } tabIndex="0" onBlur={ this._closeOptions }>

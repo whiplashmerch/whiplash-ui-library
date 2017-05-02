@@ -370,9 +370,9 @@
       },
       {
         "name": "children",
-        "type": "Array",
+        "type": "Array/Object",
         "default": "null",
-        "description": "Format: [<div value=\"1\">One</div>, <div value=\"2\">Two</div>] (if no children are provided, Component will return null)."
+        "description": "Format: <div value=\"1\">One</div>"
       },
       {
         "name": "value (optional)",
