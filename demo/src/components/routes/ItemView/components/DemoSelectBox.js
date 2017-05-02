@@ -34,10 +34,6 @@ export default function DemoSelectBox({ callback }) {
   return(
     <div>
       <div style={{ paddingBottom: '2rem' }}>
-
-      </div>
-
-      <div style={{ paddingBottom: '2rem' }}>
         <SelectBox
           form
           label="select city"
