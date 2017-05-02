@@ -430,6 +430,12 @@
         "type": "Function",
         "default": "",
         "description": "Returns the defaultChecked value onClick."
+      },
+      {
+        "name": "readOnly",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Restricts Component from updating selected state."
       }
     ],
     "notes": "Component also passes down all props given to input."
