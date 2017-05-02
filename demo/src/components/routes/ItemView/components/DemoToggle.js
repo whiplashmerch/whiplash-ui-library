@@ -74,6 +74,8 @@ export default class DemoToggle extends Component {
           callback={ this._changeBack }
         />
 
+        <Toggle readOnly active />
+
         <Toggle active callback={ onChecked } />
 
         <p style={ textStyle }>

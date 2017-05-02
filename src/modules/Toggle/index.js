@@ -8,11 +8,14 @@ import './Toggle.css';
 export default class Toggle extends Component {
   static propTypes = {
     active: PropTypes.bool,
+    readOnly: PropTypes.bool,
     toggleRef: PropTypes.func
   }
 
   static defaultProps = {
-    active: false
+    active: false,
+    readOnly: false,
+    toggleRef: () => null
   }
 
   state = {
@@ -30,8 +33,12 @@ export default class Toggle extends Component {
   // PRIVATE
 
   _updateState = () => {
-    const { callback } = this.props;
+    const { callback, readOnly } = this.props;
     const checked = this.input.checked;
+
+    if (readOnly) {
+      return;
+    }
 
     this.setState({
       active: checked
