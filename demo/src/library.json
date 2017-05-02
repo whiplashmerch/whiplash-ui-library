@@ -347,7 +347,7 @@
   {
     "name": "SelectBox",
     "description": "A select-based element which represents a control that provides a menu of options.",
-    "component": "<SelectBox form label=\"select item\" callback={ this._updateSelection } name=\"items\" required><div value=\"0002\">Portland</div></SelectBox>",
+    "component": "<SelectBox form label=\"select item\" callback={ this._updateSelection } name=\"items\" value=\"0002\"required><div value=\"0002\">Portland</div></SelectBox>",
     "group": "forms",
     "props": [
       {
@@ -378,7 +378,7 @@
         "name": "value (optional)",
         "type": "string/number",
         "default": "null",
-        "description": "Passing a value prop  will make this component a controlled component"
+        "description": "Passing a value prop will make this component a controlled component"
       }
     ],
     "notes": "Component also passes down all select related props given if needed for form purposes."
