@@ -46,6 +46,15 @@ export default class DemoInput extends Component {
           required
         />
 
+        <Input
+          inputLabel="name (no animation)"
+          maxLength="220"
+          noAnimation
+          value="Sirius Black"
+          onUserInput={ (e) => console.log(e)}
+          type="text"
+        />
+
         <div style={{ paddingTop: '1rem' }}>
           <Input
             basic

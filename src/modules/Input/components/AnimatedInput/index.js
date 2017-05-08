@@ -85,8 +85,8 @@ export default class AnimatedInput extends Component {
 
   render() {
     const { active } = this.state;
-    const { inputLabel, onUserInput, value, ...props } = this.props;
-    const InputClass = classnames('AnimatedInput', { active: !!active, value: !!value });
+    const { inputLabel, noAnimation, onUserInput, value, ...props } = this.props;
+    const InputClass = classnames('AnimatedInput', { active: !!active || noAnimation, value: !!value });
     const passwordBtn = this._getPasswordBtn();
 
     return (

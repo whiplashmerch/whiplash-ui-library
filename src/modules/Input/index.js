@@ -12,6 +12,7 @@ export default class Input extends Component {
   static propTypes = {
     basic: PropTypes.bool,
     inputLabel: PropTypes.string,
+    noAnimation: PropTypes.bool,
     onUserInput: PropTypes.func,
     search: PropTypes.bool
   }
@@ -19,6 +20,7 @@ export default class Input extends Component {
   static defaultProps = {
     basic: false,
     inputLabel: '',
+    noAnimation: false,
     onUserInput: () => console.warn('no onUserInput prop given'),
     search: false
   }
@@ -82,6 +84,7 @@ export default class Input extends Component {
     const {
       basic,
       inputLabel,
+      noAnimation,
       onUserInput,
       search,
       ...props
@@ -94,6 +97,7 @@ export default class Input extends Component {
     if (!basic) {
       return(
         <AnimatedInput
+          noAnimation={ noAnimation }
           inputLabel={ inputLabel }
           onUserInput={ onUserInput }
           { ...props }
