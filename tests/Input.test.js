@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { Input } from 'src';
 
 
 describe('<Input />', () => {
-  const testFn = () => console.log('');
+
+  const onUserInput = sinon.spy();
 
   const props = {
     basic: true,
@@ -14,7 +16,7 @@ describe('<Input />', () => {
     type: 'email',
     maxLength: 220,
     placeholder: 'test',
-    onUserInput: testFn,
+    onUserInput,
     search: true,
     required: true
   };
@@ -84,7 +86,7 @@ describe('<Input />', () => {
     expect(wrapper.props().onUserInput).to.not.equal(null);
     expect(wrapper.props().onUserInput).to.not.equal(undefined);
     expect(wrapper.props().onUserInput).to.not.throw(Error);
-    expect(wrapper.props().onUserInput).to.equal(testFn);
+    expect(wrapper.props().onUserInput).to.equal(onUserInput);
   });
 
   it('should allow all other props given', () => {
@@ -169,6 +171,12 @@ describe('<Input />', () => {
   it('should have an active class if noAnimation is true', () => {
     const noAnimation = mount(<Input noAnimation />);
     expect(noAnimation.find('.AnimatedInput .active').length).to.equal(1);
+  });
+
+  it('should should call the onUserInput function when text is input', () => {
+    wrapper.find('.Input-input').simulate('change', { target: { value: 'horcrux or die' } } );
+    expect(onUserInput.called).to.equal(true);
+    expect(onUserInput.args[1][0]).to.equal('horcrux or die');
   });
 
 });
