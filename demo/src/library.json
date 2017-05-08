@@ -271,7 +271,7 @@
   {
     "name": "Input",
     "description": "An input that displays either a animating (default) or basic style theme in your forms.",
-    "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required />",
+    "component": "<Input basic inputLabel=\"email\" type=\"email\" placeholder=\"email@example.com\" onUserInput={ this._textInput } required noAnimation />",
     "group": "forms",
     "props": [
       {
@@ -279,6 +279,12 @@
         "type": "Boolean",
         "default": "false",
         "description": "Component traditional non-animated styling."
+      },
+      {
+        "name": "noAnimation (optional)",
+        "type": "Boolean",
+        "default": "false",
+        "description": "Component will appear in the active state regardless of input."
       },
       {
         "name": "inputLabel",

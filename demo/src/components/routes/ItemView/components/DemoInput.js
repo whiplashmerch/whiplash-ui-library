@@ -50,7 +50,7 @@ export default class DemoInput extends Component {
           inputLabel="name (no animation)"
           maxLength="220"
           noAnimation
-          value="Sirius Black"
+          defaultValue="Sirius Black"
           onUserInput={ (e) => console.log(e)}
           type="text"
         />
