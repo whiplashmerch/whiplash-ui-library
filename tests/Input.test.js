@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import sinon from 'sinon';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { Input } from 'src';
@@ -7,22 +8,23 @@ import { Input } from 'src';
 
 describe('<Input />', () => {
 
-  const testFn = () => console.log('');
+  const onUserInput = sinon.spy();
+
+  const props = {
+    basic: true,
+    inputLabel: 'test label',
+    type: 'email',
+    maxLength: 220,
+    placeholder: 'test',
+    onUserInput,
+    search: true,
+    required: true
+  };
+  const noAnimationProps = { ...props, noAnimation: true };
 
   const defaultWrapper = mount(<Input />);
-
-  const wrapper = mount(
-    <Input
-      basic
-      inputLabel="test label"
-      type="email"
-      maxLength="220"
-      placeholder="test"
-      onUserInput={ testFn }
-      search
-      required
-    />
-  );
+  const wrapper = mount(<Input { ...props } />);
+  const noAnimationWrapper = mount(<Input { ...noAnimationProps } />);
 
 
   it('should render without crashing', () => {
@@ -59,6 +61,21 @@ describe('<Input />', () => {
     expect(wrapper.props().basic).to.equal(true);
   });
 
+  it('should have a default noAnimation prop', () => {
+    expect(defaultWrapper.props().noAnimation).to.not.equal(null);
+    expect(defaultWrapper.props().noAnimation).to.not.equal(undefined);
+    expect(defaultWrapper.props().noAnimation).to.not.equal('true');
+    expect(defaultWrapper.props().noAnimation).to.equal(false);
+  });
+
+  it('should accept a noAnimation prop', () => {
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(null);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(undefined);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(false);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal('true');
+    expect(noAnimationWrapper.props().noAnimation).to.equal(true);
+  });
+
   it('should have a default onUserInput prop', () => {
     expect(defaultWrapper.props().onUserInput).to.not.equal(null);
     expect(defaultWrapper.props().onUserInput).to.not.equal(undefined);
@@ -69,7 +86,7 @@ describe('<Input />', () => {
     expect(wrapper.props().onUserInput).to.not.equal(null);
     expect(wrapper.props().onUserInput).to.not.equal(undefined);
     expect(wrapper.props().onUserInput).to.not.throw(Error);
-    expect(wrapper.props().onUserInput).to.equal(testFn);
+    expect(wrapper.props().onUserInput).to.equal(onUserInput);
   });
 
   it('should allow all other props given', () => {
@@ -149,6 +166,17 @@ describe('<Input />', () => {
     passWrapper.find('.Input-toggle-value-btn').simulate('click');
     expect(passWrapper.find('.show').length).to.not.equal(0)
     expect(passWrapper.find('.show').length).to.equal(1)
+  });
+
+  it('should have an active class if noAnimation is true', () => {
+    const noAnimation = mount(<Input noAnimation />);
+    expect(noAnimation.find('.AnimatedInput .active').length).to.equal(1);
+  });
+
+  it('should should call the onUserInput function when text is input', () => {
+    wrapper.find('.Input-input').simulate('change', { target: { value: 'horcrux or die' } } );
+    expect(onUserInput.called).to.equal(true);
+    expect(onUserInput.args[1][0]).to.equal('horcrux or die');
   });
 
 });

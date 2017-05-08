@@ -8,6 +8,7 @@
   background-color: #fff;
   left: 0;
   height: 100%;
+  overflow-y: auto;
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -28,10 +29,11 @@
   cursor: pointer;
   display: inline-block;
   height: 2rem;
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 1rem;
   width: 2rem;
+  z-index: 20;
 }
 
 

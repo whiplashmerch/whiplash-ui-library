@@ -16,6 +16,16 @@ describe('<SelectBox />', () => {
     { name: 'Remote: Office Not Required', value: '0003' }
   ];
 
+  const books2 = [
+    { name: 'LeanUx', value: 0 },
+    { name: 'The Lean Startup', value: 1 },
+    { name: 'Remote: Office Not Required', value: 2 }
+  ];
+
+  const bookList2 = books2.map((book, i) => (
+    <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
+  ));
+
   const bookList = books.map((book, i) => (
     <div key={ `book-${ i }` } value={ book.value }>{ book.name }</div>
   ));
@@ -56,6 +66,12 @@ describe('<SelectBox />', () => {
       { ...controlledProps }
     >
       { bookList }
+    </SelectBox>
+  );
+
+  const numWrapper = mount(
+    <SelectBox { ...props }>
+      { bookList2 }
     </SelectBox>
   );
 
@@ -271,6 +287,15 @@ describe('<SelectBox />', () => {
     controlledWrapper.setProps({ value: '0003'});
     expect(controlledWrapper.state().selected).to.equal('Remote: Office Not Required');
     expect(controlledWrapper.state().selectedValue).to.equal('0003');
+  });
+
+  it('should callback with a text and value when value is numerical instead of string', () => {
+    numWrapper.find('.SelectBox-selection').simulate('click');
+    numWrapper.find('.SelectBox-li').at(0).simulate('click');
+
+    // make sure the callback was fired and value converted to string
+    expect(callback.args[6][0].target.text).to.equal('LeanUx');
+    expect(callback.args[6][0].target.value).to.equal('0');
   });
 
 });
