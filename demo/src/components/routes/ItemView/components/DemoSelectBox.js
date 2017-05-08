@@ -26,9 +26,8 @@ export default class DemoSelectBox extends Component {
     ];
 
     const cityList = cities.map((city, i) => (
-      <div key={ `book-${ i }` } value={ city.value }>{ city.name }</div>
+      <div key={ `city-${ i }` } value={ city.value }>{ city.name }</div>
     ));
-
 
     return(
       <div>

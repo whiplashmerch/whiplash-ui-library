@@ -133,7 +133,8 @@ export default class SelectBox extends Component {
     const currentSelected = this.state.selected;
     const currentValue = this.state.selectedValue;
     const text = selected.props.children;
-    const value = selected.props.value || selected.props.children;
+    const hasValue = selected.props.value || selected.props.value === 0 ? true : false
+    const value = hasValue ? selected.props.value.toString() : selected.props.children;
     const obj = { target: { value, text } };
 
     this.setState({
