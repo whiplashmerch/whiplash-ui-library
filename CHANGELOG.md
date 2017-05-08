@@ -1,3 +1,21 @@
+#v1.5.1
+We made a few small updates to the library, and no breaking changes 🎉
+
+* UPDATE: `<Input>` now accepts a `noAnimation` prop to show active state 
+* UPDATE: `<Modal>` css updates to fix y-scrolling issue
+* UPDATE: `<SelectBox>` fixed a small bug that will now convert a `0` value to string  
+
+#### Upgrading
+yarn:
+```
+yarn upgrade whiplash-ui-library@1.5.1
+```
+
+npm:
+```
+npm install whiplash-ui-library@1.5.1 --exact
+```
+
 #v1.5.0
 Huge update and news for you today!  🙌
 
