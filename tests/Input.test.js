@@ -6,23 +6,23 @@ import { Input } from 'src';
 
 
 describe('<Input />', () => {
-
   const testFn = () => console.log('');
 
-  const defaultWrapper = mount(<Input />);
+  const props = {
+    basic: true,
+    inputLabel: 'test label',
+    type: 'email',
+    maxLength: 220,
+    placeholder: 'test',
+    onUserInput: testFn,
+    search: true,
+    required: true
+  };
+  const noAnimationProps = { ...props, noAnimation: true };
 
-  const wrapper = mount(
-    <Input
-      basic
-      inputLabel="test label"
-      type="email"
-      maxLength="220"
-      placeholder="test"
-      onUserInput={ testFn }
-      search
-      required
-    />
-  );
+  const defaultWrapper = mount(<Input />);
+  const wrapper = mount(<Input { ...props } />);
+  const noAnimationWrapper = mount(<Input { ...noAnimationProps } />);
 
 
   it('should render without crashing', () => {
@@ -57,6 +57,21 @@ describe('<Input />', () => {
     expect(wrapper.props().basic).to.not.equal(false);
     expect(wrapper.props().basic).to.not.equal('true');
     expect(wrapper.props().basic).to.equal(true);
+  });
+
+  it('should have a default noAnimation prop', () => {
+    expect(defaultWrapper.props().noAnimation).to.not.equal(null);
+    expect(defaultWrapper.props().noAnimation).to.not.equal(undefined);
+    expect(defaultWrapper.props().noAnimation).to.not.equal('true');
+    expect(defaultWrapper.props().noAnimation).to.equal(false);
+  });
+
+  it('should accept a noAnimation prop', () => {
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(null);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(undefined);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal(false);
+    expect(noAnimationWrapper.props().noAnimation).to.not.equal('true');
+    expect(noAnimationWrapper.props().noAnimation).to.equal(true);
   });
 
   it('should have a default onUserInput prop', () => {
@@ -149,6 +164,11 @@ describe('<Input />', () => {
     passWrapper.find('.Input-toggle-value-btn').simulate('click');
     expect(passWrapper.find('.show').length).to.not.equal(0)
     expect(passWrapper.find('.show').length).to.equal(1)
+  });
+
+  it('should have an active class if noAnimation is true', () => {
+    const noAnimation = mount(<Input noAnimation />);
+    expect(noAnimation.find('.AnimatedInput .active').length).to.equal(1);
   });
 
 });
